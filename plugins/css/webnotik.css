@@ -85,7 +85,6 @@
 .panel-nav a.active {
   background-color: #000;
   color: white;
-  margin-top: 1px;
 }
 
 /* Hide the link that should open and close the panel-nav on small screens */
@@ -158,9 +157,8 @@
 		float: right;
 		display: block;
 	}
-	.what-we-do li,
-	.what-we-do li.full {
-		width: 100%;
+	.panel-nav a.active {
+		margin-top: 1px;
 	}
 
 	/* The "responsive" class is added to the panel-nav with JavaScript when the user clicks on the icon. This class makes the panel-nav look good on small screens (display the links vertically instead of horizontally) */
