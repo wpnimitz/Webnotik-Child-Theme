@@ -1,0 +1,94 @@
+.panel {
+    margin: 30px 50px 30px 30px;
+    border: 1px solid #212228;
+}
+
+.panel-header {
+    background: #212228;
+    display: block;
+    color: #fff;
+}
+
+.panel-header,
+.panel-body {
+    padding: 30px 30px;
+}
+
+.panel-header h1 {
+    color: inherit;
+    line-height: 1em;
+    margin: 0;
+}
+
+.panel-header p {
+    margin: 0;
+    line-height: 2em;
+}
+
+.panel-navigation {
+    background: #17181f;
+}
+.panel-navigation ul {
+    margin: 0;
+}
+
+.panel-navigation .forms-group {
+    padding: 10px 30px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-block;
+    margin: 0;
+}
+
+.panel-navigation .active.forms-group,
+.panel-navigation .forms-group:hover {
+    background: black;
+}
+
+.panel-body .form-group {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.panel-body .form-field p {
+	margin: 0;
+}
+
+.panel-body label {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9em;
+}
+
+.panel-body textarea,
+.panel-body input,
+.panel-body select {
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.panel-body input#submit {
+    width: initial;
+}
+
+.panel-body textarea {
+	min-height: 150px;
+}
+
+
+@media screen and (min-width: 800px) {
+	.panel-body .form-label,
+	.panel-body .form-field {
+	    vertical-align: top;
+	    display: inline-block;
+	    width: 49%;
+	}
+
+	.panel-body .form-label {
+		margin-right: 1%;
+	}
+}
