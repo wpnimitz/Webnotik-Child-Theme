@@ -8,7 +8,8 @@ jQuery(document).ready(function( $ ) {
 	    }
 	})
 	$('.form-field p').on('click', function(){
-		$(this).addClass('copied');
+		var $this = $(this)
+		$this.addClass('copied');
 		var $temp = $("<input>");;
 		$("body").append($temp);
 		$temp.val($(this).html()).select();
@@ -16,7 +17,7 @@ jQuery(document).ready(function( $ ) {
 		$temp.remove();
 
 		setTimeout(function() {
-		  $(this).removeClass('copied');
+		  $this.removeClass('copied');
 		}, 6000);
 
 	});
