@@ -52,7 +52,9 @@
     content: "Copied to Clipboard Successfully!!!";
     background: #beffbe;
     display: block;
-    position: absolute;
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
     padding: 30px 60px;
     color: #006600;
     border-radius: 5px;
