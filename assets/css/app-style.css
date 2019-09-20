@@ -160,7 +160,7 @@ START: FORM STYLING;
 }
 
 /**making sure to remove margin from gravity forms**/
-.gform_wrapper *[name] {
+.gform_wrapper li *[name] {
     margin: 0;
 }
 
