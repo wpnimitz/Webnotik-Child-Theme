@@ -85,6 +85,7 @@
 .panel-nav a.active {
   background-color: #000;
   color: white;
+  margin-top: 1px;
 }
 
 /* Hide the link that should open and close the panel-nav on small screens */
