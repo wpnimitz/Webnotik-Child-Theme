@@ -18,7 +18,7 @@ jQuery(document).ready(function( $ ) {
 
 		setTimeout(function() {
 		  $this.removeClass('copied');
-		}, 6000);
+		}, 2500);
 
 	});
 });
