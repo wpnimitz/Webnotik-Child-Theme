@@ -34,6 +34,11 @@
     margin-bottom: 30px;
 }
 
+.panel-body .form-field p:before {
+    content: "USAGE: ";
+    font-weight: 500;
+}
+
 .panel-body .form-field p {
 	margin: 0;
 	padding: 3px 7px;

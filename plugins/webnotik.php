@@ -48,7 +48,7 @@ function webnotik_real_estate_content(){
 			    	</div>
 			    	<div class="form-field">
 			    		<textarea name="webnotik_seller_form" id="webnotik_seller_form"><?php echo esc_attr( get_option('webnotik_seller_form') ); ?></textarea>
-			    		<p><strong>USAGE:</strong> [webnotik_form type="seller"]</p>
+			    		<p>[webnotik_form type="seller"]</p>
 			    	</div>
 			    </div>
 
@@ -58,7 +58,7 @@ function webnotik_real_estate_content(){
 			    	</div>
 			    	<div class="form-field">
 			    		<textarea name="webnotik_buyer_form" id="webnotik_buyer_form"><?php echo esc_attr( get_option('webnotik_buyer_form') ); ?></textarea>
-			    		<p><strong>USAGE:</strong> [webnotik_form type="buyer"]</p>
+			    		<p>[webnotik_form type="buyer"]</p>
 			    	</div>
 			    </div>
 
@@ -68,7 +68,7 @@ function webnotik_real_estate_content(){
 			    	</div>
 			    	<div class="form-field">
 			    		<textarea name="webnotik_other_form" id="webnotik_other_form"><?php echo esc_attr( get_option('webnotik_other_form') ); ?></textarea>
-			    		<p><strong>USAGE:</strong> [webnotik_form type="other"]</p>
+			    		<p>[webnotik_form type="other"]</p>
 			    	</div>			    	
 			    </div>
 
@@ -78,7 +78,7 @@ function webnotik_real_estate_content(){
 				    </div>
 			    	<div class="form-field">
 				    	<textarea name="webnotik_extra1_form" id="webnotik_extra1_form"><?php echo esc_attr( get_option('webnotik_extra1_form') ); ?></textarea>
-				    	<p><strong>USAGE:</strong> [webnotik_form type="extra1"]</p>
+				    	<p>[webnotik_form type="extra1"]</p>
 				    </div>
 			    </div>
 
@@ -88,7 +88,7 @@ function webnotik_real_estate_content(){
 				    </div>
 			    	<div class="form-field">
 				    	<textarea name="webnotik_extra2_form" id="webnotik_extra2_form"><?php echo esc_attr( get_option('webnotik_extra2_form') ); ?></textarea>
-				    	<p><strong>USAGE:</strong> [webnotik_form type="extra2"]</p>
+				    	<p>[webnotik_form type="extra2"]</p>
 				    </div>
 			    </div>
 
