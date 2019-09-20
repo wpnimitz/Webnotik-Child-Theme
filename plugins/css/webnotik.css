@@ -29,11 +29,6 @@
     background: #17181f;
 }
 
-.panel-navigation .active.forms-group,
-.panel-navigation .forms-group:hover {
-    background: black;
-}
-
 .panel-body .form-group {
     display: block;
     margin-bottom: 30px;
