@@ -1,0 +1,14 @@
+/*
+ Theme Name:     Webnotik Child Theme
+ Theme URI:      https://webnotik.com/
+ Description:    Child theme created for Divi -- a powerful page builder wordpress theme from Elegant Themes. Webnotik contains basic requirements for a child theme.
+ Author:         Roger Valdez
+ Author URI:     https://webnotik.com/
+ Template:       Divi
+ Version:        1.0.0
+*/
+
+@import url("../Divi/style.css");
+
+/* Theme customization starts here
+------------------------------------------------------- */
