@@ -36,6 +36,11 @@
 
 .panel-body .form-field p {
 	margin: 0;
+	padding: 3px 7px;
+    background: #f1f1f1;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-top: 5px !important;
 }
 
 .panel-body label {
