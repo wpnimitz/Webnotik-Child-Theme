@@ -28,18 +28,6 @@
 .panel-navigation {
     background: #17181f;
 }
-.panel-navigation ul {
-    margin: 0;
-}
-
-.panel-navigation .forms-group {
-    padding: 10px 30px;
-    color: #fff;
-    font-size: 16px;
-    line-height: 20px;
-    display: inline-block;
-    margin: 0;
-}
 
 .panel-navigation .active.forms-group,
 .panel-navigation .forms-group:hover {
