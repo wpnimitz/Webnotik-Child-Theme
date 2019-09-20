@@ -26,20 +26,12 @@ function webnotik_real_estate_content(){
 			<p><?php esc_html_e('Speeding up the process of other CRM we don\'t usually use for Webnotik Digital Agency Clients', 're-webnotik'); ?></p>
 		</div>
 		<div class="panel-navigation">
-			<ul>
-				<li class="forms-group active">
-					Forms
-				</li>
-				<li class="forms-group">
-					Keywords
-				</li>
-				<li class="forms-group">
-					Divi Global
-				</li>
-				<li class="forms-group">
-					Others
-				</li>
-			</ul>
+			<div class="panel-nav">
+				<a class="forms-group active" href="#forms">Forms</a>
+				<a class="forms-group" href="#keywords">Keywords</a>				
+				<a class="forms-group" href="#">Divi Global</a>				
+				<a class="forms-group" href="#">Others</a>				
+			</div>
 		</div>
 		
 
