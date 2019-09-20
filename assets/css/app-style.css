@@ -117,10 +117,56 @@
 
 
 
-
 /** Module Default Styling **/
 .entry-content .et_pb_text_inner p,
 .entry-content .et_pb_text_inner li {
     line-height: 1.9em;
 }
 
+
+/** 
+START: FORM STYLING; 
+**/
+.et_pb_module .gform_wrapper {
+    background: rgba(26,26,26,0.6);
+    padding: 5%;
+    margin-top: 0px;
+}
+
+/**any forms global forms (make sure they are stripped off with default style)**/
+.et_pb_module input, .et_pb_module select, .et_pb_module textarea {
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    padding: 17px 15px !important;
+    width: 100% !important;
+    margin-bottom: 15px;
+}
+
+.et_pb_module input:focus, .et_pb_module select:focus, .et_pb_module textarea:focus {
+    background: #eee;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .2);
+}
+
+.et_pb_module *[type=submit] {
+    box-sizing: border-box;
+    padding: 20px !important;
+    background: #febe0f;
+    color: #232323;
+    border: 0px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/**making sure to remove margin from gravity forms**/
+.gform_wrapper *[name] {
+    margin: 0;
+}
+
+.et_pb_module .gform_wrapper ul.gform_fields li.gfield {
+    padding-right: 0;
+}
+/** 
+END: FORM STYLING; 
+**/
