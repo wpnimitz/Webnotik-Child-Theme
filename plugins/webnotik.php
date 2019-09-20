@@ -108,7 +108,7 @@ function webnotik_real_estate_content(){
 add_action('admin_enqueue_scripts', 'register_webnotik_scripts');
 function register_webnotik_scripts() {
     wp_register_style('re-webnotik', get_stylesheet_directory_uri() . '/plugins/css/webnotik.css');
-    wp_register_script('re-plugin', get_stylesheet_directory_uri() . '/plugins/js/webnotik.js');
+    wp_register_script('re-webnotik', get_stylesheet_directory_uri() . '/plugins/js/webnotik.js');
 }
 
 
@@ -125,7 +125,7 @@ function load_my_plugin_scripts($hook) {
     }    
     // Load style & scripts.    
     wp_enqueue_style('re-webnotik');    
-    //wp_enqueue_script('re-webnotik');    
+    wp_enqueue_script('re-webnotik');    
 }
 
 
