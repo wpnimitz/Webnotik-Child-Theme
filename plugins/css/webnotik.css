@@ -48,6 +48,17 @@
     margin-top: 5px !important;
 }
 
+.panel-body .form-field p.copied:after {
+    content: "Copied to Clipboard Successfully!!!";
+    background: #beffbe;
+    display: block;
+    position: absolute;
+    padding: 30px 60px;
+    color: #006600;
+    border-radius: 5px;
+    border: 1px solid #9eff9e;
+}
+
 .panel-body label {
     display: block;
     font-weight: 700;
