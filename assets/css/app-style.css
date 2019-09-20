@@ -140,7 +140,7 @@ START: FORM STYLING;
     border-radius: 0;
     padding: 17px 15px !important;
     width: 100% !important;
-    margin-bottom: 15px;
+    margin-bottom: 15px !important;
 }
 
 .et_pb_module input:focus, .et_pb_module select:focus, .et_pb_module textarea:focus {
