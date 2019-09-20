@@ -99,8 +99,8 @@
 }
 
 /* Add an active class to highlight the current page */
-.is-active {
-  background-color: #f47726;
+.panel-nav a.active {
+  background-color: #000;
   color: white;
 }
 
@@ -164,16 +164,62 @@
   display: block;
 }
 
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the panel-nav (.icon) */
+@media screen and (max-width: 600px) {
+  .panel-nav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .panel-nav a.icon {
+    float: right;
+    display: block;
+  }
+  .what-we-do li,
+  .what-we-do li.full {
+      width: 100%;
+  }
+
+}
+
+/* The "responsive" class is added to the panel-nav with JavaScript when the user clicks on the icon. This class makes the panel-nav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .panel-nav.responsive {position: relative;}
+  .panel-nav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .panel-nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .panel-nav.responsive .dropdown {float: none;}
+  .panel-nav.responsive .dropdown-content {position: relative;}
+  .panel-nav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+
+
+
+
 
 @media screen and (min-width: 800px) {
 	.panel-body .form-label,
 	.panel-body .form-field {
 	    vertical-align: top;
 	    display: inline-block;
-	    width: 49%;
+	}
+
+	.panel-body .form-field {
+		width: 69%;
 	}
 
 	.panel-body .form-label {
+		width: 29%;
 		margin-right: 1%;
 	}
 }

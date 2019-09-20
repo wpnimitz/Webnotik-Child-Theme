@@ -29,8 +29,8 @@ function webnotik_real_estate_content(){
 			<div class="panel-nav">
 				<a class="forms-group active" href="#forms">Forms</a>
 				<a class="forms-group" href="#keywords">Keywords</a>				
-				<a class="forms-group" href="#">Divi Global</a>				
-				<a class="forms-group" href="#">Others</a>
+				<a class="forms-group" href="#divi-global">Divi Global</a>				
+				<a class="forms-group" href="#others">Others</a>
 				<a href="#" class="icon">&#9776;</a>			
 			</div>
 		</div>
