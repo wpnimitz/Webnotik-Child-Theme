@@ -19,7 +19,7 @@ function webnotik_form_shortcode( $atts ){
 	if(in_array($type, $allowed_types)) {
 		$form = get_option( 'webnotik_' . $type . '_form');
 		if($form != "") {
-			$ret = '<div class="gform_wrapper">'. $form . '</form>';
+			$ret = '<div class="gform_wrapper">'. $form . '</div>';
 		} else {
 			$ret = "Form is empty!";
 		}
