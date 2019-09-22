@@ -11,9 +11,9 @@ function register_re_webnotik_settings() {
 	//register our settings
 	register_setting( 're-webnotik-group', 'webnotik_seller_form' );
 	register_setting( 're-webnotik-group', 'webnotik_buyer_form' );
-	register_setting( 're-webnotik-group', 'webnotik_other_form' );
-	register_setting( 're-webnotik-group', 'webnotik_extra1_form' );
-	register_setting( 're-webnotik-group', 'webnotik_extra2_form' );
+	register_setting( 're-webnotik-group', 'webnotik_lender_form' );
+	register_setting( 're-webnotik-group', 'webnotik_contact_form' );
+	register_setting( 're-webnotik-group', 'webnotik_extra_form' );
 }
 
 function webnotik_real_estate_content(){
@@ -66,30 +66,30 @@ function webnotik_real_estate_content(){
 
 				     <div class="form-group">
 				    	<div class="form-label">
-				    		<label for="webnotik_other_form">Other Form</label>
+				    		<label for="webnotik_lender_form">Lender Form</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<textarea name="webnotik_other_form" id="webnotik_other_form"><?php echo esc_attr( get_option('webnotik_other_form') ); ?></textarea>
+				    		<textarea name="webnotik_lender_form" id="webnotik_lender_form"><?php echo esc_attr( get_option('webnotik_lender_form') ); ?></textarea>
 				    		<p>[webnotik_form type="other"]</p>
 				    	</div>			    	
 				    </div>
 
 				    <div class="form-group">
 				    	<div class="form-label">
-					    	<label for="webnotik_extra1_form">Extra Form #1</label>
+					    	<label for="webnotik_contact_form">Contact Form</label>
 					    </div>
 				    	<div class="form-field">
-					    	<textarea name="webnotik_extra1_form" id="webnotik_extra1_form"><?php echo esc_attr( get_option('webnotik_extra1_form') ); ?></textarea>
+					    	<textarea name="webnotik_contact_form" id="webnotik_contact_form"><?php echo esc_attr( get_option('webnotik_contact_form') ); ?></textarea>
 					    	<p>[webnotik_form type="extra1"]</p>
 					    </div>
 				    </div>
 
 				    <div class="form-group">
 				    	<div class="form-label">
-					    	<label for="webnotik_extra2_form">Extra Form #1</label>
+					    	<label for="webnotik_extra_form">Extra Form</label>
 					    </div>
 				    	<div class="form-field">
-					    	<textarea name="webnotik_extra2_form" id="webnotik_extra2_form"><?php echo esc_attr( get_option('webnotik_extra2_form') ); ?></textarea>
+					    	<textarea name="webnotik_extra_form" id="webnotik_extra_form"><?php echo esc_attr( get_option('webnotik_extra_form') ); ?></textarea>
 					    	<p>[webnotik_form type="extra2"]</p>
 					    </div>
 				    </div>

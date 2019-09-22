@@ -14,7 +14,7 @@ function webnotik_form_shortcode( $atts ){
 		), $atts, 'webnotik_form' );
 	$type = $atts["type"];
 
-	$allowed_types = array('seller', 'buyer', 'other', 'extra1', 'extra2' );
+	$allowed_types = array('seller', 'buyer', 'lender', 'contract', 'extra' );
 
 	if(in_array($type, $allowed_types)) {
 		$form = get_option( 'webnotik_' . $type . '_form');
