@@ -80,7 +80,7 @@ function webnotik_real_estate_content(){
 					    </div>
 				    	<div class="form-field">
 					    	<textarea name="webnotik_contact_form" id="webnotik_contact_form"><?php echo esc_attr( get_option('webnotik_contact_form') ); ?></textarea>
-					    	<p>[webnotik_form type="extra1"]</p>
+					    	<p>[webnotik_form type="contact"]</p>
 					    </div>
 				    </div>
 
@@ -90,7 +90,7 @@ function webnotik_real_estate_content(){
 					    </div>
 				    	<div class="form-field">
 					    	<textarea name="webnotik_extra_form" id="webnotik_extra_form"><?php echo esc_attr( get_option('webnotik_extra_form') ); ?></textarea>
-					    	<p>[webnotik_form type="extra2"]</p>
+					    	<p>[webnotik_form type="extra"]</p>
 					    </div>
 				    </div>
 
