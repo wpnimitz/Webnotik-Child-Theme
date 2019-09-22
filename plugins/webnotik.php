@@ -70,7 +70,7 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    	<div class="form-field">
 				    		<textarea name="webnotik_lender_form" id="webnotik_lender_form"><?php echo esc_attr( get_option('webnotik_lender_form') ); ?></textarea>
-				    		<p>[webnotik_form type="other"]</p>
+				    		<p>[webnotik_form type="lender"]</p>
 				    	</div>			    	
 				    </div>
 
