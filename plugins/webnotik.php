@@ -9,7 +9,11 @@ function webnotik_real_estate_add_admin_menu() {
 
 function register_re_webnotik_settings() {
 	//register our general settings
-
+	register_setting( 're-webnotik-group', 'webnotik_business_name' );
+	register_setting( 're-webnotik-group', 'webnotik_business_phone' );
+	register_setting( 're-webnotik-group', 'webnotik_business_email' );
+	register_setting( 're-webnotik-group', 'webnotik_business_address1' );
+	register_setting( 're-webnotik-group', 'webnotik_business_address2' );
 
 	//register our form settings
 	register_setting( 're-webnotik-group', 'webnotik_seller_form' );
@@ -50,6 +54,7 @@ function webnotik_real_estate_content(){
 			<?php if($tab == 'general') {?>
 			<!-- STARTS #general-forms -->
 			<div id="general"> 
+				<p>Welcome to general settings of <?php echo get_bloginfo('name'); ?>. Output any shortcode in any of your wordpress page and we will instantly convert any data to seo rich snippets.</p>
 				<form method="post" action="options.php">
 				    <?php settings_fields( 're-webnotik-group' ); ?>
 				    <?php do_settings_sections( 're-webnotik-group' ); ?>
