@@ -20,6 +20,7 @@ function register_re_webnotik_settings() {
 }
 
 function webnotik_real_estate_content(){
+	$tab = isset($_GET["tab"]) ? $_GET["tab"] : 'general';
 ?>
 
 <div class="webnotik-re-wrapper">
@@ -30,11 +31,11 @@ function webnotik_real_estate_content(){
 		</div>
 		<div class="panel-navigation">
 			<div class="panel-nav">
-				<a class="forms-group active" href="&tab=general">General</a>
-				<a class="forms-group" href="&tab=forms">Forms</a>
-				<a class="forms-group" href="&tab=keywords">Keywords</a>				
-				<a class="forms-group" href="&tab=divi-global">Divi Global</a>				
-				<a class="forms-group" href="&tab=others">Others</a>
+				<a class="forms-group active" href="admin.php?page=webnotik-real-estate&tab=general">General</a>
+				<a class="forms-group" href="admin.php?page=webnotik-real-estate&tab=forms">Forms</a>
+				<a class="forms-group" href="admin.php?page=webnotik-real-estate&tab=keywords">Keywords</a>				
+				<a class="forms-group" href="admin.php?page=webnotik-real-estate&tab=divi-global">Divi Global</a>				
+				<a class="forms-group" href="admin.php?page=webnotik-real-estate&tab=others">Others</a>
 				<a href="#" class="icon">&#9776;</a>			
 			</div>
 		</div>
@@ -42,8 +43,10 @@ function webnotik_real_estate_content(){
 
 		
 		<div class="panel-body">
+
+			<?php if($tab == 'general') {?>
 			<!-- STARTS #general-forms -->
-			<div id="forms"> 
+			<div id="general"> 
 				<form method="post" action="options.php">
 				    <?php settings_fields( 're-webnotik-group' ); ?>
 				    <?php do_settings_sections( 're-webnotik-group' ); ?>
@@ -135,7 +138,7 @@ function webnotik_real_estate_content(){
 				</form>
 			</div>
 			<!-- end #general-forms -- >
-
+			<?php } elseif($tab == 'forms') {?>
 			<!-- STARTS #forms -->
 			<div id="forms"> 
 				<form method="post" action="options.php">
@@ -229,6 +232,10 @@ function webnotik_real_estate_content(){
 				</form>
 			</div>
 			<!-- end #FORMS -- >
+			<?php } else {?>
+			Work in progress
+			<?php } ?>
+
 		</div>
 	</div>
 </div>
