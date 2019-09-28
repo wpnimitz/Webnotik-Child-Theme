@@ -127,6 +127,11 @@
 /** 
 START: FORM STYLING; 
 **/
+.gform_wrapper > .gform_wrapper {
+    padding: 0;
+}
+
+
 .et_pb_module .gform_wrapper {
     background: rgba(26,26,26,0.6);
     padding: 5%;
