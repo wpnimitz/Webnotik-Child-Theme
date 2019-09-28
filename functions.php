@@ -54,7 +54,7 @@ function webnotik_global_footer() {
 add_action( 'et_before_main_content', 'webnotik_global_header' );
 function webnotik_global_header() {
 	if(is_category(6)) {
-		echo do_shortcode('<div class="webnotik-wrapper">[et_pb_section global_module="839"][/et_pb_section]</div>');
+		echo do_shortcode('<div class="webnotik-wrapper">[et_pb_section global_module="924"][/et_pb_section]</div>');
 	}
     
 }
