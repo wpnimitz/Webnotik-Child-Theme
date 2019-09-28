@@ -64,7 +64,7 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_business_name">Business Name</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<input name="webnotik_business_name" id="webnotik_business_name"><?php echo esc_attr( get_option('webnotik_business_name') ); ?>
+				    		<input name="webnotik_business_name" id="webnotik_business_name" value="<?php echo esc_attr( get_option('webnotik_business_name') ); ?>">
 				    		<p>[webnotik business="name"]</p>
 				    	</div>
 				    </div>
@@ -74,7 +74,7 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_business_phone">Business Phone Number</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<input name="webnotik_business_phone" id="webnotik_business_phone"><?php echo esc_attr( get_option('webnotik_business_phone') ); ?>
+				    		<input name="webnotik_business_phone" id="webnotik_business_phone" value="<?php echo esc_attr( get_option('webnotik_business_phone') ); ?>">
 				    		<p>[webnotik business="phone"]</p>
 				    	</div>
 				    </div>
@@ -84,7 +84,7 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_business_email">Business Email Address</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<input name="webnotik_business_email" id="webnotik_business_email"><?php echo esc_attr( get_option('webnotik_business_email') ); ?>
+				    		<input name="webnotik_business_email" id="webnotik_business_email" value="<?php echo esc_attr( get_option('webnotik_business_email') ); ?>">
 				    		<p>[webnotik business="email"]</p>
 				    	</div>
 				    </div>
@@ -94,7 +94,7 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_business_address1">Business Address Line 1</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<input name="webnotik_business_address1" id="webnotik_business_address1"><?php echo esc_attr( get_option('webnotik_business_address1') ); ?>
+				    		<input name="webnotik_business_address1" id="webnotik_business_address1" value="<?php echo esc_attr( get_option('webnotik_business_address1') ); ?>">
 				    		<p>[webnotik business="address1"]</p>
 				    	</div>
 				    </div>
@@ -104,7 +104,7 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_business_address2">Business Address Line 2</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<input name="webnotik_business_address2" id="webnotik_business_address2"><?php echo esc_attr( get_option('webnotik_business_address2') ); ?>
+				    		<input name="webnotik_business_address2" id="webnotik_business_address2" value="<?php echo esc_attr( get_option('webnotik_business_address2') ); ?>">
 				    		<p>[webnotik business="address2"]</p>
 				    	</div>
 				    </div>
