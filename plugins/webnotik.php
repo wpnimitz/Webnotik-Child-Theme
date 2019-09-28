@@ -3,28 +3,32 @@ add_action('admin_menu', 'webnotik_real_estate_add_admin_menu');
 function webnotik_real_estate_add_admin_menu() {
     add_menu_page(__('Webnotik', 're-webnotik'), __('Webnotik', 're-webnotik'), 'manage_options', 'webnotik-real-estate', 'webnotik_real_estate_content', 'dashicons-schedule', 3);
     //call register settings function
-	add_action( 'admin_init', 'register_re_webnotik_settings' );
+	add_action( 'admin_init', 'webnotik_register_forms_settings' );
 }
 
 
-function register_re_webnotik_settings() {
-	//register our general settings
-	register_setting( 're-webnotik-group', 'webnotik_business_name' );
-	register_setting( 're-webnotik-group', 'webnotik_business_phone' );
-	register_setting( 're-webnotik-group', 'webnotik_business_email' );
-	register_setting( 're-webnotik-group', 'webnotik_business_address1' );
-	register_setting( 're-webnotik-group', 'webnotik_business_address2' );
-
+function webnotik_register_forms_settings() {
 	//register our form settings
-	register_setting( 're-webnotik-group', 'webnotik_seller_form' );
-	register_setting( 're-webnotik-group', 'webnotik_buyer_form' );
-	register_setting( 're-webnotik-group', 'webnotik_lender_form' );
-	register_setting( 're-webnotik-group', 'webnotik_realtors_form' );
-	register_setting( 're-webnotik-group', 'webnotik_wholesale_form' );
-	register_setting( 're-webnotik-group', 'webnotik_contractor_form' );
-	register_setting( 're-webnotik-group', 'webnotik_contact_form' );
-	register_setting( 're-webnotik-group', 'webnotik_extra_form' );
+	register_setting( 'webnotik-forms-group', 'webnotik_seller_form' );
+	register_setting( 'webnotik-forms-group', 'webnotik_buyer_form' );
+	register_setting( 'webnotik-forms-group', 'webnotik_lender_form' );
+	register_setting( 'webnotik-forms-group', 'webnotik_realtors_form' );
+	register_setting( 'webnotik-forms-group', 'webnotik_wholesale_form' );
+	register_setting( 'webnotik-forms-group', 'webnotik_contractor_form' );
+	register_setting( 'webnotik-forms-group', 'webnotik_contact_form' );
+	register_setting( 'webnotik-forms-group', 'webnotik_extra_form' );
 }
+
+
+function webnotik_register_general_settings() {
+//register our general settings
+	register_setting( 'webnotik-general-group', 'webnotik_business_name' );
+	register_setting( 'webnotik-general-group', 'webnotik_business_phone' );
+	register_setting( 'webnotik-general-group', 'webnotik_business_email' );
+	register_setting( 'webnotik-general-group', 'webnotik_business_address1' );
+	register_setting( 'webnotik-general-group', 'webnotik_business_address2' );
+}
+
 
 function webnotik_real_estate_content(){
 	$tab = isset($_GET["tab"]) ? $_GET["tab"] : 'general';
@@ -56,8 +60,8 @@ function webnotik_real_estate_content(){
 			<div id="general"> 
 				<p>Welcome to general settings of <?php echo get_bloginfo('name'); ?>. Output any shortcode in any of your wordpress page and we will instantly convert any data to seo rich snippets.</p>
 				<form method="post" action="options.php">
-				    <?php settings_fields( 're-webnotik-group' ); ?>
-				    <?php do_settings_sections( 're-webnotik-group' ); ?>
+				    <?php settings_fields( 'webnotik-general-group' ); ?>
+				    <?php do_settings_sections( 'webnotik-general-group' ); ?>
 
 				    <div class="form-group">
 				    	<div class="form-label">
@@ -136,8 +140,8 @@ function webnotik_real_estate_content(){
 			<!-- STARTS #forms -->
 			<div id="forms"> 
 				<form method="post" action="options.php">
-				    <?php settings_fields( 're-webnotik-group' ); ?>
-				    <?php do_settings_sections( 're-webnotik-group' ); ?>
+				    <?php settings_fields( 'webnotik-forms-group' ); ?>
+				    <?php do_settings_sections( 'webnotik-forms-group' ); ?>
 
 				    <div class="form-group">
 				    	<div class="form-label">
