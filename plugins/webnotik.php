@@ -12,6 +12,9 @@ function register_re_webnotik_settings() {
 	register_setting( 're-webnotik-group', 'webnotik_seller_form' );
 	register_setting( 're-webnotik-group', 'webnotik_buyer_form' );
 	register_setting( 're-webnotik-group', 'webnotik_lender_form' );
+	register_setting( 're-webnotik-group', 'webnotik_realtors_form' );
+	register_setting( 're-webnotik-group', 'webnotik_wholesale_form' );
+	register_setting( 're-webnotik-group', 'webnotik_contractor_form' );
 	register_setting( 're-webnotik-group', 'webnotik_contact_form' );
 	register_setting( 're-webnotik-group', 'webnotik_extra_form' );
 }
@@ -110,7 +113,7 @@ function webnotik_real_estate_content(){
 					    </div>
 				    	<div class="form-field">
 					    	<textarea name="webnotik_contact_form" id="webnotik_contact_form"><?php echo esc_attr( get_option('webnotik_contact_form') ); ?></textarea>
-					    	<p>[webnotik_form type="contact"]</p>
+					    	<p>[webnotik_form type="contact"]</p> 
 					    </div>
 				    </div>
 
