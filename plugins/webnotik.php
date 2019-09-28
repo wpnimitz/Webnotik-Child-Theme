@@ -64,6 +64,58 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    </div>
 
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_business_phone">Business Phone Number</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<input name="webnotik_business_phone" id="webnotik_business_phone"><?php echo esc_attr( get_option('webnotik_business_phone') ); ?>
+				    		<p>[webnotik business="phone"]</p>
+				    	</div>
+				    </div>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_business_email">Business Email Address</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<input name="webnotik_business_email" id="webnotik_business_email"><?php echo esc_attr( get_option('webnotik_business_email') ); ?>
+				    		<p>[webnotik business="email"]</p>
+				    	</div>
+				    </div>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_business_address1">Business Address Line 1</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<input name="webnotik_business_address1" id="webnotik_business_address1"><?php echo esc_attr( get_option('webnotik_business_address1') ); ?>
+				    		<p>[webnotik business="address1"]</p>
+				    	</div>
+				    </div>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_business_address2">Business Address Line 2</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<input name="webnotik_business_address2" id="webnotik_business_address2"><?php echo esc_attr( get_option('webnotik_business_address2') ); ?>
+				    		<p>[webnotik business="address2"]</p>
+				    	</div>
+				    </div>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_business_address">Business Full Address</label>
+				    	</div>
+				    	<div class="form-field">
+				    		No need to input anything here. This is the combination of Address Line 1 and 2 in a straigh long format. Appended with comma.
+				    		<p>[webnotik business="address"]</p>
+				    	</div>
+				    </div>
+
+
+
 
 
 				     
