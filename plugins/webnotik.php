@@ -4,6 +4,7 @@ function webnotik_real_estate_add_admin_menu() {
     add_menu_page(__('Webnotik', 're-webnotik'), __('Webnotik', 're-webnotik'), 'manage_options', 'webnotik-real-estate', 'webnotik_real_estate_content', 'dashicons-schedule', 3);
     //call register settings function
 	add_action( 'admin_init', 'webnotik_register_forms_settings' );
+	add_action( 'admin_init', 'webnotik_register_general_settings' );
 }
 
 
