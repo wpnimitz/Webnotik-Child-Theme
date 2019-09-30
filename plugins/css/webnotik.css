@@ -223,7 +223,7 @@
   right: 0;
 }
 
-.extra-keywords .form-group:hover label:last-child:before {
+.extra-keywords .form-group:last-child:hover label:before {
     content: "+ ADD";
     font-weight: 500;
     padding: 0px 13px;
