@@ -410,7 +410,7 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    </div>
 
-				    <div class="extra-keywords">
+
 				    <?php for ($i=1; $i < count($subpages); $i++) { 
 				    		$display = $i + 1;
 				    	?>
@@ -419,17 +419,12 @@ function webnotik_real_estate_content(){
 					    		<label for="webnotik_keywords_subpages<?php echo $display; ?>">Sub Keyword <span><?php echo $display; ?></span></label>
 					    	</div>
 					    	<div class="form-field">
-					    		<div class="col-2">
-						    		<input placeholder="enter other city keyword" name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages<?php echo $display; ?>" value="<?php echo esc_attr( $subpages[$i] ); ?>">
-						    		<p>[rank keyword="sub"]</p>
-						    	</div><div class="col-2">
-						    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( $subid[$i] ); ?>">
-					    			<p class="hint">Enter page ID here. Very useful for automatic page linking.</p>
-						    	</div>
+					    		<input placeholder="enter other city keyword" name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages<?php echo $display; ?>" value="<?php echo esc_attr( $subpages[$i] ); ?>">
+					    		<p class="hint">Add any global divi layouts you want to display in this particular page.</p>
 					    	</div>
 					    </div>
 				    <?php } ?> 
-				    </div>		    
+	    
 				    <?php submit_button(); ?>
 				</form>
 			</div>
