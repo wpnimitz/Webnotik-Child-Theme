@@ -46,7 +46,7 @@ jQuery(document).ready(function( $ ) {
 			$("#extra-" + eSub + " label").attr('for', 'webnotik_keywords_subpages' + eSub);
 			$("#extra-" + eSub + " input").attr('id', 'webnotik_keywords_subpages' + eSub);
 			eSub++;
-			console.log("2 recalculating...")
+			console.log("extra-" + eSub + "recalculating...")
 		});
 		console.log("recalculating...")
 	}
