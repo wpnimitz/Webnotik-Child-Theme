@@ -277,6 +277,13 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    </div>
 
+				    <?php
+				    $subid = get_option('webnotik_keywords_subpages_ids');
+
+				    print_r($subid);
+
+				     ?>
+
 				    <div class="extra-keywords"> 
 				    </div>
 
