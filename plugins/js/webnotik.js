@@ -22,7 +22,7 @@ jQuery(document).ready(function( $ ) {
 	});
 
 	var extraSub = $('.keyword').length;
-	$(".add-sub-keyword").on("click", function(){
+	$(".add-sub-keyword").on("click", ".extra-keywords", function(){
 	     var mainsub = $(".main-sub-keyword").html();
 	     extraSub++;
          var tempHtml = mainsub;         
