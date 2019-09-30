@@ -418,7 +418,11 @@ function webnotik_business_shortcode( $atts ){
 	if(in_array($type, $allowed_types)) {
 		$form = get_option( 'webnotik_business_' . $type);
 		if($form != "") {
-			$ret = '<span class="webnotik-'.$type.'">'. do_shortcode($form) . '</span>';
+			if($type == "privacy") {
+				$ret = do_shortcode($form);
+			} else {
+				$ret = '<span class="webnotik-'.$type.'">'. do_shortcode($form) . '</span>';
+			}
 		} else {
 			if($type == 'address') {
 				$ret = '<span class="webnotik-'.$type.'">'. get_option( 'webnotik_business_address1') . ', '. get_option( 'webnotik_business_address2') . '</span>';
