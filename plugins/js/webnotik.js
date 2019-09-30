@@ -7,7 +7,7 @@ jQuery(document).ready(function( $ ) {
 	        $('.panel-nav').addClass('responsive')
 	    }
 	})
-	$('.form-field p').on('click', function(){
+	$('.form-field p:not(.hint)').on('click', function(){
 		var $this = $(this)
 		$this.addClass('copied');
 		var $temp = $("<input>");;
