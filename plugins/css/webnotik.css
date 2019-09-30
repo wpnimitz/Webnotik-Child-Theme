@@ -213,7 +213,7 @@
 .extra-keywords .form-group:hover label:after {
   content: "- DEL";
   font-weight: 500;
-  padding: 5px 10px;
+  padding: 0px 13px;
   background: #FF9800;
   font-size: 10px;
   color: #ffff;
@@ -233,7 +233,7 @@
     margin-left: 5px;
     border-radius: 5px;
     position: absolute;
-    right: 0;
+    right: 60px;
 }
 
 
