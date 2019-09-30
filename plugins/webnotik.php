@@ -421,7 +421,7 @@ function webnotik_business_shortcode( $atts ){
 			if($type == 'address') {
 				$ret = '<span class="webnotik-'.$type.'">'. get_option( 'webnotik_business_address1') . ','. get_option( 'webnotik_business_address2') . '</span>';
 			} elseif($type == 'weburl') {
-				$ret = get_bloginfo('wpurl');
+				$ret = get_bloginfo('url');
 			} else {
 				$ret = "Business info is empty!";
 			}
