@@ -195,7 +195,7 @@
 }
 
 .add-sub-keyword {
-  display: flex;
+  display: flex !important;
   background: #a1e1ff;
   color: #0073a9;
   font-weight: 700;
