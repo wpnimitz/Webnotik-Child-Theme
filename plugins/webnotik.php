@@ -392,7 +392,7 @@ function webnotik_business_shortcode( $atts ){
 	if(in_array($type, $allowed_types)) {
 		$form = get_option( 'webnotik_business_' . $type);
 		if($form != "") {
-			$ret = '<div class="webnotik-'.$type.'">'. do_shortcode($form) . '</div>';
+			$ret = '<span class="webnotik-'.$type.'">'. do_shortcode($form) . '</span>';
 		} else {
 			$ret = "Business info is empty!";
 		}
