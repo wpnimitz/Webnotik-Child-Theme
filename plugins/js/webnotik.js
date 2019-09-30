@@ -21,7 +21,7 @@ jQuery(document).ready(function( $ ) {
 		}, 2500);
 	});
 
-	var extraSub = $('.keyword').length();
+	var extraSub = $('.keyword').length;
 	$(".add-sub-keyword").on("click", function(){
 	     var mainsub = $(".main-sub-keyword").html();
 	     extraSub++;
