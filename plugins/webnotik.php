@@ -282,7 +282,23 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    </div>
 
-				    <div class="extra-keywords"> 
+				    <div class="extra-keywords">
+				    <?php for ($i=1; $i < count($subpages); $i++) { ?>
+					    <div class="form-group keyword" id="extra-<?php echo $i; ?>">
+					    	<div class="form-label">
+					    		<label for="webnotik_keywords_subpages<?php echo $i; ?>">Sub Keyword <span><?php echo $i; ?></span></label>
+					    	</div>
+					    	<div class="form-field">
+					    		<div class="col-2">
+						    		<input name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages<?php echo $i; ?>" value="<?php echo esc_attr( $subpages[$i] ); ?>">
+						    		<p>[rank keyword="sub<span><?php echo $i; ?></span>"]</p>
+						    	</div><div class="col-2">
+						    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( $subid[$i] ); ?>">
+					    			<p class="hint">useful for linking automatic linking.</p>
+						    	</div>
+					    	</div>
+					    </div>
+				    <?php } ?> 
 				    </div>
 
 				    <div class="form-group add-sub-keyword">
