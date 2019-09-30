@@ -384,7 +384,8 @@ function webnotik_real_estate_content(){
 					    'public'   => true,
 					    '_builtin' => false
 					);
-					$post_types = get_post_types( $get_cpt_args, 'object' ); // use 'names' if you want to get only name of the post type.
+					$post_types = get_post_types( $get_cpt_args, 'names' ); 
+					// use 'names' if you want to get only name of the post type.
 
 					// see the registered post types
 					echo '<pre>';
