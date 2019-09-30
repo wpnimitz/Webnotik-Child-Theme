@@ -1,4 +1,22 @@
 <?php
+function webnotik_admin_bar_render() {
+    global $wp_admin_bar;
+    // we can remove a menu item, like the Comments link, just by knowing the right $id
+    //$wp_admin_bar->remove_menu('comments');
+
+    // we can add a submenu item too
+    $wp_admin_bar->add_menu( array(
+        'parent' => 'site-name',
+        'id' => 'webnotik',
+        'title' => __('Webnotik'),
+        'href' => admin_url( 'admin.php?page=webnotik-real-estate')
+    ) );
+}
+// and we hook our function via
+add_action( 'wp_before_admin_bar_render', 'webnotik_admin_bar_render' );
+
+
+
 add_action('admin_menu', 'webnotik_real_estate_add_admin_menu');
 function webnotik_real_estate_add_admin_menu() {
     add_menu_page(__('Webnotik', 're-webnotik'), __('Webnotik', 're-webnotik'), 'manage_options', 'webnotik-real-estate', 'webnotik_real_estate_content', 'dashicons-schedule', 3);
