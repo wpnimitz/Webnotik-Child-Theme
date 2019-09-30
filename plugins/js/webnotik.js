@@ -25,7 +25,7 @@ jQuery(document).ready(function( $ ) {
 	$(".add-sub-keyword").on("click", function(){
 	     var mainsub = $(".main-sub-keyword").html();
 	     extraSub++;
-         var tempHtml = mainsub.replace(/<span>1</span>/g, '<span>' + extraSub + '</span>');         
+         var tempHtml = mainsub.replace(/"<span>1</span>"/g, '<span>' + extraSub + '</span>');         
          
 	     $(".extra-keywords").append('<div class="form-group" id="extra-' + extraSub + '">' + tempHtml + '</div>'); 
 	     console.log(extraSub);
