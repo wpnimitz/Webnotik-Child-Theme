@@ -28,7 +28,7 @@ jQuery(document).ready(function( $ ) {
          var tempHtml = mainsub;         
          
 	     $(".extra-keywords").append('<div class="form-group keyword" id="extra-' + extraSub + '">' + tempHtml + '</div>');
-	     $("#extra-" + extraSub + "span").html(extraSub);
+	     $("#extra-" + extraSub + " span").html(extraSub);
 	     console.log(extraSub);
 	});
 });
