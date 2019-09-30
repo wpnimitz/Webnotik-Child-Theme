@@ -19,6 +19,15 @@ jQuery(document).ready(function( $ ) {
 		setTimeout(function() {
 		  $this.removeClass('copied');
 		}, 2500);
+	});
 
+	var extraSub = 1;
+	$(".add-sub-keyword").on("click", function(){
+	     var mainsub = $(".main-sub-keyword").html();
+	     extraSub++;
+         var tempHtml = mainsub.replace('<span>1</span>', '<span>' + extraSub + '</span>');         
+         
+	     $(".extra-keywords").append(tempHtml);
+	     console.log(extraSub);
 	});
 });
