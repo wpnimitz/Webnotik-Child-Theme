@@ -251,12 +251,15 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_keywords_main">Main Keyword</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
-				    		<p>[rank keyword="main"]</p>
-				    	</div>
-				    	<div class="extra-field">
-				    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
-				    		<p>[rank keyword="main"]</p>
+				    		<div class="et_pb_column">
+					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
+					    		<p>[rank keyword="main"]</p>
+					    	</div>
+					    	<div class="et_pb_column">
+					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
+				    			<p>[rank keyword="main"]</p>
+					    	</div>
+
 				    	</div>
 				    </div>
 
