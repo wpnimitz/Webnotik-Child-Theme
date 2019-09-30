@@ -27,6 +27,8 @@ function webnotik_register_general_settings() {
 	register_setting( 'webnotik-general-group', 'webnotik_business_email' );
 	register_setting( 'webnotik-general-group', 'webnotik_business_address1' );
 	register_setting( 'webnotik-general-group', 'webnotik_business_address2' );
+	register_setting( 'webnotik-general-group', 'webnotik_business_privacy' );
+	register_setting( 'webnotik-general-group', 'webnotik_business_tos' );
 }
 function webnotik_register_keywords_settings() {
 	//register our keywords settings
@@ -139,7 +141,27 @@ function webnotik_real_estate_content(){
 				    		This will print the current website URL.
 				    		<p>[webnotik business="weburl"]</p>
 				    	</div>
-				    </div>	     
+				    </div>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_business_privacy">Privacy Policy URL</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<input name="webnotik_business_privacy" id="webnotik_business_privacy" value="<?php echo esc_attr( get_option('webnotik_business_privacy') ); ?>">
+				    		<p>[webnotik business="address2"]</p>
+				    	</div>
+				    </div>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_business_tos">Terms of Use URL</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<input name="webnotik_business_tos" id="webnotik_business_tos" value="<?php echo esc_attr( get_option('webnotik_business_tos') ); ?>">
+				    		<p>[webnotik business="address2"]</p>
+				    	</div>
+				    </div>     
 				    
 				    <?php submit_button(); ?>
 
