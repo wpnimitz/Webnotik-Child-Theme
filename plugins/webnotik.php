@@ -278,7 +278,7 @@ function webnotik_real_estate_content(){
 				    </div>
 
 				    <div class="form-group add-sub-keyword">
-				    	Add new sub keyword
+				    	Add new sub keyword 
 				    </div>
 
 				    

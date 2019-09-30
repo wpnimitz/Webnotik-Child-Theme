@@ -195,17 +195,17 @@
 }
 
 .add-sub-keyword {
-    display: flex;
-    background: #a1e1ff;
-    color: #0073a9;
-    font-weight: 700;
-    min-height: 75px;
-    align-items: center;
-    font-size: 20px;
-    justify-content: center;
-    width: 99%;
-    border-radius: 2%;
-    border: 1px solid #0073a9;
+  display: flex;
+  background: #a1e1ff;
+  color: #0073a9;
+  font-weight: 700;
+  min-height: 75px;
+  align-items: center;
+  font-size: 20px;
+  justify-content: center;
+  width: 99%;
+  border-radius: 2%;
+  border: 1px solid #0073a9;
 }
 
 
