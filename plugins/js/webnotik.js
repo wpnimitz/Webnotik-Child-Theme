@@ -48,6 +48,7 @@ jQuery(document).ready(function( $ ) {
 			$("#extra-" + eSub + " input").attr('id', 'webnotik_keywords_subpages' + eSub);
 			eSub++;
 		});
+		console.log("recalculating...")
 	}
 
 });
