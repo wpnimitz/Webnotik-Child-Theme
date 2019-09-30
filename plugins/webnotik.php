@@ -375,9 +375,21 @@ function webnotik_real_estate_content(){
 				    <?php 
 				    settings_fields( 'webnotik-divi-global-group' );
 				    do_settings_sections( 'webnotik-divi-global-group' );
-				    
+
 				    $subpages = get_option('webnotik_keywords_subpages');
 				    $subid = get_option('webnotik_keywords_subpages_ids');
+
+
+				    $get_cpt_args = array(
+					    'public'   => true,
+					    '_builtin' => false
+					);
+					$post_types = get_post_types( $get_cpt_args, 'object' ); // use 'names' if you want to get only name of the post type.
+
+					// see the registered post types
+					echo '<pre>';
+					print_r($post_types);
+					echo '</pre>';
 				    
 				    for ($i=1; $i < count($subpages); $i++) { 
 				    		$display = $i + 1;
@@ -392,6 +404,8 @@ function webnotik_real_estate_content(){
 					    	</div>
 					    </div>
 				    <?php } ?> 
+
+
 	    
 				    <?php submit_button(); ?>
 				</form>
