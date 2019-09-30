@@ -29,7 +29,7 @@ jQuery(document).ready(function( $ ) {
          
 	     $(".extra-keywords").append('<div class="form-group keyword" id="extra-' + extraSub + '">' + tempHtml + '</div>');
 	     $("#extra-" + extraSub + " span").html(extraSub);
-	     $("#extra-" + extraSub + " input")..attr('value', '');
+	     $("#extra-" + extraSub + " input").attr('value', '');
 	     console.log(extraSub);
 	});
 });
