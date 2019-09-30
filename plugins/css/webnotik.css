@@ -35,9 +35,15 @@
 }
 
 .panel-body .form-field p:before {
-    content: "USAGE: ";
+    content: "Usage: ";
     font-weight: 500;
 }
+
+.panel-body .form-field p.hint:before {
+    content: "Hint: ";
+    font-weight: 500;
+}
+
 
 .panel-body .form-field p {
 	margin: 0;
@@ -174,6 +180,20 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.col-2 {
+  width: 49%;
+  margin-right: 1%;
+  display: inline-block;
+  box-sizing: content-box;
+  white-space: unset;
+}
+
+.col-2:last-of-type {
+  width: 50%;
+  margin-right: 0;
+}
+
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the panel-nav (.icon) */
 @media screen and (max-width: 600px) {
