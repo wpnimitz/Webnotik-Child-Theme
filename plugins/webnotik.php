@@ -339,8 +339,9 @@ function webnotik_real_estate_content(){
 
 add_action('admin_enqueue_scripts', 'register_webnotik_scripts');
 function register_webnotik_scripts() {
-    wp_register_style('re-webnotik', get_stylesheet_directory_uri() . '/plugins/css/webnotik.css?version=7');
-    wp_register_script('re-webnotik', get_stylesheet_directory_uri() . '/plugins/js/webnotik.js?version=7');
+	$ver = "1.2.1" . strtotime("now");
+    wp_register_style('re-webnotik', get_stylesheet_directory_uri() . '/plugins/css/webnotik.css?version='.$ver);
+    wp_register_script('re-webnotik', get_stylesheet_directory_uri() . '/plugins/js/webnotik.js?version='.$ver);
 }
 
 
