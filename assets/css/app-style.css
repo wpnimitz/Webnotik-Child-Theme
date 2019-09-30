@@ -137,7 +137,7 @@ START: FORM STYLING;
 .et_pb_module .gform_wrapper {
     background: rgba(26,26,26,0.6);
     padding: 5%;
-    margin-top: 0px;
+    margin: 0px;
 }
 
 /**any forms global forms (make sure they are stripped off with default style)**/
