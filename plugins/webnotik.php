@@ -408,8 +408,10 @@ function webnotik_business_shortcode( $atts ){
 	$atts = shortcode_atts(
 		array(
 			'business' => 'seller',
+			'text' => '',
 		), $atts, 'webnotik_form' );
 	$type = $atts["business"];
+	$text = $atts["text"];
 
 	$allowed_types = array('name', 'phone', 'email', 'address1', 'address2', 'address', 'privacy', 'tos', 'weburl');
 
@@ -421,7 +423,8 @@ function webnotik_business_shortcode( $atts ){
 			if($type == 'address') {
 				$ret = '<span class="webnotik-'.$type.'">'. get_option( 'webnotik_business_address1') . ','. get_option( 'webnotik_business_address2') . '</span>';
 			} elseif($type == 'weburl') {
-				$ret = get_bloginfo('url');
+				$url = get_bloginfo('url');
+				$ret = '<a href="'.$url.'">'.$text.'</a>';
 			} else {
 				$ret = "Business info is empty!";
 			}
