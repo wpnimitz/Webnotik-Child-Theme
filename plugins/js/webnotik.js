@@ -34,4 +34,8 @@ jQuery(document).ready(function( $ ) {
 	     $("#extra-" + extraSub + " input").attr('value', '');
 	     console.log(extraSub);
 	});
+	$(".extra-keywords").on("click", ".form-label label", function(){
+		$(this).closest(".keyword").remove();
+		extraSub--;
+	})
 });
