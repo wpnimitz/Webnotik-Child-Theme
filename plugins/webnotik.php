@@ -149,7 +149,7 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    	<div class="form-field">
 				    		<input name="webnotik_business_privacy" id="webnotik_business_privacy" value="<?php echo esc_attr( get_option('webnotik_business_privacy') ); ?>">
-				    		<p>[webnotik business="address2"]</p>
+				    		<p>[webnotik business="privacy"]</p>
 				    	</div>
 				    </div>
 
@@ -159,7 +159,7 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    	<div class="form-field">
 				    		<input name="webnotik_business_tos" id="webnotik_business_tos" value="<?php echo esc_attr( get_option('webnotik_business_tos') ); ?>">
-				    		<p>[webnotik business="address2"]</p>
+				    		<p>[webnotik business="tos"]</p>
 				    	</div>
 				    </div>     
 				    
@@ -411,7 +411,7 @@ function webnotik_business_shortcode( $atts ){
 		), $atts, 'webnotik_form' );
 	$type = $atts["business"];
 
-	$allowed_types = array('name', 'phone', 'email', 'address1', 'address2', 'address');
+	$allowed_types = array('name', 'phone', 'email', 'address1', 'address2', 'address', 'privacy', 'tos');
 
 	if(in_array($type, $allowed_types)) {
 		$form = get_option( 'webnotik_business_' . $type);
