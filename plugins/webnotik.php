@@ -239,7 +239,7 @@ function webnotik_real_estate_content(){
 			</div>
 			<!-- end #FORMS -- >
 			<?php } elseif($tab == 'keywords') {?>
-			<!-- STARTS #keywords-forms -->
+			<!-- STARTS #keywords-forms --> 
 			<div id="keywords"> 
 				<p>Keywords are very important for Real Estate search engine optimization as well as in creating additional pages of this website.</p>
 				<form method="post" action="options.php">
