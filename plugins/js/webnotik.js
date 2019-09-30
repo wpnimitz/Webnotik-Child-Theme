@@ -27,7 +27,7 @@ jQuery(document).ready(function( $ ) {
 	     extraSub++;
          var tempHtml = mainsub.replace('<span>1</span>', '<span>' + extraSub + '</span>');         
          
-	     $(".extra-keywords").append(tempHtml);
+	     $(".extra-keywords").append(tempHtml); 
 	     console.log(extraSub);
 	});
 });
