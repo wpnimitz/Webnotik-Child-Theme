@@ -42,7 +42,8 @@ jQuery(document).ready(function( $ ) {
 	function subKeywordRecount() {
 		var eSub = 2;
 		$(".extra-keywords .keyword").each(function(){
-			$(this).attr('class', 'extra-' + eSub);
+			$(this).attr('id', 'extra-' + eSub);
+			$("#extra-" + eSub + " span").html(eSub);
 			$("#extra-" + eSub + " label").attr('for', 'webnotik_keywords_subpages' + eSub);
 			$("#extra-" + eSub + " input").attr('id', 'webnotik_keywords_subpages' + eSub);
 			eSub++;
