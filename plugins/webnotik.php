@@ -131,13 +131,15 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    </div>
 
-
-
-
-
-				     
-
-				   
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_business_weburl">Business Website Full Address</label>
+				    	</div>
+				    	<div class="form-field">
+				    		This will print the current website URL.
+				    		<p>[webnotik business="weburl"]</p>
+				    	</div>
+				    </div>	     
 				    
 				    <?php submit_button(); ?>
 
