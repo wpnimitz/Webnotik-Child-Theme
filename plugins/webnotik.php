@@ -255,7 +255,7 @@ function webnotik_real_estate_content(){
 					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
 					    		<p>[rank keyword="main"]</p>
 					    	</div><div class="col-2">
-					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
+					    		<input name="webnotik_keywords_main_id" id="webnotik_keywords_main_id" value="<?php echo esc_attr( get_option('webnotik_keywords_main_id') ); ?>">
 				    			<p class="hint">useful for linking automatic linking.</p>
 					    	</div>
 
@@ -264,14 +264,14 @@ function webnotik_real_estate_content(){
 
 				    <div class="form-group keyword main-sub-keyword">
 				    	<div class="form-label">
-				    		<label for="webnotik_keywords_main">Sub Keyword <span>1</span></label>
+				    		<label for="webnotik_keywords_subpages[]">Sub Keyword <span>1</span></label>
 				    	</div>
 				    	<div class="form-field">
 				    		<div class="col-2">
-					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
+					    		<input name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages[]" value="<?php echo esc_attr( get_option('webnotik_keywords_subpages') ); ?>">
 					    		<p>[rank keyword="sub<span>1</span>"]</p>
 					    	</div><div class="col-2">
-					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
+					    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids[]" value="<?php echo esc_attr( get_option('webnotik_keywords_subpages_ids') ); ?>">
 				    			<p class="hint">useful for linking automatic linking.</p>
 					    	</div>
 				    	</div>
