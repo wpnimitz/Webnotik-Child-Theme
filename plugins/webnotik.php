@@ -24,6 +24,7 @@ function webnotik_real_estate_add_admin_menu() {
 	add_action( 'admin_init', 'webnotik_register_forms_settings' );
 	add_action( 'admin_init', 'webnotik_register_general_settings' );
 	add_action( 'admin_init', 'webnotik_register_keywords_settings' );
+	add_action( 'admin_init', 'webnotik_register_divi_global_settings' );
 }
 
 
@@ -55,6 +56,14 @@ function webnotik_register_keywords_settings() {
 	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_subpages' );
 	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_subpages_ids' );
 }
+function webnotik_register_divi_global_settings() {
+	//register our divi-global settings
+	register_setting( 'webnotik-divi-global-group', 'webnotik_keywords_main' );
+	register_setting( 'webnotik-divi-global-group', 'webnotik_keywords_main_id' );
+	register_setting( 'webnotik-divi-global-group', 'webnotik_keywords_subpages' );
+	register_setting( 'webnotik-divi-global-group', 'webnotik_keywords_subpages_ids' );
+}
+
 
 
 
@@ -357,7 +366,85 @@ function webnotik_real_estate_content(){
 
 				</form>
 			</div>
-			<!-- end #keywords-forms -- >
+			<!-- end #divi-global-forms -- >
+			<?php } elseif($tab == 'divi-global') {?>
+			<!-- STARTS #divi-global-forms --> 
+			<div id="divi-global"> 
+				<p>Here's the most important part. Very useful for header and footer sections.</p>
+				<form method="post" action="options.php">
+				    <?php settings_fields( 'webnotik-divi-global-group' ); ?>
+				    <?php do_settings_sections( 'webnotik-divi-global-group' ); ?>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_keywords_main">Main Keyword</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<div class="col-2">
+					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
+					    		<p>[rank keyword="main"]</p>
+					    	</div><div class="col-2">
+					    		<input name="webnotik_keywords_main_id" id="webnotik_keywords_main_id" value="<?php echo esc_attr( get_option('webnotik_keywords_main_id') ); ?>">
+				    			<p class="hint">useful for linking automatic linking.</p>
+					    	</div>
+
+				    	</div>
+				    </div>
+
+				    <?php 
+				    $subpages = get_option('webnotik_keywords_subpages');
+				    $subid = get_option('webnotik_keywords_subpages_ids');
+				     ?>
+
+				    <div class="form-group keyword main-sub-keyword">
+				    	<div class="form-label">
+				    		<label for="webnotik_keywords_subpages">Sub Keyword <span>1</span></label>
+				    	</div>
+				    	<div class="form-field">
+				    		<div class="col-2">
+					    		<input placeholder="enter other city keyword" name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages" value="<?php echo esc_attr( $subpages[0] ); ?>">
+					    		<p>[rank keyword="sub"]</p>
+					    	</div><div class="col-2">
+					    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( $subid[0] ); ?>">
+				    			<p class="hint">Enter page ID here. Very useful for automatic page linking.</p>
+					    	</div>
+				    	</div>
+				    </div>
+
+				    <div class="extra-keywords">
+				    <?php for ($i=1; $i < count($subpages); $i++) { 
+				    		$display = $i + 1;
+				    	?>
+					    <div class="form-group keyword" id="extra-<?php echo $display; ?>">
+					    	<div class="form-label">
+					    		<label for="webnotik_keywords_subpages<?php echo $display; ?>">Sub Keyword <span><?php echo $display; ?></span></label>
+					    	</div>
+					    	<div class="form-field">
+					    		<div class="col-2">
+						    		<input placeholder="enter other city keyword" name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages<?php echo $display; ?>" value="<?php echo esc_attr( $subpages[$i] ); ?>">
+						    		<p>[rank keyword="sub"]</p>
+						    	</div><div class="col-2">
+						    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( $subid[$i] ); ?>">
+					    			<p class="hint">Enter page ID here. Very useful for automatic page linking.</p>
+						    	</div>
+					    	</div>
+					    </div>
+				    <?php } ?> 
+				    </div>
+
+				    <div class="form-group add-sub-keyword">
+				    	Add new sub keyword 
+				    </div>
+
+				    
+
+				   
+				    
+				    <?php submit_button(); ?>
+
+				</form>
+			</div>
+			<!-- end #divi-global-forms -- >
 			<?php } else {?>			
 			Work in progress
 			<?php } ?>
