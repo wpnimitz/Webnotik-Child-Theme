@@ -408,25 +408,27 @@ function webnotik_business_shortcode( $atts ){
 	$atts = shortcode_atts(
 		array(
 			'business' => 'seller',
-			'text' => '',
+			'text' => 'LINK',
+			'type' => 'html',
 		), $atts, 'webnotik_form' );
-	$type = $atts["business"];
+	$business = $atts["business"];
+	$type = $atts["type"];
 	$text = $atts["text"];
 
 	$allowed_types = array('name', 'phone', 'email', 'address1', 'address2', 'address', 'privacy', 'tos', 'weburl');
 
-	if(in_array($type, $allowed_types)) {
-		$form = get_option( 'webnotik_business_' . $type);
+	if(in_array($business, $allowed_types)) {
+		$form = get_option( 'webnotik_business_' . $business);
 		if($form != "") {
-			if($type == "privacy") {
+			if($type == "url") {
 				$ret = do_shortcode($form);
 			} else {
-				$ret = '<span class="webnotik-'.$type.'">'. do_shortcode($form) . '</span>';
+				$ret = '<span class="webnotik-'.$business.'">'. do_shortcode($form) . '</span>';
 			}
 		} else {
-			if($type == 'address') {
-				$ret = '<span class="webnotik-'.$type.'">'. get_option( 'webnotik_business_address1') . ', '. get_option( 'webnotik_business_address2') . '</span>';
-			} elseif($type == 'weburl') {
+			if($business == 'address') {
+				$ret = '<span class="webnotik-'.$business.'">'. get_option( 'webnotik_business_address1') . ', '. get_option( 'webnotik_business_address2') . '</span>';
+			} elseif($business == 'weburl') {
 				$url = get_bloginfo('wpurl');
 				$ret = $url; 
 			} else {
