@@ -182,6 +182,17 @@ START: FORM STYLING;
         font-size: 16px !important;
     }
 }
+
+@media screen and (min-width: 768px) {
+    .two-fields li {
+        width: 48%;
+        display: inline-block;
+    }
+
+    .two-fields li:nth-child(odd) {
+        margin-right: 4%;
+    }
+}
 /** 
 END: FORM STYLING; 
 **/
