@@ -33,10 +33,11 @@ jQuery(document).ready(function( $ ) {
 		$("#extra-" + extraSub + " input").attr('id', 'webnotik_keywords_subpages' + extraSub);
 		$("#extra-" + extraSub + " input").attr('value', '');
 		console.log(extraSub);
+
+		subKeywordRecount();
 	});
 	$(".extra-keywords").on("click", ".form-label label", function(){
 		$(this).closest(".keyword").remove();
-		subKeywordRecount();
 	})
 
 	function subKeywordRecount() {
