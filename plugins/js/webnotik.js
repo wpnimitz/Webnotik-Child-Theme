@@ -29,6 +29,8 @@ jQuery(document).ready(function( $ ) {
          
 	     $(".extra-keywords").append('<div class="form-group keyword" id="extra-' + extraSub + '">' + tempHtml + '</div>');
 	     $("#extra-" + extraSub + " span").html(extraSub);
+	     $("#extra-" + extraSub + " label").attr('for', 'webnotik_keywords_subpages' + extraSub);
+	     $("#extra-" + extraSub + " input").attr('id', 'webnotik_keywords_subpages' + extraSub);
 	     $("#extra-" + extraSub + " input").attr('value', '');
 	     console.log(extraSub);
 	});
