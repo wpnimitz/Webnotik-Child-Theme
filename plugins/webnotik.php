@@ -421,7 +421,7 @@ function webnotik_business_shortcode( $atts ){
 			$ret = '<span class="webnotik-'.$type.'">'. do_shortcode($form) . '</span>';
 		} else {
 			if($type == 'address') {
-				$ret = '<span class="webnotik-'.$type.'">'. get_option( 'webnotik_business_address1') . ','. get_option( 'webnotik_business_address2') . '</span>';
+				$ret = '<span class="webnotik-'.$type.'">'. get_option( 'webnotik_business_address1') . ', '. get_option( 'webnotik_business_address2') . '</span>';
 			} elseif($type == 'weburl') {
 				$url = get_bloginfo('url');
 				$ret = '<a href="'.$url.'">'.$text.'</a>';
