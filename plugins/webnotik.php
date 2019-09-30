@@ -5,6 +5,7 @@ function webnotik_real_estate_add_admin_menu() {
     //call register settings function
 	add_action( 'admin_init', 'webnotik_register_forms_settings' );
 	add_action( 'admin_init', 'webnotik_register_general_settings' );
+	add_action( 'admin_init', 'webnotik_register_keywords_settings' );
 }
 
 
@@ -19,16 +20,22 @@ function webnotik_register_forms_settings() {
 	register_setting( 'webnotik-forms-group', 'webnotik_contact_form' );
 	register_setting( 'webnotik-forms-group', 'webnotik_extra_form' );
 }
-
-
 function webnotik_register_general_settings() {
-//register our general settings
+	//register our general settings
 	register_setting( 'webnotik-general-group', 'webnotik_business_name' );
 	register_setting( 'webnotik-general-group', 'webnotik_business_phone' );
 	register_setting( 'webnotik-general-group', 'webnotik_business_email' );
 	register_setting( 'webnotik-general-group', 'webnotik_business_address1' );
 	register_setting( 'webnotik-general-group', 'webnotik_business_address2' );
 }
+function webnotik_register_keywords_settings() {
+	//register our keywords settings
+	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_main' );
+	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_main_id' );
+	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_subpages' );
+	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_subpages_ids' );
+}
+
 
 
 function webnotik_real_estate_content(){
@@ -231,7 +238,88 @@ function webnotik_real_estate_content(){
 				</form>
 			</div>
 			<!-- end #FORMS -- >
-			<?php } else {?>
+			<?php } elseif($tab == 'keywords') {?>
+			<!-- STARTS #keywords-forms -->
+			<div id="keywords"> 
+				<p>Keywords are very important for Real Estate search engine optimization as well as in creating additional pages of this website.</p>
+				<form method="post" action="options.php">
+				    <?php settings_fields( 'webnotik-keywords-group' ); ?>
+				    <?php do_settings_sections( 'webnotik-keywords-group' ); ?>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_business_name">Business Name</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<input name="webnotik_business_name" id="webnotik_business_name" value="<?php echo esc_attr( get_option('webnotik_business_name') ); ?>">
+				    		<p>[webnotik business="name"]</p>
+				    	</div>
+				    </div>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_business_phone">Business Phone Number</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<input name="webnotik_business_phone" id="webnotik_business_phone" value="<?php echo esc_attr( get_option('webnotik_business_phone') ); ?>">
+				    		<p>[webnotik business="phone"]</p>
+				    	</div>
+				    </div>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_business_email">Business Email Address</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<input name="webnotik_business_email" id="webnotik_business_email" value="<?php echo esc_attr( get_option('webnotik_business_email') ); ?>">
+				    		<p>[webnotik business="email"]</p>
+				    	</div>
+				    </div>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_business_address1">Business Address Line 1</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<input name="webnotik_business_address1" id="webnotik_business_address1" value="<?php echo esc_attr( get_option('webnotik_business_address1') ); ?>">
+				    		<p>[webnotik business="address1"]</p>
+				    	</div>
+				    </div>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_business_address2">Business Address Line 2</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<input name="webnotik_business_address2" id="webnotik_business_address2" value="<?php echo esc_attr( get_option('webnotik_business_address2') ); ?>">
+				    		<p>[webnotik business="address2"]</p>
+				    	</div>
+				    </div>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_business_address">Business Full Address</label>
+				    	</div>
+				    	<div class="form-field">
+				    		No need to input anything here. This is the combination of Address Line 1 and 2 in a straigh long format. Appended with comma.
+				    		<p>[webnotik business="address"]</p>
+				    	</div>
+				    </div>
+
+
+
+
+
+				     
+
+				   
+				    
+				    <?php submit_button(); ?>
+
+				</form>
+			</div>
+			<!-- end #keywords-forms -- >
+			<?php } else {?>			
 			Work in progress
 			<?php } ?>
 
@@ -268,3 +356,54 @@ function load_my_plugin_scripts($hook) {
 
 
 
+function webnotik_form_shortcode( $atts ){  
+	$atts = shortcode_atts(
+		array(
+			'type' => 'seller',
+		), $atts, 'webnotik_form' );
+	$type = $atts["type"];
+
+	$allowed_types = array('seller', 'buyer', 'lender', 'contractor', 'realtors', 'wholesale' , 'contact', 'extra');
+
+	if(in_array($type, $allowed_types)) {
+		$form = get_option( 'webnotik_' . $type . '_form');
+		if($form != "") {
+			$ret = '<div class="gform_wrapper webnotik-'.$type.'">'. do_shortcode($form) . '</div>';
+		} else {
+			$ret = "Form is empty!";
+		}
+	} else {
+		$ret = 'Not allowed types';
+	}
+
+	return $ret;
+
+	
+}
+add_shortcode( 'webnotik_form', 'webnotik_form_shortcode' );
+
+function webnotik_business_shortcode( $atts ){  
+	$atts = shortcode_atts(
+		array(
+			'business' => 'seller',
+		), $atts, 'webnotik_form' );
+	$type = $atts["business"];
+
+	$allowed_types = array('name', 'phone', 'email', 'address1', 'address2', 'address');
+
+	if(in_array($type, $allowed_types)) {
+		$form = get_option( 'webnotik_business_' . $type);
+		if($form != "") {
+			$ret = '<div class="webnotik-'.$type.'">'. do_shortcode($form) . '</div>';
+		} else {
+			$ret = "Business info is empty!";
+		}
+	} else {
+		$ret = 'Business information is not part of the settings. Please review the code.';
+	}
+
+	return $ret;
+
+	
+}
+add_shortcode( 'webnotik', 'webnotik_business_shortcode' );

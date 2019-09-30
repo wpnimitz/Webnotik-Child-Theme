@@ -7,38 +7,6 @@ function custom_assets() {
     wp_enqueue_style( 'app-style', get_stylesheet_directory_uri() . '/assets/css/app-style.css', '', $ver );
 }
 
-function webnotik_form_shortcode( $atts ){  
-	$atts = shortcode_atts(
-		array(
-			'type' => 'seller',
-		), $atts, 'webnotik_form' );
-	$type = $atts["type"];
-
-	$allowed_types = array('seller', 'buyer', 'lender', 'contractor', 'realtors', 'wholesale' , 'contact', 'extra');
-
-	if(in_array($type, $allowed_types)) {
-		$form = get_option( 'webnotik_' . $type . '_form');
-		if($form != "") {
-			$ret = '<div class="gform_wrapper webnotik-'.$type.'">'. do_shortcode($form) . '</div>';
-		} else {
-			$ret = "Form is empty!";
-		}
-	} else {
-		$ret = 'Not allowed types';
-	}
-
-	return $ret;
-
-	
-}
-add_shortcode( 'webnotik_form', 'webnotik_form_shortcode' );
-
-
-
-
-
-
-
 
 add_action( 'et_after_main_content', 'webnotik_global_footer' );
 function webnotik_global_footer() {
