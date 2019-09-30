@@ -387,7 +387,6 @@ function webnotik_real_estate_content(){
 					    		<input name="webnotik_keywords_main_id" id="webnotik_keywords_main_id" value="<?php echo esc_attr( get_option('webnotik_keywords_main_id') ); ?>">
 				    			<p class="hint">useful for linking automatic linking.</p>
 					    	</div>
-
 				    	</div>
 				    </div>
 
@@ -430,18 +429,8 @@ function webnotik_real_estate_content(){
 					    	</div>
 					    </div>
 				    <?php } ?> 
-				    </div>
-
-				    <div class="form-group add-sub-keyword">
-				    	Add new sub keyword 
-				    </div>
-
-				    
-
-				   
-				    
+				    </div>		    
 				    <?php submit_button(); ?>
-
 				</form>
 			</div>
 			<!-- end #divi-global-forms -- >
