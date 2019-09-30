@@ -273,11 +273,11 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    	<div class="form-field">
 				    		<div class="col-2">
-					    		<input name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages" value="<?php echo esc_attr( $subpages[0] ); ?>">
+					    		<input placeholder="enter main city/location keyword" name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages" value="<?php echo esc_attr( $subpages[0] ); ?>">
 					    		<p>[rank keyword="sub<span>1</span>"]</p>
 					    	</div><div class="col-2">
 					    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( $subid[0] ); ?>">
-				    			<p class="hint">useful for linking automatic linking.</p>
+				    			<p class="hint">Enter page ID here. Very useful for automatic page linking.</p>
 					    	</div>
 				    	</div>
 				    </div>
@@ -292,11 +292,11 @@ function webnotik_real_estate_content(){
 					    	</div>
 					    	<div class="form-field">
 					    		<div class="col-2">
-						    		<input name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages<?php echo $display; ?>" value="<?php echo esc_attr( $subpages[$i] ); ?>">
+						    		<input placeholder="enter other city keyword" name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages<?php echo $display; ?>" value="<?php echo esc_attr( $subpages[$i] ); ?>">
 						    		<p>[rank keyword="sub<span><?php echo $display; ?></span>"]</p>
 						    	</div><div class="col-2">
 						    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( $subid[$i] ); ?>">
-					    			<p class="hint">useful for linking automatic linking.</p>
+					    			<p class="hint">Enter page ID here. Very useful for automatic page linking.</p>
 						    	</div>
 					    	</div>
 					    </div>
