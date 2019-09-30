@@ -246,7 +246,7 @@ function webnotik_real_estate_content(){
 				    <?php settings_fields( 'webnotik-keywords-group' ); ?>
 				    <?php do_settings_sections( 'webnotik-keywords-group' ); ?>
 
-				    <div class="form-group 3-col">
+				    <div class="form-group">
 				    	<div class="form-label">
 				    		<label for="webnotik_keywords_main">Main Keyword</label>
 				    	</div>
@@ -262,61 +262,28 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    </div>
 
-				    <div class="form-group">
+				    <div class="form-group keyword main-sub-keyword">
 				    	<div class="form-label">
-				    		<label for="webnotik_business_phone">Business Phone Number</label>
+				    		<label for="webnotik_keywords_main">Sub Keyword <span>1</span></label>
 				    	</div>
 				    	<div class="form-field">
-				    		<input name="webnotik_business_phone" id="webnotik_business_phone" value="<?php echo esc_attr( get_option('webnotik_business_phone') ); ?>">
-				    		<p>[webnotik business="phone"]</p>
+				    		<div class="col-2">
+					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
+					    		<p>[rank keyword="main"]</p>
+					    	</div><div class="col-2">
+					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
+				    			<p class="hint">useful for linking automatic linking.</p>
+					    	</div>
 				    	</div>
 				    </div>
 
 				    <div class="form-group">
-				    	<div class="form-label">
-				    		<label for="webnotik_business_email">Business Email Address</label>
-				    	</div>
-				    	<div class="form-field">
-				    		<input name="webnotik_business_email" id="webnotik_business_email" value="<?php echo esc_attr( get_option('webnotik_business_email') ); ?>">
-				    		<p>[webnotik business="email"]</p>
+				    	<div class="add-sub-keyword">
+				    		Add Sub Keyword
 				    	</div>
 				    </div>
 
-				    <div class="form-group">
-				    	<div class="form-label">
-				    		<label for="webnotik_business_address1">Business Address Line 1</label>
-				    	</div>
-				    	<div class="form-field">
-				    		<input name="webnotik_business_address1" id="webnotik_business_address1" value="<?php echo esc_attr( get_option('webnotik_business_address1') ); ?>">
-				    		<p>[webnotik business="address1"]</p>
-				    	</div>
-				    </div>
-
-				    <div class="form-group">
-				    	<div class="form-label">
-				    		<label for="webnotik_business_address2">Business Address Line 2</label>
-				    	</div>
-				    	<div class="form-field">
-				    		<input name="webnotik_business_address2" id="webnotik_business_address2" value="<?php echo esc_attr( get_option('webnotik_business_address2') ); ?>">
-				    		<p>[webnotik business="address2"]</p>
-				    	</div>
-				    </div>
-
-				    <div class="form-group">
-				    	<div class="form-label">
-				    		<label for="webnotik_business_address">Business Full Address</label>
-				    	</div>
-				    	<div class="form-field">
-				    		No need to input anything here. This is the combination of Address Line 1 and 2 in a straigh long format. Appended with comma.
-				    		<p>[webnotik business="address"]</p>
-				    	</div>
-				    </div>
-
-
-
-
-
-				     
+				    
 
 				   
 				    
