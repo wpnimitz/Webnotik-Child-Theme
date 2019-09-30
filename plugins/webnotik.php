@@ -54,7 +54,7 @@ function webnotik_real_estate_content(){
 				<a class="forms-group <?php echo $tab == "forms" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=forms">Forms</a>
 				<a class="forms-group <?php echo $tab == "keywords" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=keywords">Keywords</a>				
 				<a class="forms-group <?php echo $tab == "divi-global" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=divi-global">Divi Global</a>				
-				<a class="forms-group <?php echo $tab == "others" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=others">Others</a>
+				<a class="forms-group <?php echo $tab == "help" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=help">Help</a>
 				<a href="#" class="icon">&#9776;</a>			
 			</div>
 		</div>
