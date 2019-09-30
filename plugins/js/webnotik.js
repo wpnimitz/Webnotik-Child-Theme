@@ -32,7 +32,6 @@ jQuery(document).ready(function( $ ) {
 		$("#extra-" + extraSub + " label").attr('for', 'webnotik_keywords_subpages' + extraSub);
 		$("#extra-" + extraSub + " input").attr('id', 'webnotik_keywords_subpages' + extraSub);
 		$("#extra-" + extraSub + " input").attr('value', '');
-		console.log(extraSub);
 
 		subKeywordRecount();
 	});
@@ -47,6 +46,7 @@ jQuery(document).ready(function( $ ) {
 			$("#extra-" + eSub + " label").attr('for', 'webnotik_keywords_subpages' + eSub);
 			$("#extra-" + eSub + " input").attr('id', 'webnotik_keywords_subpages' + eSub);
 			eSub++;
+			console.log("2 recalculating...")
 		});
 		console.log("recalculating...")
 	}
