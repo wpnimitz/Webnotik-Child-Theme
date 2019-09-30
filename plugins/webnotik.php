@@ -418,6 +418,11 @@ function webnotik_business_shortcode( $atts ){
 		if($form != "") {
 			$ret = '<span class="webnotik-'.$type.'">'. do_shortcode($form) . '</span>';
 		} else {
+			if($type == 'address') {
+				$ret = '<span class="webnotik-'.$type.'">'. get_option( 'webnotik_business_address1'); . ','. get_option( 'webnotik_business_address2'); . '</span>';
+			} elseif($type == 'weburl') {
+				$ret = get_bloginfo('wpurl');
+			}
 			$ret = "Business info is empty!";
 		}
 	} else {
