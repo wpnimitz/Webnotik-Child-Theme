@@ -21,18 +21,18 @@ jQuery(document).ready(function( $ ) {
 		}, 2500);
 	});
 
-	var extraSub = $('.keyword').length;
+	
 	$(".add-sub-keyword").on("click", function(){
-	     var mainsub = $(".main-sub-keyword").html();
-	     extraSub++;
-         var tempHtml = mainsub; 
-         
-	     $(".extra-keywords").append('<div class="form-group keyword" id="extra-' + extraSub + '">' + tempHtml + '</div>');
-	     $("#extra-" + extraSub + " span").html(extraSub);
-	     $("#extra-" + extraSub + " label").attr('for', 'webnotik_keywords_subpages' + extraSub);
-	     $("#extra-" + extraSub + " input").attr('id', 'webnotik_keywords_subpages' + extraSub);
-	     $("#extra-" + extraSub + " input").attr('value', '');
-	     console.log(extraSub);
+		var mainsub = $(".main-sub-keyword").html();
+		var extraSub = $('.keyword').length;
+		var tempHtml = mainsub; 
+
+		$(".extra-keywords").append('<div class="form-group keyword" id="extra-' + extraSub + '">' + tempHtml + '</div>');
+		$("#extra-" + extraSub + " span").html(extraSub);
+		$("#extra-" + extraSub + " label").attr('for', 'webnotik_keywords_subpages' + extraSub);
+		$("#extra-" + extraSub + " input").attr('id', 'webnotik_keywords_subpages' + extraSub);
+		$("#extra-" + extraSub + " input").attr('value', '');
+		console.log(extraSub);
 	});
 	$(".extra-keywords").on("click", ".form-label label", function(){
 		$(this).closest(".keyword").remove();
