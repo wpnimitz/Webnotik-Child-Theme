@@ -194,6 +194,20 @@
   margin-right: 0;
 }
 
+.add-sub-keyword {
+    display: flex;
+    background: #a1e1ff;
+    color: #0073a9;
+    font-weight: 700;
+    min-height: 75px;
+    align-items: center;
+    font-size: 20px;
+    justify-content: center;
+    width: 99%;
+    border-radius: 2%;
+    border: 1px solid #0073a9;
+}
+
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the panel-nav (.icon) */
 @media screen and (max-width: 600px) {

@@ -269,7 +269,7 @@ function webnotik_real_estate_content(){
 				    	<div class="form-field">
 				    		<div class="col-2">
 					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
-					    		<p>[rank keyword="main"]</p>
+					    		<p>[rank keyword="sub<span>1</span>"]</p>
 					    	</div><div class="col-2">
 					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
 				    			<p class="hint">useful for linking automatic linking.</p>
@@ -277,8 +277,8 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    </div>
 
-				    <div class="form-group">
-				    	<div class="add-sub-keyword">
+				    <div class="form-group add-sub-keyword">
+				    	<div class="add">
 				    		Add Sub Keyword
 				    	</div>
 				    </div>
