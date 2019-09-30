@@ -262,27 +262,25 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    </div>
 
+				    <?php 
+				    $subpages = get_option('webnotik_keywords_subpages');
+				    $subid = get_option('webnotik_keywords_subpages_ids');
+				     ?>
+
 				    <div class="form-group keyword main-sub-keyword">
 				    	<div class="form-label">
 				    		<label for="webnotik_keywords_subpages">Sub Keyword <span>1</span></label>
 				    	</div>
 				    	<div class="form-field">
 				    		<div class="col-2">
-					    		<input name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages" value="<?php echo esc_attr( get_option('webnotik_keywords_subpages[0]') ); ?>">
+					    		<input name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages" value="<?php echo esc_attr( $subpages[0] ); ?>">
 					    		<p>[rank keyword="sub<span>1</span>"]</p>
 					    	</div><div class="col-2">
-					    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( get_option('webnotik_keywords_subpages_ids[0]') ); ?>">
+					    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( $subid[0] ); ?>">
 				    			<p class="hint">useful for linking automatic linking.</p>
 					    	</div>
 				    	</div>
 				    </div>
-
-				    <?php
-				    $subid = get_option('webnotik_keywords_subpages_ids');
-
-				    print_r($subid);
-
-				     ?>
 
 				    <div class="extra-keywords"> 
 				    </div>
