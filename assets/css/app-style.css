@@ -131,6 +131,7 @@ START: FORM STYLING;
 **/
 .gform_wrapper > .gform_wrapper {
     padding: 0 !important;
+    background: transparent !important;
 }
 
 
