@@ -24,7 +24,7 @@ jQuery(document).ready(function( $ ) {
 	
 	$(".add-sub-keyword").on("click", function(){
 		var mainsub = $(".main-sub-keyword").html();
-		var extraSub = $('.keyword').length;
+		var extraSub = $('.keyword').length + 1;
 		var tempHtml = mainsub; 
 
 		$(".extra-keywords").append('<div class="form-group keyword" id="extra-' + extraSub + '">' + tempHtml + '</div>');
@@ -36,6 +36,17 @@ jQuery(document).ready(function( $ ) {
 	});
 	$(".extra-keywords").on("click", ".form-label label", function(){
 		$(this).closest(".keyword").remove();
-		extraSub--;
+		subKeywordRecount();
 	})
+
+	function subKeywordRecount() {
+		var eSub = 2;
+		$(".extra-keywords .keyword").each(function(){
+			$(this).attr('id', 'extra-' + eSub)
+			$("#extra-" + eSub + " label").attr('for', 'webnotik_keywords_subpages' + eSub);
+			$("#extra-" + eSub + " input").attr('id', 'webnotik_keywords_subpages' + eSub);
+			eSub++;
+		});
+	}
+
 });
