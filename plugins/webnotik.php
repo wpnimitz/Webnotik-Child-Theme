@@ -448,10 +448,6 @@ function register_webnotik_scripts() {
 }
 
 
-
-
-
-
 add_action('admin_enqueue_scripts', 'load_my_plugin_scripts');
 function load_my_plugin_scripts($hook) {
     
@@ -491,6 +487,8 @@ function webnotik_form_shortcode( $atts ){
 	
 }
 add_shortcode( 'webnotik_form', 'webnotik_form_shortcode' );
+
+
 
 function webnotik_business_shortcode( $atts ){  
 	$atts = shortcode_atts(
@@ -533,6 +531,8 @@ function webnotik_business_shortcode( $atts ){
 }
 add_shortcode( 'webnotik', 'webnotik_business_shortcode' );
 
+
+
 function webnotik_city_pages( $atts ){
 	$atts = shortcode_atts(
 		array(
@@ -571,3 +571,18 @@ function webnotik_city_pages( $atts ){
 
 }
 add_shortcode( 'city_pages', 'webnotik_city_pages' );
+
+
+
+
+
+add_action( 'et_after_main_content', 'webnotik_divi_global_footer' );
+function webnotik_divi_global_footer() {
+
+	$post = get_option('webnotik_divi_post_global_footer');
+	if(is_category() || is_single()) {
+		echo do_shortcode('<div class="upsell-wrapper">'.$post.'</div>');
+		echo do_shortcode('<div class="upsell-wrapper"></div>');
+	}
+    
+}

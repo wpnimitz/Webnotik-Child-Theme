@@ -1,3 +1,7 @@
+.webnotik-category .et_pb_row:not(:last-child) {
+    padding-bottom: 0;
+}
+
 .webnotik-category article {
   transition: all 0.3s ease;
   box-shadow: 0 10px 25px 0 rgba(0,0,0,0.08);

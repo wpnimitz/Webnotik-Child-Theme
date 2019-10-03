@@ -11,9 +11,11 @@ get_header();
 			// Check if there are any posts to display
 			if ( have_posts() ) : ?>
 
+
 			<?php
 			 
 			// The Loop
+			$counter = 1;
 			while ( have_posts() ) : the_post(); ?>
 
 				<div class="et_pb_column et_pb_column_1_3">	
@@ -24,7 +26,7 @@ get_header();
 							if ( has_post_thumbnail() ) {
 							    $featured_image = get_the_post_thumbnail_url();
 							} else {
-								$featured_image = 'https://rehubgroup.com/wp-content/uploads/2019/09/Home-just-sold.jpg';
+								$featured_image = get_stylesheet_directory_uri() . '/assets/img/no-image.jpg';
 							} ?>
 
 							<img src="<?php echo $featured_image; ?>" alt="<?php the_title(); ?>">
@@ -40,7 +42,12 @@ get_header();
 				</article>
 				</div>			
 			 
-			<?php endwhile; 
+			<?php 
+				if($counter % 3 == 0) {
+					echo '</div><div class="et_pb_row et_pb_gutters2">';
+				}
+   				$counter++;
+			endwhile; 
 			 
 			else: ?>
 			<p>Sorry, no posts matched your criteria.</p>

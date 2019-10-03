@@ -8,17 +8,6 @@ function custom_assets() {
 }
 
 
-add_action( 'et_after_main_content', 'webnotik_global_footer' );
-function webnotik_global_footer() {
-
-	if(is_category() || is_single()) {
-		echo do_shortcode('<div class="upsell-wrapper">[et_pb_section global_module="366"][/et_pb_section]</div>');
-		echo do_shortcode('<div class="upsell-wrapper">[et_pb_section global_module="368"][/et_pb_section]</div>');
-	}
-    
-}
-
-
 add_action( 'et_before_main_content', 'webnotik_global_header' );
 function webnotik_global_header() {
 	if(is_category(6)) {
@@ -36,7 +25,5 @@ function webnotik_body_class( $classes ) {
 	} else {
 		$classes[] = 'webnotik-otherpage';
 	}
-    
-
     return $classes;
 }
