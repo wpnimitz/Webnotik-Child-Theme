@@ -389,22 +389,29 @@ function webnotik_real_estate_content(){
 					print_r($post_types);
 					echo '</pre>';
 				    
+				    $display = 0;
 
-				    if(is_array($cpt_pages)) {
-					    for ($i=1; $i < count($cpt_pages); $i++) { 
-					    		$display = $i + 1;
-					    	?>
-						    <div class="form-group keyword" id="extra-<?php echo $display; ?>">
-						    	<div class="form-label">
-						    		<label for="webnotik_divi_cpt_global_footer<?php echo $display; ?>">After Content Global for </span></label>
-						    	</div>
-						    	<div class="form-field">
-						    		<input placeholder="enter other city keyword" name="webnotik_divi_cpt_global_footer[]" id="webnotik_divi_cpt_global_footer<?php echo $display; ?>" value="<?php echo esc_attr( $cpt_pages[$i] ); ?>">
-						    		<p class="hint">Add any global divi layouts you want to display in this particular page.</p>
-						    	</div>
-						    </div>
-					    <?php }
-					} ?> 
+					if(is_array($cpt_pages)) {
+						foreach ($cpt_pages as $custom) {
+							 ?>
+						<div class="form-group keyword" id="extra-<?php echo $display; ?>">
+					    	<div class="form-label">
+					    		<label for="webnotik_divi_cpt_global_footer<?php echo $display; ?>">After Content Global for </span></label>
+					    	</div>
+					    	<div class="form-field">
+					    		<textarea name="webnotik_divi_cpt_global_footer[]" id="webnotik_divi_cpt_global_footer<?php echo $display; ?>"><?php echo $cpt_pages[$display]; ?></textarea>
+					    		<p class="hint">Add any global divi layouts you want to display in this particular page.</p>
+					    	</div>
+					    </div>
+
+					<?php
+					$display++;
+						} //end of foreach
+
+					} //end of if
+
+
+				    
 
 
 	    
