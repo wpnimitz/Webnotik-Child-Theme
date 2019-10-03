@@ -385,9 +385,7 @@ function webnotik_real_estate_content(){
 					// use 'names' if you want to get only name of the post type.
 
 					// see the registered post types
-					echo '<pre>';
-					print_r($post_types);
-					echo '</pre>';
+					
 				    
 
 
@@ -406,6 +404,10 @@ function webnotik_real_estate_content(){
 
 					<?php					
 					} //end of foreach
+
+					echo '<pre>';
+					print_r($post_types);
+					echo '</pre>';
 					?>
 
 
