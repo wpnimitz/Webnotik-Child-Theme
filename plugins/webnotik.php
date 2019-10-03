@@ -533,3 +533,42 @@ function webnotik_business_shortcode( $atts ){
 	
 }
 add_shortcode( 'webnotik', 'webnotik_business_shortcode' );
+
+function webnotik_city_pages( $atts ){
+	$atts = shortcode_atts(
+		array(
+			'type' => 'list', //or inline
+			'after' => '|',
+		), $atts, 'webnotik_form' );
+	$type = $atts["type"];
+	$after = $atts["text"];
+
+	$subpages = get_option('webnotik_keywords_subpages');
+	$subid = get_option('webnotik_keywords_subpages_ids');
+
+
+	if($type == "list") {
+		$ret .= "<ul>";
+	}
+
+	for ($i=0; $i < count($subpages); $i++) { 
+
+		if($type == "list") {
+			$ret .= '<li><a href="#">'. $subpages[0] . '</a></li>';
+		} else {
+			$ret '<a href="#">'. $subpages[0] . '</a>';
+			if($i != count($subpages)) {
+				$ret .= " " . $after . " ";
+			}
+
+		}
+	}
+
+	if($type == "list") {
+		$ret .= "</ul>";
+	}
+	
+	return $ret;
+
+}
+add_shortcode( 'city_pages', 'webnotik_city_pages' );
