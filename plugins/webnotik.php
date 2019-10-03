@@ -58,10 +58,9 @@ function webnotik_register_keywords_settings() {
 }
 function webnotik_register_divi_global_settings() {
 	//register our divi-global settings
-	register_setting( 'webnotik-divi-global-group', 'webnotik_keywords_main' );
-	register_setting( 'webnotik-divi-global-group', 'webnotik_keywords_main_id' );
-	register_setting( 'webnotik-divi-global-group', 'webnotik_keywords_subpages' );
-	register_setting( 'webnotik-divi-global-group', 'webnotik_keywords_subpages_ids' );
+	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_pages_global_footer' );
+	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_blog_global_footer' );
+	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_cpt_global_footer' );
 }
 
 
@@ -376,15 +375,13 @@ function webnotik_real_estate_content(){
 				    settings_fields( 'webnotik-divi-global-group' );
 				    do_settings_sections( 'webnotik-divi-global-group' );
 
-				    $subpages = get_option('webnotik_keywords_subpages');
-				    $subid = get_option('webnotik_keywords_subpages_ids');
-
-
+				    //get the actual data
+				    $cpt_pages = get_option('webnotik_divi_cpt_global_footer');
 				    $get_cpt_args = array(
 					    'public'   => true,
 					    '_builtin' => false
 					);
-					$post_types = get_post_types( $get_cpt_args, 'names' ); 
+					$post_types = get_post_types( $get_cpt_args, 'object' ); 
 					// use 'names' if you want to get only name of the post type.
 
 					// see the registered post types
@@ -392,15 +389,15 @@ function webnotik_real_estate_content(){
 					print_r($post_types);
 					echo '</pre>';
 				    
-				    for ($i=1; $i < count($subpages); $i++) { 
+				    for ($i=1; $i < count($cpt_pages); $i++) { 
 				    		$display = $i + 1;
 				    	?>
 					    <div class="form-group keyword" id="extra-<?php echo $display; ?>">
 					    	<div class="form-label">
-					    		<label for="webnotik_keywords_subpages<?php echo $display; ?>">Sub Keyword <span><?php echo $display; ?></span></label>
+					    		<label for="webnotik_divi_cpt_global_footer<?php echo $display; ?>">After Content Global for <?php echo $cpt_pages[] ?></span></label>
 					    	</div>
 					    	<div class="form-field">
-					    		<input placeholder="enter other city keyword" name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages<?php echo $display; ?>" value="<?php echo esc_attr( $subpages[$i] ); ?>">
+					    		<input placeholder="enter other city keyword" name="webnotik_divi_cpt_global_footer[]" id="webnotik_divi_cpt_global_footer<?php echo $display; ?>" value="<?php echo esc_attr( $cpt_pages[$i] ); ?>">
 					    		<p class="hint">Add any global divi layouts you want to display in this particular page.</p>
 					    	</div>
 					    </div>
