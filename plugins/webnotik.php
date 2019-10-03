@@ -396,7 +396,7 @@ function webnotik_real_estate_content(){
 					    	?>
 						    <div class="form-group keyword" id="extra-<?php echo $display; ?>">
 						    	<div class="form-label">
-						    		<label for="webnotik_divi_cpt_global_footer<?php echo $display; ?>">After Content Global for <?php echo $cpt_pages[] ?></span></label>
+						    		<label for="webnotik_divi_cpt_global_footer<?php echo $display; ?>">After Content Global for </span></label>
 						    	</div>
 						    	<div class="form-field">
 						    		<input placeholder="enter other city keyword" name="webnotik_divi_cpt_global_footer[]" id="webnotik_divi_cpt_global_footer<?php echo $display; ?>" value="<?php echo esc_attr( $cpt_pages[$i] ); ?>">
@@ -404,7 +404,7 @@ function webnotik_real_estate_content(){
 						    	</div>
 						    </div>
 					    <?php }
-					}?> 
+					} ?> 
 
 
 	    
