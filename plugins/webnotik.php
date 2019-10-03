@@ -299,7 +299,7 @@ function webnotik_real_estate_content(){
 
 				    <div class="form-group">
 				    	<div class="form-label">
-				    		<label for="webnotik_keywords_main">Main Keyword</label>
+				    		<label for="webnotik_keywords_main">Main City</label>
 				    	</div>
 				    	<div class="form-field">
 				    		<div class="col-2">
@@ -320,12 +320,12 @@ function webnotik_real_estate_content(){
 
 				    <div class="form-group keyword main-sub-keyword">
 				    	<div class="form-label">
-				    		<label for="webnotik_keywords_subpages">Sub Keyword <span>1</span></label>
+				    		<label for="webnotik_keywords_subpages">City #<span>1</span></label>
 				    	</div>
 				    	<div class="form-field">
 				    		<div class="col-2">
 					    		<input placeholder="enter other city keyword" name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages" value="<?php echo esc_attr( $subpages[0] ); ?>">
-					    		<p>[rank keyword="sub"]</p>
+					    		
 					    	</div><div class="col-2">
 					    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( $subid[0] ); ?>">
 				    			<p class="hint">Enter page URL. Very useful for automatic page linking.</p>
@@ -339,7 +339,7 @@ function webnotik_real_estate_content(){
 				    	?>
 					    <div class="form-group keyword" id="extra-<?php echo $display; ?>">
 					    	<div class="form-label">
-					    		<label for="webnotik_keywords_subpages<?php echo $display; ?>">Sub Keyword <span><?php echo $display; ?></span></label>
+					    		<label for="webnotik_keywords_subpages<?php echo $display; ?>">City #<span><?php echo $display; ?></span></label>
 					    	</div>
 					    	<div class="form-field">
 					    		<div class="col-2">
