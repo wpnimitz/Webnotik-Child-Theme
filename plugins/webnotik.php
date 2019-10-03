@@ -541,7 +541,7 @@ function webnotik_city_pages( $atts ){
 			'after' => '|',
 		), $atts, 'webnotik_form' );
 	$type = $atts["type"];
-	$after = $atts["text"];
+	$after = $atts["after"];
 
 	$subpages = get_option('webnotik_keywords_subpages');
 	$subid = get_option('webnotik_keywords_subpages_ids');
