@@ -1,4 +1,6 @@
 <?php
+// and we hook our function via
+add_action( 'wp_before_admin_bar_render', 'webnotik_admin_bar_render' );
 function webnotik_admin_bar_render() {
     global $wp_admin_bar;
     // we can remove a menu item, like the Comments link, just by knowing the right $id
@@ -12,9 +14,6 @@ function webnotik_admin_bar_render() {
         'href' => admin_url( 'admin.php?page=webnotik-real-estate')
     ) );
 }
-// and we hook our function via
-add_action( 'wp_before_admin_bar_render', 'webnotik_admin_bar_render' );
-
 
 
 add_action('admin_menu', 'webnotik_real_estate_add_admin_menu');

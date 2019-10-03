@@ -26,3 +26,17 @@ function webnotik_global_header() {
 	}
     
 }
+
+add_filter( 'body_class', 'webnotik_body_class' );
+function webnotik_body_class( $classes ) {
+	if(is_page()) {
+		$classes[] = 'webnotik-pages';
+	} elseif(is_single()) {
+		$classes[] = 'webnotik-post';
+	} else {
+		$classes[] = 'webnotik-otherpage';
+	}
+    
+
+    return $classes;
+}
