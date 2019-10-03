@@ -410,6 +410,7 @@ function webnotik_real_estate_content(){
 						} //end of foreach
 
 					} //end of if
+					?>
 
 
 				    
