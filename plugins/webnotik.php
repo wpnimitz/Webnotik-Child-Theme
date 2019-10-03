@@ -59,6 +59,7 @@ function webnotik_register_keywords_settings() {
 function webnotik_register_divi_global_settings() {
 	//register our divi-global settings
 	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_pages_global_footer' );
+	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_post_global_footer' );
 	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_blog_global_footer' );
 	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_cpt_global_footer' );
 }
@@ -374,6 +375,30 @@ function webnotik_real_estate_content(){
 				    <?php 
 				    settings_fields( 'webnotik-divi-global-group' );
 				    do_settings_sections( 'webnotik-divi-global-group' );
+				    ?>
+
+				    <div class="form-group keyword" id="extra-pages">
+				    	<div class="form-label">
+				    		<label for="webnotik_divi_pages_global_footer"> Pages - After Content</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<textarea name="webnotik_divi_pages_global_footer" id="webnotik_divi_pages_global_footer"><?php echo esc_attr( get_option('webnotik_divi_pages_global_footer') ); ?></textarea>
+				    		<p class="hint">Add any global divi layouts you want to display in this particular page.</p>
+				    	</div>
+				    </div>
+
+				    <div class="form-group keyword" id="extra-post">
+				    	<div class="form-label">
+				    		<label for="webnotik_divi_post_global_footer">Posts - After Content</label>
+				    	</div>
+				    	<divclass ="form-field">
+				    		<textarea name="webnotik_divi_post_global_footer" id="webnotik_divi_post_global_footer"><?php echo esc_attr( get_option('webnotik_divi_post_global_footer') ); ?></textarea>
+				    		<p class="hint">Add any global divi layouts you want to display in this particular page.</p>
+				    	</div>
+				    </div>
+
+
+				    <?php
 
 				    //get the actual data
 				    $cpt_pages = get_option('webnotik_divi_cpt_global_footer');
@@ -392,9 +417,9 @@ function webnotik_real_estate_content(){
 					foreach ($post_types as $custom) {
 						$cpt_name = $custom->name;
 						 ?>
-					<div class="form-group keyword" id="extra-<?php echo $$cpt_name; ?>">
+					<div class="form-group keyword" id="extra-<?php echo $cpt_name; ?>">
 				    	<div class="form-label">
-				    		<label for="webnotik_divi_cpt_global_footer-<?php echo $cpt_name; ?>">After Content Global for <?php echo $custom->label; ?></span></label>
+				    		<label for="webnotik_divi_cpt_global_footer-<?php echo $cpt_name; ?>"><?php echo $custom->label; ?> - After Content</label>
 				    	</div>
 				    	<div class="form-field">
 				    		<textarea name="webnotik_divi_cpt_global_footer[<?php echo $cpt_name; ?>]" id="webnotik_divi_cpt_global_footer-<?php echo $cpt_name; ?>"><?php echo $cpt_pages[$cpt_name]; ?></textarea>
