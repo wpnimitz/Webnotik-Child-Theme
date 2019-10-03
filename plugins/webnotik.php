@@ -554,9 +554,9 @@ function webnotik_city_pages( $atts ){
 	for ($i=0; $i < count($subpages); $i++) { 
 
 		if($type == "list") {
-			$ret .= '<li><a href="#">'. $subpages[0] . '</a></li>';
+			$ret .= '<li><a href="'. $subid[$i] . '">'. $subpages[$i] . '</a></li>';
 		} else {
-			$ret .= '<a href="#">'. $subpages[0] . '</a>';
+			$ret .= '<a href="'. $subid[$i] . '">'. $subpages[$i] . '</a>';
 			if($i != count($subpages)) {
 				$ret .= " " . $after . " ";
 			}
