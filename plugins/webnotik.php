@@ -307,7 +307,7 @@ function webnotik_real_estate_content(){
 					    		<p>[rank keyword="main"]</p>
 					    	</div><div class="col-2">
 					    		<input name="webnotik_keywords_main_id" id="webnotik_keywords_main_id" value="<?php echo esc_attr( get_option('webnotik_keywords_main_id') ); ?>">
-				    			<p class="hint">useful for linking automatic linking.</p>
+				    			<p class="hint">Enter page URL.</p>
 					    	</div>
 
 				    	</div>
@@ -328,7 +328,7 @@ function webnotik_real_estate_content(){
 					    		<p>[rank keyword="sub"]</p>
 					    	</div><div class="col-2">
 					    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( $subid[0] ); ?>">
-				    			<p class="hint">Enter page ID here. Very useful for automatic page linking.</p>
+				    			<p class="hint">Enter page URL. Very useful for automatic page linking.</p>
 					    	</div>
 				    	</div>
 				    </div>
@@ -347,7 +347,7 @@ function webnotik_real_estate_content(){
 						    		<p>[rank keyword="sub"]</p>
 						    	</div><div class="col-2">
 						    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( $subid[$i] ); ?>">
-					    			<p class="hint">Enter page ID here. Very useful for automatic page linking.</p>
+					    			<p class="hint">Enter page URL. Very useful for automatic page linking.</p>
 						    	</div>
 					    	</div>
 					    </div>
