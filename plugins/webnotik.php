@@ -391,7 +391,7 @@ function webnotik_real_estate_content(){
 				    	<div class="form-label">
 				    		<label for="webnotik_divi_post_global_footer">Posts - After Content</label>
 				    	</div>
-				    	<divclass ="form-field">
+				    	<div class="form-field">
 				    		<textarea name="webnotik_divi_post_global_footer" id="webnotik_divi_post_global_footer"><?php echo esc_attr( get_option('webnotik_divi_post_global_footer') ); ?></textarea>
 				    		<p class="hint">Add any global divi layouts you want to display in this particular page.</p>
 				    	</div>
