@@ -409,11 +409,7 @@ function webnotik_real_estate_content(){
 					$post_types = get_post_types( $get_cpt_args, 'object' ); 
 					// use 'names' if you want to get only name of the post type.
 
-					// see the registered post types
-					
-				    
-
-
+					// loop the post types
 					foreach ($post_types as $custom) {
 						$cpt_name = $custom->name;
 						 ?>
@@ -427,19 +423,8 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    </div>
 
-					<?php					
-					} //end of foreach
+					<?php } //end of foreach ?>
 
-					echo '<pre>';
-					print_r($post_types);
-					echo '</pre>';
-					?>
-
-
-				    
-
-
-	    
 				    <?php submit_button(); ?>
 				</form>
 			</div>
