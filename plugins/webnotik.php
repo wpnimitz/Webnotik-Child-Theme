@@ -556,7 +556,7 @@ function webnotik_city_pages( $atts ){
 		if($type == "list") {
 			$ret .= '<li><a href="#">'. $subpages[0] . '</a></li>';
 		} else {
-			$ret '<a href="#">'. $subpages[0] . '</a>';
+			$ret .= '<a href="#">'. $subpages[0] . '</a>';
 			if($i != count($subpages)) {
 				$ret .= " " . $after . " ";
 			}
