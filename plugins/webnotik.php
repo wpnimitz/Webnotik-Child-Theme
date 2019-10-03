@@ -389,7 +389,7 @@ function webnotik_real_estate_content(){
 				    
 
 
-					foreach ($cpt_pages as $custom) {
+					foreach ($post_types as $custom) {
 						$cpt_name = $custom->name;
 						 ?>
 					<div class="form-group keyword" id="extra-<?php echo $$cpt_name; ?>">
