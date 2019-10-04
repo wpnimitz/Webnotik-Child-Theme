@@ -595,16 +595,18 @@ function webnotik_divi_global_footer() {
 
 	//overrides the single and category page above
 	//lets check first if the current page is single
-	if(is_single()) {
-		$page_id = get_queried_object_id();
-		$post_type = get_post_type( $page_id);
+	$page_id = get_queried_object_id();
+	$post_type = get_post_type( $page_id);
 
-		if(!empty($post_type)) {
-			$post_cpt = get_option('webnotik_divi_cpt_global_footer');
+	echo $post_type;
 
-			$post = $post_cpt[$post_type];
-			$add_module = true;
-		}
+
+	if(!empty($post_type) && $post_type != 'single') {
+		$post_cpt = get_option('webnotik_divi_cpt_global_footer');
+
+		$post = $post_cpt[$post_type];
+		$add_module = true;
+		
 	}
 
 
