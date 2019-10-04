@@ -303,7 +303,7 @@ function webnotik_real_estate_content(){
 				    	<div class="form-field">
 				    		<div class="col-2">
 					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
-					    		<p>[rank keyword="main"]</p>
+					    		<p class="hint">Main city keyword</p>
 					    	</div><div class="col-2">
 					    		<input name="webnotik_keywords_main_id" id="webnotik_keywords_main_id" value="<?php echo esc_attr( get_option('webnotik_keywords_main_id') ); ?>">
 				    			<p class="hint">Enter page URL.</p>
@@ -324,7 +324,7 @@ function webnotik_real_estate_content(){
 				    	<div class="form-field">
 				    		<div class="col-2">
 					    		<input placeholder="enter other city keyword" name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages" value="<?php echo esc_attr( $subpages[0] ); ?>">
-					    		
+					    		<p class="hint">Enter Other City #<span>1</span></p>
 					    	</div><div class="col-2">
 					    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( $subid[0] ); ?>">
 				    			<p class="hint">Enter page URL. Very useful for automatic page linking.</p>
@@ -343,7 +343,7 @@ function webnotik_real_estate_content(){
 					    	<div class="form-field">
 					    		<div class="col-2">
 						    		<input placeholder="enter other city keyword" name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages<?php echo $display; ?>" value="<?php echo esc_attr( $subpages[$i] ); ?>">
-						    		<p>[rank keyword="sub"]</p>
+						    		<p class="hint">Enter Other City #<span><?php echo $display; ?></span></p>
 						    	</div><div class="col-2">
 						    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( $subid[$i] ); ?>">
 					    			<p class="hint">Enter page URL. Very useful for automatic page linking.</p>
@@ -382,7 +382,7 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    	<div class="form-field">
 				    		<textarea name="webnotik_divi_pages_global_footer" id="webnotik_divi_pages_global_footer"><?php echo esc_attr( get_option('webnotik_divi_pages_global_footer') ); ?></textarea>
-				    		<p class="hint">Add any global divi layouts you want to display in this particular page.</p>
+				    		<p class="hint">ADD any divi global layouts ID to the field above. IDs must be separated with commas.</p>
 				    	</div>
 				    </div>
 
@@ -392,7 +392,7 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    	<div class="form-field">
 				    		<textarea name="webnotik_divi_post_global_footer" id="webnotik_divi_post_global_footer"><?php echo esc_attr( get_option('webnotik_divi_post_global_footer') ); ?></textarea>
-				    		<p class="hint">Add any global divi layouts you want to display in this particular page.</p>
+				    		<p class="hint">ADD any divi global layouts ID to the field above. IDs must be separated with commas.</p>
 				    	</div>
 				    </div>
 
@@ -418,7 +418,7 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    	<div class="form-field">
 				    		<textarea name="webnotik_divi_cpt_global_footer[<?php echo $cpt_name; ?>]" id="webnotik_divi_cpt_global_footer-<?php echo $cpt_name; ?>"><?php echo $cpt_pages[$cpt_name]; ?></textarea>
-				    		<p class="hint">Add any global divi layouts you want to display in this particular page.</p>
+				    		<p class="hint">ADD any divi global layouts ID to the field above. IDs must be separated with commas.</p>
 				    	</div>
 				    </div>
 
