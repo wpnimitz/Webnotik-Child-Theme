@@ -596,14 +596,14 @@ function webnotik_divi_global_footer() {
 	//overrides the single and category page above
 	//lets check first if the current page is single
 	if(is_single()) {
-		global $post;
-		$post_type = get_post_type( $post->ID );
+		$page_id = get_queried_object_id();
+		$post_type = get_post_type( $page_id);
 		$post_cpt = get_option('webnotik_divi_cpt_global_footer');
 
 		$post = $post_cpt[$post_types];
 		$add_module = true;
 
-		echo '<div class="'.$post->ID.'">'.$post_types.'</div>';
+		echo '<div class="'.$page_id.'">'.$post_types.'</div>';
 		echo '<pre>';
 		print_r($post_cpt);
 		echo '</pre>';
