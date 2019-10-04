@@ -597,13 +597,13 @@ function webnotik_divi_global_footer() {
 	//lets check first if the current page is single
 	if(is_single()) {
 		global $post;
-		$post_type = get_post_type($post->ID);
+		$post_type = get_post_type( $post->ID );
 		$post_cpt = get_option('webnotik_divi_cpt_global_footer');
 
 		$post = $post_cpt[$post_types];
 		$add_module = true;
 
-		echo '<div class="">'.$post_types.'</div>';
+		echo '<div class="2">'.$post_types.'</div>';
 		echo '<pre>';
 		print_r($post_cpt);
 		echo '</pre>';
