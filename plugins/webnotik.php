@@ -596,7 +596,8 @@ function webnotik_divi_global_footer() {
 	//overrides the single and category page above
 	//lets check first if the current page is single
 	if(is_single()) {
-		$post_type = get_post_type();
+		global $post;
+		$post_type = get_post_type($post->ID);
 		$post_cpt = get_option('webnotik_divi_cpt_global_footer');
 
 		$post = $post_cpt[$post_types];
