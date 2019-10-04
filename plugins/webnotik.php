@@ -609,7 +609,7 @@ function webnotik_divi_global_footer() {
 
 
 	//lets display this module
-	if($add_module && count($post) > 0) {
+	if($add_module && !empty($post)) {
 		$post_id = explode(",", $post);
 
 		for ($i=0; $i < count($post_id); $i++) { 
