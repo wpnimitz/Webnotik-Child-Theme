@@ -584,7 +584,7 @@ function webnotik_divi_global_footer() {
 
 	$post = get_option('webnotik_divi_post_global_footer');
 	if(is_category() || is_single()) {
-		$post_id = explode(",", $post)
+		$post_id = explode(",", $post);
 
 		for ($i=0; $i < count($post_id); $i++) { 
 			echo do_shortcode('<div class="'.$post_id[$i].'-wrapper">[et_pb_section global_module="'.$post_id[$i].'"][/et_pb_section]</div>');
