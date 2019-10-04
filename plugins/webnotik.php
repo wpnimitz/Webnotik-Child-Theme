@@ -381,7 +381,7 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_divi_pages_global_footer"> Pages - After Content</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<textarea name="webnotik_divi_pages_global_footer" id="webnotik_divi_pages_global_footer"><?php echo esc_attr( get_option('webnotik_divi_pages_global_footer') ); ?></textarea>
+				    		<textarea placeholder="Enter any divi layout page ID here." name="webnotik_divi_pages_global_footer" id="webnotik_divi_pages_global_footer"><?php echo esc_attr( get_option('webnotik_divi_pages_global_footer') ); ?></textarea>
 				    		<p class="hint">ADD any divi global layouts ID to the field above. IDs must be separated with commas.</p>
 				    	</div>
 				    </div>
@@ -391,7 +391,7 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_divi_post_global_footer">Posts - After Content</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<textarea name="webnotik_divi_post_global_footer" id="webnotik_divi_post_global_footer"><?php echo esc_attr( get_option('webnotik_divi_post_global_footer') ); ?></textarea>
+				    		<textarea placeholder="Enter any divi layout page ID here." name="webnotik_divi_post_global_footer" id="webnotik_divi_post_global_footer"><?php echo esc_attr( get_option('webnotik_divi_post_global_footer') ); ?></textarea>
 				    		<p class="hint">ADD any divi global layouts ID to the field above. IDs must be separated with commas.</p>
 				    	</div>
 				    </div>
@@ -417,7 +417,7 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_divi_cpt_global_footer-<?php echo $cpt_name; ?>"><?php echo $custom->label; ?> - After Content</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<textarea name="webnotik_divi_cpt_global_footer[<?php echo $cpt_name; ?>]" id="webnotik_divi_cpt_global_footer-<?php echo $cpt_name; ?>"><?php echo $cpt_pages[$cpt_name]; ?></textarea>
+				    		<textarea placeholder="Enter any divi layout page ID here." name="webnotik_divi_cpt_global_footer[<?php echo $cpt_name; ?>]" id="webnotik_divi_cpt_global_footer-<?php echo $cpt_name; ?>"><?php echo $cpt_pages[$cpt_name]; ?></textarea>
 				    		<p class="hint">ADD any divi global layouts ID to the field above. IDs must be separated with commas.</p>
 				    	</div>
 				    </div>
