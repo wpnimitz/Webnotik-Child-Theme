@@ -603,7 +603,7 @@ function webnotik_divi_global_footer() {
 		$post = $post_cpt[$post_types];
 		$add_module = true;
 
-		echo '<div class="2">'.$post_types.'</div>';
+		echo '<div class="'.$post->ID.'">'.$post_types.'</div>';
 		echo '<pre>';
 		print_r($post_cpt);
 		echo '</pre>';
