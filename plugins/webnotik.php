@@ -576,13 +576,19 @@ add_shortcode( 'city_pages', 'webnotik_city_pages' );
 
 
 
+
+
+
 add_action( 'et_after_main_content', 'webnotik_divi_global_footer' );
 function webnotik_divi_global_footer() {
 
 	$post = get_option('webnotik_divi_post_global_footer');
 	if(is_category() || is_single()) {
-		echo do_shortcode('<div class="upsell-wrapper">'.$post.'</div>');
-		echo do_shortcode('<div class="upsell-wrapper"></div>');
+		$post_id = explode(",", $post)
+
+		for ($i=0; $i < count($post_id); $i++) { 
+			echo do_shortcode('<div class="'.$post_id[$i].'-wrapper">[et_pb_section global_module="'.$post_id[$i].'"][/et_pb_section]</div>');
+		}
 	}
     
 }
