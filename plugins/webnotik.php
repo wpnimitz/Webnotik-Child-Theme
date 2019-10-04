@@ -603,9 +603,6 @@ function webnotik_divi_global_footer() {
 
 		$post = $post_cpt[$post_type];
 		$add_module = true;
-
-		echo "Im here";
-		
 	}
 
 
