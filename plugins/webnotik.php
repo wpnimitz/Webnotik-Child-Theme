@@ -598,14 +598,13 @@ function webnotik_divi_global_footer() {
 	$page_id = get_queried_object_id();
 	$post_type = get_post_type( $page_id);
 
-	echo $post_type;
-
-
-	if(!empty($post_type) && $post_type != 'single') {
+	if(!empty($post_type) && $post_type != 'post' && $post_type != 'page') {
 		$post_cpt = get_option('webnotik_divi_cpt_global_footer');
 
 		$post = $post_cpt[$post_type];
 		$add_module = true;
+
+		echo "Im here";
 		
 	}
 
