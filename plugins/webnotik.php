@@ -600,10 +600,10 @@ function webnotik_divi_global_footer() {
 		$post_type = get_post_type( $page_id);
 		$post_cpt = get_option('webnotik_divi_cpt_global_footer');
 
-		$post = $post_cpt[$post_types];
+		$post = $post_cpt[$post_type];
 		$add_module = true;
 
-		echo '<div class="'.$page_id.'">'.$post_types.'</div>';
+		echo '<div class="'.$page_id.'">'.$post_type.'</div>';
 		echo '<pre>';
 		print_r($post_cpt);
 		echo '</pre>';
