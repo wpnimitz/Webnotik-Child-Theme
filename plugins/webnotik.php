@@ -582,13 +582,37 @@ add_shortcode( 'city_pages', 'webnotik_city_pages' );
 add_action( 'et_after_main_content', 'webnotik_divi_global_footer' );
 function webnotik_divi_global_footer() {
 
-	$post = get_option('webnotik_divi_post_global_footer');
+	$add_module = false;
 	if(is_category() || is_single()) {
+		$post = get_option('webnotik_divi_post_global_footer');
+		$add_module = true;
+	}
+
+	if(is_page()) {
+		$post = get_option('webnotik_divi_pages_global_footer');
+		$add_module = true;
+	}
+
+	//overrides the single and category page above
+	//lets check first if the current page is single
+	if(is_single()) {
+		$post_type = get_post_type();
+		$post_cpt = get_option('webnotik_divi_cpt_global_footer');
+
+		$post = $post_cpt["$post_types"];
+		$add_module = true;
+	}
+
+
+	//lets display this module
+	if($add_module) {
 		$post_id = explode(",", $post);
 
 		for ($i=0; $i < count($post_id); $i++) { 
 			echo do_shortcode('<div class="'.$post_id[$i].'-wrapper">[et_pb_section global_module="'.$post_id[$i].'"][/et_pb_section]</div>');
 		}
 	}
+
+
     
 }
