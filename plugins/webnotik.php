@@ -496,7 +496,7 @@ function webnotik_business_shortcode( $atts ){
 			'business' => 'seller',
 			'text' => 'LINK',
 			'type' => 'html',
-		), $atts, 'webnotik_form' );
+		), $atts, 'webnotik' );
 	$business = $atts["business"];
 	$type = $atts["type"];
 	$text = $atts["text"];
@@ -538,7 +538,7 @@ function webnotik_city_pages( $atts ){
 		array(
 			'type' => 'list', //or inline
 			'after' => '|',
-		), $atts, 'webnotik_form' );
+		), $atts, 'city_pages' );
 	$type = $atts["type"];
 	$after = $atts["after"];
 
@@ -571,6 +571,36 @@ function webnotik_city_pages( $atts ){
 
 }
 add_shortcode( 'city_pages', 'webnotik_city_pages' );
+
+
+function webnotik_city_keywords( $atts ){
+	$atts = shortcode_atts(
+		array(
+			'type' => 'single', //or inline
+			'item' => 'main'
+		), $atts, 'city_keywords' );
+	$type = $atts["type"];
+	$item = $atts["item"];
+
+	if($item == 'main') {
+		$keyword = get_option('webnotik_keywords_main');
+		$ret = $keyword;
+	} else {
+		$keyword = get_option('webnotik_keywords_subpages');
+		$item = str_replace("city", '', $item);
+		$try_keyword = $keyword[$item-1];
+
+		if(!empty($try_keyword)) {
+			$ret = $try_keyword;
+		} else {
+			$ret = 'City #' . $item;
+		}
+	}	
+	
+	return $ret;
+
+}
+add_shortcode( 'city_keywords', 'webnotik_city_keywords' );
 
 
 
