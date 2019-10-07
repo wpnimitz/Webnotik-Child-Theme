@@ -58,6 +58,7 @@ function webnotik_register_keywords_settings() {
 function webnotik_register_divi_global_settings() {
 	//register our divi-global settings
 	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_pages_global_footer' );
+	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_post_global_header' );
 	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_post_global_footer' );
 	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_blog_global_footer' );
 	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_cpt_global_footer' );
@@ -388,6 +389,16 @@ function webnotik_real_estate_content(){
 
 				    <div class="form-group keyword" id="extra-post">
 				    	<div class="form-label">
+				    		<label for="webnotik_divi_post_global_header">Posts - Before Content</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<textarea placeholder="Enter any divi layout page ID here." name="webnotik_divi_post_global_header" id="webnotik_divi_post_global_header"><?php echo esc_attr( get_option('webnotik_divi_post_global_header') ); ?></textarea>
+				    		<p class="hint">ADD any divi global layouts ID to the field above. IDs must be separated with commas.</p>
+				    	</div>
+				    </div>
+
+				    <div class="form-group keyword" id="extra-post">
+				    	<div class="form-label">
 				    		<label for="webnotik_divi_post_global_footer">Posts - After Content</label>
 				    	</div>
 				    	<div class="form-field">
@@ -604,7 +615,27 @@ add_shortcode( 'city_keywords', 'webnotik_city_keywords' );
 
 
 
+add_action( 'et_before_main_content', 'webnotik_divi_global_header' );
+function webnotik_divi_global_header() {
 
+	$add_module = false;
+	if(is_category('blog')) {
+		$post = get_option('webnotik_divi_post_global_header');
+		$add_module = true;
+	}
+
+	//lets display this module
+	if($add_module && !empty($post)) {
+		$post_id = explode(",", $post);
+
+		for ($i=0; $i < count($post_id); $i++) { 
+			echo do_shortcode('<div class="'.$post_id[$i].'-wrapper">[et_pb_section global_module="'.$post_id[$i].'"][/et_pb_section]</div>');
+		}
+	}
+
+
+    
+}
 
 
 

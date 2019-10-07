@@ -1,3 +1,17 @@
+/** Display a message on the editor **/
+.webnotik-pages .et-fb-iframe-ancestor .hero-background.et_pb_section:after,
+.webnotik-pages .et-fb-iframe-ancestor .easy-steps-background.et_pb_section:after {
+    content: "Background controlled by css -- this message is visible for admin only. You can remove the custom css class in this section.";
+    color: #000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #8a8a8a;
+}
+/** END Display a message on the editor **/
+
 .webnotik-category .et_pb_row:not(:last-child) {
     padding-bottom: 0;
 }
@@ -163,7 +177,6 @@ START: FORM STYLING;
 .et_pb_module *[type=submit] {
     box-sizing: border-box;
     padding: 20px !important;
-    background: #febe0f;
     color: #232323;
     border: 0px;
     width: 100%;
