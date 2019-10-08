@@ -62,7 +62,7 @@ function get_city_pages_callback() {
     $query_args = array( 's' => 'we buy houses' );
 	$query = new WP_Query( $query_args ); 
 
-	
+	$ret = array();
 	foreach ($query->posts as $post) {
 		$slug = $post->post_name;
 		$title = $post->post_title;
@@ -74,7 +74,7 @@ function get_city_pages_callback() {
 	    }
 	}
 
-	echo json_encode($ret);
+	echo json_encode($ret, true); 
 }
 
 
