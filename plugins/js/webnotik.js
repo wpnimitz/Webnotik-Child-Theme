@@ -60,8 +60,8 @@ jQuery(document).ready(function( $ ) {
 	    };
 
 	    jQuery.post(ajaxurl, data, function(response) {
-	        console.log('Got this from the server: ' + response);
 	        json = $.parseJSON(response);
+	        console.log('Got this from the server: ' + response);
 	        $.each(response, function(i, item) {
 	        	$(".add-sub-keyword").trigger("click");
 	        	$("#extra-" + extraSub + " input").attr('value', item.PageName);
