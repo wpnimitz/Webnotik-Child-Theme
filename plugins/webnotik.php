@@ -30,7 +30,7 @@ function webnotik_admin_bar_render() {
 	        'id' => 'webnotik-divi-global',
 	        'title' => __('Divi Global'),
 	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=divi-global')
-	    ),
+	    )
 	);
 }
 
