@@ -23,6 +23,7 @@ function webnotik_admin_bar_render() {
 	        'href' => admin_url( 'admin.php?page=webnotik-real-estate')
 	    )
 	);
+	
 	$wp_admin_bar->add_menu(
 		array(
 	    	'parent' => 'webnotik',
