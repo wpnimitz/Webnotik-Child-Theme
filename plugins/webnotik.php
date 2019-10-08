@@ -84,7 +84,7 @@ function get_city_pages_callback() {
 }
 
 function enqueue_get_city_pages_script() {
-    wp_enqueue_script( 'get-city-pages-script', get_stylesheet_directory_uri() . '/plugins/js/webnotik.js', array( 'jquery' ), null, true );
+    wp_enqueue_script( 'get-city-pages-script', get_stylesheet_directory_uri() . '/plugins/js/webnotik-ajax.js', array( 'jquery' ), null, true );
     wp_localize_script( 'get-city-pages-script', 'get_city_pages_data', array(
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
     ) );
