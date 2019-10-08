@@ -65,8 +65,8 @@ function get_city_pages_callback() {
 		$slug = $post->post_name;
 		$title = $post->post_title;
 	    
-	    if( strpos($slug, 'we-buy-houses') !== false ) {
-	    	$finalize_title = explode("we-buy-houses-", $slug);	
+	    if( strpos($title, 'We Buy Houses') !== false ) {
+	    	$finalize_title = explode("We Buy Houses", $title);	
 	    	$ret .= $finalize_title[1] . "\n";
 	    }
 	    
