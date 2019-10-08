@@ -93,17 +93,6 @@ function enqueue_get_city_pages_script() {
 
 
 
-add_action( 'wp_ajax_get_city_pages', 'get_city_pages_callback');
-function get_city_pages_callback() {
-    //$whatever = intval( $_POST['whatever'] );
-    //$whatever += 10;
-    //echo $whatever;
-
-    
-	
-	echo json_encode($ret);
-}
-
 
 add_action('admin_menu', 'webnotik_real_estate_add_admin_menu');
 function webnotik_real_estate_add_admin_menu() {
