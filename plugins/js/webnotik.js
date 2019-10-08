@@ -59,13 +59,25 @@ jQuery(document).ready(function( $ ) {
 	        whatever: 1234
 	    };
 
-	    jQuery.post(ajaxurl, data, function(response) {
-	        console.log('Got this from the server: ' + response);
-	        $.each(response, function(i, item) {
-	        	$(".add-sub-keyword").trigger("click");
-	        	$("#extra-" + extraSub + " input").attr('value', item.PageName);
-			});
-	    });
+	     $.getJSON( my_action_data.ajaxurl, data, function( json ) {
+            if ( json.success ) {
+                console.log('Got this from the server: ' + json);
+		        $.each(json, function(i, item) {
+		        	$(".add-sub-keyword").trigger("click");
+		        	$("#extra-" + extraSub + " input").attr('value', item.PageName);
+				});
+            } else {
+                alert( json.data.message );
+            }
+        } );
+
+	  //   jQuery.post(ajaxurl, data, function(response) {
+	  //       console.log('Got this from the server: ' + response);
+	  //       $.each(response, function(i, item) {
+	  //       	$(".add-sub-keyword").trigger("click");
+	  //       	$("#extra-" + extraSub + " input").attr('value', item.PageName);
+			// });
+	  //   });
 
 		
 	})

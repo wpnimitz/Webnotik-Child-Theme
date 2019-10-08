@@ -50,8 +50,10 @@ function webnotik_admin_bar_render() {
 	);
 }
 
-add_action('wp_ajax_get_city_pages', 'get_city_pages_callback');
 
+
+
+add_action( 'wp_ajax_get_city_pages', 'get_city_pages_callback');
 function get_city_pages_callback() {
     //$whatever = intval( $_POST['whatever'] );
     //$whatever += 10;
@@ -68,11 +70,8 @@ function get_city_pages_callback() {
 	    if( strpos($title, 'We Buy Houses') !== false ) {
 	    	$finalize_title = explode("We Buy Houses ", $title);	
 	    	$ret[]["PageName"] = $finalize_title[1];
-	    	$ret[]["PageID"] = $post->ID;
+	    	$ret[]["PageURL"] = get_the_permalink($post->ID);
 	    }
-	    
-
-
 	}
 
 	wp_send_json_success($ret);
