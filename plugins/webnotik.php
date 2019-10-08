@@ -23,7 +23,7 @@ function webnotik_admin_bar_render() {
 	        'href' => admin_url( 'admin.php?page=webnotik-real-estate')
 	    )
 	);
-	
+
 	$wp_admin_bar->add_menu(
 		array(
 	    	'parent' => 'webnotik',
@@ -328,6 +328,9 @@ function webnotik_real_estate_content(){
 			<!-- STARTS #keywords-forms --> 
 			<div id="keywords"> 
 				<p>Keywords are very important for Real Estate search engine optimization as well as in creating additional pages of this website.</p>
+				<p class="actions">
+					<a class="get-cp">Get City Pages</a>
+				</p>
 				<form method="post" action="options.php">
 				    <?php settings_fields( 'webnotik-keywords-group' ); ?>
 				    <?php do_settings_sections( 'webnotik-keywords-group' ); ?>
