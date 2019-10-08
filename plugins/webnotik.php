@@ -368,10 +368,10 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_keywords_main">Main City</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<div class="col-2">
+				    		<div class="col-2 k-main">
 					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
 					    		<p class="hint">Main city keyword</p>
-					    	</div><div class="col-2">
+					    	</div><div class="col-2 k-value">
 					    		<input name="webnotik_keywords_main_id" id="webnotik_keywords_main_id" value="<?php echo esc_attr( get_option('webnotik_keywords_main_id') ); ?>">
 				    			<p class="hint">Enter page URL.</p>
 					    	</div>
