@@ -68,14 +68,17 @@ function get_city_pages_callback() {
     $query_args = array( 's' => 'we buy houses' );
 	$query = new WP_Query( $query_args ); 
 
+	$record = 0;
 	foreach ($query->posts as $post) {
 		$slug = $post->post_name;
 		$title = $post->post_title;
 	    
+	    
 	    if( strpos($title, 'We Buy Houses') !== false ) {
 	    	$finalize_title = explode("We Buy Houses ", $title);	
-	    	$json[]["PageName"] = $finalize_title[1];
-	    	$json[]["PageURL"] = get_the_permalink( $post->ID );
+	    	$json[$record]["PageName"] = $finalize_title[1];
+	    	$json[$record]["PageURL"] = get_the_permalink( $post->ID );
+	    	$record++; 
 	    }
 	}
     wp_send_json_success( $json );
@@ -403,10 +406,10 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_keywords_subpages">City #<span>1</span></label>
 				    	</div>
 				    	<div class="form-field">
-				    		<div class="col-2">
+				    		<div class="col-2 k-main">
 					    		<input placeholder="enter other city keyword" name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages" value="<?php echo esc_attr( $subpages[0] ); ?>">
 					    		<p class="hint">Enter Other City #<span>1</span></p>
-					    	</div><div class="col-2">
+					    	</div><div class="col-2 k-value">
 					    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( $subid[0] ); ?>">
 				    			<p class="hint">Enter page URL. Very useful for automatic page linking.</p>
 					    	</div>
@@ -422,10 +425,10 @@ function webnotik_real_estate_content(){
 					    		<label for="webnotik_keywords_subpages<?php echo $display; ?>">City #<span><?php echo $display; ?></span></label>
 					    	</div>
 					    	<div class="form-field">
-					    		<div class="col-2">
+					    		<div class="col-2 k-main">
 						    		<input placeholder="enter other city keyword" name="webnotik_keywords_subpages[]" id="webnotik_keywords_subpages<?php echo $display; ?>" value="<?php echo esc_attr( $subpages[$i] ); ?>">
 						    		<p class="hint">Enter Other City #<span><?php echo $display; ?></span></p>
-						    	</div><div class="col-2">
+						    	</div><div class="col-2 k-value">
 						    		<input name="webnotik_keywords_subpages_ids[]" id="webnotik_keywords_subpages_ids" value="<?php echo esc_attr( $subid[$i] ); ?>">
 					    			<p class="hint">Enter page URL. Very useful for automatic page linking.</p>
 						    	</div>

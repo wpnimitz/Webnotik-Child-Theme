@@ -5,34 +5,32 @@ jQuery(document).ready(function( $ ) {
             action: 'get_city_pages',
             focus_key: 'We Buy Houses'
         };
+        
+        var json_count = 1;
+        
 
         $.getJSON( get_city_pages_data.ajaxurl, data, function( json ) {
             if ( json.success ) {
-                console.log('yes!')
-                console.log("data: " + data);  
+                json_data = json["data"]
+                $.each(json_data, function(i, item) {
+				    //console.log(item.PageName)
+				    //console.log(item.PageURL)
+				    var city1 = $(".main-sub-keyword .k-main input").val()
+                    if(city1 == "") {
+                        $(".main-sub-keyword .k-main input").attr('value', item.PageName);
+                        $(".main-sub-keyword .k-value input").attr('value', item.PageURL);
+                    } else {
+                        $(".add-sub-keyword").trigger("click");
+                        $("#extra-" + json_count + " .k-main input").attr('value', item.PageName);
+                        $("#extra-" + json_count + " .k-value input").attr('value', item.PageURL);
+                    }
 
-                $.each(json, function(i, item) {
-				    console.log("item info:" + i);
-				    console.log(item);
+				    json_count++;
+
+				    console.log("Json Count: " + json_count);
 				});
             }
         } );
-
-
-		// var data = {
-	 //        action: 'get_city_pages',
-	 //        focus_key: 'We Buy Houses'
-	 //    };
-
-	 //    jQuery.post(ajaxurl, data, function(response) {
-	 //        json = $.parseJSON(response);
-	 //        console.log('Got this from the server: ' + response);
-	 //        $.each(response, function(i, item) {
-	 //        	$(".add-sub-keyword").trigger("click");
-	 //        	$("#extra-" + extraSub + " input").attr('value', item.PageName);
-		// 	});
-	 //    });
-
 		
 	})
 });
