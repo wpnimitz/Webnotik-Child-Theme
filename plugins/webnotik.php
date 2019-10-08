@@ -78,8 +78,6 @@ function get_city_pages_callback() {
 	    	$json[]["PageURL"] = get_the_permalink( $post->ID );
 	    }
 	}
-        
-
     wp_send_json_success( $json );
 }
 
