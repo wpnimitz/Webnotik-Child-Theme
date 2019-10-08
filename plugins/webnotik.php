@@ -6,12 +6,32 @@ function webnotik_admin_bar_render() {
     // we can remove a menu item, like the Comments link, just by knowing the right $id
     //$wp_admin_bar->remove_menu('comments');
 
-    // we can add a submenu item too
-    $wp_admin_bar->add_menu( array(
-        'id' => 'webnotik',
-        'title' => __('Webnotik'),
-        'href' => admin_url( 'admin.php?page=webnotik-real-estate')
-    ) );
+    // lets add our main theme settings option
+    $wp_admin_bar->add_menu(
+	    array(
+	        'id' => 'webnotik',
+	        'title' => __('Webnotik'),
+	        'href' => admin_url( 'admin.php?page=webnotik-real-estate')
+	    ),
+	    array(
+	    	'parent' => 'webnotik',
+	        'id' => 'webnotik-forms',
+	        'title' => __('Forms'),
+	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=forms')
+	    ),
+	    array(
+	    	'parent' => 'webnotik',
+	        'id' => 'webnotik-keywords',
+	        'title' => __('City Pages'),
+	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=keywords')
+	    ),
+	    array(
+	    	'parent' => 'webnotik',
+	        'id' => 'webnotik-divi-global',
+	        'title' => __('Divi Global'),
+	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=divi-global')
+	    ),
+	);
 }
 
 
