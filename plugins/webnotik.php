@@ -74,7 +74,7 @@ function get_city_pages_callback() {
 	    }
 	}
 
-	json_encode($ret);
+	echo json_encode($ret);
 }
 
 
