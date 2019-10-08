@@ -53,11 +53,26 @@ function webnotik_admin_bar_render() {
 add_action('wp_ajax_get_city_pages', 'get_city_pages_callback');
 
 function get_city_pages_callback() {
-    $whatever = intval( $_POST['whatever'] );
-    $whatever += 10;
-    echo $whatever;
+    //$whatever = intval( $_POST['whatever'] );
+    //$whatever += 10;
+    //echo $whatever;
 
-    die(); // this is required to return a proper result
+    $args = array(
+    	's' => 'we buy houses'
+    );
+
+	$the_query = new WP_Query( $args );
+
+	// The Loop
+	if ( $the_query->have_posts() ) {
+
+	    while ( $the_query->have_posts() ) {
+	        $the_query->the_title();
+	        //whatever you want to do with each post
+	    }
+	} else {
+	     // no posts found
+	}   
 }
 
 
