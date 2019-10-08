@@ -56,28 +56,17 @@ jQuery(document).ready(function( $ ) {
 		e.preventDefault();
 		var data = {
 	        action: 'get_city_pages',
-	        whatever: 1234
+	        focus_key: 'We Buy Houses'
 	    };
 
-	     $.getJSON( ajaxurl, data, function( json ) {
-            if ( json.success ) {
-                console.log('Got this from the server: ' + json);
-		        $.each(json, function(i, item) {
-		        	$(".add-sub-keyword").trigger("click");
-		        	$("#extra-" + extraSub + " input").attr('value', item.PageName);
-				});
-            } else {
-                alert( json.data.message );
-            }
-        } );
-
-	  //   jQuery.post(ajaxurl, data, function(response) {
-	  //       console.log('Got this from the server: ' + response);
-	  //       $.each(response, function(i, item) {
-	  //       	$(".add-sub-keyword").trigger("click");
-	  //       	$("#extra-" + extraSub + " input").attr('value', item.PageName);
-			// });
-	  //   });
+	    jQuery.post(ajaxurl, data, function(response) {
+	        console.log('Got this from the server: ' + response);
+	        json = $.parseJSON(response);
+	        $.each(response, function(i, item) {
+	        	$(".add-sub-keyword").trigger("click");
+	        	$("#extra-" + extraSub + " input").attr('value', item.PageName);
+			});
+	    });
 
 		
 	})
