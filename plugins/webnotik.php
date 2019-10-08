@@ -50,6 +50,16 @@ function webnotik_admin_bar_render() {
 	);
 }
 
+add_action('wp_ajax_get_city_pages', 'get_city_pages_callback');
+
+function get_city_pages_callback() {
+    $whatever = intval( $_POST['whatever'] );
+    $whatever += 10;
+    echo $whatever;
+
+    die(); // this is required to return a proper result
+}
+
 
 add_action('admin_menu', 'webnotik_real_estate_add_admin_menu');
 function webnotik_real_estate_add_admin_menu() {

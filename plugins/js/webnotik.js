@@ -21,7 +21,7 @@ jQuery(document).ready(function( $ ) {
 		}, 2500);
 	});
 
-	
+	var extraSub = 0;
 	$(".add-sub-keyword").on("click", function(){
 		var mainsub = $(".main-sub-keyword").html();
 		var extraSub = $('.keyword').length + 1;
@@ -54,6 +54,15 @@ jQuery(document).ready(function( $ ) {
 
 	$("#get-cp").on("click", function(e) {
 		e.preventDefault();
+		var data = {
+	        action: 'get_city_pages',
+	        whatever: 1234
+	    };
+
+	    jQuery.post(ajaxurl, data, function(response) {
+	        console.log('Got this from the server: ' + response);
+	    });
+
 		$(".add-sub-keyword").trigger("click");
 	})
 
