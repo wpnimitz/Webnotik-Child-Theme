@@ -105,6 +105,16 @@
   overflow: hidden;
 }
 
+.actions a {
+  padding: 2px 8px;
+  line-height: 1.5em;
+  background: #a1e1ff;
+  text-decoration: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+
 /* Style the links inside the navigation bar */
 .panel-nav a {
   float: left;

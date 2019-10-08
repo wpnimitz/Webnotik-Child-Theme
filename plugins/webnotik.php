@@ -85,8 +85,8 @@ function get_city_pages_callback() {
 } 
 
 function enqueue_get_city_pages_script() {
-	$ver = "1.2.1" . strtotime("now");
-    wp_enqueue_script( 'get-city-pages-script', get_stylesheet_directory_uri() . '/plugins/js/webnotik-ajax.js?ver=', array( 'jquery' ), null, true );
+	$ver = "1.4.1" . strtotime("now");
+    wp_enqueue_script( 'get-city-pages-script', get_stylesheet_directory_uri() . '/plugins/js/webnotik-ajax.js?ver='.$ver, array( 'jquery' ), null, true );
     wp_localize_script( 'get-city-pages-script', 'get_city_pages_data', array(
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
     ) );
@@ -152,6 +152,8 @@ function webnotik_real_estate_content(){
 ?>
 
 <div class="webnotik-re-wrapper">
+	
+
 	<div class="panel">
 		<div class="panel-header">
 			<h1><?php esc_html_e('Welcome to Webnotik Real Estate Settings', 're-webnotik'); ?></h1>
@@ -171,6 +173,7 @@ function webnotik_real_estate_content(){
 
 		
 		<div class="panel-body">
+			<?php settings_errors(); ?>
 
 			<?php if($tab == 'general') {?>
 			<!-- STARTS #general-forms -->
@@ -373,10 +376,11 @@ function webnotik_real_estate_content(){
 			<!-- STARTS #keywords-forms --> 
 			<div id="keywords"> 
 				<p>Keywords are very important for Real Estate search engine optimization as well as in creating additional pages of this website.</p>
+				<p class="message"></p>
 				<p class="actions">
 					<a id="get-cp" href="#">Get City Pages</a>
-					<a id="rename-cp" href="#">Get City Pages</a>
-					<a id="clone-cp" href="#">Get City Pages</a>
+					<a id="rename-cp" href="#">Rename Pages</a>
+					<a id="clone-cp" href="#">Clone</a>
 				</p>
 				<form method="post" action="options.php">
 				    <?php settings_fields( 'webnotik-keywords-group' ); ?>
