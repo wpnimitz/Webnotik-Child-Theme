@@ -60,14 +60,15 @@ function get_city_pages_callback() {
     $query_args = array( 's' => 'we buy houses' );
 	$query = new WP_Query( $query_args ); 
 
-	$ret = "Here we go \n";
+	
 	foreach ($query->posts as $post) {
 		$slug = $post->post_name;
 		$title = $post->post_title;
 	    
 	    if( strpos($title, 'We Buy Houses') !== false ) {
-	    	$finalize_title = explode("We Buy Houses", $title);	
-	    	$ret .= $finalize_title[1] . "\n";
+	    	$finalize_title = explode("We Buy Houses ", $title);	
+	    	$ret[]["PageName"] = $finalize_title[1];
+	    	$ret[]["PageURL"] = get_the_permalink($post->ID);
 	    }
 	    
 
