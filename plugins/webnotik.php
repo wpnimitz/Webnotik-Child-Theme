@@ -19,6 +19,12 @@ function webnotik_admin_bar_render() {
 		array(
 	    	'parent' => 'webnotik',
 	        'id' => 'webnotik-forms',
+	        'title' => __('General'),
+	        'href' => admin_url( 'admin.php?page=webnotik-real-estate')
+	    ),
+		array(
+	    	'parent' => 'webnotik',
+	        'id' => 'webnotik-forms',
 	        'title' => __('Forms'),
 	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=forms')
 	    )
@@ -107,7 +113,7 @@ function webnotik_real_estate_content(){
 			<div class="panel-nav">
 				<a class="forms-group <?php echo $tab == "general" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=general">General</a>
 				<a class="forms-group <?php echo $tab == "forms" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=forms">Forms</a>
-				<a class="forms-group <?php echo $tab == "keywords" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=keywords">Keywords</a>				
+				<a class="forms-group <?php echo $tab == "keywords" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=keywords">City Pages</a>				
 				<a class="forms-group <?php echo $tab == "divi-global" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=divi-global">Divi Global</a>				
 				<a class="forms-group <?php echo $tab == "help" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=help">Help</a>
 				<a href="#" class="icon">&#9776;</a>			
