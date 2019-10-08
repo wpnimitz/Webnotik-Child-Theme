@@ -68,7 +68,7 @@ function get_city_pages_callback() {
 	    if( strpos($title, 'We Buy Houses') !== false ) {
 	    	$finalize_title = explode("We Buy Houses ", $title);	
 	    	$ret[]["PageName"] = $finalize_title[1];
-	    	$ret[]["PageURL"] = get_the_permalink($post->ID);
+	    	$ret[]["PageID"] = $post->ID;
 	    }
 	    
 
