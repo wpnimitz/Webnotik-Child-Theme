@@ -62,7 +62,16 @@ function get_city_pages_callback() {
 
 	$ret = "Here we go \n";
 	foreach ($query->posts as $post) {
-	    $ret .= $post->post_name . "\n";
+		$slug = $post->post_name;
+		$title = $post->post_title;
+	    
+	    if( strpos($slug, 'we-buy-houses') !== false ) {
+	    	$finalize_title = explode("we-buy-houses-", $slug);	
+	    	$ret .= $finalize_title[1];
+	    }
+	    
+
+
 	}
 
 	echo $ret;
