@@ -375,6 +375,8 @@ function webnotik_real_estate_content(){
 				<p>Keywords are very important for Real Estate search engine optimization as well as in creating additional pages of this website.</p>
 				<p class="actions">
 					<a id="get-cp" href="#">Get City Pages</a>
+					<a id="rename-cp" href="#">Get City Pages</a>
+					<a id="clone-cp" href="#">Get City Pages</a>
 				</p>
 				<form method="post" action="options.php">
 				    <?php settings_fields( 'webnotik-keywords-group' ); ?>
