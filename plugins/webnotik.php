@@ -626,11 +626,12 @@ function webnotik_divi_global_header() {
 
 	//lets display this module
 	if($add_module && !empty($post)) {
-		$post_id = explode(",", $post);
-
-		for ($i=0; $i < count($post_id); $i++) { 
-			echo do_shortcode('<div class="'.$post_id[$i].'-wrapper">[et_pb_section global_module="'.$post_id[$i].'"][/et_pb_section]</div>');
+		$layout_id = explode(",", $post);
+		echo "<!-- Start " .$layout_id[$i]. "-wrapper -->";
+		for ($i=0; $i < count($layout_id); $i++) { 
+			echo do_shortcode('<div class="'.$layout_id[$i].'-wrapper">[et_pb_section global_module="'.$layout_id[$i].'"][/et_pb_section]</div>');
 		}
+		echo "<!-- End " .$layout_id[$i]. "-wrapper -->";
 	}
 
 
@@ -670,11 +671,11 @@ function webnotik_divi_global_footer() {
 	//lets display this module
 	if($add_module && !empty($post)) {
 		$layout_id = explode(",", $post);
-		echo "<!-- Start " .$layout_id[$i]. "-->";
+		echo "<!-- Start " .$layout_id[$i]. "-wrapper -->";
 		for ($i=0; $i < count($layout_id); $i++) { 
 			echo do_shortcode('<div class="'.$layout_id[$i].'-wrapper">[et_pb_section global_module="'.$layout_id[$i].'"][/et_pb_section]</div>');
 		}
-		echo "<!-- End " .$layout_id[$i]. "-->";
+		echo "<!-- End " .$layout_id[$i]. "-wrapper -->";
 	}
 
 
