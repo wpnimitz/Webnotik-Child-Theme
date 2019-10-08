@@ -57,22 +57,10 @@ function get_city_pages_callback() {
     //$whatever += 10;
     //echo $whatever;
 
-    $args = array(
-    	's' => 'we buy houses'
-    );
+    $query_args = array( 's' => 'we buy houses' );
+	$query = new WP_Query( $query_args ); 
 
-	$the_query = new WP_Query( $args );
-
-	// The Loop
-	if ( $the_query->have_posts() ) {
-
-	    while ( $the_query->have_posts() ) {
-	        $the_query->the_title();
-	        //whatever you want to do with each post
-	    }
-	} else {
-	     // no posts found
-	}   
+	echo $query;
 }
 
 
