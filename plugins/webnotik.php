@@ -15,12 +15,6 @@ function webnotik_admin_bar_render() {
 	    ),
 	    array(
 	    	'parent' => 'webnotik',
-	        'id' => 'webnotik-forms',
-	        'title' => __('Forms'),
-	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=forms')
-	    ),
-	    array(
-	    	'parent' => 'webnotik',
 	        'id' => 'webnotik-keywords',
 	        'title' => __('City Pages'),
 	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=keywords')
@@ -30,6 +24,15 @@ function webnotik_admin_bar_render() {
 	        'id' => 'webnotik-divi-global',
 	        'title' => __('Divi Global'),
 	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=divi-global')
+	    )
+	);
+
+	$wp_admin_bar->add_menu(
+		array(
+	    	'parent' => 'webnotik',
+	        'id' => 'webnotik-forms',
+	        'title' => __('Forms'),
+	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=forms')
 	    )
 	);
 }
