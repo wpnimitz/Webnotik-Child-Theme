@@ -53,26 +53,53 @@ function webnotik_admin_bar_render() {
 
 
 
-add_action( 'wp_ajax_get_city_pages', 'get_city_pages_callback');
+// We add the action twice, once for logged in users and once for non logged in users.
+add_action( 'wp_ajax_get_city_pages', 'get_city_pages_callback' );
+
+// Enqueue the script on the front end.
+add_action( 'wp_enqueue_scripts', 'enqueue_get_city_pages_script' );
+// Enqueue the script on the back end (wp-admin)
+add_action( 'admin_enqueue_scripts', 'enqueue_get_city_pages_script' );
+
 function get_city_pages_callback() {
-    //$whatever = intval( $_POST['whatever'] );
-    //$whatever += 10;
-    //echo $whatever;
+    $json = array();
+
 
     $query_args = array( 's' => 'we buy houses' );
 	$query = new WP_Query( $query_args ); 
 
-	$ret = array();
 	foreach ($query->posts as $post) {
 		$slug = $post->post_name;
 		$title = $post->post_title;
 	    
 	    if( strpos($title, 'We Buy Houses') !== false ) {
 	    	$finalize_title = explode("We Buy Houses ", $title);	
-	    	$ret[]["PageName"] = $finalize_title[1];
-	    	$ret[]["PageURL"] = get_the_permalink( $post->ID );
+	    	$json[]["PageName"] = $finalize_title[1];
+	    	$json[]["PageURL"] = get_the_permalink( $post->ID );
 	    }
 	}
+        
+
+    wp_send_json_success( $json );
+}
+
+function enqueue_get_city_pages_script() {
+    //wp_enqueue_script( 'get-city-pages-script', 'path/to/get-city-pages-script.js', array( 'jquery' ), null, true );
+    wp_localize_script( 'get-city-pages-script', 'get_city_pages_data', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+    ) );
+}
+
+
+
+
+add_action( 'wp_ajax_get_city_pages', 'get_city_pages_callback');
+function get_city_pages_callback() {
+    //$whatever = intval( $_POST['whatever'] );
+    //$whatever += 10;
+    //echo $whatever;
+
+    
 	
 	echo json_encode($ret);
 }
