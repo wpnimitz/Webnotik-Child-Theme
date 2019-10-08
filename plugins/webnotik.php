@@ -91,7 +91,7 @@ function enqueue_get_city_pages_script() {
 }
 
 
-
+  
 
 
 add_action('admin_menu', 'webnotik_real_estate_add_admin_menu');
