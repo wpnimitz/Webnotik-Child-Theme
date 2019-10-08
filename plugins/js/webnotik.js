@@ -59,7 +59,7 @@ jQuery(document).ready(function( $ ) {
 	        whatever: 1234
 	    };
 
-	     $.getJSON( my_action_data.ajaxurl, data, function( json ) {
+	     $.getJSON( ajaxurl, data, function( json ) {
             if ( json.success ) {
                 console.log('Got this from the server: ' + json);
 		        $.each(json, function(i, item) {
