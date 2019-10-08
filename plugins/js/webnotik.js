@@ -52,4 +52,9 @@ jQuery(document).ready(function( $ ) {
 		console.log("-- -- -- -- --")
 	}
 
+	$("#get-cp").on("click", function(e) {
+		e.preventDefault();
+		$(".add-sub-keyword").trigger("click");
+	})
+
 });
