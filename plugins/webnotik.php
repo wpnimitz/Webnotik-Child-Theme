@@ -79,7 +79,7 @@ function get_city_pages_callback() {
 	    }
 	}
     wp_send_json_success( $json );
-}
+} 
 
 function enqueue_get_city_pages_script() {
 	$ver = "1.2.1" . strtotime("now");

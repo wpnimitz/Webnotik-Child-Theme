@@ -9,7 +9,12 @@ jQuery(document).ready(function( $ ) {
         $.getJSON( get_city_pages_data.ajaxurl, data, function( json ) {
             if ( json.success ) {
                 console.log('yes!')
-                console.log("Data: " + data); 
+                console.log("data: " + data);  
+
+                $.each(json, function(i, item) {
+				    console.log("item info:" + i);
+				    console.log(item);
+				});
             }
         } );
 
