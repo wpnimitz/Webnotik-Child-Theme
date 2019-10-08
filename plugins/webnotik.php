@@ -18,10 +18,10 @@ function webnotik_admin_bar_render() {
 	$wp_admin_bar->add_menu(
 		array(
 	    	'parent' => 'webnotik',
-	        'id' => 'webnotik',
+	        'id' => 'webnotik-general',
 	        'title' => __('General'),
 	        'href' => admin_url( 'admin.php?page=webnotik-real-estate')
-	    ),
+	    )
 	);
 	$wp_admin_bar->add_menu(
 		array(
