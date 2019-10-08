@@ -8,7 +8,6 @@ function webnotik_admin_bar_render() {
 
     // we can add a submenu item too
     $wp_admin_bar->add_menu( array(
-        'parent' => 'site-name',
         'id' => 'webnotik',
         'title' => __('Webnotik'),
         'href' => admin_url( 'admin.php?page=webnotik-real-estate')
@@ -18,7 +17,7 @@ function webnotik_admin_bar_render() {
 
 add_action('admin_menu', 'webnotik_real_estate_add_admin_menu');
 function webnotik_real_estate_add_admin_menu() {
-    add_menu_page(__('Webnotik', 're-webnotik'), __('Webnotik', 're-webnotik'), 'manage_options', 'webnotik-real-estate', 'webnotik_real_estate_content', 'dashicons-schedule', 3);
+    add_menu_page(__('Webnotik', 're-webnotik'), __('Webnotik', 're-webnotik'), 'manage_options', 'webnotik-real-estate', 'webnotik_real_estate_content', 'dashicons-flag', 3);
     //call register settings function
 	add_action( 'admin_init', 'webnotik_register_forms_settings' );
 	add_action( 'admin_init', 'webnotik_register_general_settings' );
