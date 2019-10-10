@@ -44,6 +44,13 @@
     font-weight: 500;
 }
 
+.webnotik-re-wrapper .hint, .webnotik-re-wrapper pre {
+    border: 1px solid #0073aa;
+    padding: 2px 5px;
+    border-radius: 3px;
+    background: #e2e2e2;
+}
+
 
 .panel-body .form-field p {
 	margin: 0;
