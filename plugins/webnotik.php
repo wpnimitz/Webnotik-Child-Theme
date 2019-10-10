@@ -48,6 +48,14 @@ function webnotik_admin_bar_render() {
 	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=divi-global')
 	    )
 	);
+	$wp_admin_bar->add_menu(
+		array(
+	    	'parent' => 'webnotik',
+	        'id' => 'webnotik-help',
+	        'title' => __('Help & Guidelines'),
+	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=help')
+	    )
+	);
 }
 
 
@@ -203,7 +211,7 @@ function webnotik_real_estate_content(){
 				<a class="forms-group <?php echo $tab == "forms" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=forms">Forms</a>
 				<a class="forms-group <?php echo $tab == "keywords" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=keywords">City Pages</a>				
 				<a class="forms-group <?php echo $tab == "divi-global" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=divi-global">Divi Global</a>				
-				<a class="forms-group <?php echo $tab == "help" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=help">Help</a>
+				<a class="forms-group <?php echo $tab == "help" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=help">Help & Guidelines</a>
 				<a href="#" class="icon">&#9776;</a>			
 			</div>
 		</div>
@@ -596,6 +604,9 @@ function webnotik_real_estate_content(){
 			<div id="help">
 				<p>Welcome to help section.</p>
 				<h2>Custom CSS defaults</h2>
+				<hr>
+				
+				<h3>Hero Background</h3>
 				<pre>
 .webnotik-pages .hero-background {
     background-image: linear-gradient(90deg,rgba(30,30,30,0.77) 30%,rgba(30,30,30,0.77) 75%),url(https://testingwebsite102.com/wp-content/uploads/depositphotos_13680678-stock-photo-street-of-residential-houses.jpg)!important;
