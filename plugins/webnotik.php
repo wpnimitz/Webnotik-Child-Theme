@@ -613,6 +613,25 @@ function webnotik_real_estate_content(){
 }
 				</pre> 
 				<p class="hint">Replace the URL to ensure that the main page as well as the city pages will have a uniformity.</p>
+
+				<h3>Form Button</h3>
+				<pre>
+.et_pb_module *[type=submit] {
+    background: #095aa5;
+	color: #fff !important;
+}
+				</pre> 
+				<p class="hint">You should replace the background color as well as the text color</p>
+
+				<h3>Testimonial <small>on city pages</small></h3>
+				<pre>
+.gray-testimonial .et_pb_testimonial {
+    background: #9e9e9e4d !important;
+}
+				</pre> 
+				<p class="hint">Our testimonial are a global testimonial, you need to add <strong>gray-testimonial</strong> class on each row module to add a gray background effect.</p>
+
+
 			</div>
 			<!-- end #help -- >
 
