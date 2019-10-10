@@ -213,3 +213,10 @@ START: FORM STYLING;
 /** 
 END: FORM STYLING; 
 **/
+
+
+
+/** OTHER MODULE DEFAULTS **/
+.et_pb_blurb_content {
+    max-width: 95%;
+}
