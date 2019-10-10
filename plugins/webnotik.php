@@ -86,10 +86,10 @@ function rename_city_pages_callback() {
 		wp_send_json_success( $success );
 
 	} else {
-		$error["given_url"] = $_REQUEST["given_url"];
-		$error["given_title"] = $_REQUEST["given_title"];
-		$error["mypost_id"] = $page->ID;
-		wp_send_json_error( $error );
+		$error["given_title"] = "Title: " . $_REQUEST["given_title"];
+		$error["given_url"] = "URL: " . $_REQUEST["given_url"];		
+		$error["mypost_id"] = "ID: " . $page->ID;
+		wp_send_json_error( $error ); 
 	}
 }
 
