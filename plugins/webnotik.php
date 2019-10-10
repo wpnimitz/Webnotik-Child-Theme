@@ -806,7 +806,7 @@ function webnotik_city_keywords( $atts ){
 		// $item = str_replace("city", '', $item);
 		// $try_keyword = $keyword[$item-1];
 
-		$exclude_words = array( 'We', 'Buy', 'Houses', 'House', 'Cash', 'Fast', 'in', 'for', 'my', 'Sell');
+		$exclude_words = array( ' for ', ' my ', ' in ', 'We', 'Buy', 'Houses', 'House', 'Cash', 'Fast', 'Sell');
     	$post_title = get_the_title();
 
     	foreach ($exclude_words as $ex_word) {
