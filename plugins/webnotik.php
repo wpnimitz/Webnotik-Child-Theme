@@ -88,6 +88,7 @@ function rename_city_pages_callback() {
 	} else {
 		$error["given_url"] = $_REQUEST["given_url"];
 		$error["given_title"] = $_REQUEST["given_title"];
+		$error["mypost_id"] = $page->ID;
 		wp_send_json_error( $error );
 	}
 }

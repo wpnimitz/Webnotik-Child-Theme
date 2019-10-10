@@ -59,7 +59,7 @@ jQuery(document).ready(function( $ ) {
             	
             	var json_data = json.data;
             	$.each(json_data, function(i, item) {
-            		$(".message").addClass("error").append("Error: " + item);
+            		$(".message").addClass("error").append("Error: " + item + "<br>");
             	}); 
             }
         } );
