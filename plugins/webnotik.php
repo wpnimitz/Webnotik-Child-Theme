@@ -591,6 +591,20 @@ function webnotik_real_estate_content(){
 				</form>
 			</div>
 			<!-- end #divi-global-forms -- >
+			<?php } elseif($tab == 'help') {?>
+			<!-- STARTS #divi-global-forms --> 
+			<div id="help">
+				<p>Welcome to help section.</p>
+				<h2>Custom CSS defaults</h2>
+				<pre>
+.webnotik-pages .hero-background {
+    background-image: linear-gradient(90deg,rgba(30,30,30,0.77) 30%,rgba(30,30,30,0.77) 75%),url(https://testingwebsite102.com/wp-content/uploads/depositphotos_13680678-stock-photo-street-of-residential-houses.jpg)!important;
+}
+				</pre>
+				<p class="hint">Replace the URL to ensure that the main page as well as the city pages will have a uniformity.</p>
+			</div>
+			<!-- end #help -- >
+
 			<?php } else {?>			
 			Work in progress
 			<?php } ?>
