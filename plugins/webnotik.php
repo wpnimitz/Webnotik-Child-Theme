@@ -600,7 +600,7 @@ function webnotik_real_estate_content(){
 .webnotik-pages .hero-background {
     background-image: linear-gradient(90deg,rgba(30,30,30,0.77) 30%,rgba(30,30,30,0.77) 75%),url(https://testingwebsite102.com/wp-content/uploads/depositphotos_13680678-stock-photo-street-of-residential-houses.jpg)!important;
 }
-				</pre>
+				</pre> 
 				<p class="hint">Replace the URL to ensure that the main page as well as the city pages will have a uniformity.</p>
 			</div>
 			<!-- end #help -- >
