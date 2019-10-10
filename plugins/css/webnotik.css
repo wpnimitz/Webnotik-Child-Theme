@@ -104,6 +104,10 @@
 	min-height: 150px;
 }
 
+#help h3 {
+  font-weight: 20px;
+}
+
 
 
 /** ADMIN NAVIGATION **/
