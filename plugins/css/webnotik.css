@@ -105,15 +105,7 @@
   overflow: hidden;
 }
 
-.actions a {
-  padding: 2px 8px;
-  line-height: 1.5em;
-  background: #a1e1ff;
-  text-decoration: none;
-  border-radius: 10px;
-  text-transform: uppercase;
-  border: 1px solid;
-}
+
 
 /* Style the links inside the navigation bar */
 .panel-nav a {
@@ -204,8 +196,15 @@
   width: 50%;
   margin-right: 0;
 }
-
-.add-sub-keyword {
+.options {
+  display: flex;
+}
+.options p {
+  margin-top: 0;
+  padding: 0;
+  margin-right: 10px;
+}
+.add-sub-keyword, .wp-core-ui p .button {
   display: flex !important;
   background: #a1e1ff;
   color: #0073a9;
@@ -217,20 +216,41 @@
   width: 99%;
   border-radius: 2%;
   border: 1px solid #0073a9;
-  margin-top: 30px;
+  text-shadow: none;
+  box-shadow: none;
+  margin-right: 3% !important;
+    margin-top: 0;
 }
 
-.extra-keywords .form-group:hover label:after {
-  content: "- DEL";
-  font-weight: 500;
-  padding: 0px 13px;
-  background: #FF9800;
-  font-size: 10px;
-  color: #ffff;
-  margin-left: 5px;
-  border-radius: 5px;
-  position: absolute;
-  right: 0;
+.form-label .actions {
+    display: none;
+}
+
+.form-label:hover .actions {
+  display: block;
+}
+
+.actions a {
+    padding: 2px 8px;
+    line-height: 1.5em;
+    background: #a1e1ff;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.webnotik-re-wrapper p.message.success {
+  padding: 20px 10px;
+  border: 1px solid green;
+  background: #beffbe;
+  border-radius: 4px;
+}
+
+.webnotik-re-wrapper p.message.error {
+  padding: 20px 10px;
+  border: 1px solid red;
+  background: #ff7777;
+  border-radius: 4px;
 }
 
 

@@ -53,19 +53,54 @@ function webnotik_admin_bar_render() {
 
 
 
-// We add the action twice, once for logged in users and once for non logged in users.
-add_action( 'wp_ajax_get_city_pages', 'get_city_pages_callback' );
 
-// Enqueue the script on the front end.
-add_action( 'wp_enqueue_scripts', 'enqueue_get_city_pages_script' );
+
+
 // Enqueue the script on the back end (wp-admin)
 add_action( 'admin_enqueue_scripts', 'enqueue_get_city_pages_script' );
 
+add_action( 'wp_ajax_rename_city_pages', 'rename_city_pages_callback' );
+function rename_city_pages_callback() {
+
+	$given_url = $_REQUEST["given_url"];
+	$slug = trim(parse_url($given_url, PHP_URL_PATH), '/');
+	
+	$page = get_page_by_path( $slug );
+	$mypost_id = $page->ID;
+	$new_title = $_REQUEST["given_title"];
+
+	if($mypost_id > 0) {
+		// Let's Update the Post
+		$my_post = array(
+			'ID'           => $mypost_id,
+			'post_title'   => 'We Buy Houses ' . $new_title,
+			'post_name'	   => str_replace(" ", "-", strtolower('We Buy Houses ' . $new_title)) 
+		);
+
+		// Update the post into the database
+		wp_update_post( $my_post );
+
+
+		$success["post_title"] = 'We Buy Houses ' . $new_title;
+		$success["post_name"] = get_the_permalink($mypost_id);
+		wp_send_json_success( $success );
+
+	} else {
+		$error["given_url"] = $_REQUEST["given_url"];
+		$error["given_title"] = $_REQUEST["given_title"];
+		wp_send_json_error( $error );
+	}
+}
+
+//actual ajax
+add_action( 'wp_ajax_get_city_pages', 'get_city_pages_callback' );
 function get_city_pages_callback() {
     $json = array();
 
 
-    $query_args = array( 's' => 'we buy houses' );
+    $query_args = array( 
+    	's' => 'we buy houses'
+    );
 	$query = new WP_Query( $query_args ); 
 
 	$record = 0;
@@ -91,6 +126,8 @@ function enqueue_get_city_pages_script() {
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
     ) );
 }
+
+
 
 
   
@@ -378,9 +415,7 @@ function webnotik_real_estate_content(){
 				<p>Keywords are very important for Real Estate search engine optimization as well as in creating additional pages of this website.</p>
 				<p class="message"></p>
 				<p class="actions">
-					<a id="get-cp" href="#">Get City Pages</a>
-					<a id="rename-cp" href="#">Rename Pages</a>
-					<a id="clone-cp" href="#">Clone</a>
+					<a id="get-cp2" href="#">List City Pages</a>
 				</p>
 				<form method="post" action="options.php">
 				    <?php settings_fields( 'webnotik-keywords-group' ); ?>
@@ -410,6 +445,11 @@ function webnotik_real_estate_content(){
 				    <div class="form-group keyword main-sub-keyword">
 				    	<div class="form-label">
 				    		<label for="webnotik_keywords_subpages">City #<span>1</span></label>
+				    		<p class="actions">
+				    			<a class="rename-cp" href="#">Rename Page</a>
+								<a class="clone-cp" href="#">Clone Page</a>
+								<a class="delete-cp" href="#">Delete Data</a>
+				    		</p>	
 				    	</div>
 				    	<div class="form-field">
 				    		<div class="col-2 k-main">
@@ -422,13 +462,18 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    </div>
 
-				    <div class="extra-keywords">
+				    <div class="extra-keywords" id="sortable">
 				    <?php for ($i=1; $i < count($subpages); $i++) { 
 				    		$display = $i + 1;
 				    	?>
 					    <div class="form-group keyword" id="extra-<?php echo $display; ?>">
 					    	<div class="form-label">
 					    		<label for="webnotik_keywords_subpages<?php echo $display; ?>">City #<span><?php echo $display; ?></span></label>
+					    		<p class="actions">
+					    			<a class="rename-cp" href="#">Rename Page</a>
+									<a class="clone-cp" href="#">Clone Page</a>
+									<a class="delete-cp" href="#">Delete Data</a>
+					    		</p>
 					    	</div>
 					    	<div class="form-field">
 					    		<div class="col-2 k-main">
@@ -443,15 +488,32 @@ function webnotik_real_estate_content(){
 				    <?php } ?> 
 				    </div>
 
-				    <div class="form-group add-sub-keyword">
-				    	Add new sub keyword 
+				    <div class="options">
+				    	<?php submit_button(); ?>
+					    <p class="submit"><a href="#" id="submit" class="button button-primary add-sub-keyword">Add new sub keyword</a></p>
+					    <p class="submit"><a href="#" id="get-cp" class="button button-primary" >List City Pages</a></p>
+					</div>
+
+				    <div class="hint-wrapper">
+				    	<p class="hint"><strong>Delete Data</strong> button will only delete the data on this page. Make sure to click save changes.</p>
+				    	<p class="hint"><strong>Rename Page</strong> will rename the current city page you have clicked. Make sure to change the name in the field.</p>
+				    	<p class="hint"><strong>Clone Page</strong> will clone the current city page you have clicked.</p>
+
+				    	<p class="shortcode">
+				    		<strong>[city_keywords]</strong> - Display the main city Name
+				    	</p>
+				    	<p class="shortcode">
+				    		<strong>[city_keywords item="city"]</strong> - You need to change the starting from number 1 to N number where N is based on the saved city data. Basically, it will also return the city name. 
+				    	</p>
+				    	<p class="shortcode">
+				    		<strong>[city_pages type="" after=""]</strong><br>
+				    		<strong>type</strong> - default is list. Available option is <span class="hi">list</span> or <span class="hi">inline</span><br>
+				    		<strong>after</strong> - default is "|" without qoutes. <br><br>
+
+				    		<strong>[city_pages]</strong> which displays a list in ul and li format and <strong>[city_pages type="inline" after="|"]</strong> which display a list of city pages separeated with "|"
+
+				    	</p>
 				    </div>
-
-				    
-
-				   
-				    
-				    <?php submit_button(); ?>
 
 				</form>
 			</div>
@@ -471,7 +533,7 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_divi_pages_global_footer"> Pages - After Content</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<textarea placeholder="Enter any divi layout page ID here." name="webnotik_divi_pages_global_footer" id="webnotik_divi_pages_global_footer"><?php echo esc_attr( get_option('webnotik_divi_pages_global_footer') ); ?></textarea>
+				    		<input placeholder="Enter any divi layout page ID here." name="webnotik_divi_pages_global_footer" id="webnotik_divi_pages_global_footer" value="<?php echo esc_attr( get_option('webnotik_divi_pages_global_footer') ); ?>">
 				    		<p class="hint">ADD any divi global layouts ID to the field above. IDs must be separated with commas.</p>
 				    	</div>
 				    </div>
@@ -481,7 +543,7 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_divi_post_global_header">Posts - Before Content</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<textarea placeholder="Enter any divi layout page ID here." name="webnotik_divi_post_global_header" id="webnotik_divi_post_global_header"><?php echo esc_attr( get_option('webnotik_divi_post_global_header') ); ?></textarea>
+				    		<input placeholder="Enter any divi layout page ID here." name="webnotik_divi_post_global_header" id="webnotik_divi_post_global_header" value="<?php echo esc_attr( get_option('webnotik_divi_post_global_header') ); ?>">
 				    		<p class="hint">ADD any divi global layouts ID to the field above. IDs must be separated with commas.</p>
 				    	</div>
 				    </div>
@@ -491,7 +553,7 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_divi_post_global_footer">Posts - After Content</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<textarea placeholder="Enter any divi layout page ID here." name="webnotik_divi_post_global_footer" id="webnotik_divi_post_global_footer"><?php echo esc_attr( get_option('webnotik_divi_post_global_footer') ); ?></textarea>
+				    		<input placeholder="Enter any divi layout page ID here." name="webnotik_divi_post_global_footer" id="webnotik_divi_post_global_footer" value="<?php echo esc_attr( get_option('webnotik_divi_post_global_footer') ); ?>">
 				    		<p class="hint">ADD any divi global layouts ID to the field above. IDs must be separated with commas.</p>
 				    	</div>
 				    </div>
@@ -517,7 +579,7 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_divi_cpt_global_footer-<?php echo $cpt_name; ?>"><?php echo $custom->label; ?> - After Content</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<textarea placeholder="Enter any divi layout page ID here." name="webnotik_divi_cpt_global_footer[<?php echo $cpt_name; ?>]" id="webnotik_divi_cpt_global_footer-<?php echo $cpt_name; ?>"><?php echo $cpt_pages[$cpt_name]; ?></textarea>
+				    		<input placeholder="Enter any divi layout page ID here." name="webnotik_divi_cpt_global_footer[<?php echo $cpt_name; ?>]" id="webnotik_divi_cpt_global_footer-<?php echo $cpt_name; ?>" value="<?php echo $cpt_pages[$cpt_name]; ?>">
 				    		<p class="hint">ADD any divi global layouts ID to the field above. IDs must be separated with commas.</p>
 				    	</div>
 				    </div>
@@ -543,8 +605,10 @@ function webnotik_real_estate_content(){
 add_action('admin_enqueue_scripts', 'register_webnotik_scripts');
 function register_webnotik_scripts() {
 	$ver = "1.2.1" . strtotime("now");
+	//wp_register_script('jui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.js');
     wp_register_style('re-webnotik', get_stylesheet_directory_uri() . '/plugins/css/webnotik.css?version='.$ver);
     wp_register_script('re-webnotik', get_stylesheet_directory_uri() . '/plugins/js/webnotik.js?version='.$ver);
+    
 }
 
 
@@ -657,7 +721,11 @@ function webnotik_city_pages( $atts ){
 		} else {
 			$ret .= '<a href="'. $subid[$i] . '">'. $subpages[$i] . '</a>';
 			if( ($i+1) != count($subpages)) {
-				$ret .= " " . $after . " ";
+				if($after == ',') {
+					$ret .= '' . $after . " ";
+				} else {
+					$ret .= " " . $after . " ";
+				}
 			}
 
 		}
@@ -679,27 +747,39 @@ function webnotik_city_keywords( $atts ){
 			'type' => 'single', //or inline
 			'item' => 'main'
 		), $atts, 'city_keywords' );
+
 	$type = $atts["type"];
 	$item = $atts["item"];
+
+
 
 	if($item == 'main') {
 		$keyword = get_option('webnotik_keywords_main');
 		$ret = $keyword;
 	} else {
-		$keyword = get_option('webnotik_keywords_subpages');
-		$item = str_replace("city", '', $item);
-		$try_keyword = $keyword[$item-1];
+		// $keyword = get_option('webnotik_keywords_subpages');
+		// $item = str_replace("city", '', $item);
+		// $try_keyword = $keyword[$item-1];
 
-		if(!empty($try_keyword)) {
-			$ret = $try_keyword;
+		$exclude_words = array( 'We', 'Buy', 'Houses', 'House', 'Cash', 'Fast', 'in', 'for', 'my', 'Sell');
+    	$post_title = get_the_title();
+
+    	foreach ($exclude_words as $ex_word) {
+    		$post_title = str_replace($ex_word, '', $post_title);
+    	}
+    	
+
+		if(!empty($post_title)) {
+			$ret = "<span>" . $post_title . "</span>";
 		} else {
-			$ret = 'City #' . $item;
+			$ret = 'City Name';
 		}
 	}	
 	
 	return $ret;
 
 }
+add_shortcode( 'city_keywords', 'webnotik_city_keywords' );
 add_shortcode( 'city_keywords', 'webnotik_city_keywords' );
 
 
@@ -718,7 +798,7 @@ function webnotik_divi_global_header() {
 		$layout_id = explode(",", $post);
 		echo "<!-- Start layout-wrapper -->";
 		for ($i=0; $i < count($layout_id); $i++) { 
-			echo do_shortcode('<div class="'.$layout_id[$i].'-wrapper">[et_pb_section global_module="'.$layout_id[$i].'"][/et_pb_section]</div>');
+			echo do_shortcode('<div class="wrapper-'.$layout_id[$i].'">[et_pb_section global_module="'.$layout_id[$i].'"][/et_pb_section]</div>');
 		}
 		echo "<!-- End layout-wrapper -->";
 	}

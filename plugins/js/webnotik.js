@@ -22,7 +22,8 @@ jQuery(document).ready(function( $ ) {
 	});
 
 	var extraSub = 0;
-	$(".add-sub-keyword").on("click", function(){
+	$(".add-sub-keyword").on("click", function(e){
+		e.preventDefault();
 		var mainsub = $(".main-sub-keyword").html();
 		var extraSub = $('.keyword').length + 1;
 		var tempHtml = mainsub; 
@@ -32,10 +33,13 @@ jQuery(document).ready(function( $ ) {
 		$("#extra-" + extraSub + " label").attr('for', 'webnotik_keywords_subpages' + extraSub);
 		$("#extra-" + extraSub + " input").attr('id', 'webnotik_keywords_subpages' + extraSub);
 		$("#extra-" + extraSub + " input").attr('value', '');
+		$("#extra-" + extraSub + " .k-main input").attr('value', 'City #' + extraSub);
+
 
 		subKeywordRecount();
 	});
-	$(".extra-keywords").on("click", ".form-label label", function(){
+	$(".extra-keywords").on("click", ".delete-cp", function(e){
+		e.preventDefault();
 		$(this).closest(".keyword").remove();
 	})
 
