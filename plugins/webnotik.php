@@ -614,14 +614,7 @@ function webnotik_real_estate_content(){
 				</pre> 
 				<p class="hint">Replace the URL to ensure that the main page as well as the city pages will have a uniformity.</p>
 
-				<h3>Form Button</h3>
-				<pre>
-.et_pb_module *[type=submit] {
-    background: #095aa5;
-	color: #fff !important;
-}
-				</pre> 
-				<p class="hint">You should replace the background color as well as the text color</p>
+
 
 				<h3>Testimonial <small>on city pages</small></h3>
 				<pre>
@@ -630,6 +623,43 @@ function webnotik_real_estate_content(){
 }
 				</pre> 
 				<p class="hint">Our testimonial are a global testimonial, you need to add <strong>gray-testimonial</strong> class on each row module to add a gray background effect.</p>
+
+				<h3>Form Header</h3>
+				<pre>
+.webnotik-pages .form-header-hero {
+    background: #268740;
+    border-bottom: 5px solid #285095;
+}
+.webnotik-pages .form-header-content,
+.single .form-header-content {
+    background: #268740;
+    border-bottom: 5px solid #fff;
+}
+				</pre> 
+				<p class="hint">You can join css if the value is the same</p>
+
+				<h3>Form Body</h3>
+				<pre>
+.webnotik-pages .form-body-hero {
+    background: transparent;
+}
+
+.webnotik-pages .form-body-content,
+.single .form-body-content {
+    background: #1a1a1a;
+}
+				</pre> 
+				<p class="hint">By default, our form have transparency of dark.</p>
+
+
+				<h3>Form Button</h3>
+				<pre>
+.et_pb_module *[type=submit] {
+    background: #095aa5;
+	color: #fff !important;
+}
+				</pre> 
+				<p class="hint">You should replace the background color as well as the text color</p>
 
 
 			</div>
@@ -747,19 +777,28 @@ function webnotik_city_pages( $atts ){
 		array(
 			'type' => 'list', //or inline
 			'after' => '|',
+			'limit' => 0
 		), $atts, 'city_pages' );
 	$type = $atts["type"];
 	$after = $atts["after"];
+	$limit = $atts["limit"];
 
 	$subpages = get_option('webnotik_keywords_subpages');
 	$subid = get_option('webnotik_keywords_subpages_ids');
+
+
+	if($limit == 0){
+		$limit_count = count($subpages);
+	} else {
+		$limit_count = $limit
+	}
 
 
 	if($type == "list") {
 		$ret .= "<ul>";
 	}
 
-	for ($i=0; $i < count($subpages); $i++) { 
+	for ($i=0; $i < $limit_count; $i++) { 
 
 		if($type == "list") {
 			$ret .= '<li><a href="'. $subid[$i] . '">'. $subpages[$i] . '</a></li>';
