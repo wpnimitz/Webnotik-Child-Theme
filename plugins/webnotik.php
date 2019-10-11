@@ -624,7 +624,7 @@ function webnotik_real_estate_content(){
 				</pre> 
 				<p class="hint">Our testimonial are a global testimonial, you need to add <strong>gray-testimonial</strong> class on each row module to add a gray background effect.</p>
 
-				<h3>Form Header</h3>
+				<h3>Form Header</h3> 
 				<pre>
 .webnotik-pages .form-header-hero {
     background: #268740;
