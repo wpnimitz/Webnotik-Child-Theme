@@ -193,7 +193,7 @@ function webnotik_register_divi_global_settings() {
 
 
 
-function webnotik_real_estate_content(){
+function webnotik_real_estate_content() {
 	$tab = isset($_GET["tab"]) ? $_GET["tab"] : 'general';
 ?>
 
@@ -600,70 +600,7 @@ function webnotik_real_estate_content(){
 			</div>
 			<!-- end #divi-global-forms -- >
 			<?php } elseif($tab == 'help') {?>
-			<!-- STARTS #divi-global-forms --> 
-			<div id="help">
-				<p>Welcome to help section.</p>
-				<h2>Custom CSS defaults</h2>
-				<hr>
-				
-				<h3>Hero Background</h3>
-				<pre>
-.webnotik-pages .hero-background {
-    background-image: linear-gradient(90deg,rgba(30,30,30,0.77) 30%,rgba(30,30,30,0.77) 75%),url(https://testingwebsite102.com/wp-content/uploads/depositphotos_13680678-stock-photo-street-of-residential-houses.jpg)!important;
-}
-				</pre> 
-				<p class="hint">Replace the URL to ensure that the main page as well as the city pages will have a uniformity.</p>
-
-
-
-				<h3>Testimonial <small>on city pages</small></h3>
-				<pre>
-.gray-testimonial .et_pb_testimonial {
-    background: #9e9e9e4d !important;
-}
-				</pre> 
-				<p class="hint">Our testimonial are a global testimonial, you need to add <strong>gray-testimonial</strong> class on each row module to add a gray background effect.</p>
-
-				<h3>Form Header</h3> 
-				<pre>
-.webnotik-pages .form-header-hero {
-    background: #268740;
-    border-bottom: 5px solid #285095;
-}
-.webnotik-pages .form-header-content,
-.single .form-header-content {
-    background: #268740;
-    border-bottom: 5px solid #fff;
-}
-				</pre> 
-				<p class="hint">You can join css if the value is the same</p>
-
-				<h3>Form Body</h3>
-				<pre>
-.webnotik-pages .form-body-hero {
-    background: transparent;
-}
-
-.webnotik-pages .form-body-content,
-.single .form-body-content {
-    background: #1a1a1a;
-}
-				</pre> 
-				<p class="hint">By default, our form have transparency of dark.</p>
-
-
-				<h3>Form Button</h3>
-				<pre>
-.et_pb_module *[type=submit] {
-    background: #095aa5;
-	color: #fff !important;
-}
-				</pre> 
-				<p class="hint">You should replace the background color as well as the text color</p>
-
-
-			</div>
-			<!-- end #help -- >
+			
 
 			<?php } else {?>			
 			Work in progress
@@ -672,9 +609,7 @@ function webnotik_real_estate_content(){
 		</div>
 	</div>
 </div>
-<?php
-    
-}
+<?php } //wenotik_real_estate_content
 
 
 add_action('admin_enqueue_scripts', 'register_webnotik_scripts');
@@ -931,6 +866,4 @@ function webnotik_divi_global_footer() {
 		echo "<!-- End layout-wrapper -->";
 	}
 
-
-    
 }
