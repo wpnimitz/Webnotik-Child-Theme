@@ -835,6 +835,10 @@ function webnotik_city_keywords( $atts ){
 	$type = $atts["type"];
 	$item = $atts["item"];
 
+	if(is_front_page()){
+		$item = "main";
+	}
+
 
 
 	if($item == 'main') {
