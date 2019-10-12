@@ -174,7 +174,8 @@ START: FORM STYLING;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .2);
 }
 
-.et_pb_module *[type=submit] {
+.et_pb_module *[type=submit],
+.et_pb_module form button {
     box-sizing: border-box;
     padding: 20px !important;
     color: #232323;
