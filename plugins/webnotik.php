@@ -654,7 +654,8 @@ function webnotik_real_estate_content(){
 
 				<h3>Form Button</h3>
 				<pre>
-.et_pb_module *[type=submit] {
+.et_pb_module *[type=submit],
+.et_pb_module form button {
     background: #095aa5;
 	color: #fff !important;
 }
