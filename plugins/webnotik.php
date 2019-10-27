@@ -10,7 +10,7 @@ function webnotik_admin_bar_render() {
     $wp_admin_bar->add_menu(
 	    array(
 	        'id' => 'webnotik',
-	        'title' => __('Webnotik'),
+	        'title' => __('REI Toolbox'),
 	        'href' => admin_url( 'admin.php?page=webnotik-real-estate')
 	    )	    
 	); 
@@ -163,7 +163,7 @@ function get_city_pages_callback() {
 
 add_action('admin_menu', 'webnotik_real_estate_add_admin_menu');
 function webnotik_real_estate_add_admin_menu() {
-    add_menu_page(__('Webnotik', 're-webnotik'), __('Webnotik', 're-webnotik'), 'manage_options', 'webnotik-real-estate', 'webnotik_real_estate_content', 'dashicons-flag', 3);
+    add_menu_page(__('REI Toolbox', 're-webnotik'), __('REI Toolbox', 're-webnotik'), 'manage_options', 'webnotik-real-estate', 'webnotik_real_estate_content', 'dashicons-flag', 3);
     //call register settings function
 	add_action( 'admin_init', 'webnotik_register_forms_settings' );
 	add_action( 'admin_init', 'webnotik_register_general_settings' );
@@ -221,7 +221,7 @@ function webnotik_real_estate_content(){
 
 	<div class="panel">
 		<div class="panel-header">
-			<h1><?php esc_html_e('Welcome to Webnotik Real Estate Settings', 're-webnotik'); ?></h1>
+			<h1><?php esc_html_e('Welcome to REI Toolbox Settings', 're-webnotik'); ?></h1>
 			<p><?php esc_html_e('Speeding up the process of other CRM we don\'t usually use for Webnotik Digital Agency Clients', 're-webnotik'); ?></p>
 		</div>
 		<div class="panel-navigation">
