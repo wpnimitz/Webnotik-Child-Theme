@@ -25,6 +25,15 @@ function webnotik_admin_bar_render() {
 	);
 
 	$wp_admin_bar->add_menu(
+		array( 
+			'parent' => 'webnotik',
+			'id' => 'webnotik-branding',
+			'title' => __('Branding'),
+			'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=branding')
+		)
+	);
+
+	$wp_admin_bar->add_menu(
 		array(
 	    	'parent' => 'webnotik',
 	        'id' => 'webnotik-forms',
@@ -210,6 +219,7 @@ function webnotik_real_estate_content(){
 		<div class="panel-navigation">
 			<div class="panel-nav">
 				<a class="forms-group <?php echo $tab == "general" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=general">General</a>
+				<a class="forms-group <?php echo $tab == "branding" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=branding">Branding</a>
 				<a class="forms-group <?php echo $tab == "forms" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=forms">Forms</a>
 				<a class="forms-group <?php echo $tab == "keywords" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=keywords">City Pages</a>				
 				<a class="forms-group <?php echo $tab == "divi-global" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=divi-global">Divi Global</a>				
