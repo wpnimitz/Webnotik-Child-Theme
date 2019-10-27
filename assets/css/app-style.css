@@ -239,6 +239,6 @@ END: FORM STYLING;
     bottom: -16px;
     height: 267px;
     width: 200px;
-    background: url(/assets/img/pen.png) no-repeat;
+    background: url(../img/pen.png) no-repeat;
     background-size: auto 100%;
 }
