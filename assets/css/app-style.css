@@ -215,11 +215,13 @@ START: FORM STYLING;
 END: FORM STYLING; 
 **/
 
-
+ 
 
 /** OTHER MODULE DEFAULTS **/
 .webnotik-pages .et_pb_blurb_content {
     max-width: 95% !important;
 }
 
-.webnotik-pages .
+.webnotik-pages .white-text-testimonial .et_pb_testimonial * {
+    color: #fff!important;
+}

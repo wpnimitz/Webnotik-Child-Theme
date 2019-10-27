@@ -66,6 +66,15 @@ function webnotik_admin_bar_render() {
 
 // Enqueue the script on the back end (wp-admin)
 add_action( 'admin_enqueue_scripts', 'enqueue_get_city_pages_script' );
+function enqueue_get_city_pages_script() {
+	$ver = "1.4.1" . strtotime("now");
+    wp_enqueue_script( 'get-city-pages-script', get_stylesheet_directory_uri() . '/plugins/js/webnotik-ajax.js?ver='.$ver, array( 'jquery' ), null, true );
+    wp_localize_script( 'get-city-pages-script', 'get_city_pages_data', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+    ) );
+}
+
+
 
 add_action( 'wp_ajax_rename_city_pages', 'rename_city_pages_callback' );
 function rename_city_pages_callback() {
@@ -128,13 +137,6 @@ function get_city_pages_callback() {
     wp_send_json_success( $json );
 } 
 
-function enqueue_get_city_pages_script() {
-	$ver = "1.4.1" . strtotime("now");
-    wp_enqueue_script( 'get-city-pages-script', get_stylesheet_directory_uri() . '/plugins/js/webnotik-ajax.js?ver='.$ver, array( 'jquery' ), null, true );
-    wp_localize_script( 'get-city-pages-script', 'get_city_pages_data', array(
-        'ajaxurl' => admin_url( 'admin-ajax.php' ),
-    ) );
-}
 
 
 
@@ -662,6 +664,12 @@ function webnotik_real_estate_content(){
 				</pre> 
 				<p class="hint">You should replace the background color as well as the text color</p>
 
+				<h3>Module Base CSS</h3>
+				<h4>Testimonial White Text</h4>
+				<p class="hint">use 'white-text-testimonial' class to make the wordings of testimonial module as white text. You must add the class in the row css class to see the effect.</p>
+				<h4>Testimonial Gray Background</h4>
+				<p class="hint">use 'gray-testimonial' class to make the background of testimonial module as gray. You must add the class in the row css class to see the background.</p>
+
 
 			</div>
 			<!-- end #help -- >
@@ -713,8 +721,13 @@ function webnotik_form_shortcode( $atts ){
 
 	if(in_array($type, $allowed_types)) {
 		$form = get_option( 'webnotik_' . $type . '_form');
+		$business_name = get_option( 'webnotik_business_name');
+		$trust_badge = get_stylesheet_directory_uri() . '/assets/img/trust-badge.jpg';
 		if($form != "") {
-			$ret = '<div class="gform_wrapper webnotik-'.$type.'">'. do_shortcode($form) . '</div>';
+			$ret = '<div class="gform_wrapper webnotik-'.$type.'">';
+			$ret .= do_shortcode($form);
+			$ret .= '<img class="aligncenter trust_badge" src="'.$trust_badge.'" alt="'.$business_name.'">';
+			$ret . '</div>';
 		} else {
 			$ret = "Form is empty!";
 		}
