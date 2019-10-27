@@ -229,3 +229,16 @@ END: FORM STYLING;
 .webnotik-pages .white-text-testimonial .et_pb_testimonial * {
     color: #fff!important;
 }
+
+
+.testimonial .et_pb_testimonial:after {
+    content: "";
+    visibility: visible;
+    position: absolute;
+    right: -90px;
+    bottom: -16px;
+    height: 267px;
+    width: 200px;
+    background: url(/assets/img/pen.png) no-repeat;
+    background-size: auto 100%;
+}
