@@ -336,6 +336,30 @@ function webnotik_real_estate_content(){
 				</form>
 			</div>
 			<!-- end #general-forms -- >
+			<?php } elseif($tab == 'branding') {?>
+			<!-- STARTS #branding -->
+			<div id="branding">
+				<p>Welcome to your branding settings. Please use this page to easily change for this template.</p>
+				<form method="post" action="options.php">
+				    <?php //settings_fields( 'webnotik-forms-group' ); ?>
+				    <?php //do_settings_sections( 'webnotik-forms-group' ); ?>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_seller_form">Seller Form</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<textarea name="webnotik_seller_form" id="webnotik_seller_form"><?php echo esc_attr( get_option('webnotik_seller_form') ); ?></textarea>
+				    	</div>
+				    </div>
+
+				   
+				    
+				    <?php //submit_button(); ?>
+
+				</form>
+			</div>
+			<!-- end #branding -- >
 			<?php } elseif($tab == 'forms') {?>
 			<!-- STARTS #forms -->
 			<div id="forms"> 
