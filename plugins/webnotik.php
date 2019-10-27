@@ -727,7 +727,7 @@ function webnotik_form_shortcode( $atts ){
 			$ret = '<div class="gform_wrapper webnotik-'.$type.'">';
 			$ret .= do_shortcode($form);
 			$ret .= '<img class="aligncenter trust_badge" src="'.$trust_badge.'" alt="'.$business_name.'">';
-			$ret . '</div>';
+			$ret .= '</div>';
 		} else {
 			$ret = "Form is empty!";
 		}
