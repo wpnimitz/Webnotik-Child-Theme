@@ -192,6 +192,8 @@ function webnotik_register_general_settings() {
 	register_setting( 'webnotik-general-group', 'webnotik_business_address2' );
 	register_setting( 'webnotik-general-group', 'webnotik_business_privacy' );
 	register_setting( 'webnotik-general-group', 'webnotik_business_tos' );
+	register_setting( 'webnotik-general-group', 'webnotik_sma_linkedin' );
+	
 }
 function webnotik_register_keywords_settings() {
 	//register our keywords settings
@@ -338,7 +340,16 @@ function webnotik_real_estate_content(){
 				    		<input name="webnotik_business_tos" id="webnotik_business_tos" value="<?php echo esc_attr( get_option('webnotik_business_tos') ); ?>">
 				    		<p>[webnotik business="tos"]</p>
 				    	</div>
-				    </div>     
+				    </div>
+				    <h3>Social Media Accounts</h3>  
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_sma_linkedin">LinkedIn URL</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<input name="webnotik_sma_linkedin" id="webnotik_sma_linkedin" value="<?php echo esc_attr( get_option('webnotik_sma_linkedin') ); ?>">
+				    	</div>
+				    </div>
 				    
 				    <?php submit_button(); ?>
 
