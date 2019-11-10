@@ -182,6 +182,7 @@ function webnotik_register_forms_settings() {
 	register_setting( 'webnotik-forms-group', 'webnotik_contractor_form' );
 	register_setting( 'webnotik-forms-group', 'webnotik_contact_form' );
 	register_setting( 'webnotik-forms-group', 'webnotik_extra_form' );
+	register_setting( 'webnotik-forms-group', 'allow_trust_badge' );
 }
 function webnotik_register_general_settings() {
 	//register our general settings
@@ -464,6 +465,17 @@ function webnotik_real_estate_content(){
 				    	<div class="form-field">
 					    	<textarea name="webnotik_extra_form" id="webnotik_extra_form"><?php echo esc_attr( get_option('webnotik_extra_form') ); ?></textarea>
 					    	<p>[webnotik_form type="extra"]</p>
+					    </div>
+				    </div>
+
+				    <h3>Other Settings</h3>
+				    <div class="form-group">
+				    	<div class="form-label">
+					    	<label for="allow_trust_badge">Allow Trust Badge? (yes/no) </label>
+					    </div>
+				    	<div class="form-field">
+				    		<?php $get_allow_trust_badge =  get_option('allow_trust_badge'); ?>
+					    	<input name="allow_trust_badge" id="allow_trust_badge" value="<?php echo $get_allow_trust_badge = "" ? 'yes' : $allow_trust_badge; ?>">
 					    </div>
 				    </div>
 
@@ -777,10 +789,15 @@ function webnotik_form_shortcode( $atts ){
 		$form = get_option( 'webnotik_' . $type . '_form');
 		$business_name = get_option( 'webnotik_business_name');
 		$trust_badge = get_stylesheet_directory_uri() . '/assets/img/trust-badge.jpg';
+		$allow_trust_badge = get_option( 'allow_trust_badge');
 		if($form != "") {
 			$ret = '<div class="gform_wrapper webnotik-'.$type.'">';
 			$ret .= do_shortcode($form);
-			$ret .= '<img class="aligncenter trust_badge" src="'.$trust_badge.'" alt="'.$business_name.'" />';
+
+			if($allow_trust_badge == "yes") {
+				$ret .= '<img class="aligncenter trust_badge" src="'.$trust_badge.'" alt="'.$business_name.'" />';
+			}
+
 			$ret .= '</div>';
 		} else {
 			$ret = "Form is empty!";
