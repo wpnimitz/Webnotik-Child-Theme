@@ -53,8 +53,8 @@ function webnotik_admin_bar_render() {
 		array(
 	    	'parent' => 'webnotik',
 	        'id' => 'webnotik-reasons',
-	        'title' => __('Post Reasons'),
-	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=reasons')
+	        'title' => __('Topics'),
+	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=topics')
 	    )
 	);
 	$wp_admin_bar->add_menu(
@@ -193,7 +193,7 @@ function webnotik_register_general_settings() {
 	register_setting( 'webnotik-general-group', 'webnotik_business_privacy' );
 	register_setting( 'webnotik-general-group', 'webnotik_business_tos' );
 	register_setting( 'webnotik-general-group', 'webnotik_sma_linkedin' );
-	
+
 }
 function webnotik_register_keywords_settings() {
 	//register our keywords settings
@@ -232,7 +232,7 @@ function webnotik_real_estate_content(){
 				<a class="forms-group <?php echo $tab == "branding" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=branding">Branding</a>
 				<a class="forms-group <?php echo $tab == "forms" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=forms">Forms</a>
 				<a class="forms-group <?php echo $tab == "keywords" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=keywords">City Pages</a>	
-				<a class="forms-group <?php echo $tab == "reasons" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=reasons">Post Reasons</a>				
+				<a class="forms-group <?php echo $tab == "topics" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=topics">Topics</a>				
 				<a class="forms-group <?php echo $tab == "divi-global" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=divi-global">Divi Global</a>				
 				<a class="forms-group <?php echo $tab == "help" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=help">Help & Guidelines</a>
 				<a href="#" class="icon">&#9776;</a>			
