@@ -475,7 +475,7 @@ function webnotik_real_estate_content(){
 					    </div>
 				    	<div class="form-field">
 				    		<?php $get_allow_trust_badge =  get_option('allow_trust_badge'); ?>
-					    	<input name="allow_trust_badge" id="allow_trust_badge" value="<?php echo $get_allow_trust_badge = "" ? 'yes' : $allow_trust_badge; ?>">
+					    	<input name="allow_trust_badge" id="allow_trust_badge" value="<?php echo $get_allow_trust_badge == "" ? 'yes' : $allow_trust_badge; ?>">
 					    </div>
 				    </div>
 
