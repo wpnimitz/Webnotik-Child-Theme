@@ -37,7 +37,7 @@
 	?>
 	<?php if($linkedin != "") {?>
 	<li class="et-social-icon et-social-linkedin">
-		<a href="<?php echo esc_url( et_get_option( 'divi_instagram_url', '#' ) ); ?>" class="icon">
+		<a href="<?php echo esc_url( $linkedin ); ?>" class="icon">
 			<span><?php esc_html_e( 'Instagram', 'Divi' ); ?></span>
 		</a>
 	</li>
