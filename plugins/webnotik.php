@@ -203,7 +203,7 @@ function webnotik_register_keywords_settings() {
 	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_subpages' );
 	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_subpages_ids' );
 }
-function webnotik_register_keywords_settings() {
+function webnotik_register_topics_settings() {
 	//register our topics settings
 	register_setting( 'webnotik-topics-group', 'webnotik_main_topics' );
 }
