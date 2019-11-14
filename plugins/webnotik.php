@@ -557,14 +557,14 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    	<div class="form-field">
 				    		<div class="col">
-				    			<p class="hint">
+				    			<p class="hint">You can click the cities below and it will automatically be copied to your clipboard</p>
 				    				<?php 
 				    					$cities = $locations->$main;
 				    					foreach ($cities as $city) {
 				    						echo '<span class="city">' . $city . '</span> '; 
 				    					}
 				    				?>
-				    			</p>
+				    			
 				    		</div>
 				    	</div>		
 				    </div>
