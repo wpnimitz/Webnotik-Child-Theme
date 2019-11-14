@@ -522,15 +522,16 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    	<div class="form-field">
 				    		<div class="col-2 k-main">
-					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
 					    		<?php 
-					    		$locations = json_decode(file_get_contents(get_stylesheet_directory() . "/plugins/locations.json"))
+					    		$locations = json_decode(file_get_contents(get_stylesheet_directory() . "/plugins/locations.json"));
+					    		$main = get_option('webnotik_keywords_main');
 					    		 ?>
 					    		<select name="webnotik_keywords_main" id="webnotik_keywords_main">
+					    			<option value="">Select Main State</option>
 					    			<?php 
 
 					    				foreach ($locations as $state => $cities) {
-					    					echo '<option values="'.$state.'">'.$state.'</option>';
+					    					echo '<option values="'.$state.'" ' .($main==$state) ? 'selected' : '' . '>'.$state.'</option>';
 					    				}
 
 					    			 ?>
