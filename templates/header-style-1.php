@@ -68,41 +68,12 @@
 			$logo = ( $user_logo = et_get_option( 'divi_logo' ) ) && ! empty( $user_logo )
 				? $user_logo
 				: get_stylesheet_directory_uri() . '/assets/img/rei-toolbox.jpg';
-
-			ob_start();
 		?>
 			<div class="logo_container">
 				<span class="logo_helper"></span>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<img src="<?php echo esc_attr( $logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" id="logo" data-height-percentage="<?php echo esc_attr( et_get_option( 'logo_height', '54' ) ); ?>" />
 				</a>
-			</div>
-		<?php
-			$logo_container = ob_get_clean();
-
-			/**
-			 * Filters the HTML output for the logo container.
-			 *
-			 * @since 3.10
-			 *
-			 * @param string $logo_container
-			 */
-			echo et_core_intentionally_unescaped( apply_filters( 'et_html_logo_container', $logo_container ), 'html' );
-		?>
-			
+			</div>			
 		</div> <!-- .container -->
-		<div class="et_search_outer">
-			<div class="container et_search_form_container">
-				<form role="search" method="get" class="et-search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<?php
-					printf( '<input type="search" class="et-search-field" placeholder="%1$s" value="%2$s" name="s" title="%3$s" />',
-						esc_attr__( 'Search &hellip;', 'Divi' ),
-						get_search_query(),
-						esc_attr__( 'Search for:', 'Divi' )
-					);
-				?>
-				</form>
-				<span class="et_close_search_field"></span>
-			</div>
-		</div>
 	</header> <!-- #main-header -->
