@@ -549,6 +549,21 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    </div>
 
+				    <div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_keywords_main">Main City</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<div class="col">
+				    			<p class="hint">
+				    				<?php foreach ($locations[$main] as $key => $value) {
+				    					echo $value . ",";
+				    				} ?>
+				    			</p>
+				    		</div>
+				    	</div>		
+				    </div>
+
 				    <?php 
 				    $subpages = get_option('webnotik_keywords_subpages');
 				    $subid = get_option('webnotik_keywords_subpages_ids');
