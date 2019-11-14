@@ -507,7 +507,7 @@ function webnotik_real_estate_content(){
 			<?php } elseif($tab == 'keywords') {?>
 			<!-- STARTS #keywords-forms --> 
 			<div id="keywords"> 
-				<p>Keywords are very important for Real Estate search engine optimization as well as in creating additional pages of this website.</p>
+				<p>Add all your city pages here. The more the merrier for SEO.</p>
 				<p class="message"></p>
 				<p class="actions">
 					<a id="get-cp2" href="#">List City Pages</a>
