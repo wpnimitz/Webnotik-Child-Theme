@@ -3,7 +3,7 @@
 			<?php
 				$logo = ( $user_logo = et_get_option( 'divi_logo' ) ) && ! empty( $user_logo )
 					? $user_logo
-					: $get_stylesheet_directory_uri . '/assets/img/rei-toolbox.jpg';
+					: get_stylesheet_directory_uri() . '/assets/img/rei-toolbox.jpg';
 
 				ob_start();
 			?>
