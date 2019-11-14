@@ -26,7 +26,7 @@
     top: 0 !important;
 }
 
-.et_fixed_nav.et_show_nav .webnotik-header#page-container {
+.webnotik-header.et_fixed_nav .webnotik-header#page-container {
     padding-top: 52px !important;
 }
 
