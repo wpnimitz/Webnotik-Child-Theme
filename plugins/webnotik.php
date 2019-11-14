@@ -203,6 +203,10 @@ function webnotik_register_keywords_settings() {
 	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_subpages' );
 	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_subpages_ids' );
 }
+function webnotik_register_keywords_settings() {
+	//register our topics settings
+	register_setting( 'webnotik-topics-group', 'webnotik_main_topics' );
+}
 function webnotik_register_divi_global_settings() {
 	//register our divi-global settings
 	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_pages_global_footer' );
@@ -211,6 +215,8 @@ function webnotik_register_divi_global_settings() {
 	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_blog_global_footer' );
 	register_setting( 'webnotik-divi-global-group', 'webnotik_divi_cpt_global_footer' );
 }
+
+
 
 
 
@@ -609,23 +615,23 @@ function webnotik_real_estate_content(){
 			<?php } elseif($tab == 'topics') {?>
 			<!-- STARTS #topics -->
 			<div id="topics">
-				<p>Welcome to your branding settings. Please use this page to easily change for this template.</p>
+				<p>Welcome to topics settings. You can easilly add topics in this section to adjust your business related topics that you can to convey with your prospective clients. You can use [main_topics] shortcode to display this topic anymore in your page. The shortcode will render a list of topics found in the box below.</p>
 				<form method="post" action="options.php">
-				    <?php //settings_fields( 'webnotik-forms-group' ); ?>
-				    <?php //do_settings_sections( 'webnotik-forms-group' ); ?>
+				    <?php settings_fields( 'webnotik-topics-group' ); ?>
+				    <?php do_settings_sections( 'webnotik-topics-group' ); ?>
 
 				    <div class="form-group">
 				    	<div class="form-label">
-				    		<label for="webnotik_seller_form">Seller Form</label>
+				    		<label for="webnotik_main_topics">Topics</label>
 				    	</div>
 				    	<div class="form-field">
-				    		<textarea name="webnotik_seller_form" id="webnotik_seller_form"><?php echo esc_attr( get_option('webnotik_seller_form') ); ?></textarea>
+				    		<textarea name="webnotik_main_topics" id="webnotik_main_topics"><?php echo esc_attr( get_option('webnotik_main_topics') ); ?></textarea>
 				    	</div>
 				    </div>
 
 				   
 				    
-				    <?php //submit_button(); ?>
+				    <?php submit_button(); ?>
 
 				</form>
 			</div>
