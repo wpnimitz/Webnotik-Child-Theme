@@ -557,10 +557,10 @@ function webnotik_real_estate_content(){
 				    		<div class="col">
 				    			<p class="hint">
 				    				<?php 
-				    					$cities = $locations[$main];
+				    					$cities = $locations->$main;
 
 
-				    				 ?>
+				    				?>
 				    			</p>
 				    		</div>
 				    	</div>		
