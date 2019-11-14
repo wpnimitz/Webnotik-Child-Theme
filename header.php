@@ -226,7 +226,7 @@
 
 	<?php ob_start(); 
 
-		include_once("templates/header-normal.php")
+		include_once("templates/header-normal.php");
 		$main_header = ob_get_clean();
 
 		/**
