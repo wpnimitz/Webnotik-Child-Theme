@@ -62,22 +62,21 @@
     max-width: 100%;
 }
 
-.panel-body .form-field p.copied:after {
-    content: "Copied to Clipboard Successfully!!!";
-    background: #beffbe;
-    display: block;
-    position: fixed;
-    bottom: 3%;
-    right: 3%;
-    padding: 30px 60px;
-    color: #006600;
-    border-radius: 5px;
-    border: 1px solid #9eff9e;
-    -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 0.5s; /* Firefox < 16 */
-        -ms-animation: fadein 0.5s; /* Internet Explorer */
-         -o-animation: fadein 0.5s; /* Opera < 12.1 */
-            animation: fadein 0.5s;
+.message {
+  background: #beffbe;
+  display: block;
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  padding: 30px 60px;
+  color: #006600;
+  border-radius: 5px;
+  border: 1px solid #9eff9e;
+  -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 0.5s; /* Firefox < 16 */
+      -ms-animation: fadein 0.5s; /* Internet Explorer */
+       -o-animation: fadein 0.5s; /* Opera < 12.1 */
+          animation: fadein 0.5s;
 }
 
 .panel-body label {

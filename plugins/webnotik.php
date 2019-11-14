@@ -227,8 +227,7 @@ function webnotik_real_estate_content(){
 ?>
 
 <div class="webnotik-re-wrapper">
-	
-
+	<div class="message"></div>
 	<div class="panel">
 		<div class="panel-header">
 			<h1><?php esc_html_e('Welcome to REI Toolbox Settings', 're-webnotik'); ?></h1>
@@ -893,6 +892,20 @@ function webnotik_form_shortcode( $atts ){
 	
 }
 add_shortcode( 'webnotik_form', 'webnotik_form_shortcode' );
+
+
+function webnotik_main_topics($atts) {
+	$main_topics = get_option( 'webnotik_main_topics');
+	$topics = explode(",", $main_topics);
+
+	$ret = '<ul class="main-topics">';
+	foreach ($topics as $topic) {
+		echo '<li>' .$topic. '</li>';
+	}
+	$ret = '</ul>';
+}
+
+add_shortcode( 'main_topics', 'webnotik_main_topics' );
 
 
 
