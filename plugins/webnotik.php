@@ -523,7 +523,7 @@ function webnotik_real_estate_content(){
 				    	<div class="form-field">
 				    		<div class="col-2 k-main">
 					    		<?php 
-					    		$locations = sort(json_decode(file_get_contents(get_stylesheet_directory() . "/plugins/locations.json")));
+					    		$locations = ksort(json_decode(file_get_contents(get_stylesheet_directory() . "/plugins/locations.json")));
 					    		$main = get_option('webnotik_keywords_main');
 					    		 ?>
 					    		<select name="webnotik_keywords_main" id="webnotik_keywords_main">
