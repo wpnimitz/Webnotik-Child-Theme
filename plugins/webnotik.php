@@ -168,6 +168,7 @@ function webnotik_real_estate_add_admin_menu() {
 	add_action( 'admin_init', 'webnotik_register_forms_settings' );
 	add_action( 'admin_init', 'webnotik_register_general_settings' );
 	add_action( 'admin_init', 'webnotik_register_keywords_settings' );
+	add_action( 'admin_init', 'webnotik_register_topics_settings' );
 	add_action( 'admin_init', 'webnotik_register_divi_global_settings' );
 }
 
@@ -626,6 +627,8 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    	<div class="form-field">
 				    		<textarea name="webnotik_main_topics" id="webnotik_main_topics"><?php echo esc_attr( get_option('webnotik_main_topics') ); ?></textarea>
+				    		<p class="hint">Use a comma separated topics.</p>
+				    		<p class="usage">[main_topics]</p>
 				    	</div>
 				    </div>
 
