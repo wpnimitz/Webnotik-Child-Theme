@@ -523,6 +523,18 @@ function webnotik_real_estate_content(){
 				    	<div class="form-field">
 				    		<div class="col-2 k-main">
 					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
+					    		<?php 
+					    		$locations = file_get_contents("locations.json");
+					    		 ?>
+					    		<select name="webnotik_keywords_main" id="webnotik_keywords_main">
+					    			<?php 
+
+					    				foreach ($locations as $state => $cities) {
+					    					echo '<option values="'.$state.'">'.$state.'</option>';
+					    				}
+
+					    			 ?>
+					    		</select>
 					    		<p class="hint">Main city keyword</p>
 					    	</div><div class="col-2 k-value">
 					    		<input name="webnotik_keywords_main_id" id="webnotik_keywords_main_id" value="<?php echo esc_attr( get_option('webnotik_keywords_main_id') ); ?>">
@@ -542,8 +554,8 @@ function webnotik_real_estate_content(){
 				    		<label for="webnotik_keywords_subpages">City #<span>1</span></label>
 				    		<p class="actions">
 				    			<a class="rename-cp" href="#">Rename Page</a>
-								<a class="clone-cp" href="#">Clone Page</a>
-								<a class="delete-cp" href="#">Delete Data</a>
+								<a class="delete-cp" href="#">Delete Data</a> 
+								<!-- <a class="clone-cp" href="#">Clone Page</a>-->
 				    		</p>	
 				    	</div>
 				    	<div class="form-field">
@@ -585,7 +597,7 @@ function webnotik_real_estate_content(){
 
 				    <div class="options">
 				    	<?php submit_button(); ?>
-					    <p class="submit"><a href="#" id="submit" class="button button-primary add-sub-keyword">Add new sub keyword</a></p>
+					    <p class="submit"><a href="#" id="submit" class="button button-primary add-sub-keyword">Add new city page</a></p>
 					    <p class="submit"><a href="#" id="get-cp" class="button button-primary" >List City Pages</a></p>
 					</div>
 
