@@ -1,3 +1,14 @@
+/** **/
+.webnotik-header #et-top-navigation {
+    float: initial;
+}
+
+.webnotik-header {
+    display: block;
+    background: #000;
+}
+
+
 /** Display a message on the editor **/
 .webnotik-pages .et-fb-iframe-ancestor .hero-background.et_pb_section:after,
 .webnotik-pages .et-fb-iframe-ancestor .easy-steps-background.et_pb_section:after {
