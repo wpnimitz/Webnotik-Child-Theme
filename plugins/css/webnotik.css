@@ -95,6 +95,7 @@
     padding: 10px 15px;
     border-radius: 3px;
     width: 100%;
+    max-width: 100%;
 }
 
 .panel-body input#submit {
