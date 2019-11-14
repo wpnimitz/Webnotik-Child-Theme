@@ -18,6 +18,15 @@
     padding: 20px;
 }
 
+.et_header_style_left .logo_container {
+    position: relative;
+}
+
+.et_fixed_nav .webnotik-header + #main-header {
+    position: relative;
+    top: 0 !important;
+}
+
 
 /** Display a message on the editor **/
 .webnotik-pages .et-fb-iframe-ancestor .hero-background.et_pb_section:after,
