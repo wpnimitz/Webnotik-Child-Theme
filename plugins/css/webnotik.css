@@ -271,6 +271,13 @@
   border-radius: 4px;
 }
 
+span.city {
+    background: #e5e5e5;
+    padding: 2px 5px;
+    margin-bottom: 2px;
+    display: inline-block;
+}
+
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the panel-nav (.icon) */
 @media screen and (max-width: 600px) {

@@ -549,7 +549,9 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    </div>
 
-				    <div class="form-group">
+
+					<?php if($main != "") {?>
+				    <div class="form-group cities">
 				    	<div class="form-label">
 				    		<label for="webnotik_keywords_main">Available Cities</label>
 				    	</div>
@@ -558,18 +560,15 @@ function webnotik_real_estate_content(){
 				    			<p class="hint">
 				    				<?php 
 				    					$cities = $locations->$main;
-
-
 				    					foreach ($cities as $city) {
 				    						echo '<span class="city">' . $city . '</span> '; 
 				    					}
-
-
 				    				?>
 				    			</p>
 				    		</div>
 				    	</div>		
 				    </div>
+				    <?php } ?>
 
 				    <?php 
 				    $subpages = get_option('webnotik_keywords_subpages');
