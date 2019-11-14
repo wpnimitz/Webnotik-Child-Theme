@@ -557,16 +557,8 @@ function webnotik_real_estate_content(){
 				    		<div class="col">
 				    			<p class="hint">
 				    				<?php 
+				    					$cities = $locations[$main];
 
-				    					if($main != "") {
-				    						for ($i=0; $i < count($locations[$main]); $i++) { 
-				    							echo $locations[$main][$i];
-
-				    							if($i < count($locations[$main])) {
-				    								echo ', ';
-				    							}
-				    						}
-				    					}
 
 				    				 ?>
 				    			</p>
