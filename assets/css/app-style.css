@@ -7,6 +7,16 @@
     display: block;
     background: #000;
 }
+.webnotik-header #top-menu,
+.webnotik-header .et-menu,
+.webnotik-header nav#top-menu-nav,
+.webnotik-header nav.et-menu-nav {
+    float: initial;
+}
+
+.webnotik-header #top-menu > li {
+    padding: 20px;
+}
 
 
 /** Display a message on the editor **/
