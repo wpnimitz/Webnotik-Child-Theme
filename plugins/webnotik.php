@@ -531,7 +531,10 @@ function webnotik_real_estate_content(){
 					    			<?php 
 
 					    				foreach ($locations as $state => $cities) {
-					    					echo '<option values="'.$state.'" ' .($main==$state) ? 'selected' : '' . '>'.$state.'</option>';
+					    					if($main == $state) {
+					    						$selected = 'selected';
+					    					}
+					    					echo '<option values="'.$state.'" '.$selected.'>'.$state.'</option>';
 					    				}
 
 					    			 ?>
