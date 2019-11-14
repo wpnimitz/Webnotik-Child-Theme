@@ -19,9 +19,8 @@
 }
 
 .et_header_style_left .logo_container {
-    position: relative;
+    position: relative !important;
 }
-
 .et_fixed_nav .webnotik-header + #main-header {
     position: relative;
     top: 0 !important;
