@@ -524,13 +524,13 @@ function webnotik_real_estate_content(){
 				    		<div class="col-2 k-main">
 					    		<input name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo esc_attr( get_option('webnotik_keywords_main') ); ?>">
 					    		<?php 
-					    		$locations = file_get_contents("locations.json");
+					    		$locations = file_get_contents(get_stylesheet_directory() . "/plugins/locations.json");
 					    		 ?>
 					    		<select name="webnotik_keywords_main" id="webnotik_keywords_main">
 					    			<?php 
 
-					    				foreach ($locations as $state => $cities) {
-					    					echo '<option values="'.$state.'">'.$state.'</option>';
+					    				for ($i=0; $i < count($locations); $i++) { 
+					    					echo '<option values="'.$locations[$i].'">'.$locations[$i].'</option>';
 					    				}
 
 					    			 ?>
