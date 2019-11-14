@@ -9,7 +9,7 @@ jQuery(document).ready(function( $ ) {
 	})
 	$('.form-field p:not(.hint), span.city').on('click', function(){
 		var $this = $(this)
-		$(".message").addClass('copied').html("Content has been copied to your clipboard!");
+		$(".message").addClass('show').html("Content has been copied to your clipboard!");
 		var $temp = $("<input>");;
 		$("body").append($temp);
 		$temp.val($(this).html()).select();
@@ -17,7 +17,7 @@ jQuery(document).ready(function( $ ) {
 		$temp.remove();
 
 		setTimeout(function() {
-		  $(".message").removeClass('copied');
+		  $(".message").removeClass('show');
 		}, 2500);
 	});
 

@@ -62,9 +62,13 @@
     max-width: 100%;
 }
 
+.message.show{
+  display: block;
+}
+
 .message {
   background: #beffbe;
-  display: block;
+  display: none;
   position: fixed;
   bottom: 3%;
   right: 3%;
