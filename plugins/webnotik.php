@@ -531,6 +531,7 @@ function webnotik_real_estate_content(){
 					    			<?php 
 
 					    				foreach ($locations as $state => $cities) {
+					    					$selected = '';
 					    					if($main == $state) {
 					    						$selected = 'selected';
 					    					}
