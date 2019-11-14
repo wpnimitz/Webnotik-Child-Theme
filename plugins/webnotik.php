@@ -551,14 +551,24 @@ function webnotik_real_estate_content(){
 
 				    <div class="form-group">
 				    	<div class="form-label">
-				    		<label for="webnotik_keywords_main">Main City</label>
+				    		<label for="webnotik_keywords_main">Available Cities</label>
 				    	</div>
 				    	<div class="form-field">
 				    		<div class="col">
 				    			<p class="hint">
-				    				<?php foreach ($locations[$main] as $key => $value) {
-				    					echo $value . ",";
-				    				} ?>
+				    				<?php 
+
+				    					if($main != "") {
+				    						for ($i=0; $i < count($locations[$main]); $i++) { 
+				    							echo $locations[$main][$i];
+
+				    							if($i < count($locations[$main])) {
+				    								echo ', ';
+				    							}
+				    						}
+				    					}
+
+				    				 ?>
 				    			</p>
 				    		</div>
 				    	</div>		
