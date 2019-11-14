@@ -560,9 +560,15 @@ function webnotik_real_estate_content(){
 				    			<p class="hint">You can click the cities below and it will automatically be copied to your clipboard</p>
 				    				<?php 
 				    					$cities = $locations->$main;
-				    					foreach ($cities as $city) {
-				    						echo '<span class="city">' . $city . '</span> '; 
+				    					
+				    					if(!empty($cities)) {
+				    						foreach ($cities as $city) {
+					    						echo '<span class="city">' . $city . '</span> '; 
+					    					}
+				    					} else {
+				    						echo 'It seems that you haven\'t selected a State yet. Please select a state from above to display list of cities.';
 				    					}
+
 				    				?>
 				    			
 				    		</div>
