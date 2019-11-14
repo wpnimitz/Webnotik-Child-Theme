@@ -560,6 +560,11 @@ function webnotik_real_estate_content(){
 				    					$cities = $locations->$main;
 
 
+				    					foreach ($cities as $city) {
+				    						echo '<span class="city">' . $city . '</span> '; 
+				    					}
+
+
 				    				?>
 				    			</p>
 				    		</div>
