@@ -398,7 +398,7 @@ function webnotik_real_estate_content(){
 					    	<label for="form_hero_header">Form Header</label>
 					    </div>
 				    	<div class="form-field">
-				    		<input type="text" name="form_hero_header" id="form_hero_header" class="wda_color_picker" value="<?php echo $header_style; ?>">    	
+				    		<input type="text" name="form_hero_header" id="form_hero_header" class="wda_color_picker" value="<?php echo $form_hero_header; ?>">    	
 					    </div>
 				    </div>
 				    <div class="form-group">
@@ -406,15 +406,9 @@ function webnotik_real_estate_content(){
 					    	<label for="form_hero_body">Form Body</label>
 					    </div>
 				    	<div class="form-field">
-				    		<input type="text" name="form_hero_body" id="form_hero_body" class="wda_color_picker" value="<?php echo $header_style; ?>">    	
+				    		<input type="text" name="form_hero_body" id="form_hero_body" class="wda_color_picker" value="<?php echo $form_hero_body; ?>">    	
 					    </div>
-				    </div>
-
-				    
-
-
-				   
-				    
+				    </div>				    
 				    <?php submit_button(); ?>
 
 				</form>
