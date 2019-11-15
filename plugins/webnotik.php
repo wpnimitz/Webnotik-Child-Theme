@@ -566,7 +566,7 @@ function webnotik_real_estate_content(){
 
 				    <div class="form-group">
 				    	<div class="form-label">
-				    		<label for="webnotik_keywords_main">Main City</label>
+				    		<label for="webnotik_keywords_main">Select Main State</label>
 				    	</div>
 				    	<div class="form-field">
 				    		<div class="col-2 k-main">
