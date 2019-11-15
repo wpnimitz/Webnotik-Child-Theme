@@ -265,13 +265,16 @@ START: FORM STYLING;
     margin-bottom: 15px !important;
 }
 
-.et_pb_module input:focus, .et_pb_module select:focus, .et_pb_module textarea:focus {
+.et_pb_module input:focus,
+.et_pb_module select:focus,
+.et_pb_module textarea:focus {
     background: #eee;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .2);
 }
 
 .et_pb_module *[type=submit],
-.et_pb_module form button {
+.et_pb_module form button,
+.business-lead-page .et_pb_button {
     box-sizing: border-box;
     padding: 20px !important;
     color: #232323;
@@ -282,6 +285,11 @@ START: FORM STYLING;
     cursor: pointer;
 }
 
+.business-lead-page .et_pb_button {
+    background: #2e60db;
+    border: 0px;
+    color: #fff;
+}
 /**making sure to remove margin from gravity forms**/
 .gform_wrapper li *[name] {
     margin: 0 !important;
