@@ -1,4 +1,4 @@
-	<div class="webnotik-header header-style-1">
+	<div class="special-header special-style-1">
 		<div class="container">
 			<div class="header-menu">
 				<div id=webnotiok-navigation">
