@@ -402,6 +402,7 @@ function webnotik_real_estate_content(){
 					    </div>
 				    	<div class="form-field">
 				    		<input type="text" name="wda_form[hero_background]" id="wda_form['hero_background']" class="" value="<?php echo $wda_form['hero_background']; ?>">    	
+				    		<p class="hint">Background image must be no less than 1800 x 700 in dimension and the size must no longer than 200KB.</p>
 					    </div>
 				    </div>
 				    <div class="form-group">
