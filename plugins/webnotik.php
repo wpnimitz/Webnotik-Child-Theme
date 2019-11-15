@@ -398,6 +398,14 @@ function webnotik_real_estate_content(){
 				    <h3>Hero Sections</h3>
 				    <div class="form-group">
 				    	<div class="form-label">
+					    	<label for="wda_form['hero_background']">Hero background</label>
+					    </div>
+				    	<div class="form-field">
+				    		<input type="text" name="wda_form[hero_background]" id="wda_form['hero_background']" class="" value="<?php echo $wda_form['hero_background']; ?>">    	
+					    </div>
+				    </div>
+				    <div class="form-group">
+				    	<div class="form-label">
 					    	<label for="wda_form['hero_header']">Hero Form Header</label>
 					    </div>
 				    	<div class="form-field">
