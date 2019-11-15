@@ -407,7 +407,7 @@ function webnotik_real_estate_content(){
 					    	<label for="wda_form['hero_header']">Form Header</label>
 					    </div>
 				    	<div class="form-field">
-				    		<input type="text" name='wda_form["hero_header"]' data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['hero_header']" class="wda_color_picker" value="<?php echo $wda_form['hero_header']; ?>">    	
+				    		<input type="text" name="wda_form[hero_header]" data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['hero_header']" class="wda_color_picker" value="<?php echo $wda_form['hero_header']; ?>">    	
 					    </div>
 				    </div>
 				    <div class="form-group">
@@ -415,18 +415,9 @@ function webnotik_real_estate_content(){
 					    	<label for="wda_form['hero_body']">Form Body</label>
 					    </div>
 				    	<div class="form-field">
-					    	<input type="text"  name='wda_form["hero_body"]' data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['hero_body']" class="wda_color_picker" value="<?php echo $wda_form['hero_body']; ?>">    	
+					    	<input type="text"  name='wda_form[hero_body]' data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['hero_body']" class="wda_color_picker" value="<?php echo $wda_form['hero_body']; ?>">    	
 					    </div>
-				    </div>		
-
-				    <div class="form-group">
-				    	<div class="form-label">
-					    	<label for='wda_form["test"]'>Form Body</label>
-					    </div>
-				    	<div class="form-field">
-				    		<input type="text" name='wda_form["test"]' id="wda_form['test']" class="" value='<?php echo $wda_form["test"]; ?>'>    	
-					    </div>
-				    </div>				    
+				    </div>						    
 				    <?php submit_button(); ?>
 
 				</form>
