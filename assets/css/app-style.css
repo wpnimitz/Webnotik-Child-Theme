@@ -274,7 +274,7 @@ START: FORM STYLING;
 
 .et_pb_module *[type=submit],
 .et_pb_module form button,
-.business-lead-page .et_pb_button {
+.business-lead-page .button {
     box-sizing: border-box;
     padding: 20px !important;
     color: #232323;
@@ -285,7 +285,7 @@ START: FORM STYLING;
     cursor: pointer;
 }
 
-.business-lead-page .et_pb_button {
+.business-lead-page .button {
     background: #2e60db;
     border: 0px;
     color: #fff;
