@@ -87,7 +87,7 @@ function wda_admin_assets() {
 	$ver = "1.4.1" . strtotime("now");
 	// Add the color picker css file       
     wp_enqueue_style( 'wp-color-picker' );
-    wp_enqueue_script( 'wp-color-picker');
+    wp_enqueue_script( 'wp-color-picker-alpha', get_stylesheet_directory_uri() . '/plugins/js/wp-color-picker-alpha.min.js', array( 'wp-color-picker' ), $ver, true );
     wp_enqueue_script( 'get-city-pages-script', get_stylesheet_directory_uri() . '/plugins/js/webnotik-ajax.js?ver='.$ver, array( 'jquery' ), null, true );
     wp_localize_script( 'get-city-pages-script', 'get_city_pages_data', array(
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
@@ -407,7 +407,7 @@ function webnotik_real_estate_content(){
 					    	<label for="wda_form['hero_header']">Form Header</label>
 					    </div>
 				    	<div class="form-field">
-				    		<input type="text" name="wda_form[hero_header]" data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['hero_header']" class="wda_color_picker" value="<?php echo $wda_form['hero_header']; ?>">    	
+				    		<input type="text" name="wda_form[hero_header]"  data-alpha="true" data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['hero_header']" class="wda_color_picker" value="<?php echo $wda_form['hero_header']; ?>">    	
 					    </div>
 				    </div>
 				    <div class="form-group">
@@ -415,7 +415,7 @@ function webnotik_real_estate_content(){
 					    	<label for="wda_form['hero_body']">Form Body</label>
 					    </div>
 				    	<div class="form-field">
-					    	<input type="text"  name='wda_form[hero_body]' data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['hero_body']" class="wda_color_picker" value="<?php echo $wda_form['hero_body']; ?>">    	
+					    	<input type="text" name='wda_form[hero_body]' data-alpha="true" data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['hero_body']" class="wda_color_picker" value="<?php echo $wda_form['hero_body']; ?>">    	
 					    </div>
 				    </div>						    
 				    <?php submit_button(); ?>
