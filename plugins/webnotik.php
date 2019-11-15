@@ -421,7 +421,7 @@ function webnotik_real_estate_content(){
 					    	<label for="wda_form['test']">Form Body</label>
 					    </div>
 				    	<div class="form-field">
-				    		<input type="text" name="wda_form['test']" id="wda_form['test']" class="" value="<?php echo $wda_form['test']; ?>">    	
+				    		<input type="text" name="wda_form['test']" id="wda_form['test']" class="" value="<?php echo $wda_form["test"]; ?>">    	
 					    </div>
 				    </div>				    
 				    <?php submit_button(); ?>
