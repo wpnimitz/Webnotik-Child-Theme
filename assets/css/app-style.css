@@ -43,6 +43,31 @@
 }
 
 
+.webnotik-header #main-header .container {
+    display: flex;
+}
+
+
+
+.webnotik-header .easy-contact {
+    display: flex;
+    align-items: center;
+}
+
+.webnotik-header .business-phone p {
+    color: #848484!important;
+    line-height: 1.9em;
+    font-size: 16px;
+}
+
+.business-phone h4 {
+    font-weight: 700;
+    font-size: 29px;
+    color: #1f1f1f!important;
+}
+
+
+
 
 
 
