@@ -55,6 +55,11 @@ jQuery(document).ready(function( $ ) {
 	}
 
 	if( $(".wda_color_picker").length ){
-		$( '.wda_color_picker' ).wpColorPicker();
+		var params = { 
+		    change: function(e, ui) {
+		      $( e.target ).val( ui.color.toString() );
+		    },
+		  }
+		$( '.wda_color_picker' ).wpColorPicker(params);
 	}
 });
