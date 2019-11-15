@@ -60,7 +60,13 @@
     align-items: center;
 }
 
-.webnotik-header .business-phone p {
+.business-phone,
+.business-lead-page {
+    width: 50%;
+    text-align: center;
+}
+
+.business-phone p {
     color: #848484!important;
     line-height: 1.9em;
     font-size: 16px;
@@ -71,6 +77,8 @@
     font-size: 29px;
     color: #1f1f1f!important;
 }
+
+
 
 
 
