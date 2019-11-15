@@ -19,7 +19,9 @@ function webnotik_body_class( $classes ) {
 
 	$header_style =  get_option('webnotik_main_topics');
 	//create a condition here for the header setup
-	$classes[] = 'webnotik-header header-' .$header_style;
+	if($header_style !+ 'normal') {
+		$classes[] = 'webnotik-header header-' .$header_style;
+	}
 
     return $classes;
 }
