@@ -203,6 +203,7 @@ function webnotik_register_general_settings() {
 function webnotik_register_branding_settings() {
 	//register our branding settings
 	register_setting( 'webnotik-branding-group', 'webnotik_header_style' );
+	register_setting( 'webnotik-branding-group', 'wda_form' );
 }
 function webnotik_register_keywords_settings() {
 	//register our keywords settings
@@ -379,8 +380,7 @@ function webnotik_real_estate_content(){
 				    settings_fields( 'webnotik-branding-group' );
 				    do_settings_sections( 'webnotik-branding-group' ); 
 				    $header_style =  get_option('webnotik_header_style');
-				    $form_hero_header =  get_option('form_hero_header');
-				    $form_hero_body =  get_option('form_hero_body');
+				    $wda_form =  get_option('wda_form');
 				    ?>
 
 				    <div class="form-group">
@@ -398,18 +398,18 @@ function webnotik_real_estate_content(){
 				    <h3>Hero Form Style</h3>
 				    <div class="form-group">
 				    	<div class="form-label">
-					    	<label for="form_hero_header">Form Header</label>
+					    	<label for="wda_form['hero_header']">Form Header</label>
 					    </div>
 				    	<div class="form-field">
-				    		<input type="text" name="form_hero_header" id="form_hero_header" class="wda_color_picker" value="<?php echo $form_hero_header; ?>">    	
+				    		<input type="text" name="wda_form['hero_header']"  data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['hero_header']" class="wda_color_picker" value="<?php echo $wda_form['hero_header']; ?>">    	
 					    </div>
 				    </div>
 				    <div class="form-group">
 				    	<div class="form-label">
-					    	<label for="form_hero_body">Form Body</label>
+					    	<label for="wda_form['hero_body']">Form Body</label>
 					    </div>
 				    	<div class="form-field">
-				    		<input type="text" name="form_hero_body" id="form_hero_body" class="wda_color_picker" value="<?php echo $form_hero_body; ?>">    	
+				    		<input type="text" name="wda_form['hero_body']"  data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['hero_body']" class="wda_color_picker" value="<?php echo $wda_form['hero_body']; ?>">    	
 					    </div>
 				    </div>				    
 				    <?php submit_button(); ?>
