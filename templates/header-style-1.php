@@ -75,6 +75,18 @@
 					<img src="<?php echo esc_attr( $logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" id="logo" data-height-percentage="<?php echo esc_attr( et_get_option( 'logo_height', '54' ) ); ?>" />
 				</a>
 			</div>
+			<?php
+				$logo_container = ob_get_clean();
+
+				/**
+				 * Filters the HTML output for the logo container.
+				 *
+				 * @since 3.10
+				 *
+				 * @param string $logo_container
+				 */
+				echo et_core_intentionally_unescaped( apply_filters( 'et_html_logo_container', $logo_container ), 'html' );
+			?>
 			<div class="easy-contact">
 				<div class="business-phone">
 					<p>CALL US TODAY!</p>
