@@ -380,15 +380,15 @@ function webnotik_real_estate_content(){
 					    	<label for="webnotik_header_style">Header Style</label>
 					    </div>
 				    	<div class="form-field">
-
 				    		<select name="webnotik_header_style" id="webnotik_header_style">
 				    		<?php $header_style =  get_option('webnotik_header_style'); ?>
 				    		<option value="normal" <?php echo $header_style == "normal" ? 'selected' : '' ?>>Normal Header</option>
 				    		<option value="style-1" <?php echo $header_style == "style-1" ? 'selected' : '' ?>>Style 1</option>
-				    		</select>
-					    	
+				    		</select>					    	
 					    </div>
 				    </div>
+
+				    
 
 
 				   
