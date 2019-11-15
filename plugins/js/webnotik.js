@@ -53,4 +53,8 @@ jQuery(document).ready(function( $ ) {
 			eSub++;
 		});
 	}
+
+	if( $(".wda_color_picker").length ){
+		$( '.cpa-color-picker' ).wpColorPicker();
+	}
 });

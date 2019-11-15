@@ -372,8 +372,13 @@ function webnotik_real_estate_content(){
 			<div id="branding">
 				<p>Welcome to your branding settings. Please use this page to easily change for this template.</p>
 				<form method="post" action="options.php">
-				    <?php settings_fields( 'webnotik-branding-group' ); ?>
-				    <?php do_settings_sections( 'webnotik-branding-group' ); ?>
+				    <?php 
+				    settings_fields( 'webnotik-branding-group' );
+				    do_settings_sections( 'webnotik-branding-group' ); 
+				    $header_style =  get_option('webnotik_header_style');
+				    $form_hero_header =  get_option('form_hero_header');
+				    $form_hero_body =  get_option('form_hero_body');
+				    ?>
 
 				    <div class="form-group">
 				    	<div class="form-label">
@@ -381,7 +386,6 @@ function webnotik_real_estate_content(){
 					    </div>
 				    	<div class="form-field">
 				    		<select name="webnotik_header_style" id="webnotik_header_style">
-				    		<?php $header_style =  get_option('webnotik_header_style'); ?>
 				    		<option value="normal" <?php echo $header_style == "normal" ? 'selected' : '' ?>>Normal Header</option>
 				    		<option value="style-1" <?php echo $header_style == "style-1" ? 'selected' : '' ?>>Style 1</option>
 				    		</select>					    	
@@ -394,11 +398,7 @@ function webnotik_real_estate_content(){
 					    	<label for="form_hero_header">Form Header</label>
 					    </div>
 				    	<div class="form-field">
-				    		<select name="form_hero_header" id="form_hero_header">
-				    		<?php $form_hero_header =  get_option('form_hero_header'); ?>
-				    		<option value="normal" <?php echo $form_hero_header == "normal" ? 'selected' : '' ?>>Normal Header</option>
-				    		<option value="style-1" <?php echo $form_hero_header == "style-1" ? 'selected' : '' ?>>Style 1</option>
-				    		</select>					    	
+				    		<input type="text" name="form_hero_header" id="form_hero_header" class="wda_color_picker" value="<?php echo $header_style; ?>">    	
 					    </div>
 				    </div>
 				    <div class="form-group">
@@ -406,11 +406,7 @@ function webnotik_real_estate_content(){
 					    	<label for="form_hero_body">Form Body</label>
 					    </div>
 				    	<div class="form-field">
-				    		<select name="form_hero_body" id="form_hero_body">
-				    		<?php $form_hero_body =  get_option('form_hero_body'); ?>
-				    		<option value="normal" <?php echo $header_style == "normal" ? 'selected' : '' ?>>Normal Header</option>
-				    		<option value="style-1" <?php echo $header_style == "style-1" ? 'selected' : '' ?>>Style 1</option>
-				    		</select>					    	
+				    		<input type="text" name="form_hero_body" id="form_hero_body" class="wda_color_picker" value="<?php echo $header_style; ?>">    	
 					    </div>
 				    </div>
 
