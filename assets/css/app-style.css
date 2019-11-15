@@ -43,10 +43,16 @@
 }
 
 
-.webnotik-header #main-header .container {
+.webnotik-header .container.et_menu_container {
+    z-index: 99;
     display: flex;
 }
 
+.webnotik-header .logo_container, 
+.webnotik-header .easy-contact {
+    width: 50% !important;
+    display: inline-block;
+}
 
 
 .webnotik-header .easy-contact {
