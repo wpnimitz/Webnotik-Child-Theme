@@ -409,7 +409,9 @@ function webnotik_real_estate_content(){
 					    	<label for="wda_form['hero_body']">Form Body</label>
 					    </div>
 				    	<div class="form-field">
-				    		<input type="text" name="wda_form['hero_body']"  data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['hero_body']" class="wda_color_picker" value="<?php echo $wda_form['hero_body']; ?>">    	
+				    		<input type="text" name="wda_form['hero_body']" value="<?php echo $wda_form['hero_body']; ?>" class="color_holder">
+
+				    		<input type="text" data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['hero_body']" class="wda_color_picker" value="<?php echo $wda_form['hero_body']; ?>">    	
 					    </div>
 				    </div>				    
 				    <?php submit_button(); ?>
