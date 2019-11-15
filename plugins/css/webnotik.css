@@ -282,6 +282,18 @@ span.city {
     display: inline-block;
 }
 
+.wp-picker-open+.wp-picker-input-wrap {
+  display: flex;
+}
+
+.wda_color_picker {
+  width: 100px !important;
+  padding: 0 10px !important;
+  height: 25px !important;
+}
+
+
+
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the panel-nav (.icon) */
 @media screen and (max-width: 600px) {
