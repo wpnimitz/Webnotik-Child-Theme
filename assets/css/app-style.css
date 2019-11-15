@@ -6,7 +6,9 @@
 .webnotik-header {
     display: block;
     background: #000;
+    z-index: 20;
 }
+
 .webnotik-header #top-menu,
 .webnotik-header .et-menu,
 .webnotik-header nav#top-menu-nav,
@@ -29,6 +31,17 @@
 .webnotik-header #page-container {
     padding-top: 52px !important;
 }
+
+
+
+
+.webnotik-header #main-header {
+    z-index: 10;
+}
+
+
+
+
 
 
 /** Display a message on the editor **/
