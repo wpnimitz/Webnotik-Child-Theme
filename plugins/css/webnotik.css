@@ -91,19 +91,19 @@
     position: relative;
 }
 
-.panel-body textarea,
-.panel-body input,
-.panel-body select {
+.panel-body .form-field textarea,
+.panel-body .form-field input,
+.panel-body .form-field select {
   border: 1px solid #ccc;
-  padding: 10px 15px;
+  padding: 5px 15px;
   border-radius: 3px;
-  width: 100%;
+  width: 100% !important;
   max-width: 100%;
-  height: 3em;
+  height: 2.5em;
 }
 
 .panel-body input#submit {
-    width: initial;
+  width: initial;
 }
 
 .panel-body textarea {
