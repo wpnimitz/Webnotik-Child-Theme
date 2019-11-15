@@ -57,7 +57,7 @@ jQuery(document).ready(function( $ ) {
 	if( $(".wda_color_picker").length ){
 		var params = { 
 		    change: function(e, ui) {
-		      $(e).parent(".form-field").find(".color_holder").val(ui.color.toString());
+		      $(e).closest(".form-field").find(".color_holder").attr("value", ui.color.toString());
 		      console.log("found!");
 		    },
 		  }
