@@ -87,6 +87,7 @@ function wda_admin_assets() {
 	$ver = "1.4.1" . strtotime("now");
 	// Add the color picker css file       
     wp_enqueue_style( 'wp-color-picker' );
+    wp_enqueue_script( 'wp-color-picker');
     wp_enqueue_script( 'get-city-pages-script', get_stylesheet_directory_uri() . '/plugins/js/webnotik-ajax.js?ver='.$ver, array( 'jquery' ), null, true );
     wp_localize_script( 'get-city-pages-script', 'get_city_pages_data', array(
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
