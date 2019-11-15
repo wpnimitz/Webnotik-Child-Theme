@@ -55,6 +55,12 @@
 }
 
 
+.webnotik-header #logo {
+    width: 100%;
+    max-width: 300px !important;
+    height: auto;
+}
+
 .webnotik-header .easy-contact {
     display: flex;
     align-items: center;
@@ -77,6 +83,8 @@
     font-size: 29px;
     color: #1f1f1f!important;
 }
+
+
 
 
 
