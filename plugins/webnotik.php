@@ -381,6 +381,8 @@ function webnotik_real_estate_content(){
 				    do_settings_sections( 'webnotik-branding-group' ); 
 				    $header_style =  get_option('webnotik_header_style');
 				    $wda_form =  get_option('wda_form');
+
+				    print_r($wda_form);
 				    ?>
 
 				    <div class="form-group">
@@ -418,7 +420,7 @@ function webnotik_real_estate_content(){
 
 				    <div class="form-group">
 				    	<div class="form-label">
-					    	<label for="wda_form['test']">Form Body</label>
+					    	<label for='wda_form["test"]'>Form Body</label>
 					    </div>
 				    	<div class="form-field">
 				    		<input type="text" name="wda_form['test']" id="wda_form['test']" class="" value="<?php echo $wda_form["test"]; ?>">    	
