@@ -211,6 +211,8 @@ function webnotik_register_keywords_settings() {
 	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_main_id' );
 	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_subpages' );
 	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_subpages_ids' );
+	register_setting( 'webnotik-keywords-group', 'webnotik_other_cities' );
+	
 }
 function webnotik_register_topics_settings() {
 	//register our topics settings
@@ -624,6 +626,16 @@ function webnotik_real_estate_content(){
 				    	</div>		
 				    </div>
 				    <?php } ?>
+
+					<div class="form-group">
+				    	<div class="form-label">
+				    		<label for="webnotik_other_cities">Other Cities</label>
+				    	</div>
+				    	<div class="form-field">
+				    		<textarea name="webnotik_other_cities" id="webnotik_other_cities"><?php echo esc_attr( get_option('webnotik_other_cities') ); ?></textarea>
+				    	</div>
+				    </div>
+
 
 				    <?php 
 				    $subpages = get_option('webnotik_keywords_subpages');
