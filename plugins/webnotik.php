@@ -388,6 +388,32 @@ function webnotik_real_estate_content(){
 					    </div>
 				    </div>
 
+				    <h3>Hero Form Style</h3>
+				    <div class="form-group">
+				    	<div class="form-label">
+					    	<label for="form_hero_header">Form Header</label>
+					    </div>
+				    	<div class="form-field">
+				    		<select name="form_hero_header" id="form_hero_header">
+				    		<?php $form_hero_header =  get_option('form_hero_header'); ?>
+				    		<option value="normal" <?php echo $form_hero_header == "normal" ? 'selected' : '' ?>>Normal Header</option>
+				    		<option value="style-1" <?php echo $form_hero_header == "style-1" ? 'selected' : '' ?>>Style 1</option>
+				    		</select>					    	
+					    </div>
+				    </div>
+				    <div class="form-group">
+				    	<div class="form-label">
+					    	<label for="form_hero_body">Form Body</label>
+					    </div>
+				    	<div class="form-field">
+				    		<select name="form_hero_body" id="form_hero_body">
+				    		<?php $form_hero_body =  get_option('form_hero_body'); ?>
+				    		<option value="normal" <?php echo $header_style == "normal" ? 'selected' : '' ?>>Normal Header</option>
+				    		<option value="style-1" <?php echo $header_style == "style-1" ? 'selected' : '' ?>>Style 1</option>
+				    		</select>					    	
+					    </div>
+				    </div>
+
 				    
 
 
