@@ -81,7 +81,7 @@
 					<h4><?php echo get_option('webnotik_business_phone'); ?></h4>
 				</div>
 				<div class="business-lead-page">
-					<a class="et_pb_button" href="">
+					<a class="button" href="">
 						Get My Cash Offer!
 					</a>
 				</div>
