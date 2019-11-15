@@ -62,7 +62,7 @@
 	</div>
 
 
-	<header id="main-header" data-height-onload="<?php echo esc_attr( et_get_option( 'menu_height', '66' ) ); ?>">
+	<header id="main-header" class="ep_pb_section">
 		<div class="container clearfix et_menu_container">
 		<?php
 			$logo = ( $user_logo = et_get_option( 'divi_logo' ) ) && ! empty( $user_logo )
