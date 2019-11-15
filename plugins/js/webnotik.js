@@ -57,7 +57,8 @@ jQuery(document).ready(function( $ ) {
 	if( $(".wda_color_picker").length ){
 		var params = { 
 		    change: function(e, ui) {
-		      $(this).parent(".form-field").find(".color_holder").val(ui.color.toString())
+		      $(e).parent(".form-field").find(".color_holder").val(ui.color.toString());
+		      console.log("found!");
 		    },
 		  }
 		$( '.wda_color_picker' ).wpColorPicker(params);
