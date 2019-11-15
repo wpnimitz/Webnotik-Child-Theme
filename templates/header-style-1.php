@@ -74,6 +74,17 @@
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<img src="<?php echo esc_attr( $logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" id="logo" data-height-percentage="<?php echo esc_attr( et_get_option( 'logo_height', '54' ) ); ?>" />
 				</a>
-			</div>			
+			</div>
+			<div class="easy-contact">
+				<div class="business-phone">
+					<p>CALL US TODAY!</p>
+					<h4><?php echo get_option('webnotik_business_phone'); ?></h4>
+				</div>
+				<div class="business-lead-page">
+					<a class="et_pb_button" href="">
+						Get My Cash Offer!
+					</a>
+				</div>
+			</div>		
 		</div> <!-- .container -->
 	</header> <!-- #main-header -->
