@@ -82,9 +82,11 @@ function webnotik_admin_bar_render() {
 
 
 // Enqueue the script on the back end (wp-admin)
-add_action( 'admin_enqueue_scripts', 'enqueue_get_city_pages_script' );
-function enqueue_get_city_pages_script() {
+add_action( 'admin_enqueue_scripts', 'wda_admin_assets' );
+function wda_admin_assets() {
 	$ver = "1.4.1" . strtotime("now");
+	// Add the color picker css file       
+    wp_enqueue_style( 'wp-color-picker' );
     wp_enqueue_script( 'get-city-pages-script', get_stylesheet_directory_uri() . '/plugins/js/webnotik-ajax.js?ver='.$ver, array( 'jquery' ), null, true );
     wp_localize_script( 'get-city-pages-script', 'get_city_pages_data', array(
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
