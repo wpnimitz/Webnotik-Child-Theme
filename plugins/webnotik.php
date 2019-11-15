@@ -382,7 +382,9 @@ function webnotik_real_estate_content(){
 				    $header_style =  get_option('webnotik_header_style');
 				    $wda_form =  get_option('wda_form');
 
+				    echo "<pre>";
 				    print_r($wda_form);
+				    echo "</pre>";
 				    echo $wda_form["header_header"];
 				    ?>
 
