@@ -226,7 +226,7 @@
 
 	<?php ob_start(); 
 
-		$header_style =  get_option('webnotik_main_topics');
+		$header_style =  get_option('webnotik_header_style');
 		include_once("templates/header-" . $header_style);
 		$main_header = ob_get_clean();
 
