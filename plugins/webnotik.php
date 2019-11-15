@@ -383,6 +383,7 @@ function webnotik_real_estate_content(){
 				    $wda_form =  get_option('wda_form');
 
 				    print_r($wda_form);
+				    echo $wda_form->header_header;
 				    ?>
 
 				    <div class="form-group">
