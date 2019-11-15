@@ -212,7 +212,7 @@ function webnotik_register_keywords_settings() {
 	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_subpages' );
 	register_setting( 'webnotik-keywords-group', 'webnotik_keywords_subpages_ids' );
 	register_setting( 'webnotik-keywords-group', 'webnotik_other_cities' );
-	
+
 }
 function webnotik_register_topics_settings() {
 	//register our topics settings
@@ -671,8 +671,8 @@ function webnotik_real_estate_content(){
 					    		<label for="webnotik_keywords_subpages<?php echo $display; ?>">City #<span><?php echo $display; ?></span></label>
 					    		<p class="actions">
 					    			<a class="rename-cp" href="#">Rename Page</a>
-									<a class="clone-cp" href="#">Clone Page</a>
 									<a class="delete-cp" href="#">Delete Data</a>
+									<!-- <a class="clone-cp" href="#">Clone Page</a>-->
 					    		</p>
 					    	</div>
 					    	<div class="form-field">
