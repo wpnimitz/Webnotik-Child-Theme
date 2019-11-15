@@ -167,6 +167,7 @@ function webnotik_real_estate_add_admin_menu() {
     //call register settings function
 	add_action( 'admin_init', 'webnotik_register_forms_settings' );
 	add_action( 'admin_init', 'webnotik_register_general_settings' );
+	add_action( 'admin_init', 'webnotik_register_branding_settings' );
 	add_action( 'admin_init', 'webnotik_register_keywords_settings' );
 	add_action( 'admin_init', 'webnotik_register_topics_settings' );
 	add_action( 'admin_init', 'webnotik_register_divi_global_settings' );
@@ -195,7 +196,10 @@ function webnotik_register_general_settings() {
 	register_setting( 'webnotik-general-group', 'webnotik_business_privacy' );
 	register_setting( 'webnotik-general-group', 'webnotik_business_tos' );
 	register_setting( 'webnotik-general-group', 'webnotik_sma_linkedin' );
-
+}
+function webnotik_register_branding_settings() {
+	//register our branding settings
+	register_setting( 'webnotik-branding-group', 'webnotik_header_style' );
 }
 function webnotik_register_keywords_settings() {
 	//register our keywords settings
@@ -368,21 +372,28 @@ function webnotik_real_estate_content(){
 			<div id="branding">
 				<p>Welcome to your branding settings. Please use this page to easily change for this template.</p>
 				<form method="post" action="options.php">
-				    <?php //settings_fields( 'webnotik-forms-group' ); ?>
-				    <?php //do_settings_sections( 'webnotik-forms-group' ); ?>
+				    <?php settings_fields( 'webnotik-branding-group' ); ?>
+				    <?php do_settings_sections( 'webnotik-branding-group' ); ?>
 
 				    <div class="form-group">
 				    	<div class="form-label">
-				    		<label for="webnotik_seller_form">Seller Form</label>
-				    	</div>
+					    	<label for="webnotik_main_topics">Header Style</label>
+					    </div>
 				    	<div class="form-field">
-				    		<textarea name="webnotik_seller_form" id="webnotik_seller_form"><?php echo esc_attr( get_option('webnotik_seller_form') ); ?></textarea>
-				    	</div>
+
+				    		<select name="webnotik_main_topics" id="webnotik_main_topics">
+				    		<?php $get_allow_trust_badge =  get_option('webnotik_main_topics'); ?>
+				    		<option value="normal" <?php echo $get_allow_trust_badge == "normal" ? 'selected' : '' ?>>Normal Header</option>
+				    		<option value="style-1" <?php echo $get_allow_trust_badge == "style-1" ? 'selected' : '' ?>>Style 1</option>
+				    		</select>
+					    	
+					    </div>
 				    </div>
+
 
 				   
 				    
-				    <?php //submit_button(); ?>
+				    <?php submit_button(); ?>
 
 				</form>
 			</div>
