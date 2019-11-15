@@ -57,8 +57,7 @@ jQuery(document).ready(function( $ ) {
 	if( $(".wda_color_picker").length ){
 		var params = { 
 		    change: function(e, ui) {
-		      $( e.target ).val( ui.color.toString() );
-		      console.log(ui.color.toString())
+		      $(this).closest(".color_holder").val(ui.color.toString())
 		    },
 		  }
 		$( '.wda_color_picker' ).wpColorPicker(params);
