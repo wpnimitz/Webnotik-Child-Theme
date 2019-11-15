@@ -385,7 +385,7 @@ function webnotik_real_estate_content(){
 				    echo "<pre>";
 				    print_r($wda_form);
 				    echo "</pre>";
-				    echo $wda_form["header_header"];
+				    echo $wda_form["hero_header"];
 				    ?>
 
 				    <div class="form-group">
