@@ -382,9 +382,9 @@ function webnotik_real_estate_content(){
 				    	<div class="form-field">
 
 				    		<select name="webnotik_main_topics" id="webnotik_main_topics">
-				    		<?php $get_allow_trust_badge =  get_option('webnotik_main_topics'); ?>
-				    		<option value="normal" <?php echo $get_allow_trust_badge == "normal" ? 'selected' : '' ?>>Normal Header</option>
-				    		<option value="style-1" <?php echo $get_allow_trust_badge == "style-1" ? 'selected' : '' ?>>Style 1</option>
+				    		<?php $header_style =  get_option('webnotik_main_topics'); ?>
+				    		<option value="normal" <?php echo $header_style == "normal" ? 'selected' : '' ?>>Normal Header</option>
+				    		<option value="style-1" <?php echo $header_style == "style-1" ? 'selected' : '' ?>>Style 1</option>
 				    		</select>
 					    	
 					    </div>
