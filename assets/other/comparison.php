@@ -1,7 +1,6 @@
 <?php
-if(empty($logo)) {
-	$logo = get_stylesheet_directory_uri() . '/assets/img/rei-toolbox.jpg';
-}
+$logo = get_option('webnotik_business_logo_url', get_stylesheet_directory_uri() . '/assets/img/rei-toolbox.jpg');
+$business_name = get_option('webnotik_business_name', 'REI ToolBox');
 $comparison = '<table class="table table-bordered table-striped">
 	<thead>
 		<tr>
@@ -10,7 +9,7 @@ $comparison = '<table class="table table-bordered table-striped">
 
 			<th>Selling w/ An Agent</th>
 
-			<th><img alt="sell tucson home fast" class="aligncenter" src="'.$logo.'" style="max-width: 88px; width: 100%;">
+			<th><img alt="'.$business_name.'" class="aligncenter" src="'.$logo.'" style="max-width: 88px; width: 100%;">
 			</th>
 		</tr>
 	</thead>
