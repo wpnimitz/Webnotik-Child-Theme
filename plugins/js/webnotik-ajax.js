@@ -54,7 +54,7 @@ jQuery(document).ready(function( $ ) {
             	console.log(json_data);
                 $(".message").addClass("success").append("Successfully renamed. New URL: " + json.data["post_name"]);
 
-                $("#" + $target).find(".k-value input").val(json.data["post_name"])
+                $(this).closest(".keyword").find(".k-value input").val(json.data["post_name"])
             } else {
             	
             	var json_data = json.data;
