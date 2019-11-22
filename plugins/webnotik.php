@@ -743,7 +743,8 @@ function webnotik_real_estate_content(){
 				    	<div class="form-field">
 				    		<textarea name="webnotik_main_topics" id="webnotik_main_topics"><?php echo esc_attr( get_option('webnotik_main_topics') ); ?></textarea>
 				    		<p class="hint">Use a comma separated topics.</p>
-				    		<p class="usage">[main_topics]</p>
+				    		<p class="usage">[main_topics display="4"]</p>
+				    		<p class="hit">Display value from 1 to 4. Default is 4</p>
 				    	</div>
 				    </div>
 
