@@ -986,6 +986,7 @@ function webnotik_main_topics($atts) {
 add_shortcode( 'main_topics', 'webnotik_main_topics' );
 
 function webnotik_comparison($atts) {
+	global $comparison;
 	$ret = '<div class="webnotik-comparison">';
 	$ret .= $comparison;
 	$ret .= '</div>';
