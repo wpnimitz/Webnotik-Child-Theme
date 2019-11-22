@@ -987,14 +987,22 @@ add_shortcode( 'webnotik_form', 'webnotik_form_shortcode' );
 
 
 function webnotik_main_topics($atts) {
+	$atts = shortcode_atts(
+		array(
+			'display' => '4',
+		), $atts, 'webnotik_main_topics' );
+	$display = $atts["display"];
+
 	$main_topics = get_option( 'webnotik_main_topics');
 	$topics = explode(",", $main_topics);
 
-	$ret = '<ul class="main-topics">';
+	$ret = '<ul class="main-topics display-'.$display.'" >';
 	foreach ($topics as $topic) {
 		$ret .= '<li>' .$topic. '</li>';
 	}
 	$ret .= '</ul>';
+
+	return $ret;
 }
 
 add_shortcode( 'main_topics', 'webnotik_main_topics' );
