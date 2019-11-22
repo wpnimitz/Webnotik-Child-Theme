@@ -9,7 +9,7 @@ $comparison = '<table class="table table-bordered table-striped">
 
 			<th>Selling w/ An Agent</th>
 
-			<th><img alt="'.$business_name.'" class="aligncenter" src="'.$logo.'" style="max-width: 88px; width: 100%;">
+			<th><img alt="'.$business_name.'" class="aligncenter" src="'.$logo.'" style="max-width: 200px; width: 100%;">
 			</th>
 		</tr>
 	</thead>
