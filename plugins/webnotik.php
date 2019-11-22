@@ -992,7 +992,7 @@ function webnotik_main_topics($atts) {
 
 	$ret = '<ul class="main-topics">';
 	foreach ($topics as $topic) {
-		$ret . '<li>' .$topic. '</li>';
+		$ret .= '<li>' .$topic. '</li>';
 	}
 	$ret .= '</ul>';
 }
