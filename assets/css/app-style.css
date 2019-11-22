@@ -363,7 +363,7 @@ END: FORM STYLING;
     background-size: auto 100%;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
     #main-header .container {
         max-width: 96% !important;
         width: 100% !important;
