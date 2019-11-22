@@ -204,6 +204,7 @@ function webnotik_register_branding_settings() {
 	//register our branding settings
 	register_setting( 'webnotik-branding-group', 'webnotik_header_style' );
 	register_setting( 'webnotik-branding-group', 'wda_form' );
+	register_setting( 'webnotik-branding-group', 'webnotik_business_logo_url' );
 }
 function webnotik_register_keywords_settings() {
 	//register our keywords settings
