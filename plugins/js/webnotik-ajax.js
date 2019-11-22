@@ -71,7 +71,7 @@ jQuery(document).ready(function( $ ) {
     $("#save-styles").on("click", function(e) {
         e.preventDefault();
         var data = {
-            action: 'generate_new_rei_style',
+            action: 'generate_new_rei_style'
         }
         $.getJSON( get_city_pages_data.ajaxurl, data, function( json ) {
             console.log(json.data);
