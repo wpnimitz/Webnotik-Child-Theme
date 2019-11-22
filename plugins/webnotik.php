@@ -1214,7 +1214,7 @@ function webnotik_divi_global_footer() {
 
     
 }
-function generate_new_rei_style( $old_value, $new_value ) {
+function generate_new_rei_style() {
 	$file = get_stylesheet_directory() . '/assets/css/rei-style.css';
 	$current = file_get_contents('includes/style.php');
 	file_put_contents($file, $current);
