@@ -895,6 +895,13 @@ function webnotik_real_estate_content(){
 				<h4>Testimonial Gray Background</h4>
 				<p class="hint">use 'gray-testimonial' class to make the background of testimonial module as gray. You must add the class in the row css class to see the background.</p>
 
+				<h3>Shortcode & Usage</h3>
+				<pre>[webnotik_form]</pre>
+				By default, it will show you seller form. You can extend it by adding `type` parameter as well as `source` parameter.
+
+				<pre>type = seller, buyer, contractor, lender, realtors, wholesale, contact, extra</pre>
+				<pre>source = replaces %source% in your html code, this will help us make our form very fluid. Default value is `organic`</pre>
+	
 
 			</div>
 			<!-- end #help -- >
@@ -941,6 +948,7 @@ function webnotik_form_shortcode( $atts ){
 			'type' => 'seller',
 		), $atts, 'webnotik_form' );
 	$type = $atts["type"];
+	$source = $atts["source"];
 
 	$allowed_types = array('seller', 'buyer', 'lender', 'contractor', 'realtors', 'wholesale' , 'contact', 'extra');
 
@@ -951,8 +959,14 @@ function webnotik_form_shortcode( $atts ){
 		$allow_trust_badge = get_option( 'allow_trust_badge');
 		if($form != "") {
 			$ret = '<div class="gform_wrapper webnotik-'.$type.'">';
-			$ret .= do_shortcode($form);
 
+			if(!empty($source)) {
+				$ret .= str_replace("%source%", $source, do_shortcode($form))
+			} else {
+				if(empty($source)) {
+					$ret .= str_replace("%source%", "organic", do_shortcode($form))
+				}
+			}
 			if($allow_trust_badge == "yes") {
 				$ret .= '<img class="aligncenter trust_badge" src="'.$trust_badge.'" alt="'.$business_name.'" />';
 			}
