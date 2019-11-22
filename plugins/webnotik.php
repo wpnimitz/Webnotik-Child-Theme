@@ -383,6 +383,7 @@ function webnotik_real_estate_content(){
 				    do_settings_sections( 'webnotik-branding-group' ); 
 				    $header_style =  get_option('webnotik_header_style');
 				    $wda_form =  get_option('wda_form');
+				    $webnotik_business_logo_url =  get_option('webnotik_business_logo_url');
 				    ?>
 
 				    <div class="form-group">
@@ -391,9 +392,17 @@ function webnotik_real_estate_content(){
 					    </div>
 				    	<div class="form-field">
 				    		<select name="webnotik_header_style" id="webnotik_header_style">
-				    		<option value="normal" <?php echo $header_style == "normal" ? 'selected' : '' ?>>Normal Header</option>
-				    		<option value="style-1" <?php echo $header_style == "style-1" ? 'selected' : '' ?>>Style 1</option>
-				    		</select>					    	
+					    		<option value="normal" <?php echo $header_style == "normal" ? 'selected' : '' ?>>Normal Header</option>
+					    		<option value="style-1" <?php echo $header_style == "style-1" ? 'selected' : '' ?>>Style 1</option>
+				    		</select>
+					    </div>
+				    </div>
+				    <div class="form-group">
+				    	<div class="form-label">
+					    	<label for="webnotik_business_logo_url">Business Logo URL</label>
+					    </div>
+				    	<div class="form-field">
+				    		<input name="webnotik_business_logo_url" id="webnotik_business_logo_url" value="<?php echo get_option('webnotik_business_logo_url'); ?>">					    	
 					    </div>
 				    </div>
 
@@ -974,6 +983,13 @@ function webnotik_main_topics($atts) {
 }
 
 add_shortcode( 'main_topics', 'webnotik_main_topics' );
+
+function webnotik_comparison($atts) {
+	include_once(get_stylesheet_directory() . "/assets/others/comparison.php");
+	return $comparison;
+}
+
+add_shortcode( 'rei_comparison', 'webnotik_comparison' );
 
 
 
