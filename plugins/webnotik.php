@@ -76,11 +76,6 @@ function webnotik_admin_bar_render() {
 }
 
 
-
-
-
-
-
 // Enqueue the script on the back end (wp-admin)
 add_action( 'admin_enqueue_scripts', 'wda_admin_assets' );
 function wda_admin_assets() {
@@ -93,8 +88,6 @@ function wda_admin_assets() {
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
     ) );
 }
-
-
 
 add_action( 'wp_ajax_rename_city_pages', 'rename_city_pages_callback' );
 function rename_city_pages_callback() {
@@ -156,12 +149,6 @@ function get_city_pages_callback() {
 	}
     wp_send_json_success( $json );
 } 
-
-
-
-
-
-  
 
 
 add_action('admin_menu', 'webnotik_real_estate_add_admin_menu');
@@ -1226,3 +1213,15 @@ function webnotik_divi_global_footer() {
 
     
 }
+
+/**
+ * Hook into options page after save.
+ */
+function generate_new_rei_style( $old_value, $new_value ) {
+	$file = get_stylesheet_directory() . '/assets/css/rei-style.css';
+	$current = file_get_contents('includes/style.php');
+	file_put_contents($file, $current);
+
+	wp_send_json_success($current);
+}
+add_action( 'update_option_webnotik_register_branding_settings', 'generate_new_rei_style', 10, 2 );

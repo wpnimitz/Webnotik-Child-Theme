@@ -27,15 +27,3 @@ function webnotik_body_class( $classes ) {
 
     return $classes;
 }
-
-
-/**
- * Hook into options page after save.
- */
-public function generate_new_rei_style( $old_value, $new_value ) {
-	$style = get_stylesheet_directory() . '/assets/css/rei-style.css';
-	$file = file_get_contents('includes/style.php');
-	file_put_contents($style, $file);
-}
-add_action( 'update_option_webnotik_register_branding_settings', 'generate_new_rei_style', 10, 2 );
-
