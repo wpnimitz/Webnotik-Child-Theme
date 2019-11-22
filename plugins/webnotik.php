@@ -988,7 +988,10 @@ add_shortcode( 'main_topics', 'webnotik_main_topics' );
 function webnotik_comparison($atts) {
 	$logo = get_option('webnotik_business_logo_url');
 	include_once(get_stylesheet_directory() . "/assets/others/comparison.php");
-	return $comparison;
+	$ret = '<div class="webnotik-comparison">';
+	$ret .= $comparison;
+	$ret .= '</div>';
+	return $ret;
 }
 
 add_shortcode( 'rei_comparison', 'webnotik_comparison' );
