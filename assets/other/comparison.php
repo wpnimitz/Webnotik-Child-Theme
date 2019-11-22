@@ -1,5 +1,5 @@
 <?php
-if(!isset($logo)) {
+if(empty($logo)) {
 	$logo = get_stylesheet_directory_uri() . '/assets/img/rei-toolbox.jpg';
 }
 $comparison = '<table class="table table-bordered table-striped">
