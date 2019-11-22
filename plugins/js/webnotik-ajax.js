@@ -38,6 +38,7 @@ jQuery(document).ready(function( $ ) {
 
 	$(".rename-cp").on("click", function(e) {
 		e.preventDefault();
+        $this = $(this);
 		gUrl = $(this).closest(".keyword").find(".k-value input").val();
 		gTitle = $(this).closest(".keyword").find(".k-main input").val();
 		$target = $(this).closest('.keyword').attr('id');
@@ -54,7 +55,7 @@ jQuery(document).ready(function( $ ) {
             	console.log(json_data);
                 $(".message").addClass("success").append("Successfully renamed. New URL: " + json.data["post_name"]);
 
-                $(this).closest(".keyword").find(".k-value input").val(json.data["post_name"])
+                $this.closest(".keyword").find(".k-value input").val(json.data["post_name"])
             } else {
             	
             	var json_data = json.data;
