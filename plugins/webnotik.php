@@ -436,7 +436,8 @@ function webnotik_real_estate_content(){
 				    	<div class="form-field">
 					    	<input type="text" name='wda_form[content_body]' data-alpha="true" data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['content_body']" class="wda_color_picker" value="<?php echo $wda_form['content_body']; ?>">    	
 					    </div>
-				    </div>						    
+				    </div>				
+				    <div id="save-styles">Save styles</div>		    
 				    <?php submit_button(); ?>
 
 				</form>
@@ -1213,10 +1214,6 @@ function webnotik_divi_global_footer() {
 
     
 }
-
-/**
- * Hook into options page after save.
- */
 function generate_new_rei_style( $old_value, $new_value ) {
 	$file = get_stylesheet_directory() . '/assets/css/rei-style.css';
 	$current = file_get_contents('includes/style.php');
@@ -1224,4 +1221,3 @@ function generate_new_rei_style( $old_value, $new_value ) {
 
 	wp_send_json_success($current);
 }
-add_action( 'update_option_webnotik_register_branding_settings', 'generate_new_rei_style', 10, 2 );
