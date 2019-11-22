@@ -961,10 +961,10 @@ function webnotik_form_shortcode( $atts ){
 			$ret = '<div class="gform_wrapper webnotik-'.$type.'">';
 
 			if(!empty($source)) {
-				$ret .= str_replace("%source%", $source, do_shortcode($form))
+				$ret .= str_replace("%source%", $source, do_shortcode($form));
 			} else {
 				if(empty($source)) {
-					$ret .= str_replace("%source%", "organic", do_shortcode($form))
+					$ret .= str_replace("%source%", "organic", do_shortcode($form));
 				}
 			}
 			if($allow_trust_badge == "yes") {
@@ -992,9 +992,9 @@ function webnotik_main_topics($atts) {
 
 	$ret = '<ul class="main-topics">';
 	foreach ($topics as $topic) {
-		echo '<li>' .$topic. '</li>';
+		$ret . '<li>' .$topic. '</li>';
 	}
-	$ret = '</ul>';
+	$ret .= '</ul>';
 }
 
 add_shortcode( 'main_topics', 'webnotik_main_topics' );
