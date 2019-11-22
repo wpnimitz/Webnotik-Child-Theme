@@ -1219,5 +1219,6 @@ function generate_new_rei_style() {
 	$current = file_get_contents('includes/style.php');
 	file_put_contents($file, $current);
 
+	echo 'test';
 	wp_send_json_success($current);
 }
