@@ -229,6 +229,21 @@
     font-weight: 600;
 }
 
+/** MAIN TOPIS **/
+.main-topics.display-4 li {
+    display: inline-block;
+    width: 25%;
+}
+
+.main-topics.display-3 li {
+    display: inline-block;
+    width: 33%;
+}.
+.main-topics.display-2 li {
+    display: inline-block;
+    width: 50%;
+}
+
 
 
 /** Module Default Styling **/
