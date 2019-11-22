@@ -215,7 +215,7 @@
 
 /** SINGLE BLOG PAGE **/
 .entry-content p {
-	line-height: 1.9em;
+    line-height: 1.9em;
 }
 
 .post-meta a {
@@ -238,7 +238,7 @@
 .main-topics.display-3 li {
     display: inline-block;
     width: 33%;
-}.
+}
 .main-topics.display-2 li {
     display: inline-block;
     width: 50%;
@@ -363,9 +363,14 @@ END: FORM STYLING;
     background-size: auto 100%;
 }
 
-@media screen and (max-width: 1024px) {
-    #main-header .container {
-        max-width: 96% !important;
-        width: 100% !important;
+@media screen and (max-width: 980px) {
+    #main-header .container,
+    .et_pb_row {
+        padding-left: 3% !important;
+        padding-right: 3% !important;
+        width: 96% !important; 
+        box-sizing: border-box;
+        max-width: 1380px !important;
     }
+    
 }
