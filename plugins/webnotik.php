@@ -986,7 +986,7 @@ function webnotik_main_topics($atts) {
 add_shortcode( 'main_topics', 'webnotik_main_topics' );
 
 function webnotik_comparison($atts) {
-	include_once(get_stylesheet_directory() . "/assets/others/comparison.php");
+	include(get_stylesheet_directory() . "/assets/others/comparison.php");
 	$ret = '<div class="webnotik-comparison">';
 	$ret .= $comparison;
 	$ret .= '</div>';
@@ -994,9 +994,6 @@ function webnotik_comparison($atts) {
 }
 
 add_shortcode( 'rei_comparison', 'webnotik_comparison' );
-
-
-
 function webnotik_business_shortcode( $atts ){  
 	$atts = shortcode_atts(
 		array(

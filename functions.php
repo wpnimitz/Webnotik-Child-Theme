@@ -1,5 +1,6 @@
 <?php
 include_once("plugins/webnotik.php");
+include_once("assets/other/comparison.php");
 
 add_action( 'wp_enqueue_scripts', 'custom_assets' );
 function custom_assets() {
