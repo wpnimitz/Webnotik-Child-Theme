@@ -6,6 +6,7 @@ add_action( 'wp_enqueue_scripts', 'custom_assets' );
 function custom_assets() {
 	$ver = "1.0.1" . strtotime("now");
     wp_enqueue_style( 'app-style', get_stylesheet_directory_uri() . '/assets/css/app-style.css', '', $ver );
+    wp_enqueue_style( 'rei-style', get_stylesheet_directory_uri() . '/includes/style.php', '', $ver );
 }
 
 add_filter( 'body_class', 'webnotik_body_class' );
