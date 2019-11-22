@@ -394,7 +394,7 @@ function webnotik_real_estate_content(){
 				    	<div class="form-field">
 				    		<select name="webnotik_header_style" id="webnotik_header_style">
 					    		<option value="normal" <?php echo $header_style == "normal" ? 'selected' : '' ?>>Normal Header</option>
-					    		<option value="style-1" <?php echo $header_style == "style-1" ? 'selected' : '' ?>>Style 1</option>
+					    		<!-- <option value="style-1" <?php echo $header_style == "style-1" ? 'selected' : '' ?>>Style 1</option> -->
 				    		</select>
 					    </div>
 				    </div>
