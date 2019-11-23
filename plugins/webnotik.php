@@ -413,7 +413,7 @@ function webnotik_real_estate_content(){
 				    <h3>Hero Sections</h3>
 				    <div class="form-group">
 				    	<div class="form-label">
-					    	<label for="wda_form[hero_background]">Hero background</label>
+					    	<label for="wda_form[hero_background]">Hero Background Image</label>
 					    </div>
 				    	<div class="form-field">
 				    		<input type="text" name="wda_form[hero_background]" id="wda_form['hero_background']" class="" value="<?php echo $wda_form['hero_background']; ?>">    	
@@ -422,7 +422,15 @@ function webnotik_real_estate_content(){
 				    </div>
 				    <div class="form-group">
 				    	<div class="form-label">
-					    	<label for="wda_form[hero_header]">Form Header</label>
+					    	<label for="wda_form[hero_overlay]">Form Header Background</label>
+					    </div>
+				    	<div class="form-field">
+				    		<input type="text" name="wda_form[hero_overlay]"  data-alpha="true" data-default-color="<?php echo $wda_form['hero_overlay']; ?>" id="wda_form[hero_overlay]" class="wda_color_picker" value="<?php echo $wda_form['hero_overlay']; ?>">    	
+					    </div>
+				    </div>
+				    <div class="form-group">
+				    	<div class="form-label">
+					    	<label for="wda_form[hero_header]">Form Header Background</label>
 					    </div>
 				    	<div class="form-field">
 				    		<input type="text" name="wda_form[hero_header]"  data-alpha="true" data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['hero_header']" class="wda_color_picker" value="<?php echo $wda_form['hero_header']; ?>">    	
@@ -430,7 +438,7 @@ function webnotik_real_estate_content(){
 				    </div>
 				    <div class="form-group">
 				    	<div class="form-label">
-					    	<label for="wda_form[hero_body]">Form Body</label>
+					    	<label for="wda_form[hero_body]">Form Body Background</label>
 					    </div>
 				    	<div class="form-field">
 					    	<input type="text" name='wda_form[hero_body]' data-alpha="true" data-default-color="<?php echo $wda_form['hero_body']; ?>" id="wda_form['hero_body']" class="wda_color_picker" value="<?php echo $wda_form['hero_body']; ?>">    	
@@ -439,7 +447,7 @@ function webnotik_real_estate_content(){
 				    <h3>Content Areas</h3>
 				    <div class="form-group">
 				    	<div class="form-label">
-					    	<label for="wda_form[content_header]">Content Form Header</label>
+					    	<label for="wda_form[content_header]">Form Header Background</label>
 					    </div>
 				    	<div class="form-field">
 				    		<input type="text" name="wda_form[content_header]"  data-alpha="true" data-default-color="<?php echo $wda_form['content_header']; ?>" id="wda_form['content_header']" class="wda_color_picker" value="<?php echo $wda_form['content_header']; ?>">    	
@@ -447,7 +455,7 @@ function webnotik_real_estate_content(){
 				    </div>
 				    <div class="form-group">
 				    	<div class="form-label">
-					    	<label for="wda_form[content_body]">Content Form Body</label>
+					    	<label for="wda_form[content_body]">Form Body Background</label>
 					    </div>
 				    	<div class="form-field">
 					    	<input type="text" name='wda_form[content_body]' data-alpha="true" data-default-color="<?php echo $wda_form['content_body']; ?>" id="wda_form['content_body']" class="wda_color_picker" value="<?php echo $wda_form['content_body']; ?>">
@@ -455,7 +463,7 @@ function webnotik_real_estate_content(){
 				    </div>
 				    <div class="form-group">
 				    	<div class="form-label">
-					    	<label for="wda_form[button_color]">Button Color</label>
+					    	<label for="wda_form[button_color]">Button Background</label>
 					    </div>
 				    	<div class="form-field">
 					    	<input type="text" name='wda_form[button_color]' data-alpha="true" data-default-color="<?php echo $wda_form['button_color']; ?>" id="wda_form['button_color']" class="wda_color_picker" value="<?php echo $wda_form['button_color']; ?>">
@@ -463,7 +471,7 @@ function webnotik_real_estate_content(){
 				    </div>
 				    <div class="form-group">
 				    	<div class="form-label">
-					    	<label for="wda_form[button_color_hover]">Button Color Hover</label>
+					    	<label for="wda_form[button_color_hover]">Button Background Hover</label>
 					    </div>
 				    	<div class="form-field">
 					    	<input type="text" name='wda_form[button_color_hover]' data-alpha="true" data-default-color="<?php echo $wda_form['button_color_hover']; ?>" id="wda_form['button_color_hover']" class="wda_color_picker" value="<?php echo $wda_form['button_color_hover']; ?>">
