@@ -1,10 +1,11 @@
 <?php
+$css = '';
 $wda_form = get_option('wda_form');
 extract($wda_form);
 
 $border_radius = '5px';
 
-$css = '.webnotik-pages .form-header-hero  {
+$css .= '.webnotik-pages .form-header-hero  {
     background: '.$hero_header.';
     
 }';
@@ -23,13 +24,13 @@ $css .= '.webnotik-pages .form-body-content, .single .form-body-content {
 }';
 
 $css .= '.et_pb_module *[type=submit] {
-	background: red;
+	background: '.$button_color.';
 	margin: 0 auto;
 	text-align: center;
 	font-weight: bold;
 	margin-top: 45px;
 	color: #fff !important;
-	background-image: linear-gradient(to left, transparent, transparent 50%, #00c6ff 50%, #00c6ff);
+	background-image: linear-gradient(to left, transparent, transparent 50%, '.$button_color_hover.' 50%, '.$button_color_hover.');
 	background-position: 100% 0;
 	background-size: 200% 100%;
 	transition: all .25s ease-in;
