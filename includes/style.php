@@ -28,16 +28,23 @@ $css .= '.webnotik-pages .form-body-content, .single .form-body-content {
     background: '.$content_body.';
 }';
 
-$css .= '.et_pb_module *[type=submit] {
-    background: '.$button_color.';
+.$css .= '.et_pb_module *[type=submit] {
+	background: red;
+	margin: 0 auto;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 45px;
 	color: #fff !important;
+	background-image: linear-gradient(to left, transparent, transparent 50%, #00c6ff 50%, #00c6ff);
+	background-position: 100% 0;
+	background-size: 200% 100%;
+	transition: all .25s ease-in;
 }';
 
 $css .= '.et_pb_module *[type=submit]:hover {
-    background: '.$button_color_hover.';
-	color: #fff !important;
+  background-position: 0 0;
+  color: #fff !important;
 }';
-
 
 
 
