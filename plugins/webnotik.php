@@ -1255,7 +1255,7 @@ function webnotik_divi_global_footer() {
 add_action( 'wp_ajax_generate_new_rei_style', 'generate_new_rei_style' );
 function generate_new_rei_style() {
 	include_once('/includes/style.php');
-	$file = '/assets/css/rei-style.css';
+	$file = TEMPLATEPATH . '/assets/css/rei-style.css';
 	fopen($file, "w") or die("Unable to open file!");	
 	$success = "Style successfully updated.";
 	fwrite($file, $css);
