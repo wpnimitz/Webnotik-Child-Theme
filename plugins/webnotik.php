@@ -422,7 +422,7 @@ function webnotik_real_estate_content(){
 				    </div>
 				    <div class="form-group">
 				    	<div class="form-label">
-					    	<label for="wda_form[hero_overlay]">Form Header Background</label>
+					    	<label for="wda_form[hero_overlay]">Hero Overlay Color</label>
 					    </div>
 				    	<div class="form-field">
 				    		<input type="text" name="wda_form[hero_overlay]"  data-alpha="true" data-default-color="<?php echo $wda_form['hero_overlay']; ?>" id="wda_form[hero_overlay]" class="wda_color_picker" value="<?php echo $wda_form['hero_overlay']; ?>">    	
