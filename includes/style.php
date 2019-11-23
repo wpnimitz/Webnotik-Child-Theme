@@ -28,7 +28,7 @@ $css .= '.webnotik-pages .form-body-content, .single .form-body-content {
     background: '.$content_body.';
 }';
 
-.$css .= '.et_pb_module *[type=submit] {
+$css .= '.et_pb_module *[type=submit] {
 	background: red;
 	margin: 0 auto;
 	text-align: center;
