@@ -6,7 +6,8 @@ extract($wda_form);
 $border_radius = '5px';
 
 $css .= '.webnotik-pages .form-header-hero,
-.webnotik-pages .form-hero .form-header  {
+.webnotik-pages .form-hero .form-header,
+.single .form-hero .form-header  {
     background: '.$hero_header.';
     
 }';

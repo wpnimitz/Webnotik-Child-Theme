@@ -152,15 +152,6 @@
     display: block;
 }
 
-.webnotik-category article .more-link:after {
-    font-family: ETmodules;
-    content: '\39';
-    margin-left: 5px;
-    top: 1px;
-    position: relative;
-}
-
-
 /** SIDEBAR & WIDGET Area **/
 .widgettitle {
     font-weight: 700;
