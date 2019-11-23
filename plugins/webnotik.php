@@ -1254,9 +1254,8 @@ function webnotik_divi_global_footer() {
 }
 add_action( 'wp_ajax_generate_new_rei_style', 'generate_new_rei_style' );
 function generate_new_rei_style() {
-	$file = get_stylesheet_directory() . '/assets/css/rei-style.css';
-	touch($file);
-	include_once(get_stylesheet_directory() . '/includes/style.php');
+	$file = '/assets/css/rei-style.css';
+	include_once('/includes/style.php');
 	file_put_contents($file, $css);
 	$success = "Style successfully updated.";
 	wp_send_json_success($success);
