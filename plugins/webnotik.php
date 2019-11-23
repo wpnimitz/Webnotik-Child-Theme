@@ -1258,7 +1258,7 @@ function generate_new_rei_style() {
 	$file = get_stylesheet_directory() . '/assets/css/rei-style.css';
 	$myCSS = fopen($file, "w") or die("Unable to open file!");	
 	$success = "Style successfully updated.";
-	fwrite($file, $css);
-	fclose($file);
+	fwrite($myCSS, $css);
+	fclose($myCSS);
 	wp_send_json_success($success);
 }
