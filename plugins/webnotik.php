@@ -1252,8 +1252,20 @@ function webnotik_divi_global_footer() {
 }
 add_action( 'wp_ajax_generate_new_rei_style', 'generate_new_rei_style' );
 function generate_new_rei_style() {
+	
+	
+	//The name of the file that we want to create if it doesn't exist.
 	$file = get_stylesheet_directory() . '/assets/css/rei-style.css';
+	 
+	//Use the function is_file to check if the file already exists or not.
+	if(!is_file($file)){
+	    //Some simple example content.
+	    $success = "Style successfully updated.";
+	} else {
+		fopen($file, "w");
+		$success = "Style successfully created.";
+	}
 	include_once(get_stylesheet_directory() . '/includes/style.php');
 	file_put_contents($file, $css);
-	wp_send_json_success($css);
+	wp_send_json_success($success);
 }
