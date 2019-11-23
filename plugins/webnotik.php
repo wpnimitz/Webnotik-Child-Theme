@@ -373,6 +373,13 @@ function webnotik_real_estate_content(){
 				    $wda_form =  get_option('wda_form');
 				    $webnotik_business_logo_url =  get_option('webnotik_business_logo_url');
 				    $round_corners = $wda_form["round_corners"];
+
+				    $file = get_stylesheet_directory() . '/assets/css/rei-style.css';
+
+					//Use the function is_file to check if the file already exists or not.
+					if(!is_file($file)){
+					    fopen($file, "w");
+					}
 				    ?>
 
 				    <div class="form-group">
@@ -1256,6 +1263,7 @@ function generate_new_rei_style() {
 	
 	//The name of the file that we want to create if it doesn't exist.
 	$file = get_stylesheet_directory() . '/assets/css/rei-style.css';
+
 	 
 	//Use the function is_file to check if the file already exists or not.
 	if(!is_file($file)){
