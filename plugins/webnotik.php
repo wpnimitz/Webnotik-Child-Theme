@@ -392,8 +392,8 @@ function webnotik_real_estate_content(){
 					    </div>
 				    	<div class="form-field">
 				    		<select name="wda_form[round_corners]" id="wda_form[round_corners]">
-					    		<option value="normal" <?php echo $header_style == "normal" ? 'selected' : '' ?>>Normal Header</option>
-					    		<option value="style-1" <?php echo $header_style == "style-1" ? 'selected' : '' ?>>Style 1</option> -->
+					    		<option value="No" <?php echo $round_corners == "No" ? 'selected' : '' ?>>No</option>
+					    		<option value="Yes" <?php echo $round_corners == "Yes" ? 'selected' : '' ?>>Yes</option>
 				    		</select>
 					    </div>
 				    </div>
