@@ -374,7 +374,7 @@ function webnotik_real_estate_content(){
 				    $webnotik_business_logo_url =  get_option('webnotik_business_logo_url');
 				    $round_corners = $wda_form["round_corners"];
 
-				    touch(get_stylesheet_directory() . '/assets/css/rei-style.css');
+				    
 				    ?>
 
 				    <div class="form-group">
@@ -1255,6 +1255,7 @@ function webnotik_divi_global_footer() {
 add_action( 'wp_ajax_generate_new_rei_style', 'generate_new_rei_style' );
 function generate_new_rei_style() {
 	$file = get_stylesheet_directory() . '/assets/css/rei-style.css';
+	touch($file);
 	include_once(get_stylesheet_directory() . '/includes/style.php');
 	file_put_contents($file, $css);
 	$success = "Style successfully updated.";
