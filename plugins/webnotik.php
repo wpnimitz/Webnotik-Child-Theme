@@ -437,8 +437,12 @@ function webnotik_real_estate_content(){
 					    	<input type="text" name='wda_form[content_body]' data-alpha="true" data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['content_body']" class="wda_color_picker" value="<?php echo $wda_form['content_body']; ?>">    	
 					    </div>
 				    </div>				
-				    <div id="save-styles">Save styles</div>		    
-				    <?php submit_button(); ?>
+					<p>Save the changes first before updating styles.</p>
+
+					<div class="options">
+				    	<?php submit_button(); ?>
+				    	<p class="submit"><a href="#" id="save-styles" class="button button-primary" >Update Styles</a></p>  
+				    </div>
 
 				</form>
 			</div>
