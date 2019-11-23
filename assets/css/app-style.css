@@ -262,14 +262,10 @@ START: FORM STYLING;
     padding: 0 !important;
     background: transparent !important;
 }
-
 .form-header, .form-body {
     padding: 5%;
 }
-
-
 .et_pb_module .gform_wrapper {
-    background: rgba(26,26,26,0.6);
     margin: 0px;
 }
 
