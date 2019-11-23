@@ -37,6 +37,7 @@ $css .= '.et_pb_module *[type=submit] {
 	background-position: 100% 0;
 	background-size: 200% 100%;
 	transition: all .25s ease-in;
+	margin-bottom: 0;
 }';
 
 $css .= '.et_pb_module *[type=submit]:hover {
