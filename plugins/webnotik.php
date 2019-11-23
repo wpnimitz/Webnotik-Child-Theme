@@ -374,13 +374,7 @@ function webnotik_real_estate_content(){
 				    $webnotik_business_logo_url =  get_option('webnotik_business_logo_url');
 				    $round_corners = $wda_form["round_corners"];
 
-				    $file = TEMPLATEPATH . '/assets/css/rei-style.css';
-
-					//Use the function is_file to check if the file already exists or not.
-					if(!is_file($file)){
-					    fopen($file, "w");
-					    fclose($myfile);
-					}
+				    touch(get_stylesheet_directory() . '/assets/css/rei-style.css');
 				    ?>
 
 				    <div class="form-group">
