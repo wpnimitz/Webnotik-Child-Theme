@@ -1277,7 +1277,7 @@ function webnotik_gf_entry($atts) {
     extract( shortcode_atts( array(
         'id' => false,
         'field' => false,
-        'default' => '' ,
+        'default' => 'Invalid Entry ID.' ,
         'after' => '' ,
     ), $atts ) );
 
@@ -1291,11 +1291,10 @@ function webnotik_gf_entry($atts) {
     if( isset( $_GET['id']) ) {
         $entry_id = $_GET['id'];
         $field = $_GET["field"];
-    	$default = $_GET["default"];
     }
 
-    if(empty($entry_id) && empty($default)) {
-        return "Invalid Entry ID";
+    if( isset( $_GET['default']) ) {
+        $default = $_GET["default"];
     }
 
     $entry = GFAPI::get_entry( $entry_id );
