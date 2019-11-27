@@ -1270,3 +1270,43 @@ function generate_new_rei_style() {
 	fclose($myCSS);
 	wp_send_json_success($success);
 }
+
+
+add_shortcode("wgf_entry", "webnotik_gf_entry");
+function webnotik_gf_entry($atts) {
+    extract( shortcode_atts( array(
+        'id' => false,
+        'field' => false,
+        'default' => ''
+    ), $atts ) );
+
+    $entry_id = $atts["id"];
+    $field = $atts["field"];
+    $default = $atts["default"];
+
+
+    //only applies on important pages.
+    if( isset( $_GET['id']) ) {
+        $entry_id = $_GET['schedule_id'];
+        $field = $_GET["field"];
+    	$default = $_GET["default"];
+    }
+
+    if(!$entry_id) {
+        return "Invalid Entry ID";
+    }
+
+    $entry = GFAPI::get_entry( $entry_id );
+
+    if( $field ) {
+        if(!empty($entry[$field])) {
+            return $entry[$field];
+        } else {
+            if(!empty($default)) {
+            	return $default;
+            } else {
+            	return 'No value found';
+            }
+        }
+    }
+}
