@@ -1294,7 +1294,7 @@ function webnotik_gf_entry($atts) {
     	$default = $_GET["default"];
     }
 
-    if(empty($entry_id)) {
+    if(empty($entry_id) && empty($default)) {
         return "Invalid Entry ID";
     }
 
