@@ -1287,7 +1287,7 @@ function webnotik_gf_entry($atts) {
 
     //only applies on important pages.
     if( isset( $_GET['id']) ) {
-        $entry_id = $_GET['schedule_id'];
+        $entry_id = $_GET['id'];
         $field = $_GET["field"];
     	$default = $_GET["default"];
     }
