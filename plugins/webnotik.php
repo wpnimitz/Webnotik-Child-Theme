@@ -1277,12 +1277,14 @@ function webnotik_gf_entry($atts) {
     extract( shortcode_atts( array(
         'id' => false,
         'field' => false,
-        'default' => '' 
+        'default' => '' ,
+        'after' => '' ,
     ), $atts ) );
 
     $entry_id = $atts["id"];
     $field = $atts["field"];
     $default = $atts["default"];
+    $after = $atts["after"];
 
 
     //need to get the id passed by gravity forms// make sure your passing the correct entry ID.
@@ -1300,7 +1302,13 @@ function webnotik_gf_entry($atts) {
 
     if( $field ) {
         if(!empty($entry[$field])) {
-            return $entry[$field];
+            $ret = $entry[$field];
+
+            if(!empty($after)) {
+            	$ret .= $after;
+            }
+
+            return $ret;
         } else {
             if(!empty($default)) {
             	return $default;
