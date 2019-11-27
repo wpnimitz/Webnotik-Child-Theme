@@ -1285,7 +1285,7 @@ function webnotik_gf_entry($atts) {
     $default = $atts["default"];
 
 
-    //only applies on important pages.
+    //need to get the id passed by gravity forms// make sure your passing the correct entry ID.
     if( isset( $_GET['id']) ) {
         $entry_id = $_GET['id'];
         $field = $_GET["field"];
