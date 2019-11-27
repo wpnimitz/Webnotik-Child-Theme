@@ -1277,7 +1277,7 @@ function webnotik_gf_entry($atts) {
     extract( shortcode_atts( array(
         'id' => false,
         'field' => false,
-        'default' => ''
+        'default' => '' 
     ), $atts ) );
 
     $entry_id = $atts["id"];
