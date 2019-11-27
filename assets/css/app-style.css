@@ -261,9 +261,11 @@ START: FORM STYLING;
 }
 
 /**any forms global forms (make sure they are stripped off with default style)**/
-.et_pb_module input, .et_pb_module select, .et_pb_module textarea {
+.et_pb_module input,
+.et_pb_module select,
+.et_pb_module textarea {
     background: #fff;
-    border: none;
+    border: 1px solid #bbb !important;
     border-radius: 0;
     padding: 17px 15px !important;
     width: 100% !important;
