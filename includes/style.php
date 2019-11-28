@@ -32,7 +32,6 @@ $css .= '.et_pb_module *[type=submit] {
 	margin: 0 auto;
 	text-align: center;
 	font-weight: bold;
-	margin-top: 45px;
 	color: #fff !important;
 	background-image: linear-gradient(to left, transparent, transparent 50%, '.$button_color_hover.' 50%, '.$button_color_hover.');
 	background-position: 100% 0;
