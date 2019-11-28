@@ -44,7 +44,7 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 						get_template_part( 'includes/social_icons', 'footer' );
 					}
 
-					echo 'Copyright © '.date("Y").' '.get_bloginfo('name').'. All rights reserved. Powered by <a href="https://webnotik.com/">Webnotik</a>'
+					echo '<div id="footer-info">Copyright © '.date("Y").' '.get_bloginfo('name').'. All rights reserved. Powered by <a href="https://webnotik.com/">Webnotik</a></div>';
 				?>
 					</div>	<!-- .container -->
 				</div>
