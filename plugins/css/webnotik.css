@@ -51,6 +51,14 @@
     background: #e2e2e2;
 }
 
+.webnotik-re-wrapper h3 {
+    border-bottom: 1px solid #9f9f9f;
+    max-width: 99%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
 
 .panel-body .form-field p {
 	margin: 0;
