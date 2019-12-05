@@ -5,6 +5,15 @@ extract($wda_form);
 
 $border_radius = '5px';
 
+if(!empty($hero_background)) {
+	$hero_background = get_stylesheet_directory_uri() . '/assets/img/no-bg.jpg';
+}
+
+
+$css .= '.webnotik-pages .hero-background {
+    background-image: linear-gradient(90deg,rgba(30,30,30,0.50) 30%,rgba(30,30,30,0.20) 75%),url('.$hero_background.')!important;
+}';
+
 $css .= '.webnotik-pages .form-header-hero,
 .webnotik-pages .form-hero .form-header,
 .single .form-hero .form-header  {
