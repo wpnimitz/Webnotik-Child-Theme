@@ -244,6 +244,12 @@
 }
 
 
+/** depreciated since 1.2.7 **/
+.form-body-hero {
+    padding: 15px !important;
+}
+
+
 /** 
 START: FORM STYLING; 
 
