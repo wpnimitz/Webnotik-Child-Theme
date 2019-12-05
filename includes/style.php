@@ -5,7 +5,7 @@ extract($wda_form);
 
 $border_radius = '5px';
 
-if(!empty($hero_background)) {
+if(empty($hero_background)) {
 	$hero_background = get_stylesheet_directory_uri() . '/assets/img/no-bg.jpg';
 }
 
