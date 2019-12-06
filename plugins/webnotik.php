@@ -373,7 +373,7 @@ function webnotik_real_estate_content(){
 				    $wda_form =  get_option('wda_form');
 				    $webnotik_business_logo_url =  get_option('webnotik_business_logo_url');
 				    $round_corners = $wda_form["round_corners"];
-				    $round_corners = $wda_form["remove_form_header_padding_bottom"];
+				    $remove_form_header_padding_bottom = $wda_form["remove_form_header_padding_bottom"];
 
 				    
 				    ?>
