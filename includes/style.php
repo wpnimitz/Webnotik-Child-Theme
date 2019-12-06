@@ -15,7 +15,7 @@ if(empty($hero_background)) {
 	$hero_background = get_stylesheet_directory_uri() . '/assets/img/no-bg.jpg';
 }
 $css .= '.webnotik-pages .hero-background {
-    background-image: linear-gradient(90deg,rgba(30,30,30,0.50) 30%,rgba(30,30,30,0.20) 75%),url('.$hero_background.')!important;
+    background-image: linear-gradient(90deg,rgba(30,30,30,0.50) 30%,rgba(30,30,30,0.20) 75%),url('.$hero_background.');
 }';
 
 if(!empty($form_header)) {
@@ -60,7 +60,7 @@ if(!empty($form_body)) {
 }
 
 if($form_fields_size == "Small") {
-	$css .= '.gform_wrapper .et_pb_module input, .gform_wrapper .et_pb_module select, .gform_wrapper .et_pb_module textarea {
+	$css .= '.et_pb_module .gform_wrapper input, .et_pb_module .gform_wrapper select, .et_pb_module .gform_wrapper textarea {
 		padding: 10px 15px !important;
 	}';
 }
