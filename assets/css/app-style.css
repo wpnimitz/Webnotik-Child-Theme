@@ -259,12 +259,18 @@ START: FORM STYLING;
     padding: 0 !important;
     background: transparent !important;
 }
-.form-header, .form-body {
+.form-header, .form-body,
+.form-header-hero .gform_wrapper {
     padding: 5%;
 }
+.form-header-hero p {
+    padding-bottom: 0;
+}
+
 .et_pb_module .gform_wrapper {
     margin: 0px;
 }
+
 
 /**any forms global forms (make sure they are stripped off with default style)**/
 .et_pb_module input,

@@ -373,6 +373,7 @@ function webnotik_real_estate_content(){
 				    $wda_form =  get_option('wda_form');
 				    $webnotik_business_logo_url =  get_option('webnotik_business_logo_url');
 				    $round_corners = $wda_form["round_corners"];
+				    $round_corners = $wda_form["remove_form_header_padding_bottom"];
 
 				    
 				    ?>
@@ -428,12 +429,25 @@ function webnotik_real_estate_content(){
 				    		<input type="text" name="wda_form[hero_overlay]"  data-alpha="true" data-default-color="<?php echo $wda_form['hero_overlay']; ?>" id="wda_form[hero_overlay]" class="wda_color_picker" value="<?php echo $wda_form['hero_overlay']; ?>">    	
 					    </div>
 				    </div>
+				     <h3>Form Design</h3>
 				    <div class="form-group">
 				    	<div class="form-label">
 					    	<label for="wda_form[hero_header]">Form Header Background</label>
 					    </div>
 				    	<div class="form-field">
 				    		<input type="text" name="wda_form[hero_header]"  data-alpha="true" data-default-color="<?php echo $wda_form['hero_header']; ?>" id="wda_form['hero_header']" class="wda_color_picker" value="<?php echo $wda_form['hero_header']; ?>">    	
+					    </div>
+				    </div>
+				    
+				    <div class="form-group">
+				    	<div class="form-label">
+					    	<label for="wda_form[remove_form_header_padding_bottom]">Remove Header Bottom Padding?</label>
+					    </div>
+				    	<div class="form-field">
+				    		<select name="wda_form[remove_form_header_padding_bottom]" id="wda_form[remove_form_header_padding_bottom]">
+					    		<option value="No" <?php echo $remove_form_header_padding_bottom == "No" ? 'selected' : '' ?>>No</option>
+					    		<option value="Yes" <?php echo $remove_form_header_padding_bottom == "Yes" ? 'selected' : '' ?>>Yes</option>
+				    		</select>
 					    </div>
 				    </div>
 				    <div class="form-group">
