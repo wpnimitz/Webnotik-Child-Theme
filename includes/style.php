@@ -27,7 +27,7 @@ $css .= '.webnotik-pages .form-header-hero,
     
 }';
 // border-bottom: 5px solid #fff;
-if($remove_form_header_padding_bottom == "yes") {
+if($remove_form_header_padding_bottom == "Yes") {
 $css .= '.form-header {
     padding-bottom: 0 !important;
 	}';
