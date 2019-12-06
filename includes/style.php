@@ -35,8 +35,9 @@ $css .= '.form-header {
 
 
 $css .= '.webnotik-pages .form-body-hero,
-.webnotik-pages .form-hero .form-body {
-    background: '.$hero_body.';
+.webnotik-pages .form-hero .form-body,
+.form-header-hero .gform_wrapper {
+    background: '.$form_body.';
 }';
 
 $css .= '.webnotik-pages .form-header-content,
