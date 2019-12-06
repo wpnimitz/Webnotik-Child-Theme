@@ -374,8 +374,7 @@ function webnotik_real_estate_content(){
 				    $webnotik_business_logo_url =  get_option('webnotik_business_logo_url');
 				    $round_corners = $wda_form["round_corners"];
 				    $remove_form_header_padding_bottom = $wda_form["remove_form_header_padding_bottom"];
-
-				    
+				    $form_fields_size = $wda_form["form_fields_size"];
 				    ?>
 
 				    <div class="form-group">
@@ -447,6 +446,17 @@ function webnotik_real_estate_content(){
 				    		<select name="wda_form[remove_form_header_padding_bottom]" id="wda_form[remove_form_header_padding_bottom]">
 					    		<option value="No" <?php echo $remove_form_header_padding_bottom == "No" ? 'selected' : '' ?>>No</option>
 					    		<option value="Yes" <?php echo $remove_form_header_padding_bottom == "Yes" ? 'selected' : '' ?>>Yes</option>
+				    		</select>
+					    </div>
+				    </div>
+				    <div class="form-group">
+				    	<div class="form-label">
+					    	<label for="wda_form[form_fields_size]">Form Fields Size</label>
+					    </div>
+				    	<div class="form-field">
+				    		<select name="wda_form[form_fields_size]" id="wda_form[form_fields_size]">
+					    		<option value="Small" <?php echo $form_fields_size == "Small" ? 'selected' : '' ?>>Small</option>
+					    		<option value="Regular" <?php echo $form_fields_size == "Regular" ? 'selected' : '' ?>>Regular</option>
 				    		</select>
 					    </div>
 				    </div>

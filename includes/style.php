@@ -28,8 +28,8 @@ $css .= '.webnotik-pages .form-header-hero,
 }';
 // border-bottom: 5px solid #fff;
 if($remove_form_header_padding_bottom == "Yes") {
-$css .= '.form-header {
-    padding-bottom: 0 !important;
+	$css .= '.form-header {
+	    padding-bottom: 0 !important;
 	}';
 }
 
@@ -51,6 +51,12 @@ $css .= '.webnotik-pages .form-header-content,
 $css .= '.webnotik-pages .form-body-content, .single .form-body-content {
     background: '.$form_body.';
 }';
+
+if($form_fields_size == "Small") {
+	$css .= '.gform_wrapper .et_pb_module input, .gform_wrapper .et_pb_module select, .gform_wrapper .et_pb_module textarea {
+		padding: 10px 15px !important;
+	}';
+}
 
 $css .= '.et_pb_module *[type=submit] {
 	background: '.$button_color.';
