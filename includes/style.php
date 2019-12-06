@@ -18,6 +18,8 @@ $css .= '.webnotik-pages .hero-background {
     background-image: linear-gradient(90deg,rgba(30,30,30,0.50) 30%,rgba(30,30,30,0.20) 75%),url('.$hero_background.');
 }';
 
+
+
 if(!empty($form_header)) {
 	$css .= '.webnotik-pages .form-header-hero,
 	.webnotik-pages .form-hero .form-header,
@@ -63,6 +65,11 @@ if($form_fields_size == "Small") {
 	$css .= '.et_pb_module .gform_wrapper input, .et_pb_module .gform_wrapper select, .et_pb_module .gform_wrapper textarea {
 		padding: 10px 15px !important;
 	}';
+}
+
+if($round_corners == "Yes") { 
+	$css .= '.et_pb_section .rounded_corners { border-radius: 5px}';
+
 }
 
 
