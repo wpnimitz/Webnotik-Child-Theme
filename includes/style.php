@@ -23,7 +23,7 @@ $css .= '.webnotik-pages .hero-background {
 $css .= '.webnotik-pages .form-header-hero,
 .webnotik-pages .form-hero .form-header,
 .single .form-hero .form-header  {
-    background: '.$hero_header.';
+    background: '.$form_header.';
     
 }';
 // border-bottom: 5px solid #fff;
@@ -40,14 +40,16 @@ $css .= '.webnotik-pages .form-body-hero,
     background: '.$form_body.';
 }';
 
+
+//depreciated since 1.2.7
 $css .= '.webnotik-pages .form-header-content,
 .single .form-header-content {
-    background: '.$content_header.';
+    background: '.$form_body.';
 }';
 
-
+//depreciated since 1.2.7
 $css .= '.webnotik-pages .form-body-content, .single .form-body-content {
-    background: '.$content_body.';
+    background: '.$form_body.';
 }';
 
 $css .= '.et_pb_module *[type=submit] {
