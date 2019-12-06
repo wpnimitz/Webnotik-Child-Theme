@@ -1,5 +1,7 @@
 <?php
-$css = '';
+$css = '/**';
+$css .= 'Created on: ' . date("Y/m/d H:i:s");
+$css .= '**/';
 $wda_form = get_option('wda_form');
 extract($wda_form);
 
