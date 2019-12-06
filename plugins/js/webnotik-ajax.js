@@ -76,6 +76,10 @@ jQuery(document).ready(function( $ ) {
         $.getJSON( get_city_pages_data.ajaxurl, data, function( json ) {
             console.log(json.data);
             $(".message").addClass("success show").html("Successfully created a stylesheet base on branding configurations.");
+
+            setTimeout(function() {
+              $(".message").removeClass('show');
+            }, 2500);
         } );
     })
 });
