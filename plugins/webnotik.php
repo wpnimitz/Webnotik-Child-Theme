@@ -430,7 +430,7 @@ function webnotik_real_estate_content(){
 					    </div>
 				    </div>
 				     <h3>Form Design</h3>
-				     <p class="hint">Make sure to add <strong>form-hero-header</strong> class to any module that you have a form.</p>
+				     <p>Make sure to add <strong>form-hero-header</strong> class to any module that you have a form.</p>
 				    <div class="form-group">
 				    	<div class="form-label">
 					    	<label for="wda_form[form_header]">Form Header Background</label>
