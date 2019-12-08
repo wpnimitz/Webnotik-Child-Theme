@@ -27,6 +27,9 @@ if(!empty($form_header)) {
 	    background: '.$form_header.';
 	    
 	}';
+	$css .= '.webnotik-pages .et_pb_divider:before {
+	    border-top-color: '.$form_header.';
+	}';
 }
 
 if($remove_form_header_padding_bottom == "Yes") {

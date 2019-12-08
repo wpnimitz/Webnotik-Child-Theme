@@ -97,7 +97,7 @@
 /** Display a message on the editor **/
 .webnotik-pages .et-fb-iframe-ancestor .hero-background.et_pb_section:after,
 .webnotik-pages .et-fb-iframe-ancestor .easy-steps-background.et_pb_section:after {
-    content: "Background controlled by css -- this message is visible for admin only. You can remove the custom css class in this section.";
+    content: "Edit background in REI Toolkit -> Branding -- this message is visible for admin only. You can remove the custom css class in this section.";
     color: #000;
     position: absolute;
     top: 0;
