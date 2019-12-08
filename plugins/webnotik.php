@@ -1179,6 +1179,8 @@ function webnotik_city_keywords( $atts ){
 		$item = "main";
 	}
 
+	
+
 
 
 	if($item == 'main') {
@@ -1188,9 +1190,10 @@ function webnotik_city_keywords( $atts ){
 		// $keyword = get_option('webnotik_keywords_subpages');
 		// $item = str_replace("city", '', $item);
 		// $try_keyword = $keyword[$item-1];
+		global $post;
 
 		$exclude_words = array( ' for ', ' my ', 'in ', 'In ', 'We ', 'Buy', 'Houses', 'House', 'Cash', 'Fast', 'Sell');
-    	$post_title = get_the_title();
+    	$post_title = get_the_title($post->ID);
 
     	foreach ($exclude_words as $ex_word) {
     		$post_title = str_replace($ex_word, '', $post_title);
