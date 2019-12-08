@@ -109,12 +109,11 @@ function rename_city_pages_callback() {
 
 		// Update the post into the database
 		wp_update_post( $my_post );
-
+		update_post_meta($mypost_id, 'city_keyword', $new_title);
 
 		$success["post_title"] = 'We Buy Houses ' . $new_title;
 		$success["post_name"] = get_the_permalink($mypost_id);
-		wp_send_json_success( $success );
-		update_post_meta($mypost_id, 'city_keyword', $new_title); 
+		wp_send_json_success( $success );	
 
 	} else {
 		$error["given_title"] = "Title: " . $_REQUEST["given_title"];
