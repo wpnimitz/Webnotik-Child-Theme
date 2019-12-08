@@ -92,5 +92,11 @@ if(!empty($button_color)) {
 }
 
 
-
-
+if($round_corners == "Yes") {
+	$css .= '.round_corners .cta a,
+		.round_corners *[type=submit],
+		.round_corners .et_pb_button
+		{
+		    border-radius: '.$round_corners_px.' !important;
+		}';
+}

@@ -373,6 +373,7 @@ function webnotik_real_estate_content(){
 				    $wda_form =  get_option('wda_form');
 				    $webnotik_business_logo_url =  get_option('webnotik_business_logo_url');
 				    $round_corners = $wda_form["round_corners"];
+				    $round_corners_px = $wda_form["round_corners_px"];
 				    $remove_form_header_padding_bottom = $wda_form["remove_form_header_padding_bottom"];
 				    $form_fields_size = $wda_form["form_fields_size"];
 				    ?>
@@ -398,6 +399,14 @@ function webnotik_real_estate_content(){
 					    		<option value="Yes" <?php echo $round_corners == "Yes" ? 'selected' : '' ?>>Yes</option>
 				    		</select>
 				    		<p class="hint">add <strong>rounded_corners</strong> to module or row class.</p>
+					    </div>
+				    </div>
+				    <div class="form-group">
+				    	<div class="form-label">
+					    	<label for="wda_form[round_corners_px]">Round Corners PX</label>
+					    </div>
+				    	<div class="form-field">
+				    		<input type="number" step="1" name="wda_form[round_corners_px]" id="wda_form[round_corners_px]" value="<?php echo $round_corners_px; ?>">
 					    </div>
 				    </div>
 
