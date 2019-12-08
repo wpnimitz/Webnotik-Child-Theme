@@ -53,7 +53,7 @@ jQuery(document).ready(function( $ ) {
             if ( json.success ) {
             	json_data = json["data"];
             	console.log(json_data);
-                $(".message").addClass("success").append("Successfully renamed. New URL: " + json.data["post_name"]);
+                rei_message_show("Successfully renamed. New URL: " + json.data["post_name"], "success");
 
                 $this.closest(".keyword").find(".k-value input").val(json.data["post_name"])
             } else {
@@ -75,11 +75,15 @@ jQuery(document).ready(function( $ ) {
         }
         $.getJSON( get_city_pages_data.ajaxurl, data, function( json ) {
             console.log(json.data);
-            $(".message").addClass("success show").html("Successfully created a stylesheet base on branding configurations.");
-
-            setTimeout(function() {
-              $(".message").removeClass('show');
-            }, 2500);
+            rei_message_show("Successfully created a stylesheet base on branding configurations.", "success");
         } );
     })
+
+    function rei_message_show(msg, extra_class) {
+        $(".message").attr("class", "").addClass("show " + extra_class).html(msg);
+
+        setTimeout(function() {
+          $(".message").removeClass('show');
+        }, 2500);
+    }
 });
