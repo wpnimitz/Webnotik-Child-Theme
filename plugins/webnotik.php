@@ -1210,9 +1210,6 @@ function webnotik_city_keywords( $atts ){
 
 }
 add_shortcode( 'city_keywords', 'webnotik_city_keywords' );
-add_shortcode( 'city_keywords', 'webnotik_city_keywords' );
-
-
 
 add_action( 'et_before_main_content', 'webnotik_divi_global_header' );
 function webnotik_divi_global_header() {
