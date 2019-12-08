@@ -80,7 +80,7 @@ jQuery(document).ready(function( $ ) {
     })
 
     function rei_message_show(msg, extra_class) {
-        $(".message").attr("class", "").addClass("show " + extra_class).html(msg);
+        $(".message").attr("class", "").addClass("message show " + extra_class).html(msg);
 
         setTimeout(function() {
           $(".message").removeClass('show');
