@@ -114,6 +114,7 @@ function rename_city_pages_callback() {
 		$success["post_title"] = 'We Buy Houses ' . $new_title;
 		$success["post_name"] = get_the_permalink($mypost_id);
 		wp_send_json_success( $success );
+		update_post_meta($mypost_id, 'city_keyword', $new_title); 
 
 	} else {
 		$error["given_title"] = "Title: " . $_REQUEST["given_title"];
@@ -1178,19 +1179,19 @@ function webnotik_city_keywords( $atts ){
 	if(is_front_page()){
 		$item = "main";
 	}
-
-	
-
-
+	global $post;
+	$city_keyword = get_post_meta( $post->ID, 'city_keyword', true );
 
 	if($item == 'main') {
 		$keyword = get_option('webnotik_keywords_main');
 		$ret = $keyword;
+	} elseif (!empty($city_keyword)) {
+		$ret = $city_keyword;
 	} else {
 		// $keyword = get_option('webnotik_keywords_subpages');
 		// $item = str_replace("city", '', $item);
 		// $try_keyword = $keyword[$item-1];
-		global $post;
+		
 
 		$exclude_words = array( ' for ', ' my ', 'in ', 'In ', 'We ', 'Buy', 'Houses', 'House', 'Cash', 'Fast', 'Sell');
     	$post_title = get_the_title($post->ID);
