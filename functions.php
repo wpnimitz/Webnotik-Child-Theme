@@ -25,5 +25,11 @@ function webnotik_body_class( $classes ) {
 		$classes[] = 'webnotik-header header-' .$header_style;
 	}
 
+	$round_corners =  get_option('round_corners');
+	//add round_corners to body
+	if($round_corners == "Yes") {
+		$classes[] = 'round_corners';
+	}
+
     return $classes;
 }

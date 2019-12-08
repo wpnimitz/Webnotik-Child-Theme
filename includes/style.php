@@ -70,11 +70,6 @@ if($form_fields_size == "Small") {
 	}';
 }
 
-if($round_corners == "Yes") { 
-	$css .= '.et_pb_section .rounded_corners { border-radius: 5px}';
-
-}
-
 
 if(!empty($button_color)) {
 	$css .= '.et_pb_module *[type=submit] {
