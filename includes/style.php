@@ -97,6 +97,6 @@ if($round_corners == "Yes") {
 		.round_corners *[type=submit],
 		.round_corners .et_pb_button
 		{
-		    border-radius: '.$round_corners_px.' !important;
+		    border-radius: '.$round_corners_px.'px !important;
 		}';
 }
