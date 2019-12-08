@@ -622,7 +622,6 @@ function webnotik_real_estate_content(){
 			<!-- STARTS #keywords-forms --> 
 			<div id="keywords"> 
 				<p>Add all your city pages here. The more the merrier for SEO.</p>
-				<p class="message"></p>
 				<p class="actions">
 					<a id="get-cp2" href="#">List City Pages</a>
 				</p>
