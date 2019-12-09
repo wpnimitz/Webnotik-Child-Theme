@@ -256,6 +256,7 @@
 .location-list li a:before {
     font-family: etmodules;
     content: "\e01d";
+    padding-right: 10px;
 }
 
 
