@@ -998,6 +998,7 @@ function webnotik_form_shortcode( $atts ){
 	$atts = shortcode_atts(
 		array(
 			'type' => 'seller',
+			'source' => 'organic',
 		), $atts, 'webnotik_form' );
 	$type = $atts["type"];
 	$source = $atts["source"];
@@ -1124,7 +1125,7 @@ function webnotik_city_pages( $atts ){
 
 	$subpages = get_option('webnotik_keywords_subpages');
 	$subid = get_option('webnotik_keywords_subpages_ids');
-
+	$ret = '';
 
 	if($limit == 0){
 		$limit_count = count($subpages);
