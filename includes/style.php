@@ -89,7 +89,11 @@ if(!empty($button_color)) {
 	  background-position: 0 0;
 	  color: #fff !important;
 	}';
-}
+
+	$css .= '
+	.webnotik-pages .location-list li a {
+		color: '.$button_color.'
+	}';
 
 
 if($round_corners != "Yes") {
@@ -104,3 +108,5 @@ $css .= '
 {
     border-radius: '.$round_corners_px.'px !important;
 }';
+
+

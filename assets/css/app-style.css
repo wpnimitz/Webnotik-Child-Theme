@@ -235,6 +235,24 @@
     width: 50%;
 }
 
+.location-list ul {
+    padding: 0;
+}
+
+.location-list li {
+    list-style: none;
+}
+
+.location-list li a {
+    padding: 10px 15px;
+    display: block;
+    background: #f1f1f1;
+    margin-bottom: 5px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 700;
+}
+
 
 
 /** Module Default Styling **/
