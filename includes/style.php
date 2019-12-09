@@ -90,8 +90,7 @@ if(!empty($button_color)) {
 	  color: #fff !important;
 	}';
 
-	$css .= '
-	.webnotik-pages .location-list li a {
+	$css .= '.webnotik-pages .location-list li a {
 		color: '.$button_color.'
 	}';
 
