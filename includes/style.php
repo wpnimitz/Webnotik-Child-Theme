@@ -93,6 +93,7 @@ if(!empty($button_color)) {
 	$css .= '.webnotik-pages .location-list li a {
 		color: '.$button_color.'
 	}';
+}
 
 
 if($round_corners != "Yes") {
