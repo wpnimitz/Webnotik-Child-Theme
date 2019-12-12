@@ -241,6 +241,9 @@
 
 .location-list li {
     list-style: none;
+    width: 49%;
+    display: inline-block;
+    margin-right: 1%;
 }
 
 .location-list li a {
