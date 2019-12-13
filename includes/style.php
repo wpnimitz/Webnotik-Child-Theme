@@ -23,6 +23,7 @@ $css .= '.webnotik-pages .hero-background {
 if(!empty($form_header)) {
 	$css .= '.webnotik-pages .form-header-hero,
 	.webnotik-pages .form-hero .form-header,
+	.single .form-header-hero .form-header,
 	.single .form-hero .form-header  {
 	    background: '.$form_header.';
 	    
@@ -42,6 +43,7 @@ if($remove_form_header_padding_bottom == "Yes") {
 if(!empty($form_body)) {
 	$css .= '.webnotik-pages .form-body-hero,
 	.webnotik-pages .form-hero .form-body,
+	.single .form-header-hero .gform_wrapper,
 	.form-header-hero .gform_wrapper {
 	    background: '.$form_body.';
 	}';

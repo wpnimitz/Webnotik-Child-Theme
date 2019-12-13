@@ -758,13 +758,12 @@ function webnotik_real_estate_content(){
 				    <div class="hint-wrapper">
 				    	<p class="hint"><strong>Delete Data</strong> button will only delete the data on this page. Make sure to click save changes.</p>
 				    	<p class="hint"><strong>Rename Page</strong> will rename the current city page you have clicked. Make sure to change the name in the field.</p>
-				    	<p class="hint"><strong>Clone Page</strong> will clone the current city page you have clicked.</p>
-
+				    	
 				    	<p class="shortcode">
 				    		<strong>[city_keywords]</strong> - Display the main city Name
 				    	</p>
 				    	<p class="shortcode">
-				    		<strong>[city_keywords item="city"]</strong> - You need to change the starting from number 1 to N number where N is based on the saved city data. Basically, it will also return the city name. 
+				    		<strong>[city_keywords item="city"]</strong> Display current page location keyword by eliminating common words in the page title.
 				    	</p>
 				    	<p class="shortcode">
 				    		<strong>[city_pages type="" after=""]</strong><br>
