@@ -123,10 +123,12 @@ $css .= '
 .round_corners .et_pb_image .has-box-shadow-overlay
 {
     border-radius: '.$round_corners_px.'px !important;
-    border: '.$round_corners_px.';
 }';
 
+
+//isolated case where the button have a spacing for the hover color
 $css .= '
 .round_corners .et_pb_module .gform_wrapper button {
 	margin-left: -1px;
+	border: '.$round_corners_px.';
 }';
