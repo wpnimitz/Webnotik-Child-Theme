@@ -125,3 +125,8 @@ $css .= '
     border-radius: '.$round_corners_px.'px !important;
     border: '.$round_corners_px.';
 }';
+
+$css .= '
+.round_corners .et_pb_module .gform_wrapper button {
+	margin-left: -1px;
+}';
