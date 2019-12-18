@@ -1292,10 +1292,12 @@ function generate_new_rei_style() {
 }
 
 
-add_action('after_setup_theme', 'create_rei_style');
-function create_rei_style() {
-    generate_new_rei_style();
-}
+// add_action('after_setup_theme', 'create_rei_style');
+// function create_rei_style() {
+
+	
+//     generate_new_rei_style();
+// }
 
 
 add_shortcode("wgf_entry", "webnotik_gf_entry");
