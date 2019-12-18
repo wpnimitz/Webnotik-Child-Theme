@@ -123,6 +123,5 @@ $css .= '
 .round_corners .et_pb_image .has-box-shadow-overlay
 {
     border-radius: '.$round_corners_px.'px !important;
+    border: '.$round_corners_px.';
 }';
-
-
