@@ -26,10 +26,7 @@ function webnotik_body_class( $classes ) {
 	}
 
 	$wda_form =  get_option('wda_form');
-	//add round_corners to body
-	if($wda_form["round_corners"] == "Yes") {
-		$classes[] = 'round_corners';
-	}
+	$classes[] = 'round_corners';
 
     return $classes;
 }
