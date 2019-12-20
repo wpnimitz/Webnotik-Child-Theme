@@ -438,8 +438,8 @@ function webnotik_real_estate_content(){
 				    		<input type="text" name="wda_form[hero_overlay]"  data-alpha="true" data-default-color="<?php echo $wda_form['hero_overlay']; ?>" id="wda_form[hero_overlay]" class="wda_color_picker" value="<?php echo $wda_form['hero_overlay']; ?>">    	
 					    </div>
 				    </div>
-				     <h3>Form Design</h3>
-				     <p>Make sure to add <strong>form-hero-header</strong> class to any module that you have a form.</p>
+				    <h3>Form Design</h3>
+				    <p>Make sure to add <strong>form-hero-header</strong> class to any module that you have a form.</p>
 				    <div class="form-group">
 				    	<div class="form-label">
 					    	<label for="wda_form[form_header]">Form Header Background</label>
@@ -493,6 +493,26 @@ function webnotik_real_estate_content(){
 					    </div>
 				    	<div class="form-field">
 					    	<input type="text" name='wda_form[button_color_hover]' data-alpha="true" data-default-color="<?php echo $wda_form['button_color_hover']; ?>" id="wda_form['button_color_hover']" class="wda_color_picker" value="<?php echo $wda_form['button_color_hover']; ?>">
+					    </div>
+				    </div>
+
+
+				    <h3>Form Design</h3>
+				    <div class="form-group">
+				    	<div class="form-label">
+					    	<label for="wda_form[typage_bg_color]">Thank You Page Background Color</label>
+					    </div>
+				    	<div class="form-field">
+					    	<input type="text" name='wda_form[typage_bg_color]' data-alpha="true" data-default-color="<?php echo $wda_form['typage_bg_color']; ?>" id="wda_form['typage_bg_color']" class="wda_color_picker" value="<?php echo $wda_form['typage_bg_color']; ?>">
+					    </div>
+				    </div>
+
+				    <div class="form-group">
+				    	<div class="form-label">
+					    	<label for="wda_form[typage_button_bg_color]">Thank You Page Button Background Color</label>
+					    </div>
+				    	<div class="form-field">
+					    	<input type="text" name='wda_form[typage_button_bg_color]' data-alpha="true" data-default-color="<?php echo $wda_form['typage_button_bg_color']; ?>" id="wda_form['buttypage_button_bg_colorton_color_hover']" class="wda_color_picker" value="<?php echo $wda_form['typage_button_bg_color']; ?>">
 					    </div>
 				    </div>
 
