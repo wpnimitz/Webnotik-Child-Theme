@@ -497,7 +497,7 @@ function webnotik_real_estate_content(){
 				    </div>
 
 
-				    <h3>Form Design</h3>
+				    <h3>Other Page</h3>
 				    <div class="form-group">
 				    	<div class="form-label">
 					    	<label for="wda_form[typage_bg_color]">Thank You Page Background Color</label>
