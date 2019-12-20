@@ -1199,6 +1199,7 @@ add_shortcode( 'city_pages', 'webnotik_city_pages' );
 
 
 function webnotik_city_keywords( $atts ){
+	global $post;
 	$atts = shortcode_atts(
 		array(
 			'type' => 'single', //or inline
@@ -1212,8 +1213,8 @@ function webnotik_city_keywords( $atts ){
 		$item = "main";
 	}
 
-	$page_id = get_the_ID();
-	$city_keyword = get_post_meta( get_the_ID(), 'city_keyword', true );
+	//$page_id = get_the_ID();
+	$city_keyword = get_post_meta( $post->ID, 'city_keyword', true );
 
 	if($item == 'main') {
 		$keyword = get_option('webnotik_keywords_main');
