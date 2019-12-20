@@ -25,11 +25,16 @@ $css .= '
 if(!empty($main_branding_color)) {
 	$css .= '
 	.main,
-	span.main,
-	.cta a {
+	span.main {
 		color: '.$main_branding_color.';
 	}
 	';
+	$css .= '
+	.cta a {
+		background: '.$main_branding_color.';
+	}
+	';
+	
 }
 
 if(!empty($form_header)) {
