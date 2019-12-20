@@ -1208,11 +1208,12 @@ function webnotik_city_keywords( $atts ){
 	$type = $atts["type"];
 	$item = $atts["item"];
 
-	if(is_front_page()){
+	if( is_front_page() ){
 		$item = "main";
 	}
-	global $post;
-	$city_keyword = get_post_meta( $post->ID, 'city_keyword', true );
+
+	$page_id = get_the_ID();
+	$city_keyword = get_post_meta( get_the_ID(), 'city_keyword', true );
 
 	if($item == 'main') {
 		$keyword = get_option('webnotik_keywords_main');
@@ -1234,13 +1235,13 @@ function webnotik_city_keywords( $atts ){
     	
 
 		if(!empty($post_title)) {
-			$ret = "<span>" . $post_title . "</span>";
+			$ret = $post_title;
 		} else {
 			$ret = 'City Name';
 		}
 	}	
 	
-	return $ret;
+	return '<span class="city city-'.$page_id.'">' . $ret . '</span>';
 
 }
 add_shortcode( 'city_keywords', 'webnotik_city_keywords' );
