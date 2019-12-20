@@ -504,6 +504,7 @@ function webnotik_real_estate_content(){
 					    </div>
 				    	<div class="form-field">
 					    	<input type="text" name='wda_form[typage_bg_color]' data-alpha="true" data-default-color="<?php echo $wda_form['typage_bg_color']; ?>" id="wda_form['typage_bg_color']" class="wda_color_picker" value="<?php echo $wda_form['typage_bg_color']; ?>">
+					    	<p class="hint">Use 'thank-you-page' as a section or module class to use this background color</p>
 					    </div>
 				    </div>
 
