@@ -51,7 +51,7 @@ if(!empty($form_header)) {
 	.webnotik-pages .form-hero .form-header,
 	.single .form-header-hero .form-header,
 	.single .form-hero .form-header,
-	.webnotik-pages .thank-you-page  {
+	.webnotik-pages .thank-you-page.et_pb_fullwidth_header  {
 	    background: '.$form_header.';
 	    
 	}';
