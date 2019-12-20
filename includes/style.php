@@ -50,7 +50,8 @@ if(!empty($form_header)) {
 	.webnotik-pages .form-header-hero,
 	.webnotik-pages .form-hero .form-header,
 	.single .form-header-hero .form-header,
-	.single .form-hero .form-header  {
+	.single .form-hero .form-header,
+	.webnotik-pages .thank-you-page  {
 	    background: '.$form_header.';
 	    
 	}';
