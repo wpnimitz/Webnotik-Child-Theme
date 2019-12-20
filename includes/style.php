@@ -17,7 +17,8 @@ if(empty($hero_background)) {
 $css .= '
 .webnotik-pages .hero-background {
     background-image: linear-gradient(90deg,rgba(30,30,30,0.50) 30%,rgba(30,30,30,0.20) 75%),url('.$hero_background.');
-}';
+}
+';
 
 
 
@@ -33,14 +34,16 @@ if(!empty($form_header)) {
 	$css .= '
 	.webnotik-pages .et_pb_divider:before {
 	    border-top-color: '.$form_header.';
-	}';
+	}
+	';
 }
 
 if($remove_form_header_padding_bottom == "Yes") {
 	$css .= '
 	.form-header {
 	    padding-bottom: 0 !important;
-	}';
+	}
+	';
 }
 
 
@@ -51,7 +54,8 @@ if(!empty($form_body)) {
 	.single .form-header-hero .gform_wrapper,
 	.form-header-hero .gform_wrapper {
 	    background: '.$form_body.';
-	}';
+	}
+	';
 }
 
 
@@ -61,7 +65,8 @@ if(!empty($form_body)) {
 	.webnotik-pages .form-header-content,
 	.single .form-header-content {
 	    background: '.$form_body.';
-	}';
+	}
+	';
 }
 
 
@@ -70,14 +75,16 @@ if(!empty($form_body)) {
 	$css .= '
 	.webnotik-pages .form-body-content, .single .form-body-content {
 	    background: '.$form_body.';
-	}';
+	}
+	';
 }
 
 if($form_fields_size == "Small") {
 	$css .= '
 	.et_pb_module .gform_wrapper input, .et_pb_module .gform_wrapper select, .et_pb_module .gform_wrapper textarea {
 		padding: 10px 15px !important;
-	}';
+	}
+	';
 }
 
 
@@ -95,19 +102,22 @@ if(!empty($button_color)) {
 		background-size: 200% 100%;
 		transition: all .25s ease-in;
 		margin-bottom: 0;
-	}';
+	}
+	';
 
 	$css .= '
 	.et_pb_module *[type=submit]:hover, 
 	.et_pb_module .gform_wrapper button:hover {
 	  background-position: 0 0;
 	  color: #fff !important;
-	}';
+	}
+	';
 
 	$css .= '
 	.webnotik-pages .location-list li a {
 		color: '.$button_color.'
-	}';
+	}
+	';
 }
 
 
@@ -123,7 +133,8 @@ $css .= '
 .round_corners .et_pb_image .has-box-shadow-overlay
 {
     border-radius: '.$round_corners_px.'px !important;
-}';
+}
+';
 
 
 //isolated case where the button have a spacing for the hover color
@@ -131,4 +142,5 @@ $css .= '
 .round_corners .et_pb_module .gform_wrapper button {
 	margin-left: -1px;
 	border: '.$round_corners_px.';
-}';
+}
+';
