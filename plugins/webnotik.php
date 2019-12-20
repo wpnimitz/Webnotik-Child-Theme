@@ -420,6 +420,16 @@ function webnotik_real_estate_content(){
 					    </div>
 				    </div>
 
+				    <div class="form-group">
+				    	<div class="form-label">
+					    	<label for="wda_form[main_branding_color]">Main Branding Color</label>
+					    </div>
+				    	<div class="form-field">
+				    		<input type="text" name="wda_form[main_branding_color]"  data-alpha="true" data-default-color="<?php echo $wda_form['main_branding_color']; ?>" id="wda_form[main_branding_color]" class="wda_color_picker" value="<?php echo $wda_form['main_branding_color']; ?>">  
+				    		<p class="hint">Currently used for menu cta background, span text and lines.</p>  	
+					    </div>
+				    </div>
+
 				    <h3>Hero Sections</h3>
 				    <div class="form-group">
 				    	<div class="form-label">
