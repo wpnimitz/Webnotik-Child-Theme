@@ -30,8 +30,11 @@ if(!empty($main_branding_color)) {
 	}
 	';
 	$css .= '
-	.cta a {
+	.cta a {   
 		background: '.$main_branding_color.';
+		padding: 15px 20px!important;
+	    border-radius: 3px;
+	    color: #fff!important;
 	}
 	';
 	
