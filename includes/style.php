@@ -30,7 +30,8 @@ if(!empty($main_branding_color)) {
 	}
 	';
 	$css .= '
-	.cta a {   
+	.cta a,
+	.webnotik-pages .thank-you-page .et_pb_button {   
 		background: '.$main_branding_color.';
 		padding: 15px 20px!important;
 	    border-radius: 3px;
