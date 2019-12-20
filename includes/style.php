@@ -22,6 +22,16 @@ $css .= '
 
 
 
+if(!empty($main_branding_color)) {
+	$css .= '
+	.main,
+	span.main,
+	.cta a {
+		color: '.$main_branding_color.';
+	}
+	';
+}
+
 if(!empty($form_header)) {
 	$css .= '
 	.webnotik-pages .form-header-hero,
