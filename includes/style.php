@@ -110,7 +110,8 @@ if($form_fields_size == "Small") {
 if(!empty($button_color)) {
 	$css .= '
 	.et_pb_module *[type=submit], 
-	.et_pb_module .gform_wrapper button {
+	.et_pb_module .gform_wrapper button,
+	.webnotik-pages .thank-you-page.et_pb_fullwidth_header .et_pb_button {
 		background: '.$button_color.';
 		margin: 0 auto;
 		text-align: center;
@@ -126,7 +127,8 @@ if(!empty($button_color)) {
 
 	$css .= '
 	.et_pb_module *[type=submit]:hover, 
-	.et_pb_module .gform_wrapper button:hover {
+	.et_pb_module .gform_wrapper button:hover,
+	.webnotik-pages .thank-you-page.et_pb_fullwidth_header .et_pb_button:hover {
 	  background-position: 0 0;
 	  color: #fff !important;
 	}
