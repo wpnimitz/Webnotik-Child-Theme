@@ -112,7 +112,7 @@ if(!empty($button_color)) {
 	.et_pb_module *[type=submit], 
 	.et_pb_module .gform_wrapper button,
 	.webnotik-pages .thank-you-page.et_pb_fullwidth_header .et_pb_button {
-		background: '.$button_color.' !important;
+		background: '.$button_color.';
 		margin: 0 auto;
 		text-align: center;
 		font-weight: bold;
