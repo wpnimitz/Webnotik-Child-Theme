@@ -1220,7 +1220,12 @@ function webnotik_city_keywords( $atts ){
 		$keyword = get_option('webnotik_keywords_main');
 		$ret = $keyword;
 	} elseif (!empty($city_keyword)) {
-		$ret = $city_keyword;
+		if(isset($_GET["et_fb"])) {
+			$ret = 'City Page';
+		} else {
+			$ret = $city_keyword;
+		}
+		
 	} else {
 		// $keyword = get_option('webnotik_keywords_subpages');
 		// $item = str_replace("city", '', $item);
