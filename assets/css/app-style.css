@@ -406,7 +406,8 @@ END: FORM STYLING;
     background-size: auto 100%;
 }
 
-.widget_search input#s {
+.widget_search input#s,
+.widget_search input#searchsubmit {
     border-radius: initial;
 }
 
