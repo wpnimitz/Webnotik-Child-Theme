@@ -408,7 +408,7 @@ END: FORM STYLING;
 
 .widget_search input#s,
 .widget_search input#searchsubmit {
-    border-radius: initial;
+    border-radius: initial !important;
 }
 
 @media screen and (max-width: 980px) {
