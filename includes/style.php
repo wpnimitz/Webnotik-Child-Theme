@@ -171,6 +171,6 @@ $css .= '
 $css .= '
 .round_corners .et_pb_module .gform_wrapper button {
 	margin-left: -1px;
-	border: '.$round_corners_px.';
+	border: '.$round_corners_px.'px;
 }
 ';
