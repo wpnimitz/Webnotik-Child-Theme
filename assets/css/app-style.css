@@ -241,20 +241,24 @@
 
 .location-list li {
     list-style: none;
+    width: 99%;
+    display: inline-block;
+    margin-right: 1%;
+}
+
+.location-list .column-2 li {
     width: 49%;
     display: inline-block;
     margin-right: 1%;
 }
 
 .location-list .column-3 li {
-    list-style: none;
     width: 32%;
     display: inline-block;
     margin-right: 1%;
 }
 
 .location-list .column-4 li {
-    list-style: none;
     width: 24%;
     display: inline-block;
     margin-right: 1%;
