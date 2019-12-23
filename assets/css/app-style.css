@@ -280,7 +280,7 @@
     padding-right: 10px;
 }
 
-.et-icon:before
+.et-icon:before,
 .cta-icon a:before {
     font-family: etmodules;
     color: inherit;
@@ -292,6 +292,9 @@
 .cta-icon.phone a:before {
     content: "\e090";
 }
+
+
+
 
 /** Module Default Styling **/
 .entry-content .et_pb_text_inner p,
