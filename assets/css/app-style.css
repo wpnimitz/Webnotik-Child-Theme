@@ -280,21 +280,16 @@
     padding-right: 10px;
 }
 
-.et-icon:before {
+.et-icon a:before {
     font-family: etmodules;
     color: #008bdb;
     font-size: 1.5em;
     padding-left: 1px;
 }
 
-.et-icon.phone {
+.et-icon.phone a:before {
     content: "\e090";
 }
-
-.et-icon.email {
-    content: "\e076";
-}
-
 
 /** Module Default Styling **/
 .entry-content .et_pb_text_inner p,
