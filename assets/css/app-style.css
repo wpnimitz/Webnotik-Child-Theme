@@ -289,7 +289,7 @@
 }
 
 .et-icon.phone:before,
-.cta-icon .phone a:before {
+.cta-icon.phone a:before {
     content: "\e090";
 }
 
