@@ -28,6 +28,10 @@
     top: 0 !important;
 }
 
+.centerCenter {
+    display: flex;
+    align-items: center;
+}
 
 
 
