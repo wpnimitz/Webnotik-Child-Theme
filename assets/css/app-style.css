@@ -280,14 +280,16 @@
     padding-right: 10px;
 }
 
-.et-icon a:before {
+.et-icon:before
+.cta-icon a:before {
     font-family: etmodules;
     color: inherit;
     padding-right: 5px;
     line-height: 1.2em;
 }
 
-.et-icon.phone a:before {
+.et-icon.phone:before,
+.cta-icon .phone a:before {
     content: "\e090";
 }
 
