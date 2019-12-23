@@ -310,9 +310,6 @@
     padding: 3px 10px;
     border-radius: 30px;
     color: #fff !important;
-}
-
-.et_pb_portfolio_grid.badge .et_pb_portfolio_item .post-meta a[title=SOLD] {
     background: red !important;
 }
 
