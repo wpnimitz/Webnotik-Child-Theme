@@ -303,19 +303,18 @@
 }
 
 
-.et_pb_portfolio_grid.badge .et_pb_portfolio_item .post-meta a[title=SOLD],
-.et_pb_portfolio_grid.badge .et_pb_portfolio_item .post-meta a[title^=Coming],
-.et_pb_portfolio_grid.badge .et_pb_portfolio_item .post-meta a[title^=Wholesale],
-.et_pb_portfolio_grid.badge .et_pb_portfolio_item .post-meta a[title^=Under] {
+.et_pb_portfolio_grid.badge .et_pb_portfolio_item .post-meta a[title] {
     position: absolute;
     top: 5px;
     left: 5px;
-    background: red;
     padding: 3px 10px;
     border-radius: 30px;
     color: #fff !important;
 }
 
+.et_pb_portfolio_grid.badge .et_pb_portfolio_item .post-meta a[title=SOLD] {
+    background: red !important;
+}
 
 
 
