@@ -311,6 +311,7 @@
     border-radius: 30px;
     color: #fff !important;
     background: red;
+    z-index: 999;
 }
 
 
