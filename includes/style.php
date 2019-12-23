@@ -52,7 +52,8 @@ if(!empty($form_header)) {
 	.single .form-header-hero .form-header,
 	.single .form-hero .form-header,
 	.webnotik-pages .thank-you-page.et_pb_fullwidth_header,
-	.et_pb_section.thank-you-page  {
+	.et_pb_section.thank-you-page,
+	.et_pb_portfolio_grid.badge .et_pb_portfolio_item .post-meta a[title]  {
 	    background: '.$form_header.';
 	    
 	}';
