@@ -661,28 +661,28 @@ function webnotik_real_estate_content(){
 
 				    <div class="form-group">
 				    	<div class="form-label">
-				    		<label for="webnotik_keywords_main">Select Main State</label>
+				    		<label for="webnotik_keywords_main">Main State/s</label>
 				    	</div>
 				    	<div class="form-field">
 				    		<div class="col-2 k-main">
 					    		<?php 
-					    		$locations = json_decode(file_get_contents(get_stylesheet_directory() . "/plugins/locations.json"));
+					    		//$locations = json_decode(file_get_contents(get_stylesheet_directory() . "/plugins/locations.json"));
 					    		$main = get_option('webnotik_keywords_main');
 					    		 ?>
-					    		<select name="webnotik_keywords_main" id="webnotik_keywords_main">
-					    			<option value="">Select Main State</option>
+					    		<input type="text" name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo $main; ?>">
+
 					    			<?php 
 
-					    				foreach ($locations as $state => $cities) {
-					    					$selected = '';
-					    					if($main == $state) {
-					    						$selected = 'selected';
-					    					}
-					    					echo '<option values="'.$state.'" '.$selected.'>'.$state.'</option>';
-					    				}
+					    				// foreach ($locations as $state => $cities) {
+					    				// 	$selected = '';
+					    				// 	if($main == $state) {
+					    				// 		$selected = 'selected';
+					    				// 	}
+					    				// 	echo '<option values="'.$state.'" '.$selected.'>'.$state.'</option>';
+					    				// }
 
 					    			 ?>
-					    		</select>
+
 					    		<p class="hint">Main city keyword</p>
 					    	</div><div class="col-2 k-value">
 					    		<input name="webnotik_keywords_main_id" id="webnotik_keywords_main_id" value="<?php echo esc_attr( get_option('webnotik_keywords_main_id') ); ?>">
@@ -691,6 +691,8 @@ function webnotik_real_estate_content(){
 
 				    	</div>
 				    </div>
+
+
 
 
 					<?php if($main != "") {?>
