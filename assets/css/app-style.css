@@ -303,6 +303,19 @@
 }
 
 
+.et_pb_portfolio_grid.badge .et_pb_portfolio_item .post-meta a[title=SOLD] {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: red;
+    padding: 3px 10px;
+    border-radius: 30px;
+    color: #fff !important;
+}
+
+
+
+
 /** depreciated since 1.2.7 **/
 .form-body-hero {
     padding: 15px !important;
