@@ -282,9 +282,9 @@
 
 .et-icon a:before {
     font-family: etmodules;
-    color: #008bdb;
-    font-size: 1.5em;
-    padding-left: 1px;
+    color: inherit;
+    padding-right: 5px;
+    line-height: 1.2em;
 }
 
 .et-icon.phone a:before {
