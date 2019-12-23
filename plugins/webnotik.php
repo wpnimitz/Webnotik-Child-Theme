@@ -1096,8 +1096,9 @@ function webnotik_comparison($atts) {
 	$ret .= '</div>';
 	return $ret;
 }
-
 add_shortcode( 'rei_comparison', 'webnotik_comparison' );
+
+
 function webnotik_business_shortcode( $atts ){  
 	$atts = shortcode_atts(
 		array(
@@ -1218,13 +1219,8 @@ function webnotik_city_keywords( $atts ){
 	if($item == 'main') {
 		$keyword = get_option('webnotik_keywords_main');
 		$ret = $keyword;
-	} elseif (!empty($city_keyword)) {
-		if(isset($_GET["et_fb"])) {
-			$ret = 'City Page';
-		} else {
-			$ret = $city_keyword;
-		}
-		
+	} elseif (!empty($city_keyword) && !isset($_GET["et_fb"])) {
+		$ret = $city_keyword;
 	} else {
 		// $keyword = get_option('webnotik_keywords_subpages');
 		// $item = str_replace("city", '', $item);
