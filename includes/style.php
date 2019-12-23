@@ -43,6 +43,12 @@ if(!empty($main_branding_color)) {
 	    border-top-color: '.$main_branding_color.';
 	}
 	';
+
+	$css .= '
+	.et_pb_portfolio_grid.badge .et_pb_portfolio_item .post-meta a[title] {
+	    background: '.$main_branding_color.' !important;
+	}
+	';
 }
 
 if(!empty($form_header)) {
@@ -52,8 +58,7 @@ if(!empty($form_header)) {
 	.single .form-header-hero .form-header,
 	.single .form-hero .form-header,
 	.webnotik-pages .thank-you-page.et_pb_fullwidth_header,
-	.et_pb_section.thank-you-page,
-	.et_pb_portfolio_grid.badge .et_pb_portfolio_item .post-meta a[title]  {
+	.et_pb_section.thank-you-page {
 	    background: '.$form_header.';
 	    
 	}';
@@ -156,8 +161,7 @@ $css .= '
 .round_corners .et_pb_button,
 .round_corners .et_pb_module .gform_wrapper button,
 .round_corners .et_pb_image .has-box-shadow-overlay,
-.round_corners .et_pb_module.rounded,
-.et_pb_portfolio_grid.badge .et_pb_portfolio_item .post-meta a[title] {
+.round_corners .et_pb_module.rounded{
     border-radius: '.$round_corners_px.'px !important;
 }
 ';
