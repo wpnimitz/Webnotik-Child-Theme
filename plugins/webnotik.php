@@ -44,9 +44,9 @@ function webnotik_admin_bar_render() {
 	$wp_admin_bar->add_menu(
 		array(
 	    	'parent' => 'webnotik',
-	        'id' => 'webnotik-keywords',
+	        'id' => 'webnotik-city-pages',
 	        'title' => __('City Pages'),
-	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=keywords')
+	        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=city-pages')
 	    )
 	);
 	$wp_admin_bar->add_menu(
@@ -236,7 +236,7 @@ function webnotik_real_estate_content(){
 				<a class="forms-group <?php echo $tab == "general" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=general">General</a>
 				<a class="forms-group <?php echo $tab == "branding" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=branding">Branding</a>
 				<a class="forms-group <?php echo $tab == "forms" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=forms">Forms</a>
-				<a class="forms-group <?php echo $tab == "keywords" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=keywords">City Pages</a>	
+				<a class="forms-group <?php echo $tab == "city-pages" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=city-pages">City Pages</a>	
 				<a class="forms-group <?php echo $tab == "topics" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=topics">Topics</a>				
 				<a class="forms-group <?php echo $tab == "divi-global" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=divi-global">Divi Global</a>				
 				<a class="forms-group <?php echo $tab == "help" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=help">Help & Guidelines</a>
@@ -648,9 +648,9 @@ function webnotik_real_estate_content(){
 				</form>
 			</div>
 			<!-- end #FORMS -- >
-			<?php } elseif($tab == 'keywords') {?>
-			<!-- STARTS #keywords-forms --> 
-			<div id="keywords"> 
+			<?php } elseif($tab == 'city-pages') {?>
+			<!-- STARTS #city-pages-forms --> 
+			<div id="city-pages"> 
 				<p>Add all your city pages here. The more the merrier for SEO.</p>
 				<form method="post" action="options.php">
 				    <?php settings_fields( 'webnotik-keywords-group' ); ?>
