@@ -1,76 +1,83 @@
+#wpadminbar #wp-admin-bar-wpse .ab-icon:before {
+  content: '\f306';
+  top: 3px;
+}
+
+
 .panel {
-    margin: 30px 50px 30px 30px;
-    border: 1px solid #212228;
+  margin: 30px 50px 30px 30px;
+  border: 1px solid #212228;
 }
 
 .panel-header {
-    background: #212228;
-    display: block;
-    color: #fff;
+  background: #212228;
+  display: block;
+  color: #fff;
 }
 
 .panel-header,
 .panel-body {
-    padding: 30px 30px;
+  padding: 30px 30px;
 }
 
 .panel-header h1 {
-    color: inherit;
-    line-height: 1em;
-    margin: 0;
+  color: inherit;
+  line-height: 1em;
+  margin: 0;
 }
 
 .panel-header p {
-    margin: 0;
-    line-height: 2em;
+  margin: 0;
+  line-height: 2em;
 }
 
 .panel-navigation {
-    background: #17181f;
+  background: #17181f;
 }
 
 .panel-body .form-group {
-    display: block;
-    margin-bottom: 30px;
+  display: block;
+  margin-bottom: 30px;
 }
 
 .panel-body .form-field p:before {
-    content: "Usage: ";
-    font-weight: 500;
+  content: "Usage: ";
+  font-weight: 500;
 }
 
 .panel-body .form-field p.hint:before {
-    content: "Hint: ";
-    font-weight: 500;
+  content: "Hint: ";
+  font-weight: 500;
 }
 
-.webnotik-re-wrapper .hint, .webnotik-re-wrapper pre {
-    border: 1px solid #0073aa;
-    padding: 2px 5px;
-    border-radius: 3px;
-    background: #e2e2e2;
+.webnotik-re-wrapper .hint,
+.webnotik-re-wrapper pre {
+  border: 1px solid #0073aa;
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: #e2e2e2;
 }
 
 .webnotik-re-wrapper h3 {
-    border-bottom: 1px solid #9f9f9f;
-    max-width: 99%;
-    padding-top: 30px;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+  border-bottom: 1px solid #9f9f9f;
+  max-width: 99%;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 
 .panel-body .form-field p {
-	margin: 0;
-	padding: 3px 7px;
-    background: #f1f1f1;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    margin-top: 5px !important;
-    max-width: 100%;
+  margin: 0;
+  padding: 3px 7px;
+  background: #f1f1f1;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  margin-top: 5px !important;
+  max-width: 100%;
 }
 
-.message.show{
+.message.show {
   display: block;
 }
 
@@ -84,19 +91,23 @@
   color: #006600;
   border-radius: 5px;
   border: 1px solid #9eff9e;
-  -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
-     -moz-animation: fadein 0.5s; /* Firefox < 16 */
-      -ms-animation: fadein 0.5s; /* Internet Explorer */
-       -o-animation: fadein 0.5s; /* Opera < 12.1 */
-          animation: fadein 0.5s;
+  -webkit-animation: fadein 0.5s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 0.5s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 0.5s;
+  /* Internet Explorer */
+  -o-animation: fadein 0.5s;
+  /* Opera < 12.1 */
+  animation: fadein 0.5s;
 }
 
 .panel-body label {
-    display: block;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.9em;
-    position: relative;
+  display: block;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9em;
+  position: relative;
 }
 
 .panel-body .form-field textarea,
@@ -115,7 +126,7 @@
 }
 
 .panel-body textarea {
-	min-height: 150px;
+  min-height: 150px;
 }
 
 #help h3 {
@@ -123,7 +134,7 @@
   margin-top: 60px;
 }
 
-#help hr + h3 {
+#help hr+h3 {
   margin-top: 30px;
 }
 
@@ -167,7 +178,7 @@
 
 /* Style the dropdown button to fit inside the panel-nav */
 .dropdown .dropbtn {
-  font-size: 17px; 
+  font-size: 17px;
   border: none;
   outline: none;
   color: white;
@@ -183,7 +194,7 @@
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -198,7 +209,8 @@
 }
 
 /* Add a dark background on panel-nav links and the dropdown button on hover */
-.panel-nav a:hover, .dropdown:hover .dropbtn {
+.panel-nav a:hover,
+.dropdown:hover .dropbtn {
   background-color: #555;
   color: white;
 }
@@ -226,15 +238,19 @@
   width: 50%;
   margin-right: 0;
 }
+
 .options {
   display: flex;
 }
+
 .options p {
   margin-top: 0;
   padding: 0;
   margin-right: 10px;
 }
-.add-sub-keyword, .wp-core-ui p .button {
+
+.add-sub-keyword,
+.wp-core-ui p .button {
   display: flex !important;
   background: #a1e1ff;
   color: #0073a9;
@@ -249,11 +265,11 @@
   text-shadow: none;
   box-shadow: none;
   margin-right: 3% !important;
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .form-label .actions {
-    display: none;
+  display: none;
 }
 
 .form-label:hover .actions {
@@ -261,12 +277,12 @@
 }
 
 .actions a {
-    padding: 2px 8px;
-    line-height: 1.5em;
-    background: #a1e1ff;
-    text-decoration: none;
-    border-radius: 10px;
-    border: 1px solid;
+  padding: 2px 8px;
+  line-height: 1.5em;
+  background: #a1e1ff;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 1px solid;
 }
 
 .webnotik-re-wrapper p.message.success {
@@ -284,10 +300,10 @@
 }
 
 span.city {
-    background: #e5e5e5;
-    padding: 2px 5px;
-    margin-top: 2px;
-    display: inline-block;
+  background: #e5e5e5;
+  padding: 2px 5px;
+  margin-top: 2px;
+  display: inline-block;
 }
 
 .wp-picker-open+.wp-picker-input-wrap {
@@ -306,43 +322,59 @@ span.city {
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the panel-nav (.icon) */
 @media screen and (max-width: 600px) {
 
-	.panel-nav a:not(:first-child), .dropdown .dropbtn {
-		display: none;
-	}
-	.panel-nav a.icon {
-		float: right;
-		display: block;
-	}
-	.panel-nav a.active {
-		margin-top: 1px;
-	}
+  .panel-nav a:not(:first-child),
+  .dropdown .dropbtn {
+      display: none;
+  }
 
-	/* The "responsive" class is added to the panel-nav with JavaScript when the user clicks on the icon. This class makes the panel-nav look good on small screens (display the links vertically instead of horizontally) */
+  .panel-nav a.icon {
+      float: right;
+      display: block;
+  }
 
-	.panel {
-		margin: 4% 3% 0.5% 0.5%;
-	}
-	.panel-nav {
-		background: #000;
-	}
-	.panel-nav.responsive {position: relative;}
-	.panel-nav.responsive a.icon {
-		position: absolute;
-		right: 0;
-		top: 0;
-	}
-	.panel-nav.responsive a {
-		float: none;
-		display: block;
-		text-align: left;
-	}
-	.panel-nav.responsive .dropdown {float: none;}
-	.panel-nav.responsive .dropdown-content {position: relative;}
-	.panel-nav.responsive .dropdown .dropbtn {
-		display: block;
-		width: 100%;
-		text-align: left;
-	}
+  .panel-nav a.active {
+      margin-top: 1px;
+  }
+
+  /* The "responsive" class is added to the panel-nav with JavaScript when the user clicks on the icon. This class makes the panel-nav look good on small screens (display the links vertically instead of horizontally) */
+
+  .panel {
+      margin: 4% 3% 0.5% 0.5%;
+  }
+
+  .panel-nav {
+      background: #000;
+  }
+
+  .panel-nav.responsive {
+      position: relative;
+  }
+
+  .panel-nav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+  }
+
+  .panel-nav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+  }
+
+  .panel-nav.responsive .dropdown {
+      float: none;
+  }
+
+  .panel-nav.responsive .dropdown-content {
+      position: relative;
+  }
+
+  .panel-nav.responsive .dropdown .dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+  }
 }
 
 
@@ -351,50 +383,76 @@ span.city {
 
 
 @media screen and (min-width: 800px) {
-	.panel-body .form-label,
-	.panel-body .form-field {
-	    vertical-align: top;
-	    display: inline-block;
-	}
 
-	.panel-body .form-field {
-		width: 69%;
-	}
+  .panel-body .form-label,
+  .panel-body .form-field {
+      vertical-align: top;
+      display: inline-block;
+  }
 
-	.panel-body .form-label {
-		width: 29%;
-		margin-right: 1%;
-	}
+  .panel-body .form-field {
+      width: 69%;
+  }
+
+  .panel-body .form-label {
+      width: 29%;
+      margin-right: 1%;
+  }
 }
 
 
 
 
 @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
 }
 
 /* Opera < 12.1 */
 @-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
 }
