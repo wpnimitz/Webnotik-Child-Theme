@@ -10,7 +10,7 @@ function webnotik_admin_bar_render() {
     $wp_admin_bar->add_menu(
 	    array(
 	        'id' => 'webnotik',
-	        'title' => __('REI Toolbox'),
+	        'title'  => '<span class="ab-icon"></span>'.__( 'REI Toolbox', 'rei-toolbox' ),
 	        'href' => admin_url( 'admin.php?page=webnotik-real-estate')
 	    )	    
 	); 
@@ -649,7 +649,7 @@ function webnotik_real_estate_content(){
 			</div>
 			<!-- end #FORMS -- >
 			<?php } elseif($tab == 'city-pages') {?>
-			<!-- STARTS #city-pages-forms --> 
+			<!-- STARTS #city-pages --> 
 			<div id="city-pages"> 
 				<p>Add all your city pages here. The more the merrier for SEO.</p>
 				<form method="post" action="options.php">
