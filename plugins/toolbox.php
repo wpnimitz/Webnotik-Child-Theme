@@ -4,10 +4,11 @@ $pages = array('Branding', 'Forms', 'City Pages', 'Divi Global', 'Help & Guideli
 add_action('admin_menu', 'toolbox_admin_menu_999');
 function toolbox_admin_menu_999() {
 	global $pages;
-    add_menu_page( __('Toolbox', 'rei-toolbox'), __('Toolbox', 'rei-toolbox'), 'manage_options', 'toolbox', 'admin_rei_toolbox_content', 'dashicons-flag', 3);
+    add_menu_page( __('Toolbox', 'rei-toolbox'), __('Toolbox', 'rei-toolbox'), 'manage_options', 'toolbox', 'show_toolbox_content_callback', 'dashicons-flag', 3);
 
-    for ($i=0; $i < count($pages); $i++) { 
-		add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', 'toolbox&tab='.toolbox_create_slug($pages[$i]), 'admin_rei_toolbox_content', $i);
+    for ($i=0; $i < count($pages); $i++) {
+    	$content = toolbox_create_slug('toolbox ' . $pages[$i] . 'callback', true);
+		add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', 'toolbox-'.toolbox_create_slug($pages[$i]), $content, $i);
     }
 
     //call register settings function
@@ -18,7 +19,7 @@ function toolbox_admin_menu_999() {
 	add_action( 'admin_init', 'webnotik_register_topics_settings' );
 	add_action( 'admin_init', 'webnotik_register_divi_global_settings' );
 }
-function admin_rei_toolbox_content() {
+function show_toolbox_content_callback() {
 	echo 'Something awesome is coming here.';
 } //close admin_rei_toolbox_content
 
