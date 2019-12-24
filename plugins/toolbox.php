@@ -66,8 +66,6 @@ function toolbox_create_slug($string, $underscore = false) {
     $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string);
     // Replaces multiple hyphens with single one.
     $string = preg_replace('/-+/', '-', $string);
-     // Replaces multiple underscores with single one.
-    $string = preg_replace('/_+/', '_', $string);
 
     // Make sure that all characters are in lowercase
     $string = strtolower($string);
