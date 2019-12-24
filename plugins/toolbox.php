@@ -8,11 +8,11 @@ function toolbox_admin_assets() {
 	$ver = "1.4.1" . strtotime("now");
 	// Add the color picker css file       
     wp_enqueue_style( 'wp-color-picker' );
+    wp_register_style('toolbox-css', get_stylesheet_directory_uri() . '/plugins/css/webnotik.css?version='.$ver);
+    wp_register_script('toolbox-webnotik', get_stylesheet_directory_uri() . '/plugins/js/webnotik.js?version='.$ver);
     wp_enqueue_script( 'wp-color-picker-alpha', get_stylesheet_directory_uri() . '/plugins/js/wp-color-picker-alpha.min.js', array( 'wp-color-picker' ), $ver, true );
     wp_enqueue_script( 'get-city-pages-script', get_stylesheet_directory_uri() . '/plugins/js/webnotik-ajax.js?ver='.$ver, array( 'jquery' ), null, true );
-    wp_localize_script( 'get-city-pages-script', 'get_city_pages_data', array(
-        'ajaxurl' => admin_url( 'admin-ajax.php' ),
-    ) );
+    wp_localize_script( 'get-city-pages-script', 'get_city_pages_data', array('ajaxurl' => admin_url( 'admin-ajax.php' )) );
 }
 
 
@@ -92,32 +92,35 @@ function toolbox_content($body, $tab = 'general') {
 	ob_start()
 	?>
 	<div class="webnotik-re-wrapper">
-	<div class="message"></div>
-	<div class="panel">
-		<div class="panel-header">
-			<h1>Welcome to REI Toolbox Settings</h1>
-			<p>Speeding up the process of website development for Real Estate Investor clients.</p>
-		</div>
-		<div class="panel-navigation">
-			<div class="panel-nav">
-				<?php 
+		<div class="message"></div>
+		<div class="panel">
+			<div class="panel-header">
+				<h1>Welcome to REI Toolbox Settings</h1>
+				<p>Speeding up the process of website development for Real Estate Investor clients.</p>
+			</div>
+			<div class="panel-navigation">
+				<div class="panel-nav">
+					<?php 
 
-				//url
-				for ($i=0; $i < count($pages); $i++) {
-			    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
-					echo '<a class="forms-group ' . ($tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox-'.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
-			    }
+					//url
+					for ($i=0; $i < count($pages); $i++) {
+				    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
+						echo '<a class="forms-group ' . ($tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox-'.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
+				    }
 
-				 ?>
-				
+					 ?>
+					
 
-				<a href="#" class="icon">&#9776;</a>			
+					<a href="#" class="icon">&#9776;</a>			
+				</div>
+			</div>
+			
+
+			
+			<div class="panel-body">
 			</div>
 		</div>
-		
-
-		
-		<div class="panel-body">
+	</div>
 <?php 
 	$output = ob_get_contents();
     ob_end_clean();
