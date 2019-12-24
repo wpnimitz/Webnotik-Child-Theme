@@ -4,6 +4,11 @@ $pages = array('General', 'Branding', 'Forms', 'City Pages', 'Divi Global', 'Hel
 add_action('admin_menu', 'toolbox_admin_menu_999');
 function toolbox_admin_menu_999() {
     add_menu_page( __('Toolbox', 'rei-toolbox'), __('Toolbox', 'rei-toolbox'), 'manage_options', 'toolbox', 'admin_rei_toolbox_content', 'dashicons-flag', 3);
+
+    for ($i=0; $i < count($pages); $i++) { 
+		add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', toolbox_create_slug($pages[$i]), toolbox_show_submenu_content(toolbox_create_slug($pages[$i])), $i);
+    }
+
     //call register settings function
 	add_action( 'admin_init', 'webnotik_register_forms_settings' );
 	add_action( 'admin_init', 'webnotik_register_general_settings' );
@@ -14,12 +19,12 @@ function toolbox_admin_menu_999() {
 }
 function admin_rei_toolbox_content() {
 	$tab = isset($_GET["tab"]) ? $_GET["tab"] : 'general';
-
-
 	?>
 	<h1><?php echo $tab; ?></h1>
 
 <?php } //close admin_rei_toolbox_content
+
+
 add_action( 'wp_before_admin_bar_render', 'toolbox_admin_bar_render' );
 function toolbox_admin_bar_render() {
     global $wp_admin_bar;
@@ -62,4 +67,9 @@ function toolbox_create_slug($string) {
     $string = strtolower($string);
     
     return $string;
+}
+
+
+function toolbox_show_submenu_content($content) {
+	return $content;
 }
