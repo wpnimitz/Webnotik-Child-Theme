@@ -93,7 +93,7 @@ function toolbox_divi_global_callback() {
 }
 
 
-function toolbox_help_guidlines_callback() {
+function toolbox_help_guidelines_callback() {
 	echo 'help and guidlines';
 }
 
