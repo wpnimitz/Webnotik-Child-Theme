@@ -19,10 +19,6 @@ function toolbox_admin_menu_999() {
 	add_action( 'admin_init', 'webnotik_register_topics_settings' );
 	add_action( 'admin_init', 'webnotik_register_divi_global_settings' );
 }
-function show_toolbox_content_callback() {
-	echo 'Something awesome is coming here.';
-} //close admin_rei_toolbox_content
-
 
 add_action( 'wp_before_admin_bar_render', 'toolbox_admin_bar_render' );
 function toolbox_admin_bar_render() {
@@ -75,6 +71,55 @@ function toolbox_create_slug($string, $underscore = false) {
     return $string;
 }
 
+
+function toolbox_content($body) {
+	global $pages;
+	ob_start()
+	?>
+	<div class="webnotik-re-wrapper">
+	<div class="message"></div>
+	<div class="panel">
+		<div class="panel-header">
+			<h1><?php esc_html_e('Welcome to REI Toolbox Settings', 're-webnotik'); ?></h1>
+			<p><?php esc_html_e('Speeding up the process of other CRM we don\'t usually use for Webnotik Digital Agency Clients', 're-webnotik'); ?></p>
+		</div>
+		<div class="panel-navigation">
+			<div class="panel-nav">
+				<?php 
+				for ($i=0; $i < count($pages); $i++) {
+			    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
+					add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', 'toolbox-'.toolbox_create_slug($pages[$i]), $toolbox_content, $i);
+					echo '<a class="forms-group <?php echo $tab == "general" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=general">General</a>';
+			    }
+
+				 ?>
+				
+				<a class="forms-group <?php echo $tab == "branding" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=branding">Branding</a>
+				<a class="forms-group <?php echo $tab == "forms" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=forms">Forms</a>
+				<a class="forms-group <?php echo $tab == "city-pages" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=city-pages">City Pages</a>	
+				<a class="forms-group <?php echo $tab == "topics" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=topics">Topics</a>				
+				<a class="forms-group <?php echo $tab == "divi-global" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=divi-global">Divi Global</a>				
+				<a class="forms-group <?php echo $tab == "help" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=help">Help & Guidelines</a>
+				<a href="#" class="icon">&#9776;</a>			
+			</div>
+		</div>
+		
+
+		
+		<div class="panel-body">
+<?php 
+	$output = ob_get_contents();
+    ob_end_clean();
+
+    return $output;
+
+} //close toolbox_content
+
+function show_toolbox_content_callback() {
+	$ret = 'Something awesome is coming here.';
+
+	echo toolbox_content($ret);
+}
 
 function toolbox_branding_callback() {
 	echo 'branding';
