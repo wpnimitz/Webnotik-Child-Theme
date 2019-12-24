@@ -7,7 +7,7 @@ function toolbox_admin_menu_999() {
     add_menu_page( __('Toolbox', 'rei-toolbox'), __('Toolbox', 'rei-toolbox'), 'manage_options', 'toolbox', 'admin_rei_toolbox_content', 'dashicons-flag', 3);
 
     for ($i=0; $i < count($pages); $i++) { 
-		add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', '=toolbox&tab='.toolbox_create_slug($pages[$i]), 'admin_rei_toolbox_content', $i);
+		add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', 'toolbox&tab='.toolbox_create_slug($pages[$i]), 'admin_rei_toolbox_content', $i);
     }
 
     //call register settings function
