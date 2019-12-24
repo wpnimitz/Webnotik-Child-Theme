@@ -72,7 +72,7 @@ function toolbox_create_slug($string, $underscore = false) {
 }
 
 
-function toolbox_content($body) {
+function toolbox_content($body, $tab = 'general') {
 	global $pages;
 	ob_start()
 	?>
@@ -80,26 +80,22 @@ function toolbox_content($body) {
 	<div class="message"></div>
 	<div class="panel">
 		<div class="panel-header">
-			<h1><?php esc_html_e('Welcome to REI Toolbox Settings', 're-webnotik'); ?></h1>
-			<p><?php esc_html_e('Speeding up the process of other CRM we don\'t usually use for Webnotik Digital Agency Clients', 're-webnotik'); ?></p>
+			<h1>Welcome to REI Toolbox Settings</h1>
+			<p>Speeding up the process of website development for Real Estate Investor clients.</p>
 		</div>
 		<div class="panel-navigation">
 			<div class="panel-nav">
 				<?php 
+
+				//url
 				for ($i=0; $i < count($pages); $i++) {
 			    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
-					add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', 'toolbox-'.toolbox_create_slug($pages[$i]), $toolbox_content, $i);
-					echo '<a class="forms-group <?php echo $tab == "general" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=general">General</a>';
+					echo '<a class="forms-group ' . ($tab == "general" ? 'active' : 'inactive') . '" href="toolbox-'.toolbox_create_slug($pages[$i]).'">General</a>';
 			    }
 
 				 ?>
 				
-				<a class="forms-group <?php echo $tab == "branding" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=branding">Branding</a>
-				<a class="forms-group <?php echo $tab == "forms" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=forms">Forms</a>
-				<a class="forms-group <?php echo $tab == "city-pages" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=city-pages">City Pages</a>	
-				<a class="forms-group <?php echo $tab == "topics" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=topics">Topics</a>				
-				<a class="forms-group <?php echo $tab == "divi-global" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=divi-global">Divi Global</a>				
-				<a class="forms-group <?php echo $tab == "help" ? 'active' : 'inactive'; ?>" href="admin.php?page=webnotik-real-estate&tab=help">Help & Guidelines</a>
+
 				<a href="#" class="icon">&#9776;</a>			
 			</div>
 		</div>
@@ -118,7 +114,7 @@ function toolbox_content($body) {
 function show_toolbox_content_callback() {
 	$ret = 'Something awesome is coming here.';
 
-	echo toolbox_content($ret);
+	echo toolbox_content($ret, 'general');
 }
 
 function toolbox_branding_callback() {
