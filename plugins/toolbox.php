@@ -19,11 +19,8 @@ function toolbox_admin_menu_999() {
 	add_action( 'admin_init', 'webnotik_register_divi_global_settings' );
 }
 function admin_rei_toolbox_content() {
-	$tab = isset($_GET["tab"]) ? $_GET["tab"] : 'general';
-	?>
-	<h1><?php echo $tab; ?></h1>
-
-<?php } //close admin_rei_toolbox_content
+	echo 'Something awesome is coming here.';
+} //close admin_rei_toolbox_content
 
 
 add_action( 'wp_before_admin_bar_render', 'toolbox_admin_bar_render' );
@@ -72,5 +69,6 @@ function toolbox_create_slug($string) {
 
 
 function toolbox_show_submenu_content($content) {
-	return $content;
+	$tab = isset($_GET["tab"]) ? $_GET["tab"] : 'general';
+	return $tab;
 }
