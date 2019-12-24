@@ -2,7 +2,7 @@
 $pages = array('General', 'Branding', 'Forms', 'City Pages', 'Divi Global', 'Help & Guidelines');
 
 add_action( 'wp_before_admin_bar_render', 'toolbox_admin_bar_render' );
-function webnotik_admin_bar_render() {
+function toolbox_admin_bar_render() {
     global $wp_admin_bar;
     global $pages;
     // we can remove a menu item, like the Comments link, just by knowing the right $id
@@ -21,9 +21,9 @@ function webnotik_admin_bar_render() {
     	$wp_admin_bar->add_menu(
 			array(
 		    	'parent' => 'toolbox',
-		        'id' => 'toolbox-' . toolbox_create_slug($page[$i]),
-		        'title' => __($page[$i]),
-		        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=' . toolbox_create_slug($page[$i]) )
+		        'id' => 'toolbox-' . toolbox_create_slug($pages[$i]),
+		        'title' => __($pages[$i]),
+		        'href' => admin_url( 'admin.php?page=webnotik-real-estate&tab=' . toolbox_create_slug($pages[$i]) )
 		    )
 		);
     }
