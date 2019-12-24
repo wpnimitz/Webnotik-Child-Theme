@@ -19,7 +19,7 @@ function toolbox_admin_menu_999() {
 	add_action( 'admin_init', 'webnotik_register_divi_global_settings' );
 }
 function admin_rei_toolbox_content() {
-	echo 'Something awesome is coming here.';
+	return 'Something awesome is coming here.';
 } //close admin_rei_toolbox_content
 
 
