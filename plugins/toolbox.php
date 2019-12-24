@@ -70,5 +70,5 @@ function toolbox_create_slug($string) {
 
 function toolbox_show_submenu_content() {
 	$tab = isset($_GET["tab"]) ? $_GET["tab"] : 'general';
-	echo $tab;
+	return $tab;
 }
