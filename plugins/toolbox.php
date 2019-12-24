@@ -19,7 +19,7 @@ function toolbox_admin_scripts_assets() {
 add_action('admin_menu', 'toolbox_admin_menu_999');
 function toolbox_admin_menu_999() {
 	global $pages;
-    add_menu_page( __('Toolbox', 'rei-toolbox'), __('Toolbox', 'rei-toolbox'), 'manage_options', 'toolbox', 'show_toolbox_content_callback', 'dashicons-flag', 3);
+    add_menu_page( __('Toolbox', 'rei-toolbox'), __('Toolbox v2', 'rei-toolbox'), 'manage_options', 'toolbox', 'show_toolbox_content_callback', 'dashicons-flag', 3);
 
     for ($i=0; $i < count($pages); $i++) {
     	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
@@ -100,7 +100,7 @@ function toolbox_content($body, $tab = 'general') {
 			</div>
 			<div class="panel-navigation">
 				<div class="panel-nav">
-					<a class="forms-group <?php echo ($tab= 'general' ? 'active' : '') ?>" href="admin.php?page=toolbox">General</a>
+					<a class="forms-group <?php echo ($tab == 'general' ? 'active' : '') ?>" href="admin.php?page=toolbox">General</a>
 					<?php 
 					for ($i=0; $i < count($pages); $i++) {
 				    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
