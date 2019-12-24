@@ -1,5 +1,5 @@
 <?php
-$pages = array('General', 'Branding', 'Forms', 'City Pages', 'Divi Global', 'Help & Guidelines');
+$pages = array('Branding', 'Forms', 'City Pages', 'Divi Global', 'Help & Guidelines');
 
 add_action('admin_menu', 'toolbox_admin_menu_999');
 function toolbox_admin_menu_999() {
