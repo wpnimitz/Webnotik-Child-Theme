@@ -3,6 +3,7 @@ $pages = array('General', 'Branding', 'Forms', 'City Pages', 'Divi Global', 'Hel
 
 add_action('admin_menu', 'toolbox_admin_menu_999');
 function toolbox_admin_menu_999() {
+	global $pages;
     add_menu_page( __('Toolbox', 'rei-toolbox'), __('Toolbox', 'rei-toolbox'), 'manage_options', 'toolbox', 'admin_rei_toolbox_content', 'dashicons-flag', 3);
 
     for ($i=0; $i < count($pages); $i++) { 
