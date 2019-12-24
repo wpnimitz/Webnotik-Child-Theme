@@ -7,7 +7,7 @@ function toolbox_admin_menu_999() {
     add_menu_page( __('Toolbox', 'rei-toolbox'), __('Toolbox', 'rei-toolbox'), 'manage_options', 'toolbox', 'show_toolbox_content_callback', 'dashicons-flag', 3);
 
     for ($i=0; $i < count($pages); $i++) {
-    	$content = toolbox_create_slug('toolbox ' . $pages[$i] . 'callback', true);
+    	$content = 'toolbox_' .toolbox_create_slug(. $pages[$i], true) .'_callback';
 		add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', 'toolbox-'.toolbox_create_slug($pages[$i]), $content, $i);
     }
 
