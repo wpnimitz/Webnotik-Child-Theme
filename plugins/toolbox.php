@@ -1,6 +1,21 @@
 <?php
 $pages = array('Branding', 'Forms', 'City Pages', 'Divi Global', 'Help & Guidelines');
 
+
+// Enqueue the script on the back end (wp-admin)
+add_action( 'admin_enqueue_scripts', 'toolbox_admin_assets' );
+function toolbox_admin_assets() {
+	$ver = "1.4.1" . strtotime("now");
+	// Add the color picker css file       
+    wp_enqueue_style( 'wp-color-picker' );
+    wp_enqueue_script( 'wp-color-picker-alpha', get_stylesheet_directory_uri() . '/plugins/js/wp-color-picker-alpha.min.js', array( 'wp-color-picker' ), $ver, true );
+    wp_enqueue_script( 'get-city-pages-script', get_stylesheet_directory_uri() . '/plugins/js/webnotik-ajax.js?ver='.$ver, array( 'jquery' ), null, true );
+    wp_localize_script( 'get-city-pages-script', 'get_city_pages_data', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+    ) );
+}
+
+
 add_action('admin_menu', 'toolbox_admin_menu_999');
 function toolbox_admin_menu_999() {
 	global $pages;
@@ -90,7 +105,7 @@ function toolbox_content($body, $tab = 'general') {
 				//url
 				for ($i=0; $i < count($pages); $i++) {
 			    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
-					echo '<a class="forms-group ' . ($tab == "general" ? 'active' : 'inactive') . '" href="toolbox-'.toolbox_create_slug($pages[$i]).'">General</a>';
+					echo '<a class="forms-group ' . ($tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="toolbox-'.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
 			    }
 
 				 ?>
@@ -118,23 +133,28 @@ function show_toolbox_content_callback() {
 }
 
 function toolbox_branding_callback() {
-	echo 'branding';
+	$ret = 'Something awesome is coming here.';
+	echo toolbox_content($ret, 'branding');
 }
 
 function toolbox_forms_callback() {
-	echo 'forms';
+	$ret = 'Something awesome is coming here.';
+	echo toolbox_content($ret, 'forms');
 }
 
 function toolbox_city_pages_callback() {
-	echo 'city pages';
+	$ret = 'Something awesome is coming here.';
+	echo toolbox_content($ret, 'city-pages');
 }
 
 function toolbox_divi_global_callback() {
-	echo 'divi global';
+	$ret = 'Something awesome is coming here.';
+	echo toolbox_content($ret, 'divi-global');
 }
 
 
 function toolbox_help_guidelines_callback() {
-	echo 'help and guidlines';
+	$ret = 'Something awesome is coming here.';
+	echo toolbox_content($ret, 'help-guidelines');
 }
 
