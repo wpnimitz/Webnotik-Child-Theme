@@ -47,7 +47,7 @@ function toolbox_admin_bar_render() {
 	    array(
 	        'id' => 'toolbox',
 	        'title' => __('Toolbox'),
-	        'href' => admin_url( 'admin.php?page=webnotik-toolbox')
+	        'href' => admin_url( 'admin.php?page=toolbox')
 	    )	    
 	); 
 
@@ -105,7 +105,7 @@ function toolbox_content($body, $tab = 'general') {
 				//url
 				for ($i=0; $i < count($pages); $i++) {
 			    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
-					echo '<a class="forms-group ' . ($tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="toolbox-'.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
+					echo '<a class="forms-group ' . ($tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox-'.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
 			    }
 
 				 ?>
