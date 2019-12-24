@@ -44,3 +44,25 @@ function toolbox_create_slug($string) {
     
     return $string;
 }
+
+
+
+add_action('admin_menu', 'toolbox_admin_menu_999');
+function toolbox_admin_menu_999() {
+    add_menu_page( __('Toolbox', 'rei-toolbox'), __('Toolbox', 'rei-toolbox'), 'manage_options', 'toolbox', 'admin_rei_toolbox_content', 'dashicons-flag', 3);
+    //call register settings function
+	add_action( 'admin_init', 'webnotik_register_forms_settings' );
+	add_action( 'admin_init', 'webnotik_register_general_settings' );
+	add_action( 'admin_init', 'webnotik_register_branding_settings' );
+	add_action( 'admin_init', 'webnotik_register_keywords_settings' );
+	add_action( 'admin_init', 'webnotik_register_topics_settings' );
+	add_action( 'admin_init', 'webnotik_register_divi_global_settings' );
+}
+function admin_rei_toolbox_content() {
+	$tab = isset($_GET["tab"]) ? $_GET["tab"] : 'general';
+
+
+	?>
+	<h1><?php echo $tab; ?></h1>
+
+<?php } //close admin_rei_toolbox_content
