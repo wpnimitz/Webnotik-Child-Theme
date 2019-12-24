@@ -65,7 +65,7 @@ function toolbox_create_slug($string, $underscore = false) {
     // Replaces multiple hyphens with single one.
     $string = preg_replace('/-+/', '-', $string);
 
-    // Make sure that all characters are in lowercase
+    // make all characters lower case
     $string = strtolower($string);
     
     return $string;
