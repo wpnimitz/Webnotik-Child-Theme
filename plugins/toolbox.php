@@ -76,7 +76,24 @@ function toolbox_create_slug($string, $underscore = false) {
 }
 
 
-function toolbox_submenu_content_branding() {
-	$tab = isset($_GET["tab"]) ? $_GET["tab"] : 'general';
-	return $tab;
+function toolbox_branding_callback() {
+	return 'branding';
 }
+
+function toolbox_forms_callback() {
+	return 'forms';
+}
+
+function toolbox_city_pages_callback() {
+	return 'city pages';
+}
+
+function toolbox_divi_global_callback() {
+	return 'divi global';
+}
+
+
+function toolbox_help_guidlines_callback() {
+	return 'help and guidlines';
+}
+
