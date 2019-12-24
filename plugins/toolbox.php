@@ -7,7 +7,7 @@ function toolbox_admin_menu_999() {
     add_menu_page( __('Toolbox', 'rei-toolbox'), __('Toolbox', 'rei-toolbox'), 'manage_options', 'toolbox', 'admin_rei_toolbox_content', 'dashicons-flag', 3);
 
     for ($i=0; $i < count($pages); $i++) { 
-		add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', '?page=toolbox&tab='.toolbox_create_slug($pages[$i]), toolbox_show_submenu_content($pages[$i]), $i);
+		add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', toolbox_create_slug($pages[$i]), toolbox_show_submenu_content($pages[$i]), $i);
     }
 
     //call register settings function
@@ -52,14 +52,21 @@ function toolbox_admin_bar_render() {
 }
 
 
-function toolbox_create_slug($string) {
-	// Replaces all spaces with hyphens.
-    $string = str_replace(' ', '-', $string);
+function toolbox_create_slug($string, $underscore = false) {
+	// Replaces all spaces with hyphens or underscore.
+	if($underscore) {
+		$string = str_replace(' ', '_', $string);
+	} else {
+		$string = str_replace(' ', '-', $string);
+	}
+    
 
     // Removes special chars.
     $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string);
     // Replaces multiple hyphens with single one.
     $string = preg_replace('/-+/', '-', $string);
+     // Replaces multiple underscores with single one.
+    $string = preg_replace('/_+/', '_', $string);
 
     // Make sure that all characters are in lowercase
     $string = strtolower($string);
