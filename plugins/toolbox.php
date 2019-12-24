@@ -46,7 +46,7 @@ function toolbox_admin_bar_render() {
 		    	'parent' => 'toolbox',
 		        'id' => 'toolbox-' . toolbox_create_slug($pages[$i]),
 		        'title' => __($pages[$i]),
-		        'href' => admin_url( 'admin.php?page=toolbox&tab=' . toolbox_create_slug($pages[$i]) )
+		        'href' => admin_url( 'admin.php?page=toolbox-' . toolbox_create_slug($pages[$i]) )
 		    )
 		);
     }
