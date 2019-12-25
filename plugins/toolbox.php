@@ -49,7 +49,7 @@ function toolbox_admin_bar_render() {
     // lets add our main theme settings option
     $wp_admin_bar->add_menu(
 	    array(
-	        'id' => 'toolbox',
+	        'id' => 'toolbox-general',
 	        'title' => __('Toolbox'),
 	        'href' => admin_url( 'admin.php?page=toolbox-general')
 	    )	    
