@@ -49,14 +49,14 @@ function toolbox_admin_bar_render() {
 	    array(
 	        'id' => 'toolbox',
 	        'title' => __('Toolbox'),
-	        'href' => admin_url( 'admin.php?page=toolbox')
+	        'href' => admin_url( 'admin.php?page=toolbox-general')
 	    )	    
 	); 
 
     for ($i=0; $i < count($pages); $i++) { 
     	$wp_admin_bar->add_menu(
 			array(
-		    	'parent' => 'toolbox',
+		    	'parent' => 'toolbox-general',
 		        'id' => 'toolbox-' . toolbox_create_slug($pages[$i]),
 		        'title' => __($pages[$i]),
 		        'href' => admin_url( 'admin.php?page=toolbox-' . toolbox_create_slug($pages[$i]) )
