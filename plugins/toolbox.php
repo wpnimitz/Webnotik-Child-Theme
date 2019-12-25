@@ -193,6 +193,7 @@ function toolbox_fields($type = 'text', $name, $group = false, $help = false, $o
 
 function toolbox_content($body, $tab = 'general') {
 	global $pages;
+	$current_tab = isset($_GET["tab"]) ? $_GET["tab"] : 'general';
 	ob_start()
 	?>
 	<div class="webnotik-re-wrapper toolbox-wrapper">
@@ -205,9 +206,8 @@ function toolbox_content($body, $tab = 'general') {
 			</div>
 			<div class="panel-navigation">
 				<div class="panel-nav">
-					<a class="forms-group <?php echo ($tab == 'general' ? 'active' : '') ?>" href="admin.php?page=toolbox">General</a>
+					<a class="forms-group <?php echo ($current_tab == 'general' ? 'active' : '') ?>" href="admin.php?page=toolbox">General</a>
 					<?php
-					$current_tab = isset($_GET["tab"]) ? $_GET["tab"] : '';
 					for ($i=0; $i < count($pages); $i++) {
 				    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
 						echo '<a class="forms-group ' . ($current_tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox&tab='.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
