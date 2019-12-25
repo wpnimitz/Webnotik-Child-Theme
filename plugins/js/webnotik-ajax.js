@@ -42,6 +42,30 @@ jQuery(document).ready(function( $ ) {
         gUrl = $(this).closest(".keyword").find(".k-value input").val();
         gTitle = $(this).closest(".keyword").find(".k-main input").val();
         $target = $(this).closest('.keyword').attr('id');
+
+        var data = {
+            action: 'clone_city_page',
+            given_url: gUrl,
+            given_title: gTitle
+        };
+        $.getJSON( get_city_pages_data.ajaxurl, data, function( json ) {
+            $(".message").html("").attr("class", '').addClass("message");
+            if ( json.success ) {
+                json_data = json["data"];
+                console.log(json_data);
+                rei_message_show("Successfully clone city page. See new city details below", "success");
+
+                $this.closest(".keyword").find(".k-value input").val(json.data["post_name"])
+            } else {
+                
+                var json_data = json.data;
+                $.each(json_data, function(i, item) {
+                    $(".message").addClass("error").append("Error: " + item + "<br>");
+                }); 
+            }
+        } );
+
+        console.log(gUrl);
     }
 
 	$(".rename-cp").on("click", function(e) {

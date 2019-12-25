@@ -111,8 +111,46 @@ function rename_city_pages_callback() {
 		wp_update_post( $my_post );
 		update_post_meta($mypost_id, 'city_keyword', $new_title);
 
-		$success["post_title"] = 'We Buy Houses ' . $new_title;
+		$success["post_title"] = 'We Buy Houses in ' . $new_title;
 		$success["post_name"] = get_the_permalink($mypost_id);
+		wp_send_json_success( $success );	
+
+	} else {
+		$error["given_title"] = "Title: " . $_REQUEST["given_title"];
+		$error["given_url"] = "URL: " . $_REQUEST["given_url"];		
+		$error["mypost_id"] = "ID: " . $page->ID;
+		wp_send_json_error( $error ); 
+	}
+}
+
+add_action( 'wp_ajax_clone_city_page', 'clone_city_page_callback' );
+function clone_city_page_callback() {
+
+	$given_url = $_REQUEST["given_url"];
+	$slug = trim(parse_url($given_url, PHP_URL_PATH), '/');
+	
+	$page = get_page_by_path( $slug );
+	$mypost_id = $page->ID;
+	$new_title = $_REQUEST["given_title"];
+
+	if($mypost_id > 0) {
+		// Create post object
+		$mypost = array(
+		  'post_title'    => get_the_title($mypost_id),
+		  'post_content'  => get_post_field('post_content', $mypost_id),
+		  'post_type'     => 'page',
+		  'post_status'   => 'publish',
+		  'post_author'   => get_current_user_id()
+		);
+		 
+		// Insert the post into the database
+		$new_post_id = wp_insert_post( $mypost );
+
+		// Update the post into the database
+		update_post_meta($new_post_id, 'city_keyword', $new_title);
+
+		$success["post_title"] = $new_title;
+		$success["post_name"] = get_the_permalink($new_post_id);
 		wp_send_json_success( $success );	
 
 	} else {
