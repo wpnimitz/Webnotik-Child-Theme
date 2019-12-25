@@ -23,10 +23,10 @@ function toolbox_admin_menu_999() {
     add_menu_page( __('Toolbox', 'rei-toolbox'), __('Toolbox v2', 'rei-toolbox'), 'manage_options', 'toolbox', 'show_toolbox_content_callback', 'dashicons-flag', 3);
     add_action( 'admin_init', 'toolbox_settings' );
 
-    for ($i=0; $i < count($pages); $i++) {
-    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
-		add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', 'toolbox-'.toolbox_create_slug($pages[$i]), $toolbox_content, $i);
-    }
+  //   for ($i=0; $i < count($pages); $i++) {
+  //   	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
+		// add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', 'toolbox-'.toolbox_create_slug($pages[$i]), $toolbox_content, $i);
+  //   }
 }
 function toolbox_settings() {
 	global $pages;
@@ -59,7 +59,7 @@ function toolbox_admin_bar_render() {
 		    	'parent' => 'toolbox',
 		        'id' => 'toolbox-' . toolbox_create_slug($pages[$i]),
 		        'title' => __($pages[$i]),
-		        'href' => admin_url( 'admin.php?page=toolbox-' . toolbox_create_slug($pages[$i]) )
+		        'href' => admin_url( 'admin.php?page=toolbox&tab=' . toolbox_create_slug($pages[$i]) )
 		    )
 		);
     }
