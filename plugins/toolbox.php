@@ -86,7 +86,7 @@ function toolbox_create_slug($string, $underscore = false) {
 
 function get_toolbox_option($name, $group) {
 	global $default;
-	$toolbox = get_option('toolbox-' . $group);
+	$toolbox = get_option($group);
 
 	if(isset($toolbox[$name])) {
 		return $toolbox[$name];
