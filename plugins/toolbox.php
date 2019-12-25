@@ -145,9 +145,7 @@ function toolbox_fields($type = 'text', $name, $group = false, $help = false, $o
 		}
 	}
 	if($group) {
-		$final_name = 'toolbox['.$group.']['.$name.']';
-	} else {
-		$final_name = 'toolbox['.$name.']';
+		$final_name = $group.'['.$name.']';
 	}
 	if(!$class) {
 		$class = '';

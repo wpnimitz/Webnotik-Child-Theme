@@ -1187,7 +1187,7 @@ function webnotik_city_keywords( $atts ){
 		}
 	}	
 	
-	return '<span class="city city-'.$page_id.'">' . $ret . '</span>';
+	return '<span class="city city-'.$post->ID.'">' . $ret . '</span>';
 
 }
 add_shortcode( 'city_keywords', 'webnotik_city_keywords' );
