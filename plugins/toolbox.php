@@ -1,32 +1,6 @@
 <?php
 $pages = array('Branding', 'Forms', 'City Pages', 'Divi Global', 'Help & Guidelines');
-$default = array(
-	"general" => array(
-		"business_name" => "",
-		"business_phone_number" => "",
-		"business_email_address" => "",
-		"business_address_line_1" => "",
-		"business_address_line_2" => "",
-		"business_logo_url" => "",
-		"privacy_url" => "/privacy-policy/",
-		"terms_of_use_url" => "/terms-of-use/"
-	),
-	"branding" => array(
-		"round_corners" => "",
-		"round_corners_px" => "",
-		"main_branding_color" => "",
-		"secondary_branding_color" => "",
-		"hero_background_image" => "",
-		"hero_bg_image_overlay_color" => "",
-		"form_header_background_color" => "",
-		"form_body_background_color" => "",
-		"form_button_background_color" => "",
-		"form_button_hover_background_color" => "",
-		"special_page_background_color" => "",
-		"special_page_button_background_color" => "",
-		"special_page_button_hover_background_color" => "",
-	)
-);
+include_once('toolbox-config.php');
 
 
 // Enqueue the script on the back end (wp-admin)
@@ -115,42 +89,65 @@ function get_toolbox_option($name, $group) {
 	}
 }
 
-function toolbox_fields($type = 'text', $name, $value, $help = false, $group = false, $options = false) {
+function toolbox_fields($type = 'text', $name, $group = false, $help = false, $options = false, $class = false, $others = false) {
+	$label = $name;
+	$name = toolbox_create_slug($name, true);
 	$ret = '<div class="form-group">';
 	$ret .= '<div class="form-label">';
-	$ret .= '<label for="'.toolbox_create_slug($name).'">'.$name.'</label>';
+	$ret .= '<label for="'.$name.'">'.$label.'</label>';
 	$ret .= '</div>';
-
 	if($help) {
 		$help_ret = '';
 		foreach ($help as $key => $print) {
 			$help_ret .= '<p class="'.$key.'">'.$print.'</p>';
 		}
 	}
-
 	if($group) {
-		$final_name = 'toolbox['.$group.']['.toolbox_create_slug($name, true).']';
+		$final_name = 'toolbox['.$group.']['.$name.']';
 	} else {
-		$final_name = 'toolbox['.toolbox_create_slug($name, true).']';
+		$final_name = 'toolbox['.$name.']';
+	}
+	if(!$class) {
+		$class = '';
 	}
 
+	if($others) {
+		$data = '';
+		foreach ($others as $other => $val) {
+			$data .= 'data-' . $other . '="'.$val.'"';
+		}
+	}
+
+	$value = get_toolbox_option($name, $group);
 	$ret .= '<div class="form-field">';
 	switch ($type) {
 		case 'text':
 		case 'number':
-			$ret .= '<input type="'.$type.'" name="'.$final_name.'" id="'.toolbox_create_slug($name).'" value="'.$value.'">';
-			$ret .= isset($help_ret) ? $help_ret : '';
+			$ret .= '<input class="'.$class.'" type="'.$type.'" name="'.$final_name.'" id="'.$name.'" value="'.$value.'" '.(isset($data) ? $data : '').'>';
+			break;
+		case 'select':
+			$ret .= '<select class="'.$class.'" name="'.$final_name.'" id="'.$name.'" '.(isset($data) ? $data : '').'>';
+			if($options) {
+				for ($i=0; $i < count($options); $i++) {
+					$option_value = toolbox_create_slug($options[$i], true);
+					$is_selected = ($value == $option_value) ? 'selected' : '';
+					$ret .= '<option value="'.$option_value.'" '.$is_selected.'>'.$options[$i].'</option>';
+				}
+			}
+			$ret .= '</select>';
+			break;
+		case 'textarea':
+			$ret .= '<textarea name="'.$final_name.'" id="'.$name.'">'.$value.'</textarea>';
 			break;
 		default:
 			# code...
 			break;
 	}
-	$ret .= '</div>';
+	$ret .= isset($help_ret) ? $help_ret : '';
+	$ret .= '</div>'; //close form-field
+	$ret .= '</div>'; //close form-group
 
-
-	$ret .= '</div>';
-
-	return $ret;
+	echo  $ret;
 }
 
 
@@ -204,32 +201,16 @@ function show_toolbox_content_callback() {
 	ob_start();
 	echo '<p>Welcome to general settings of Wide Open Homes LLC. Output any shortcode in any of your wordpress page and we will instantly convert any data to seo rich snippets.</p>';	
 	
-	echo toolbox_fields('text', 
-		'Business Name', get_toolbox_option('business_name', 'general'), 
-		array('help' => '[webnotik business="name"]'), 'general');
-	echo toolbox_fields('text',
-		'Business Phone Number', get_toolbox_option('business_phone_number', 'general'), 
-		array('help' => '[webnotik business="phone_number"]'), 'general');
-	echo toolbox_fields('text',
-		'Business Email Address',get_toolbox_option('business_email_address', 'general'),
-		array('help' => '[webnotik business="email_address"]'), 'general');
-	echo toolbox_fields('text',
-		'Business Address Line 1', get_toolbox_option('business_address_line_1', 'general'), 
-		array('help' => '[webnotik business="address_line_1"]'), 'general');
-	echo toolbox_fields('text',
-		'Business Address Line 2', get_toolbox_option('business_address_line_2', 'general'), 
-		array('help' => '[webnotik business="address_line_2"]'), 'general');
-	echo toolbox_fields('text',
-		'Business Logo URL', get_toolbox_option('business_logo_url', 'general'), 
-		array('help' => '[webnotik business="logo_url"]'), 'general');
-	echo toolbox_fields('text',
-		'Privacy URL', get_toolbox_option('privacy_url', 'general'), 
-		array('help' => '[webnotik business="privacy_url"]'), 'general');
-	echo toolbox_fields('text',
-		'Terms of Use URL', get_toolbox_option('terms_of_use_url', 'general'), 
-		array('help' => '[webnotik business="terms_of_use_url"]'), 'general');
+	toolbox_fields('text', 'Business Name', 'general', array('help' => '[webnotik business="name"]'));
+	toolbox_fields('text', 'Business Phone Number', 'general', array('help' => '[webnotik business="phone_number"]'));
+	toolbox_fields('text', 'Business Email Address', 'general', array('help' => '[webnotik business="email_address"]'));
+	toolbox_fields('text', 'Business Address Line 1', 'general', array('help' => '[webnotik business="address_line_1"]'));
+	toolbox_fields('text', 'Business Address Line 2', 'general', array('help' => '[webnotik business="address_line_2"]'));
+	toolbox_fields('text', 'Business Logo URL', 'general', array('help' => '[webnotik business="logo_url"]'));
+	toolbox_fields('text', 'Privacy URL', 'general',  array('help' => '[webnotik business="privacy_url"]'));
+	toolbox_fields('text', 'Terms of Use URL', 'general', array('help' => '[webnotik business="terms_of_use_url"]'));
 
-	submit_button();	
+	submit_button();
 
 	echo '<pre>';
 	print_r($toolbox);
@@ -244,10 +225,30 @@ function toolbox_branding_callback() {
 	ob_start();
 	echo '<p>Welcome to your branding settings. Please use this page to easily change for this template.</p>';	
 	
-	echo toolbox_fields('text', 'Round Corners?', get_toolbox_option('round_corners', 'branding'), false, 'branding');
-	echo toolbox_fields('text', 'Round Corners PX', get_toolbox_option('round_corners_px', 'branding'), false, 'branding');
-	echo toolbox_fields('text', 'Main Branding Color', get_toolbox_option('main_branding_color', 'branding'), false, 'branding');
-	echo toolbox_fields('text', 'Secondary Branding Color', get_toolbox_option('secondary_branding_color', 'branding'), false, 'branding');
+	toolbox_fields('select', 'Round Corners?', 'branding', false, array("No","Yes"));
+	toolbox_fields('text', 'Round Corners PX', 'branding');
+	toolbox_fields('text', 'Main Branding Color', 'branding', false, false, 'wda_color_picker');
+	toolbox_fields('text', 'Secondary Branding Color', 'branding', false, false, 'wda_color_picker');
+
+	echo '<h3>Hero Section</h3>';
+	toolbox_fields('text', 'Hero Background Image', 'branding');
+	toolbox_fields('text', 'Hero Background Overlay Color', 'branding', false, false, 'wda_color_picker');
+
+	echo '<h3>Form Design</h3>';
+	echo '<p>Make sure to add <strong>form-hero-header</strong> class to any module that you have a form.</p>';
+	toolbox_fields('text', 'Form Header Background', 'branding', false, array("No","Yes"));
+	toolbox_fields('select', 'Remove Header Bottom Padding?', 'branding', false, array("No","Yes"));
+	toolbox_fields('select', 'Form Fields Size', 'branding', false, array("Small","Regular"));
+	toolbox_fields('text', 'Form Body Background', 'branding', false, false, 'wda_color_picker');
+	toolbox_fields('text', 'Form Button Background', 'branding', false, false, 'wda_color_picker');
+	toolbox_fields('text', 'Form Button Background Hover', 'branding', false, false, 'wda_color_picker');
+	toolbox_fields('select', 'Allow Trust Badge?', 'branding', false, array("No","Yes"));
+
+	echo '<h3>Special Pages</h3>';
+	echo '<p>Perfect for Thank You and 404 Pages. Make sure to add <strong>special-page</strong> class to the section class settings.</p>';
+	toolbox_fields('text', 'Special Page Background Color', 'branding', false, false, 'wda_color_picker');
+	toolbox_fields('text', 'Special Page Button Background Color', 'branding', false, false, 'wda_color_picker');
+	toolbox_fields('text', 'Special Page Button Hover Background Color', 'branding', false, false, 'wda_color_picker');
 
 	submit_button();	
 
@@ -257,8 +258,24 @@ function toolbox_branding_callback() {
 }
 
 function toolbox_forms_callback() {
-	$ret = 'Something awesome is coming here.';
-	echo toolbox_content($ret, 'forms');
+	ob_start();
+
+	toolbox_fields('textarea', 'Seller Form', 'forms', array('help' => '[webnotik_form type="seller_form"]', 'hint' => "In some instances, you may use lead source, this will help us gain more advantage for PPC landing pages. For reference, please check our Help & Guidelines section <a href='#'>here.</a>"));
+	toolbox_fields('textarea', 'Buyer Form', 'forms', array('help' => '[webnotik_form type="buyer_form"]'));
+	toolbox_fields('textarea', 'Private Lending Form', 'forms', array('help' => '[webnotik_form type="private_lending_form"]'));
+	toolbox_fields('textarea', 'Contractor Form', 'forms', array('help' => '[webnotik_form type="contractor_form"]'));
+	toolbox_fields('textarea', 'Realtors Form', 'forms', array('help' => '[webnotik_form type="realtors_form"]'));
+	toolbox_fields('textarea', 'Wholesale Form', 'forms', array('help' => '[webnotik_form type="wholesale_form"]'));
+	toolbox_fields('textarea', 'Contact Form', 'forms', array('help' => '[webnotik_form type="contact_form"]'));
+	toolbox_fields('textarea', 'Extra Form', 'forms', array('help' => '[webnotik_form type="extra_form"]'));
+
+
+
+	submit_button();	
+
+	$output = ob_get_contents();
+    ob_end_clean();
+	echo toolbox_content($output, 'forms');
 }
 
 function toolbox_city_pages_callback() {
@@ -276,4 +293,3 @@ function toolbox_help_guidelines_callback() {
 	$ret = 'Something awesome is coming here.';
 	echo toolbox_content($ret, 'help-guidelines');
 }
-
