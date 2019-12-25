@@ -66,7 +66,7 @@ jQuery(document).ready(function( $ ) {
         } );
 
         console.log(gUrl);
-    }
+    });
 
 	$(".rename-cp").on("click", function(e) {
 		e.preventDefault();
