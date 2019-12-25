@@ -98,10 +98,10 @@ function get_toolbox_option($name, $group) {
 function city_pages_field($name, $action = false, $count = 0) {
 	$label = $name;
 	$name = toolbox_create_slug($name, true);
-	$toolbox = get_option('toolbox');
+	$toolbox = get_option('city_pages');
 
-	$city_names = @$toolbox["city_pages"]["names"];
-	$city_urls = @$toolbox["city_pages"]["urls"];
+	$city_names = @$toolbox"names"];
+	$city_urls = @$toolbox["urls"];
 
 	$value1 = '';
 	if(!empty($city_names[$count])) {
@@ -337,7 +337,7 @@ function toolbox_city_pages_callback() {
 
 	submit_button();
 
-	
+
 	echo '<pre>';
 	print_r($toolbox);
 	echo '</pre>';
