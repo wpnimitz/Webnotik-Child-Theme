@@ -328,6 +328,11 @@ function toolbox_city_pages_callback() {
 	
 	city_pages_field('Main State');
 	city_pages_field('City #1', true, 1);
+	city_pages_field('City #2', true, 2);
+	city_pages_field('City #3', true, 3);
+	city_pages_field('City #4', true, 4);
+	city_pages_field('City #5', true, 5);
+	city_pages_field('City #6', true, 6);
 
 
 
