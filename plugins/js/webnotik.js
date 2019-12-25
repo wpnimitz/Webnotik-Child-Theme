@@ -35,7 +35,7 @@ jQuery(document).ready(function( $ ) {
 		$("#extra-" + extraSub + " input").attr('value', '');
 		$("#extra-" + extraSub + " .k-main input").attr('value', 'City #' + extraSub);
 
-		$(".main-sub-keyword").attr("date-new", extraSub - 1); //temporary deduct one.
+		$(".main-sub-keyword").attr("data-new", extraSub - 1); //temporary deduct one.
 
 		subKeywordRecount();
 	});

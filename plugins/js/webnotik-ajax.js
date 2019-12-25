@@ -54,8 +54,13 @@ jQuery(document).ready(function( $ ) {
                 json_data = json["data"];
                 console.log(json_data);
                 rei_message_show("Successfully clone city page. See new city details below", "success");
-                $(".add-sub-keyword").trigger( "click" );
-                $this.closest(".keyword").find(".k-value input").val(json.data["post_name"])
+
+                //let's create a new city page field
+                $(".add-sub-keyword").trigger( "click" ); 
+                //lets display the data
+                get_extra_id = $(".main-sub-keyword").data("new");
+                $("#extra-" + get_extra_id).find(".k-main input")(json.data["post_title"])
+                $("#extra-" + get_extra_id).find(".k-value input")(json.data["post_name"])
             } else {
                 
                 var json_data = json.data;
