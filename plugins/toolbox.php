@@ -240,7 +240,7 @@ function toolbox_content($body, $tab = 'general') {
 } //close toolbox_content
 
 function show_toolbox_content_callback() {
-	$toolbox = get_option('toolbox');
+	
 
 	ob_start();
 	echo '<p>Welcome to general settings of Wide Open Homes LLC. Output any shortcode in any of your wordpress page and we will instantly convert any data to seo rich snippets.</p>';	
@@ -256,9 +256,7 @@ function show_toolbox_content_callback() {
 
 	submit_button();
 
-	echo '<pre>';
-	print_r($toolbox);
-	echo '</pre>';
+	
 
 	$output = ob_get_contents();
     ob_end_clean();
@@ -321,6 +319,7 @@ function toolbox_forms_callback() {
 }
 
 function toolbox_city_pages_callback() {
+	$toolbox = get_option('toolbox');
 	ob_start();
 	echo '<p>Add all your city pages here. The more the merrier for SEO.</p>';	
 
@@ -338,6 +337,10 @@ function toolbox_city_pages_callback() {
 
 	submit_button();
 
+	
+	echo '<pre>';
+	print_r($toolbox);
+	echo '</pre>';
 
 	$output = ob_get_contents();
     ob_end_clean();
