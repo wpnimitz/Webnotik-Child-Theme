@@ -54,7 +54,7 @@ jQuery(document).ready(function( $ ) {
                 json_data = json["data"];
                 console.log(json_data);
                 rei_message_show("Successfully clone city page. See new city details below", "success");
-
+                $(".add-sub-keyword").trigger( "click" );
                 $this.closest(".keyword").find(".k-value input").val(json.data["post_name"])
             } else {
                 
