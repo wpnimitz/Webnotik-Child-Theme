@@ -291,6 +291,25 @@
   font-size: 12px;
 }
 
+.webnotik-re-wrapper .input-group {
+  background: rgba(0, 0, 0, 0.10);
+  padding: 2px;
+  border-radius: 2px;
+  display: flex;
+}
+
+.k-main input, .k-main .inline-action {
+  display: inline-block;
+}
+
+.actions.inline-action {
+  display: flex;
+  align-items: center;
+}
+.actions.inline-action a {
+  margin: 2px;
+}
+
 .webnotik-re-wrapper p.message.success {
   padding: 20px 10px;
   border: 1px solid green;

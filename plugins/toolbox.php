@@ -10,7 +10,7 @@ function toolbox_admin_scripts_assets() {
 	// Add the color picker css file       
     wp_enqueue_style( 'wp-color-picker' );
     wp_enqueue_style('toolbox-css', get_stylesheet_directory_uri() . '/plugins/css/webnotik.css?version='.$ver);
-    wp_enqueue_script('toolbox-webnotik', get_stylesheet_directory_uri() . '/plugins/js/webnotik.js?version='.$ver);
+    //wp_enqueue_script('toolbox-webnotik', get_stylesheet_directory_uri() . '/plugins/js/webnotik.js?version='.$ver);
     wp_enqueue_script( 'wp-color-picker-alpha', get_stylesheet_directory_uri() . '/plugins/js/wp-color-picker-alpha.min.js', array( 'wp-color-picker' ), $ver, true );
     wp_enqueue_script( 'get-city-pages-script', get_stylesheet_directory_uri() . '/plugins/js/webnotik-ajax.js?ver='.$ver, array( 'jquery' ), null, true );
     wp_localize_script( 'get-city-pages-script', 'get_city_pages_data', array('ajaxurl' => admin_url( 'admin-ajax.php' )) );
@@ -100,7 +100,7 @@ function city_pages_field($name, $action = false, $count = 0) {
 	$name = toolbox_create_slug($name, true);
 	$toolbox = get_option('city_pages');
 
-	$city_names = @$toolbox"names"];
+	$city_names = @$toolbox["names"];
 	$city_urls = @$toolbox["urls"];
 
 	$value1 = '';
@@ -112,23 +112,29 @@ function city_pages_field($name, $action = false, $count = 0) {
 		$value2 = $city_urls[$count];
 	}
 
-	$action = '<p class="actions">
-				    			<a class="rename-cp" href="#">Rename Page</a>
-								<a class="delete-cp" href="#">Delete Data</a> 
-								<!-- <a class="clone-cp" href="#">Clone Page</a>-->
-				    		</p>';
+	$city_action = '';
+	if($action) {
+		$city_action = '<div class="actions inline-action">
+			<a title="Rename City Page" class="rename-cp" href="#">RP</a>
+			<a title="Delete this City Page Data" class="delete-cp" href="#">DD</a>
+			<a title="Clone this City Page Data" class="clone-cp" href="#">CD</a>
+		</div>';
+	}
 
 
 	$ret = '<div class="form-group">
     	<div class="form-label">
-    		<label for="'.$name.'">'.$label.'</label>
+    		<label for="'.$name.'">'.$label.'</label> 
     	</div>
-    	<div class="form-field">
+    	<div class="form-field keyword">
     		<div class="col-2 k-main">
-	    		<input type="text" name="toolbox[city_pages][names][]" id="'.$name.'" value="'.$value1.'">
+    			<div class="input-group">
+	    			<input type="text" name="city_pages[names][]" id="'.$name.'" value="'.$value1.'">
+	    			'.$city_action.'
+	    		</div>
 	    		<p class="hint">Enter focus city or state here.</p>
 	    	</div><div class="col-2 k-value">
-	    		<input name="toolbox[city_pages][urls][]" id="'.$name.'" value="'.$value2.'">
+	    		<div class="input-group"><input type="url" name="city_pages[urls][]" id="'.$name.'" value="'.$value2.'"></div>
     			<p class="hint">Enter page URL. Very usefull for automatic linking.</p>
 	    	</div>
     	</div>
@@ -319,11 +325,10 @@ function toolbox_forms_callback() {
 }
 
 function toolbox_city_pages_callback() {
-	$toolbox = get_option('toolbox');
+	$toolbox = get_option('city_pages');
 	ob_start();
-	echo '<p>Add all your city pages here. The more the merrier for SEO.</p>';	
-
-	echo '<p>this page is still cooking its settings. Come back again soon!';
+	echo '<h2>Welcome to REI Toolbox City Pages Data Builder</h2>';	
+	echo '<p>In this section, you can rename, delete and even clone your currrent city page landing page. Just make sure you provide the correct name and correct url to make it work properly.</p>';
 	
 	city_pages_field('Main State');
 	city_pages_field('City #1', true, 1);
