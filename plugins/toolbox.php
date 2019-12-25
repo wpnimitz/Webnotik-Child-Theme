@@ -114,7 +114,7 @@ function city_pages_field($name, $action = false, $count = 0) {
 				    			<a class="rename-cp" href="#">Rename Page</a>
 								<a class="delete-cp" href="#">Delete Data</a> 
 								<!-- <a class="clone-cp" href="#">Clone Page</a>-->
-				    		</p>'
+				    		</p>';
 
 
 	$ret = '<div class="form-group">
