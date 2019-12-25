@@ -234,7 +234,7 @@ function toolbox_content($body, $tab = 'general') {
 } //close toolbox_content
 
 function show_toolbox_content_callback() {
-	$toolbox = get_option('toolbox');
+	$toolbox = get_option('toolbox-general');
 
 	ob_start();
 	echo '<p>Welcome to general settings of Wide Open Homes LLC. Output any shortcode in any of your wordpress page and we will instantly convert any data to seo rich snippets.</p>';	
