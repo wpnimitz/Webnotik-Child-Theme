@@ -25,7 +25,7 @@ function toolbox_admin_menu_999() {
 
     for ($i=0; $i < count($pages); $i++) {
     	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
-		add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', 'toolbox-'.toolbox_create_slug($pages[$i]), $toolbox_content, $i);
+		add_submenu_page('toolbox-general', $pages[$i], $pages[$i], 'manage_options', 'toolbox-'.toolbox_create_slug($pages[$i]), $toolbox_content, $i);
     }
 }
 function toolbox_settings() {
