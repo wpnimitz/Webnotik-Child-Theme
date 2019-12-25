@@ -95,13 +95,13 @@ function get_toolbox_option($name, $group) {
 	}
 }
 
-function city_pages_field($name, $action = false, $count = 0) {
+function city_pages_field($name, $action = false, $count = 0, $class = "") {
 	$label = $name;
 	$name = toolbox_create_slug($name, true);
-	$toolbox = get_option('city_pages');
+	$city_pages = get_option('city_pages');
 
-	$city_names = @$toolbox["names"];
-	$city_urls = @$toolbox["urls"];
+	$city_names = @$city_pages["names"];
+	$city_urls = @$city_pages["urls"];
 
 	$value1 = '';
 	if(!empty($city_names[$count])) {
@@ -122,11 +122,11 @@ function city_pages_field($name, $action = false, $count = 0) {
 	}
 
 
-	$ret = '<div class="form-group">
+	$ret = '<div class="form-group keyword '.$class.'">
     	<div class="form-label">
     		<label for="'.$name.'">'.$label.'</label> 
     	</div>
-    	<div class="form-field keyword">
+    	<div class="form-field">
     		<div class="col-2 k-main">
     			<div class="input-group">
 	    			<input type="text" name="city_pages[names][]" id="'.$name.'" value="'.$value1.'">
@@ -325,31 +325,24 @@ function toolbox_forms_callback() {
 }
 
 function toolbox_city_pages_callback() {
-	$toolbox = get_option('city_pages');
+	$city_pages = get_option('city_pages');
 	ob_start();
 	echo '<h2>Welcome to REI Toolbox City Pages Data Builder</h2>';	
 	echo '<p>In this section, you can rename, delete and even clone your currrent city page landing page. Just make sure you provide the correct name and correct url to make it work properly.</p>';
 	
 	city_pages_field('Main State');
-	city_pages_field('City #1', true, 1);
-	city_pages_field('City #2', true, 2);
-	city_pages_field('City #3', true, 3);
-	city_pages_field('City #4', true, 4);
-	city_pages_field('City #5', true, 5);
-	city_pages_field('City #6', true, 6);
-
-
+	city_pages_field('City #1', true, 1, 'main-sub-keyword');
+	echo '<div class="extra-keywords" id="sortable">';
+	for ($i=2; $i < count($city_pages); $i++) { 
+		city_pages_field('City #' . $i, true, $i);
+	}
+	echo '</div>';
 
 	echo '<div class="options">';
     submit_button();
 	echo '<p class="submit"><a href="#" id="submit" class="button button-primary add-sub-keyword">Add new city page</a></p>
 	    <p class="submit"><a href="#" id="get-cp" class="button button-primary" >List City Pages</a></p>
 	</div>';
-
-
-	echo '<pre>';
-	print_r($toolbox);
-	echo '</pre>';
 
 	$output = ob_get_contents();
     ob_end_clean();
