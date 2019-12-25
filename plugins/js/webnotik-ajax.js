@@ -59,8 +59,8 @@ jQuery(document).ready(function( $ ) {
                 $(".add-sub-keyword").trigger( "click" ); 
                 //lets display the data
                 get_extra_id = $(".main-sub-keyword").data("new");
-                $("#extra-" + get_extra_id).find(".k-main input")(json.data["post_title"])
-                $("#extra-" + get_extra_id).find(".k-value input")(json.data["post_name"])
+                $("#extra-" + get_extra_id + " .k-main input")(json.data["post_title"])
+                $("#extra-" + get_extra_id + " .k-value input")(json.data["post_name"])
             } else {
                 
                 var json_data = json.data;
