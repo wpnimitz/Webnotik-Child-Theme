@@ -32,7 +32,7 @@ function toolbox_settings() {
 	global $pages;
 	for ($i=0; $i < count($pages); $i++) {
     	$settings_group = 'toolbox-' .toolbox_create_slug($pages[$i], true) .'-group';
-		register_setting( $settings_group, toolbox_create_slug($pages[$i]) );
+		register_setting( $settings_group, toolbox_create_slug($pages[$i],true) );
     }
 }
 
