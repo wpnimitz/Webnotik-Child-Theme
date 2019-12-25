@@ -39,4 +39,3 @@ $default = array(
 		"extra_form" => "",
 	)
 );
-?>
