@@ -340,7 +340,11 @@ function toolbox_city_pages_callback() {
 
 
 
-	submit_button();
+	echo '<div class="options">
+    	'.submit_button().'
+	    <p class="submit"><a href="#" id="submit" class="button button-primary add-sub-keyword">Add new city page</a></p>
+	    <p class="submit"><a href="#" id="get-cp" class="button button-primary" >List City Pages</a></p>
+	</div>';
 
 
 	echo '<pre>';

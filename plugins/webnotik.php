@@ -146,8 +146,13 @@ function clone_city_page_callback() {
 		// Insert the post into the database
 		$new_post_id = wp_insert_post( $mypost );
 
-		// Update the post into the database
-		update_post_meta($new_post_id, 'city_keyword', $new_title);
+		// Copy post metadata
+		$data = get_post_custom($mypost_id);
+	    foreach ( $data as $key => $values) {
+	      foreach ($values as $value) {
+	        add_post_meta( $new_post_id, $key, $value );
+	      }
+	    }
 
 		$success["post_title"] = $new_title;
 		$success["post_name"] = get_the_permalink($new_post_id);
