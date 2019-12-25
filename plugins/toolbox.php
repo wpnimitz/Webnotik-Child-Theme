@@ -30,8 +30,10 @@ function toolbox_admin_menu_999() {
 }
 function toolbox_settings() {
 	global $pages;
+	//for general settings since its not part of the loop
+	register_setting( 'toolbox-general-group', 'general' );
 	for ($i=0; $i < count($pages); $i++) {
-    	$settings_group = 'toolbox-' .toolbox_create_slug($pages[$i], true);
+    	$settings_group = 'toolbox-' .toolbox_create_slug($pages[$i], true) . '-group';
 		register_setting( $settings_group, toolbox_create_slug($pages[$i], true) );
     }
 }
@@ -222,8 +224,8 @@ function toolbox_content($body, $tab = 'general') {
 			<?php settings_errors(); ?>			
 			<div class="panel-body">
 				<form method="post" action="options.php">
-				<?php settings_fields( 'toolbox-' .toolbox_create_slug($tab, true)); ?>
-				<?php do_settings_sections( 'toolbox-' .toolbox_create_slug($tab, true)); ?>
+				<?php settings_fields( 'toolbox-' .toolbox_create_slug($tab, true) . '-group'); ?>
+				<?php do_settings_sections( 'toolbox-' .toolbox_create_slug($tab, true) . '-group'); ?>
 				<?php echo $body; ?>
 				</form>
 			</div>
