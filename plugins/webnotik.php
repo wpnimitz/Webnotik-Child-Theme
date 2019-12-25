@@ -690,44 +690,6 @@ function webnotik_real_estate_content(){
 				    </div>
 
 
-
-
-					<?php if($main != "") {?>
-				    <div class="form-group cities">
-				    	<div class="form-label">
-				    		<label for="webnotik_keywords_main">Available Cities</label>
-				    	</div>
-				    	<div class="form-field">
-				    		<div class="col">
-				    			<p class="hint">You can click the cities below and it will automatically be copied to your clipboard</p>
-				    				<?php 
-				    					$cities = $locations->$main;
-				    					
-				    					if(!empty($cities)) {
-				    						foreach ($cities as $city) {
-					    						echo '<span class="city">' . $city . '</span> '; 
-					    					}
-				    					} else {
-				    						echo 'It seems that you haven\'t selected a State yet. Please select a state from above to display list of cities.';
-				    					}
-
-				    				?>
-				    			
-				    		</div>
-				    	</div>		
-				    </div>
-				    <?php } ?>
-
-					<div class="form-group">
-				    	<div class="form-label">
-				    		<label for="webnotik_other_cities">Other Cities</label>
-				    	</div>
-				    	<div class="form-field">
-				    		<textarea name="webnotik_other_cities" id="webnotik_other_cities"><?php echo esc_attr( get_option('webnotik_other_cities') ); ?></textarea>
-				    	</div>
-				    </div>
-
-
 				    <?php 
 				    $subpages = get_option('webnotik_keywords_subpages');
 				    $subid = get_option('webnotik_keywords_subpages_ids');
