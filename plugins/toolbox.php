@@ -211,7 +211,7 @@ function toolbox_content($body, $tab = 'general') {
 			</div>
 			<div class="panel-navigation">
 				<div class="panel-nav">
-					<a class="forms-group <?php echo ($tab == 'general' ? 'active' : '') ?>" href="admin.php?page=toolbox">General</a>
+					<a class="forms-group <?php echo ($tab == 'general' ? 'active' : '') ?>" href="admin.php?page=toolbox-general">General</a>
 					<?php 
 					for ($i=0; $i < count($pages); $i++) {
 				    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
