@@ -209,7 +209,7 @@ function toolbox_content($body, $tab = 'general') {
 					<?php 
 					for ($i=0; $i < count($pages); $i++) {
 				    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
-						echo '<a class="forms-group ' . ($tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox-'.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
+						echo '<a class="forms-group ' . ($tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox&tab='.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
 				    }
 					?>
 					<a href="#" class="icon">&#9776;</a>			
