@@ -206,10 +206,11 @@ function toolbox_content($body, $tab = 'general') {
 			<div class="panel-navigation">
 				<div class="panel-nav">
 					<a class="forms-group <?php echo ($tab == 'general' ? 'active' : '') ?>" href="admin.php?page=toolbox">General</a>
-					<?php 
+					<?php
+					$current_tab = isset($_GET["tab"]) ? $_GET["tab"] : '';
 					for ($i=0; $i < count($pages); $i++) {
 				    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
-						echo '<a class="forms-group ' . ($tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox&tab='.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
+						echo '<a class="forms-group ' . ($current_tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox&tab='.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
 				    }
 					?>
 					<a href="#" class="icon">&#9776;</a>			
