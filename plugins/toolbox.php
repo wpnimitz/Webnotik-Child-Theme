@@ -23,16 +23,16 @@ function toolbox_admin_menu_999() {
     add_menu_page( __('Toolbox', 'rei-toolbox'), __('Toolbox v2', 'rei-toolbox'), 'manage_options', 'toolbox', 'show_toolbox_content_callback', 'dashicons-flag', 3);
     add_action( 'admin_init', 'toolbox_settings' );
 
-  //   for ($i=0; $i < count($pages); $i++) {
-  //   	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
-		// add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', 'toolbox-'.toolbox_create_slug($pages[$i]), $toolbox_content, $i);
-  //   }
+    for ($i=0; $i < count($pages); $i++) {
+    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
+		add_submenu_page('toolbox', $pages[$i], $pages[$i], 'manage_options', 'toolbox-'.toolbox_create_slug($pages[$i]), $toolbox_content, $i);
+    }
 }
 function toolbox_settings() {
 	global $pages;
 	for ($i=0; $i < count($pages); $i++) {
     	$settings_group = 'toolbox-' .toolbox_create_slug($pages[$i], true) .'-group';
-		register_setting( $settings_group, toolbox_create_slug('toolbox-'.$pages[$i]) );
+		register_setting( $settings_group, toolbox_create_slug($pages[$i]) );
     }
 }
 
@@ -59,7 +59,7 @@ function toolbox_admin_bar_render() {
 		    	'parent' => 'toolbox',
 		        'id' => 'toolbox-' . toolbox_create_slug($pages[$i]),
 		        'title' => __($pages[$i]),
-		        'href' => admin_url( 'admin.php?page=toolbox&tab=' . toolbox_create_slug($pages[$i]) )
+		        'href' => admin_url( 'admin.php?page=toolbox-' . toolbox_create_slug($pages[$i]) )
 		    )
 		);
     }
@@ -110,12 +110,16 @@ function city_pages_field($name, $action = false, $count = 0) {
 		$value2 = $city_urls[$count];
 	}
 
-	$city_action = '<p class="actions"><a class="rename-cp" href="#">Rename Page</a> <a class="delete-cp" href="#">Delete Data</a> </p>';
+	$action = '<p class="actions">
+				    			<a class="rename-cp" href="#">Rename Page</a>
+								<a class="delete-cp" href="#">Delete Data</a> 
+								<!-- <a class="clone-cp" href="#">Clone Page</a>-->
+				    		</p>'
 
 
 	$ret = '<div class="form-group">
     	<div class="form-label">
-    		<label for="'.$name.'">'.$label.'</label> '.($action ? $city_action : '').'
+    		<label for="'.$name.'">'.$label.'</label>
     	</div>
     	<div class="form-field">
     		<div class="col-2 k-main">
@@ -145,7 +149,9 @@ function toolbox_fields($type = 'text', $name, $group = false, $help = false, $o
 		}
 	}
 	if($group) {
-		$final_name = 'toolbox-' . $group.'['.$name.']';
+		$final_name = 'toolbox['.$group.']['.$name.']';
+	} else {
+		$final_name = 'toolbox['.$name.']';
 	}
 	if(!$class) {
 		$class = '';
@@ -193,10 +199,9 @@ function toolbox_fields($type = 'text', $name, $group = false, $help = false, $o
 
 function toolbox_content($body, $tab = 'general') {
 	global $pages;
-	$current_tab = isset($_GET["tab"]) ? $_GET["tab"] : 'general';
 	ob_start()
 	?>
-	<div class="webnotik-re-wrapper toolbox-wrapper">
+	<div class="webnotik-re-wrapper">
 		<div class="message"></div>
 		<div class="panel">
 			<div class="panel-header">
@@ -206,11 +211,11 @@ function toolbox_content($body, $tab = 'general') {
 			</div>
 			<div class="panel-navigation">
 				<div class="panel-nav">
-					<a class="forms-group <?php echo ($current_tab == 'general' ? 'active' : '') ?>" href="admin.php?page=toolbox">General</a>
-					<?php
+					<a class="forms-group <?php echo ($tab == 'general' ? 'active' : '') ?>" href="admin.php?page=toolbox">General</a>
+					<?php 
 					for ($i=0; $i < count($pages); $i++) {
 				    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
-						echo '<a class="forms-group ' . ($current_tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox&tab='.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
+						echo '<a class="forms-group ' . ($tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox-'.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
 				    }
 					?>
 					<a href="#" class="icon">&#9776;</a>			
@@ -218,7 +223,7 @@ function toolbox_content($body, $tab = 'general') {
 			</div>
 			<?php settings_errors(); ?>			
 			<div class="panel-body">
-				<form method="post" action="options.php" class="tab-<?php echo $tab; ?>">
+				<form method="post" action="options.php">
 				<?php settings_fields( 'toolbox-' .toolbox_create_slug($tab, true) .'-group' ); ?>
 				<?php do_settings_sections( 'toolbox-' .toolbox_create_slug($tab, true) .'-group' ); ?>
 				<?php echo $body; ?>
@@ -235,7 +240,7 @@ function toolbox_content($body, $tab = 'general') {
 } //close toolbox_content
 
 function show_toolbox_content_callback() {
-	$toolbox = get_option('toolbox-general');
+	$toolbox = get_option('toolbox');
 
 	ob_start();
 	echo '<p>Welcome to general settings of Wide Open Homes LLC. Output any shortcode in any of your wordpress page and we will instantly convert any data to seo rich snippets.</p>';	
