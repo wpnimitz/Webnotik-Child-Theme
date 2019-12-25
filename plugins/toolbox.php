@@ -32,7 +32,7 @@ function toolbox_settings() {
 	global $pages;
 	for ($i=0; $i < count($pages); $i++) {
     	$settings_group = 'toolbox-' .toolbox_create_slug($pages[$i], true) .'-group';
-		register_setting( $settings_group, toolbox_create_slug($pages[$i],true) );
+		register_setting( $settings_group, toolbox_create_slug('toolbox-'.$pages[$i]) );
     }
 }
 
@@ -145,7 +145,7 @@ function toolbox_fields($type = 'text', $name, $group = false, $help = false, $o
 		}
 	}
 	if($group) {
-		$final_name = $group.'['.$name.']';
+		$final_name = 'toolbox-' . $group.'['.$name.']';
 	}
 	if(!$class) {
 		$class = '';
