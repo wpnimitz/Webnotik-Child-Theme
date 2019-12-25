@@ -333,8 +333,8 @@ function toolbox_city_pages_callback() {
 	city_pages_field('Main State');
 	city_pages_field('City #1', true, 1, 'main-sub-keyword');
 	echo '<div class="extra-keywords" id="sortable">';
-	for ($i=2; $i < count($city_pages); $i++) { 
-		city_pages_field('City #' . $i, true, $i);
+	for ($i=1; $i < count($city_pages); $i++) { 
+		city_pages_field('City #' . ($i +1), true, ($i +1));
 	}
 	echo '</div>';
 
@@ -343,6 +343,11 @@ function toolbox_city_pages_callback() {
 	echo '<p class="submit"><a href="#" id="submit" class="button button-primary add-sub-keyword">Add new city page</a></p>
 	    <p class="submit"><a href="#" id="get-cp" class="button button-primary" >List City Pages</a></p>
 	</div>';
+
+
+	echo '<pre>';
+	print_r($city_pages);
+	echo '</pre>';
 
 	$output = ob_get_contents();
     ob_end_clean();
