@@ -268,12 +268,16 @@
   margin-top: 0;
 }
 
+.panel-body .tab-city-pages label {
+  display: inline-block !important;
+}
+
 .form-label .actions {
   display: none;
 }
 
 .form-label:hover .actions {
-  display: block;
+  display: inline-block;
 }
 
 .actions a {

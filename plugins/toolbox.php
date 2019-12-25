@@ -29,7 +29,11 @@ function toolbox_admin_menu_999() {
     }
 }
 function toolbox_settings() {
-	register_setting( 'toolbox-settings-group', 'toolbox' );
+	global $pages;
+	for ($i=0; $i < count($pages); $i++) {
+    	$settings_group = 'toolbox-' .toolbox_create_slug($pages[$i], true) .'-group';
+		register_setting( $settings_group, toolbox_create_slug($pages[$i]) );
+    }
 }
 
 
@@ -80,13 +84,51 @@ function toolbox_create_slug($string, $underscore = false) {
 
 function get_toolbox_option($name, $group) {
 	global $default;
-	$toolbox = get_option('toolbox');
+	$toolbox = get_option('toolbox-' . $group);
 
-	if(isset($toolbox[$group][$name])) {
-		return $toolbox[$group][$name];
+	if(isset($toolbox[$name])) {
+		return $toolbox[$name];
 	} else {
 		return $default[$group][$name];
 	}
+}
+
+function city_pages_field($name, $action = false, $count = 0) {
+	$label = $name;
+	$name = toolbox_create_slug($name, true);
+	$toolbox = get_option('toolbox');
+
+	$city_names = @$toolbox["city_pages"]["names"];
+	$city_urls = @$toolbox["city_pages"]["urls"];
+
+	$value1 = '';
+	if(!empty($city_names[$count])) {
+		$value1 = $city_names[$count];
+	}
+	$value2 = '';
+	if(!empty($city_urls[$count])) {
+		$value2 = $city_urls[$count];
+	}
+
+	$city_action = '<p class="actions"><a class="rename-cp" href="#">Rename Page</a> <a class="delete-cp" href="#">Delete Data</a> </p>';
+
+
+	$ret = '<div class="form-group">
+    	<div class="form-label">
+    		<label for="'.$name.'">'.$label.'</label> '.($action ? $city_action : '').'
+    	</div>
+    	<div class="form-field">
+    		<div class="col-2 k-main">
+	    		<input type="text" name="toolbox[city_pages][names][]" id="'.$name.'" value="'.$value1.'">
+	    		<p class="hint">Enter focus city or state here.</p>
+	    	</div><div class="col-2 k-value">
+	    		<input name="toolbox[city_pages][urls][]" id="'.$name.'" value="'.$value2.'">
+    			<p class="hint">Enter page URL. Very usefull for automatic linking.</p>
+	    	</div>
+    	</div>
+    </div>';
+
+    echo $ret;
 }
 
 function toolbox_fields($type = 'text', $name, $group = false, $help = false, $options = false, $class = false, $others = false) {
@@ -172,16 +214,14 @@ function toolbox_content($body, $tab = 'general') {
 						echo '<a class="forms-group ' . ($tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox-'.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
 				    }
 					?>
-					
-
 					<a href="#" class="icon">&#9776;</a>			
 				</div>
 			</div>
 			<?php settings_errors(); ?>			
 			<div class="panel-body">
-				<form method="post" action="options.php">
-				<?php settings_fields( 'toolbox-settings-group' ); ?>
-				<?php do_settings_sections( 'toolbox-settings-group' ); ?>
+				<form method="post" action="options.php" class="tab-<?php echo $tab; ?>">
+				<?php settings_fields( 'toolbox-' .toolbox_create_slug($tab, true) .'-group' ); ?>
+				<?php do_settings_sections( 'toolbox-' .toolbox_create_slug($tab, true) .'-group' ); ?>
 				<?php echo $body; ?>
 				</form>
 			</div>
@@ -269,8 +309,6 @@ function toolbox_forms_callback() {
 	toolbox_fields('textarea', 'Contact Form', 'forms', array('help' => '[webnotik_form type="contact_form"]'));
 	toolbox_fields('textarea', 'Extra Form', 'forms', array('help' => '[webnotik_form type="extra_form"]'));
 
-
-
 	submit_button();	
 
 	$output = ob_get_contents();
@@ -279,8 +317,22 @@ function toolbox_forms_callback() {
 }
 
 function toolbox_city_pages_callback() {
-	$ret = 'Something awesome is coming here.';
-	echo toolbox_content($ret, 'city-pages');
+	ob_start();
+	echo '<p>Add all your city pages here. The more the merrier for SEO.</p>';	
+
+	echo '<p>this page is still cooking its settings. Come back again soon!';
+	
+	city_pages_field('Main State');
+	city_pages_field('City #1', true, 1);
+
+
+
+	submit_button();
+
+
+	$output = ob_get_contents();
+    ob_end_clean();
+	echo toolbox_content($output, 'city-pages');
 }
 
 function toolbox_divi_global_callback() {

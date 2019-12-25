@@ -662,24 +662,8 @@ function webnotik_real_estate_content(){
 				    	</div>
 				    	<div class="form-field">
 				    		<div class="col-2 k-main">
-					    		<?php 
-					    		//$locations = json_decode(file_get_contents(get_stylesheet_directory() . "/plugins/locations.json"));
-					    		$main = get_option('webnotik_keywords_main');
-					    		 ?>
+					    		<?php $main = get_option('webnotik_keywords_main'); ?>
 					    		<input type="text" name="webnotik_keywords_main" id="webnotik_keywords_main" value="<?php echo $main; ?>">
-
-					    			<?php 
-
-					    				// foreach ($locations as $state => $cities) {
-					    				// 	$selected = '';
-					    				// 	if($main == $state) {
-					    				// 		$selected = 'selected';
-					    				// 	}
-					    				// 	echo '<option values="'.$state.'" '.$selected.'>'.$state.'</option>';
-					    				// }
-
-					    			 ?>
-
 					    		<p class="hint">Main city keyword</p>
 					    	</div><div class="col-2 k-value">
 					    		<input name="webnotik_keywords_main_id" id="webnotik_keywords_main_id" value="<?php echo esc_attr( get_option('webnotik_keywords_main_id') ); ?>">
@@ -725,7 +709,6 @@ function webnotik_real_estate_content(){
 					    		<p class="actions">
 					    			<a class="rename-cp" href="#">Rename Page</a>
 									<a class="delete-cp" href="#">Delete Data</a>
-									<!-- <a class="clone-cp" href="#">Clone Page</a>-->
 					    		</p>
 					    	</div>
 					    	<div class="form-field">
