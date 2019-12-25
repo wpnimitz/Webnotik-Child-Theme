@@ -195,7 +195,7 @@ function toolbox_content($body, $tab = 'general') {
 	global $pages;
 	ob_start()
 	?>
-	<div class="webnotik-re-wrapper">
+	<div class="webnotik-re-wrapper toolbox-wrapper">
 		<div class="message"></div>
 		<div class="panel">
 			<div class="panel-header">
