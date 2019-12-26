@@ -2,7 +2,6 @@
 $pages = array('Branding', 'Forms', 'City Pages', 'Divi Global', 'Help & Guidelines', 'Report');
 include_once('toolbox-config.php');
 
-
 // Enqueue the script on the back end (wp-admin)
 add_action( 'admin_enqueue_scripts', 'toolbox_admin_scripts_assets' );
 function toolbox_admin_scripts_assets() {
@@ -15,7 +14,6 @@ function toolbox_admin_scripts_assets() {
     wp_enqueue_script( 'get-city-pages-script', get_stylesheet_directory_uri() . '/plugins/js/webnotik-ajax.js?ver='.$ver, array( 'jquery' ), null, true );
     wp_localize_script( 'get-city-pages-script', 'get_city_pages_data', array('ajaxurl' => admin_url( 'admin-ajax.php' )) );
 }
-
 
 add_action('admin_menu', 'toolbox_admin_menu_999');
 function toolbox_admin_menu_999() {
@@ -38,7 +36,6 @@ function toolbox_settings() {
     }
 }
 
-
 add_action( 'wp_before_admin_bar_render', 'toolbox_admin_bar_render' );
 function toolbox_admin_bar_render() {
     global $wp_admin_bar;
@@ -55,8 +52,8 @@ function toolbox_admin_bar_render() {
 	    )	    
 	); 
 
-  //   for ($i=0; $i < count($pages); $i++) { 
-  //   	$wp_admin_bar->add_menu(
+	//   for ($i=0; $i < count($pages); $i++) { 
+	//   	$wp_admin_bar->add_menu(
 		// 	array(
 		//     	'parent' => 'toolbox-general',
 		//         'id' => 'toolbox-' . toolbox_create_slug($pages[$i]),
@@ -64,9 +61,8 @@ function toolbox_admin_bar_render() {
 		//         'href' => admin_url( 'admin.php?page=toolbox-' . toolbox_create_slug($pages[$i]) )
 		//     )
 		// );
-  //   }
+	//   }
 }
-
 
 function toolbox_create_slug($string, $underscore = false) {
     // Replaces all spaces with hyphens.
@@ -128,9 +124,6 @@ function city_pages_field($name, $action = false, $count = 0, $class = "") {
 			<a title="Verify URL" class="verify-cp" href="#">Verify</a>
 		</div>';
 	}
-
-
-
 	$ret = '<div class="form-group keyword '.$class.'">
     	<div class="form-label">
     		<label for="'.$name.'">'.$label.'</label> 
@@ -214,10 +207,8 @@ function toolbox_fields($type = 'text', $name, $group = false, $help = false, $o
 	return $ret;
 }
 
-
 function toolbox_content($body, $tab = 'general') {
 	global $pages;
-
 
 	$ret = '<div class="webnotik-re-wrapper">';
 	$ret .= '';
@@ -254,6 +245,11 @@ function toolbox_content($body, $tab = 'general') {
 			</div>
 		</div>';
 } //close toolbox_content
+
+function toolbox_admin_notices() {
+    settings_errors();
+}
+add_action('admin_notices', 'toolbox_admin_notices');
 
 function show_toolbox_content_callback() {
 
@@ -341,8 +337,6 @@ function toolbox_city_pages_callback() {
 	$ret .=  '<p class="submit"><a href="#" id="submit" class="button button-primary add-sub-keyword">Add new city page</a></p>
 	    <p class="submit"><a href="#" id="get-cp" class="button button-primary" >List City Pages</a></p>
 	</div>';
-
-
 	echo toolbox_content($ret, 'city-pages');
 }
 
@@ -357,7 +351,6 @@ function toolbox_divi_global_callback() {
 
 	echo toolbox_content($ret, 'divi-global');
 }
-
 
 function toolbox_help_guidelines_callback() {
 	$ret = 'Something awesome is coming here.';
