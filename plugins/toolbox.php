@@ -217,6 +217,7 @@ function toolbox_fields($type = 'text', $name, $group = false, $help = false, $o
 
 function toolbox_content($body, $tab = 'general') {
 	global $pages;
+	$tab_group_name = 'toolbox-' .toolbox_create_slug($tab, true) . '-group';
 	?>
 	<div class="webnotik-re-wrapper">
 		<div class="message"></div>
@@ -241,8 +242,8 @@ function toolbox_content($body, $tab = 'general') {
 			<?php settings_errors(); ?>			
 			<div class="panel-body">
 				<form method="post" action="options.php">
-				<?php settings_fields( 'toolbox-' .toolbox_create_slug($tab, true) . '-group'); ?>
-				<?php do_settings_sections( 'toolbox-' .toolbox_create_slug($tab, true) . '-group'); ?>
+				<?php settings_fields( $tab_group_name ); ?>
+				<?php do_settings_sections( $tab_group_name ); ?>
 				<?php echo $body; ?>
 				</form>
 			</div>
