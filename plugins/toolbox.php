@@ -113,6 +113,7 @@ function city_pages_field($name, $action = false, $count = 0, $class = "") {
 	}
 
 	$city_action = '';
+	$url_action = '';
 	if($action) {
 		$city_action = '<div class="actions inline-action">
 			<a title="Rename City Page" class="rename-cp" href="#">RP</a>
