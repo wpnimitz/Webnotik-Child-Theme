@@ -1,5 +1,5 @@
 <?php
-$pages = array('Branding', 'Forms', 'City Pages', 'Divi Global', 'Help & Guidelines', 'Report', 'Ticket');
+$pages = array('Branding');
 include_once('toolbox-config.php');
 
 
