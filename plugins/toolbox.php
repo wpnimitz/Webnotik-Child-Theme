@@ -217,38 +217,42 @@ function toolbox_fields($type = 'text', $name, $group = false, $help = false, $o
 
 function toolbox_content($body, $tab = 'general') {
 	global $pages;
-	?>
-	<div class="webnotik-re-wrapper">
-		<div class="message"></div>
-		<div class="panel">
+
+
+	$ret = '<div class="webnotik-re-wrapper">';
+	$ret .= '';
+	$ret .= '<div class="message"></div>';
+	$ret .= '<div class="panel">
 			<div class="panel-header">
 				<h1>Welcome to REI Toolbox Settings</h1>
-				<p>Speeding up the process of website development for Real Estate Investor clients.</p>
-				
-			</div>
-			<div class="panel-navigation">
-				<div class="panel-nav">
-					<a class="forms-group <?php echo ($tab == 'general' ? 'active' : '') ?>" href="admin.php?page=toolbox-general">General</a>
-					<?php 
-					for ($i=0; $i < count($pages); $i++) {
-				    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
-						echo '<a class="forms-group ' . ($tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox-'.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
-				    }
-					?>
-					<a href="#" class="icon">&#9776;</a>			
+				<p>Speeding up the process of website development for Real Estate Investor clients.</p>';
+	$ret .= '<div class="panel">
+				<div class="panel-header">
+					<h1>Welcome to REI Toolbox Settings</h1>
+					<p>Speeding up the process of website development for Real Estate Investor clients.</p></div>';
+	$ret .= '<div class="panel-navigation">
+				<div class="panel-nav">';
+	$ret .= '<a class="forms-group '. ($tab == 'general' ? 'active' : '') .'" href="admin.php?page=toolbox-general">General</a>';
+
+			for ($i=0; $i < count($pages); $i++) {
+		    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
+				$ret .= '<a class="forms-group ' . ($tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox-'.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
+		    }
+	$ret .= '<a href="#" class="icon">&#9776;</a>';
+	$ret .= '</div>';
+	$ret .= '</div>';
+
+	$ret .= get_settings_errors();
+	$ret .= '<div class="panel-body">';
+	$ret .= '   <form method="post" action="options.php">';
+	$ret .= settings_fields( 'toolbox-' .toolbox_create_slug($tab, true) . '-group');
+	$ret .= do_settings_sections( 'toolbox-' .toolbox_create_slug($tab, true) . '-group');
+
+	$ret .= $body;
+	$ret .= '   </form>
 				</div>
 			</div>
-			<?php settings_errors(); ?>			
-			<div class="panel-body">
-				<form method="post" action="options.php">
-				<?php settings_fields( 'toolbox-' .toolbox_create_slug($tab, true) . '-group'); ?>
-				<?php do_settings_sections( 'toolbox-' .toolbox_create_slug($tab, true) . '-group'); ?>
-				<?php echo $body; ?>
-				</form>
-			</div>
-		</div>
-	</div>
-<?php 
+		</div>';
 } //close toolbox_content
 
 function show_toolbox_content_callback() {
