@@ -152,7 +152,7 @@ function city_pages_field($name, $action = false, $count = 0, $class = "") {
     	</div>
     </div>';
 
-    echo $ret;
+    return $ret;
 }
 
 function toolbox_fields($type = 'text', $name, $group = false, $help = false, $options = false, $class = false, $others = false) {
@@ -270,90 +270,76 @@ function show_toolbox_content_callback() {
 }
 
 function toolbox_branding_callback() {
-	ob_start();
-	echo '<p>Welcome to your branding settings. Please use this page to easily change for this template.</p>';	
+	$ret = '<p>Welcome to your branding settings. Please use this page to easily change for this template.</p>';	
 	
-	echo toolbox_fields('select', 'Round Corners?', 'branding', false, array("No","Yes"));
-	echo toolbox_fields('text', 'Round Corners PX', 'branding', array('help' => 'add <strong>rounded_corners</strong> to module or row class.'));
-	echo toolbox_fields('text', 'Main Branding Color', 'branding', false, false, 'wda_color_picker');
-	echo toolbox_fields('text', 'Secondary Branding Color', 'branding', false, false, 'wda_color_picker');
+	$ret .= toolbox_fields('select', 'Round Corners?', 'branding', false, array("No","Yes"));
+	$ret .= toolbox_fields('text', 'Round Corners PX', 'branding', array('help' => 'add <strong>rounded_corners</strong> to module or row class.'));
+	$ret .= toolbox_fields('text', 'Main Branding Color', 'branding', false, false, 'wda_color_picker');
+	$ret .= toolbox_fields('text', 'Secondary Branding Color', 'branding', false, false, 'wda_color_picker');
 
-	echo '<h3>Hero Section</h3>';
-	echo toolbox_fields('text', 'Hero Background Image', 'branding');
-	echo toolbox_fields('text', 'Hero Background Overlay Color', 'branding', false, false, 'wda_color_picker');
+	$ret .= '<h3>Hero Section</h3>';
+	$ret .= toolbox_fields('text', 'Hero Background Image', 'branding');
+	$ret .= toolbox_fields('text', 'Hero Background Overlay Color', 'branding', false, false, 'wda_color_picker');
 
-	echo '<h3>Form Design</h3>';
-	echo '<p>Make sure to add <strong>form-hero-header</strong> class to any module that you have a form.</p>';
-	echo toolbox_fields('text', 'Form Header Background', 'branding', false, false, 'wda_color_picker');
-	echo toolbox_fields('select', 'Remove Header Bottom Padding?', 'branding', false, array("No","Yes"));
-	echo toolbox_fields('select', 'Form Fields Size', 'branding', false, array("Small","Regular"));
-	echo toolbox_fields('text', 'Form Body Background', 'branding', false, false, 'wda_color_picker');
-	echo toolbox_fields('text', 'Form Button Background', 'branding', false, false, 'wda_color_picker');
-	echo toolbox_fields('text', 'Form Button Background Hover', 'branding', false, false, 'wda_color_picker');
-	echo toolbox_fields('select', 'Allow Trust Badge?', 'branding', false, array("No","Yes"));
+	$ret .= '<h3>Form Design</h3>';
+	$ret .= '<p>Make sure to add <strong>form-hero-header</strong> class to any module that you have a form.</p>';
+	$ret .= toolbox_fields('text', 'Form Header Background', 'branding', false, false, 'wda_color_picker');
+	$ret .= toolbox_fields('select', 'Remove Header Bottom Padding?', 'branding', false, array("No","Yes"));
+	$ret .= toolbox_fields('select', 'Form Fields Size', 'branding', false, array("Small","Regular"));
+	$ret .= toolbox_fields('text', 'Form Body Background', 'branding', false, false, 'wda_color_picker');
+	$ret .= toolbox_fields('text', 'Form Button Background', 'branding', false, false, 'wda_color_picker');
+	$ret .= toolbox_fields('text', 'Form Button Background Hover', 'branding', false, false, 'wda_color_picker');
+	$ret .= toolbox_fields('select', 'Allow Trust Badge?', 'branding', false, array("No","Yes"));
 
-	echo '<h3>Special Pages</h3>';
-	echo '<p>Perfect for Thank You and 404 Pages. Make sure to add <strong>special-page</strong> class to the section class settings.</p>';
-	echo toolbox_fields('text', 'Special Page Background Color', 'branding', false, false, 'wda_color_picker');
-	echo toolbox_fields('text', 'Special Page Button Background Color', 'branding', false, false, 'wda_color_picker');
-	echo toolbox_fields('text', 'Special Page Button Hover Background Color', 'branding', false, false, 'wda_color_picker');
+	$ret .= '<h3>Special Pages</h3>';
+	$ret .= '<p>Perfect for Thank You and 404 Pages. Make sure to add <strong>special-page</strong> class to the section class settings.</p>';
+	$ret .= toolbox_fields('text', 'Special Page Background Color', 'branding', false, false, 'wda_color_picker');
+	$ret .= toolbox_fields('text', 'Special Page Button Background Color', 'branding', false, false, 'wda_color_picker');
+	$ret .= toolbox_fields('text', 'Special Page Button Hover Background Color', 'branding', false, false, 'wda_color_picker');
 
-	submit_button();	
-
-	$output = ob_get_contents();
-	echo toolbox_content($output, 'branding');
-	ob_end_flush();
+	$ret .= get_submit_button();
+	echo toolbox_content($ret, 'branding');
 }
 
 function toolbox_forms_callback() {
-	ob_start();
+	$ret = toolbox_fields('textarea', 'Seller Form', 'forms', array('help' => '[webnotik_form type="seller_form"]', 'hint' => "In some instances, you may use lead source, this will help us gain more advantage for PPC landing pages. For reference, please check our Help & Guidelines section <a href='#'>here.</a>"));
+	$ret .= toolbox_fields('textarea', 'Buyer Form', 'forms', array('help' => '[webnotik_form type="buyer_form"]'));
+	$ret .= toolbox_fields('textarea', 'Private Lending Form', 'forms', array('help' => '[webnotik_form type="private_lending_form"]'));
+	$ret .= toolbox_fields('textarea', 'Contractor Form', 'forms', array('help' => '[webnotik_form type="contractor_form"]'));
+	$ret .= toolbox_fields('textarea', 'Realtors Form', 'forms', array('help' => '[webnotik_form type="realtors_form"]'));
+	$ret .= toolbox_fields('textarea', 'Wholesale Form', 'forms', array('help' => '[webnotik_form type="wholesale_form"]'));
+	$ret .= toolbox_fields('textarea', 'Contact Form', 'forms', array('help' => '[webnotik_form type="contact_form"]'));
+	$ret .= toolbox_fields('textarea', 'Extra Form', 'forms', array('help' => '[webnotik_form type="extra_form"]'));
 
-	echo toolbox_fields('textarea', 'Seller Form', 'forms', array('help' => '[webnotik_form type="seller_form"]', 'hint' => "In some instances, you may use lead source, this will help us gain more advantage for PPC landing pages. For reference, please check our Help & Guidelines section <a href='#'>here.</a>"));
-	echo toolbox_fields('textarea', 'Buyer Form', 'forms', array('help' => '[webnotik_form type="buyer_form"]'));
-	echo toolbox_fields('textarea', 'Private Lending Form', 'forms', array('help' => '[webnotik_form type="private_lending_form"]'));
-	echo toolbox_fields('textarea', 'Contractor Form', 'forms', array('help' => '[webnotik_form type="contractor_form"]'));
-	echo toolbox_fields('textarea', 'Realtors Form', 'forms', array('help' => '[webnotik_form type="realtors_form"]'));
-	echo toolbox_fields('textarea', 'Wholesale Form', 'forms', array('help' => '[webnotik_form type="wholesale_form"]'));
-	echo toolbox_fields('textarea', 'Contact Form', 'forms', array('help' => '[webnotik_form type="contact_form"]'));
-	echo toolbox_fields('textarea', 'Extra Form', 'forms', array('help' => '[webnotik_form type="extra_form"]'));
+	$ret .= get_submit_button();	
 
-	submit_button();	
-
-	$output = ob_get_contents();
-    ob_end_clean();
-	echo toolbox_content($output, 'forms');
+	echo toolbox_content($ret, 'forms');
 }
 
 function toolbox_city_pages_callback() {
 	$city_pages = get_option('city_pages');
-	ob_start();
-	echo '<h2>Welcome to REI Toolbox City Pages Data Builder</h2>';	
-	echo '<p>In this section, you can rename, delete and even clone your currrent city page landing page. Just make sure you provide the correct name and correct url to make it work properly.</p>';
+
+	$ret =  '<h2>Welcome to REI Toolbox City Pages Data Builder</h2>';	
+	$ret .=  '<p>In this section, you can rename, delete and even clone your currrent city page landing page. Just make sure you provide the correct name and correct url to make it work properly.</p>';
 	
-	city_pages_field('Main State');
+	$ret .= city_pages_field('Main State');
 	city_pages_field('City #1', true, 1, 'main-sub-keyword');
-	echo '<div class="extra-keywords" id="sortable">';
+	$ret .=  '<div class="extra-keywords" id="sortable">';
 	$city_count = 2;
 	for ($i=2; $i < count($city_pages["names"]); $i++) { 
-		city_pages_field('City #' . $city_count, true, $city_count);
+		$ret .= city_pages_field('City #' . $city_count, true, $city_count);
 		$city_count++;
 	}
-	echo '</div>';
+	$ret .=  '</div>';
 
-	echo '<div class="options">';
-    submit_button();
-	echo '<p class="submit"><a href="#" id="submit" class="button button-primary add-sub-keyword">Add new city page</a></p>
+	$ret .=  '<div class="options">';
+    $ret .= get_submit_button();
+	$ret .=  '<p class="submit"><a href="#" id="submit" class="button button-primary add-sub-keyword">Add new city page</a></p>
 	    <p class="submit"><a href="#" id="get-cp" class="button button-primary" >List City Pages</a></p>
 	</div>';
 
 
-	echo '<pre>';
-	print_r($city_pages);
-	echo '</pre>';
-
-	$output = ob_get_contents();
-    ob_end_clean();
-	echo toolbox_content($output, 'city-pages');
+	echo toolbox_content($ret, 'city-pages');
 }
 
 function toolbox_divi_global_callback() {
