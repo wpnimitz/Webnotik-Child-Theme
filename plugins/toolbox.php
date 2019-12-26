@@ -39,7 +39,7 @@ function toolbox_settings() {
 }
 
 
-//add_action( 'wp_before_admin_bar_render', 'toolbox_admin_bar_render' );
+add_action( 'wp_before_admin_bar_render', 'toolbox_admin_bar_render' );
 function toolbox_admin_bar_render() {
     global $wp_admin_bar;
     global $pages;
@@ -55,16 +55,16 @@ function toolbox_admin_bar_render() {
 	    )	    
 	); 
 
-    for ($i=0; $i < count($pages); $i++) { 
-    	$wp_admin_bar->add_menu(
-			array(
-		    	'parent' => 'toolbox-general',
-		        'id' => 'toolbox-' . toolbox_create_slug($pages[$i]),
-		        'title' => __($pages[$i]),
-		        'href' => admin_url( 'admin.php?page=toolbox-' . toolbox_create_slug($pages[$i]) )
-		    )
-		);
-    }
+  //   for ($i=0; $i < count($pages); $i++) { 
+  //   	$wp_admin_bar->add_menu(
+		// 	array(
+		//     	'parent' => 'toolbox-general',
+		//         'id' => 'toolbox-' . toolbox_create_slug($pages[$i]),
+		//         'title' => __($pages[$i]),
+		//         'href' => admin_url( 'admin.php?page=toolbox-' . toolbox_create_slug($pages[$i]) )
+		//     )
+		// );
+  //   }
 }
 
 
