@@ -386,5 +386,5 @@ function toolbox_help_guidelines_callback() {
 
 function toolbox_report_callback() {
 	$ret = 'Something awesome is coming here.';
-	echo toolbox_content($ret, 'help-guidelines');
+	echo toolbox_content($ret, 'report');
 }
