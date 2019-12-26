@@ -309,8 +309,8 @@ function toolbox_branding_callback() {
 	submit_button();	
 
 	$output = ob_get_contents();
-    ob_end_clean();
 	echo toolbox_content($output, 'branding');
+	ob_end_clean();
 }
 
 function toolbox_forms_callback() {
