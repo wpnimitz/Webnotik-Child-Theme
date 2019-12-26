@@ -368,8 +368,8 @@ function toolbox_divi_global_callback() {
 	ob_start();
 	echo '<p>Here\'s the most important part. Very useful for header and footer sections.</p>';
 
-	toolbox_fields('text', 'Blog Post - Before Content', 'divi-global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
-	toolbox_fields('text', 'Blog Post - After Content', 'divi-global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
+	toolbox_fields('text', 'Blog Post - Before Content', 'divi_global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
+	toolbox_fields('text', 'Blog Post - After Content', 'divi_global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
 
 	submit_button();
 
