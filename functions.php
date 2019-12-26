@@ -21,14 +21,19 @@ function webnotik_body_class( $classes ) {
 		$classes[] = 'webnotik-otherpage';
 	}
 
-	$header_style =  get_option('webnotik_header_style');
-	//create a condition here for the header setup
-	if($header_style != 'normal' || $header_style == "") {
-		$classes[] = 'webnotik-header header-' .$header_style;
-	}
-
-	$wda_form =  get_option('wda_form');
 	$classes[] = 'round_corners';
 
     return $classes;
+}
+
+add_action('after_setup_theme', 'create_rei_style');
+function create_rei_style() {
+	$filename = get_stylesheet_directory() . '/assets/css/rei-style.css';
+	if (!file_exists($filename)) {
+	    //partial code from generate_new_rei_style() just remove the json success
+		include_once( get_stylesheet_directory() . '/includes/style.php' );
+		$myCSS = fopen($filename, "w") or die("Unable to open file!");	
+		fwrite($myCSS, $css);
+		fclose($myCSS);
+	}
 }
