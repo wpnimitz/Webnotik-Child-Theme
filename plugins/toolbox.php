@@ -343,17 +343,17 @@ function toolbox_city_pages_callback() {
 }
 
 function toolbox_divi_global_callback() {
-	ob_start();
-	echo '<p>Here\'s the most important part. Very useful for header and footer sections.</p>';
 
-	echo toolbox_fields('text', 'Blog Post - Before Content', 'divi_global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
-	echo toolbox_fields('text', 'Blog Post - After Content', 'divi_global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
+	$ret = '<p>Here\'s the most important part. Very useful for header and footer sections.</p>';
 
-	submit_button();
+	$ret .= toolbox_fields('text', 'Blog Post - Before Content', 'divi_global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
+	$ret .= toolbox_fields('text', 'Blog Post - After Content', 'divi_global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
 
-	$output = ob_get_contents();
-    ob_end_clean();
-	echo toolbox_content($output, 'divi-global');
+	$ret .= get_submit_button();
+
+
+
+	echo toolbox_content($ret, 'divi-global');
 }
 
 
