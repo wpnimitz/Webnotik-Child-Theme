@@ -282,7 +282,7 @@ function toolbox_branding_callback() {
 	echo '<p>Welcome to your branding settings. Please use this page to easily change for this template.</p>';	
 	
 	toolbox_fields('select', 'Round Corners?', 'branding', false, array("No","Yes"));
-	toolbox_fields('text', 'Round Corners PX', 'branding');
+	toolbox_fields('text', 'Round Corners PX', 'branding', array('help' => 'add <strong>rounded_corners</strong> to module or row class.'));
 	toolbox_fields('text', 'Main Branding Color', 'branding', false, false, 'wda_color_picker');
 	toolbox_fields('text', 'Secondary Branding Color', 'branding', false, false, 'wda_color_picker');
 
