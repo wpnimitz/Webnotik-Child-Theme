@@ -242,7 +242,7 @@ function toolbox_content($body, $tab = 'general') {
 	$ret .= '</div>';
 	$ret .= '</div>';
 
-	$ret .= get_settings_errors();
+	$ret .= settings_errors();
 	$ret .= '<div class="panel-body">';
 	$ret .= '   <form method="post" action="options.php">';
 	$ret .= settings_fields( 'toolbox-' .toolbox_create_slug($tab, true) . '-group');
