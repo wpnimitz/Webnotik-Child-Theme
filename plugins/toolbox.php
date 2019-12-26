@@ -244,11 +244,11 @@ function toolbox_content($body, $tab = 'general') {
 				</div>
 			</div>
 		</div>';
+
+	return $ret;
 } //close toolbox_content
 
-function toolbox_admin_notices() {
-    settings_errors();
-}
+
 add_action('admin_notices', 'toolbox_admin_notices');
 
 function show_toolbox_content_callback() {
