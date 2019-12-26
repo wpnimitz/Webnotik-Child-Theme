@@ -254,8 +254,6 @@ function toolbox_content($body, $tab = 'general') {
 } //close toolbox_content
 
 function show_toolbox_content_callback() {
-	
-
 	ob_start();
 	echo '<p>Welcome to general settings of Wide Open Homes LLC. Output any shortcode in any of your wordpress page and we will instantly convert any data to seo rich snippets.</p>';	
 	
@@ -268,10 +266,8 @@ function show_toolbox_content_callback() {
 	toolbox_fields('text', 'Privacy URL', 'general',  array('help' => '[webnotik business="privacy_url"]'));
 	toolbox_fields('text', 'Terms of Use URL', 'general', array('help' => '[webnotik business="terms_of_use_url"]'));
 
+
 	submit_button();
-
-	
-
 	$output = ob_get_contents();
     ob_end_clean();
 	echo toolbox_content($output, 'general');
@@ -365,8 +361,15 @@ function toolbox_city_pages_callback() {
 }
 
 function toolbox_divi_global_callback() {
-	$ret = 'Something awesome is coming here.';
-	echo toolbox_content($ret, 'divi-global');
+	ob_start();
+	echo '<p>Here\'s the most important part. Very useful for header and footer sections.</p>';
+
+	toolbox_fields('text', 'Blog Post - Before Content', 'divi-global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
+	toolbox_fields('text', 'Blog Post - After Content', 'divi-global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
+
+	$output = ob_get_contents();
+    ob_end_clean();
+	echo toolbox_content($output, 'divi-global');
 }
 
 
