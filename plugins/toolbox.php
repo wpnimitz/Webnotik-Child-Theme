@@ -211,7 +211,7 @@ function toolbox_fields($type = 'text', $name, $group = false, $help = false, $o
 	$ret .= '</div>'; //close form-field
 	$ret .= '</div>'; //close form-group
 
-	echo  $ret;
+	return $ret;
 }
 
 
@@ -255,14 +255,14 @@ function show_toolbox_content_callback() {
 	ob_start();
 	echo '<p>Welcome to general settings of Wide Open Homes LLC. Output any shortcode in any of your wordpress page and we will instantly convert any data to seo rich snippets.</p>';	
 	
-	toolbox_fields('text', 'Business Name', 'general', array('help' => '[webnotik business="name"]'));
-	toolbox_fields('text', 'Business Phone Number', 'general', array('help' => '[webnotik business="phone_number"]'));
-	toolbox_fields('text', 'Business Email Address', 'general', array('help' => '[webnotik business="email_address"]'));
-	toolbox_fields('text', 'Business Address Line 1', 'general', array('help' => '[webnotik business="address_line_1"]'));
-	toolbox_fields('text', 'Business Address Line 2', 'general', array('help' => '[webnotik business="address_line_2"]'));
-	toolbox_fields('text', 'Business Logo URL', 'general', array('help' => '[webnotik business="logo_url"]'));
-	toolbox_fields('text', 'Privacy URL', 'general',  array('help' => '[webnotik business="privacy_url"]'));
-	toolbox_fields('text', 'Terms of Use URL', 'general', array('help' => '[webnotik business="terms_of_use_url"]'));
+	echo toolbox_fields('text', 'Business Name', 'general', array('help' => '[webnotik business="name"]'));
+	echo toolbox_fields('text', 'Business Phone Number', 'general', array('help' => '[webnotik business="phone_number"]'));
+	echo toolbox_fields('text', 'Business Email Address', 'general', array('help' => '[webnotik business="email_address"]'));
+	echo toolbox_fields('text', 'Business Address Line 1', 'general', array('help' => '[webnotik business="address_line_1"]'));
+	echo toolbox_fields('text', 'Business Address Line 2', 'general', array('help' => '[webnotik business="address_line_2"]'));
+	echo toolbox_fields('text', 'Business Logo URL', 'general', array('help' => '[webnotik business="logo_url"]'));
+	echo toolbox_fields('text', 'Privacy URL', 'general',  array('help' => '[webnotik business="privacy_url"]'));
+	echo toolbox_fields('text', 'Terms of Use URL', 'general', array('help' => '[webnotik business="terms_of_use_url"]'));
 
 
 	submit_button();
@@ -275,30 +275,30 @@ function toolbox_branding_callback() {
 	ob_start();
 	echo '<p>Welcome to your branding settings. Please use this page to easily change for this template.</p>';	
 	
-	toolbox_fields('select', 'Round Corners?', 'branding', false, array("No","Yes"));
-	toolbox_fields('text', 'Round Corners PX', 'branding', array('help' => 'add <strong>rounded_corners</strong> to module or row class.'));
-	toolbox_fields('text', 'Main Branding Color', 'branding', false, false, 'wda_color_picker');
-	toolbox_fields('text', 'Secondary Branding Color', 'branding', false, false, 'wda_color_picker');
+	echo toolbox_fields('select', 'Round Corners?', 'branding', false, array("No","Yes"));
+	echo toolbox_fields('text', 'Round Corners PX', 'branding', array('help' => 'add <strong>rounded_corners</strong> to module or row class.'));
+	echo toolbox_fields('text', 'Main Branding Color', 'branding', false, false, 'wda_color_picker');
+	echo toolbox_fields('text', 'Secondary Branding Color', 'branding', false, false, 'wda_color_picker');
 
 	echo '<h3>Hero Section</h3>';
-	toolbox_fields('text', 'Hero Background Image', 'branding');
-	toolbox_fields('text', 'Hero Background Overlay Color', 'branding', false, false, 'wda_color_picker');
+	echo toolbox_fields('text', 'Hero Background Image', 'branding');
+	echo toolbox_fields('text', 'Hero Background Overlay Color', 'branding', false, false, 'wda_color_picker');
 
 	echo '<h3>Form Design</h3>';
 	echo '<p>Make sure to add <strong>form-hero-header</strong> class to any module that you have a form.</p>';
-	toolbox_fields('text', 'Form Header Background', 'branding', false, false, 'wda_color_picker');
-	toolbox_fields('select', 'Remove Header Bottom Padding?', 'branding', false, array("No","Yes"));
-	toolbox_fields('select', 'Form Fields Size', 'branding', false, array("Small","Regular"));
-	toolbox_fields('text', 'Form Body Background', 'branding', false, false, 'wda_color_picker');
-	toolbox_fields('text', 'Form Button Background', 'branding', false, false, 'wda_color_picker');
-	toolbox_fields('text', 'Form Button Background Hover', 'branding', false, false, 'wda_color_picker');
-	toolbox_fields('select', 'Allow Trust Badge?', 'branding', false, array("No","Yes"));
+	echo toolbox_fields('text', 'Form Header Background', 'branding', false, false, 'wda_color_picker');
+	echo toolbox_fields('select', 'Remove Header Bottom Padding?', 'branding', false, array("No","Yes"));
+	echo toolbox_fields('select', 'Form Fields Size', 'branding', false, array("Small","Regular"));
+	echo toolbox_fields('text', 'Form Body Background', 'branding', false, false, 'wda_color_picker');
+	echo toolbox_fields('text', 'Form Button Background', 'branding', false, false, 'wda_color_picker');
+	echo toolbox_fields('text', 'Form Button Background Hover', 'branding', false, false, 'wda_color_picker');
+	echo toolbox_fields('select', 'Allow Trust Badge?', 'branding', false, array("No","Yes"));
 
 	echo '<h3>Special Pages</h3>';
 	echo '<p>Perfect for Thank You and 404 Pages. Make sure to add <strong>special-page</strong> class to the section class settings.</p>';
-	toolbox_fields('text', 'Special Page Background Color', 'branding', false, false, 'wda_color_picker');
-	toolbox_fields('text', 'Special Page Button Background Color', 'branding', false, false, 'wda_color_picker');
-	toolbox_fields('text', 'Special Page Button Hover Background Color', 'branding', false, false, 'wda_color_picker');
+	echo toolbox_fields('text', 'Special Page Background Color', 'branding', false, false, 'wda_color_picker');
+	echo toolbox_fields('text', 'Special Page Button Background Color', 'branding', false, false, 'wda_color_picker');
+	echo toolbox_fields('text', 'Special Page Button Hover Background Color', 'branding', false, false, 'wda_color_picker');
 
 	submit_button();	
 
@@ -310,14 +310,14 @@ function toolbox_branding_callback() {
 function toolbox_forms_callback() {
 	ob_start();
 
-	toolbox_fields('textarea', 'Seller Form', 'forms', array('help' => '[webnotik_form type="seller_form"]', 'hint' => "In some instances, you may use lead source, this will help us gain more advantage for PPC landing pages. For reference, please check our Help & Guidelines section <a href='#'>here.</a>"));
-	toolbox_fields('textarea', 'Buyer Form', 'forms', array('help' => '[webnotik_form type="buyer_form"]'));
-	toolbox_fields('textarea', 'Private Lending Form', 'forms', array('help' => '[webnotik_form type="private_lending_form"]'));
-	toolbox_fields('textarea', 'Contractor Form', 'forms', array('help' => '[webnotik_form type="contractor_form"]'));
-	toolbox_fields('textarea', 'Realtors Form', 'forms', array('help' => '[webnotik_form type="realtors_form"]'));
-	toolbox_fields('textarea', 'Wholesale Form', 'forms', array('help' => '[webnotik_form type="wholesale_form"]'));
-	toolbox_fields('textarea', 'Contact Form', 'forms', array('help' => '[webnotik_form type="contact_form"]'));
-	toolbox_fields('textarea', 'Extra Form', 'forms', array('help' => '[webnotik_form type="extra_form"]'));
+	echo toolbox_fields('textarea', 'Seller Form', 'forms', array('help' => '[webnotik_form type="seller_form"]', 'hint' => "In some instances, you may use lead source, this will help us gain more advantage for PPC landing pages. For reference, please check our Help & Guidelines section <a href='#'>here.</a>"));
+	echo toolbox_fields('textarea', 'Buyer Form', 'forms', array('help' => '[webnotik_form type="buyer_form"]'));
+	echo toolbox_fields('textarea', 'Private Lending Form', 'forms', array('help' => '[webnotik_form type="private_lending_form"]'));
+	echo toolbox_fields('textarea', 'Contractor Form', 'forms', array('help' => '[webnotik_form type="contractor_form"]'));
+	echo toolbox_fields('textarea', 'Realtors Form', 'forms', array('help' => '[webnotik_form type="realtors_form"]'));
+	echo toolbox_fields('textarea', 'Wholesale Form', 'forms', array('help' => '[webnotik_form type="wholesale_form"]'));
+	echo toolbox_fields('textarea', 'Contact Form', 'forms', array('help' => '[webnotik_form type="contact_form"]'));
+	echo toolbox_fields('textarea', 'Extra Form', 'forms', array('help' => '[webnotik_form type="extra_form"]'));
 
 	submit_button();	
 
@@ -362,8 +362,8 @@ function toolbox_divi_global_callback() {
 	ob_start();
 	echo '<p>Here\'s the most important part. Very useful for header and footer sections.</p>';
 
-	toolbox_fields('text', 'Blog Post - Before Content', 'divi_global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
-	toolbox_fields('text', 'Blog Post - After Content', 'divi_global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
+	echo toolbox_fields('text', 'Blog Post - Before Content', 'divi_global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
+	echo toolbox_fields('text', 'Blog Post - After Content', 'divi_global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
 
 	submit_button();
 
