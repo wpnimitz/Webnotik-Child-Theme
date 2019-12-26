@@ -217,7 +217,7 @@ function toolbox_fields($type = 'text', $name, $group = false, $help = false, $o
 
 function toolbox_content($body, $tab = 'general') {
 	global $pages;
-	ob_start()
+	ob_start();
 	?>
 	<div class="webnotik-re-wrapper">
 		<div class="message"></div>
@@ -251,7 +251,7 @@ function toolbox_content($body, $tab = 'general') {
 	</div>
 <?php 
 	$output = ob_get_contents();
-    ob_end_clean();
+    ob_end_flush();
 
     return $output;
 
@@ -273,7 +273,7 @@ function show_toolbox_content_callback() {
 
 	submit_button();
 	$output = ob_get_contents();
-    ob_end_clean();
+    ob_end_flush();
 	echo toolbox_content($output, 'general');
 }
 
@@ -309,7 +309,7 @@ function toolbox_branding_callback() {
 	submit_button();	
 
 	$output = ob_get_contents();
-    ob_end_clean();
+    ob_end_flush();
 	echo toolbox_content($output, 'branding');
 }
 
@@ -328,7 +328,7 @@ function toolbox_forms_callback() {
 	submit_button();	
 
 	$output = ob_get_contents();
-    ob_end_clean();
+    ob_end_flush();
 	echo toolbox_content($output, 'forms');
 }
 
@@ -360,7 +360,7 @@ function toolbox_city_pages_callback() {
 	echo '</pre>';
 
 	$output = ob_get_contents();
-    ob_end_clean();
+    ob_end_flush();
 	echo toolbox_content($output, 'city-pages');
 }
 
@@ -374,7 +374,7 @@ function toolbox_divi_global_callback() {
 	submit_button();
 
 	$output = ob_get_contents();
-    ob_end_clean();
+    ob_end_flush();
 	echo toolbox_content($output, 'divi-global');
 }
 
