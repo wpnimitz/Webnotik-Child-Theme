@@ -39,7 +39,7 @@ function toolbox_settings() {
 }
 
 
-add_action( 'wp_before_admin_bar_render', 'toolbox_admin_bar_render' );
+//add_action( 'wp_before_admin_bar_render', 'toolbox_admin_bar_render' );
 function toolbox_admin_bar_render() {
     global $wp_admin_bar;
     global $pages;
@@ -333,8 +333,10 @@ function toolbox_city_pages_callback() {
 	city_pages_field('Main State');
 	city_pages_field('City #1', true, 1, 'main-sub-keyword');
 	echo '<div class="extra-keywords" id="sortable">';
-	for ($i=1; $i < count($city_pages); $i++) { 
-		city_pages_field('City #' . ($i +1), true, ($i +1));
+	$city_count = 2;
+	for ($i=2; $i < count($city_pages["names"]); $i++) { 
+		city_pages_field('City #' . $city_count, true, $city_count);
+		$city_count++;
 	}
 	echo '</div>';
 
