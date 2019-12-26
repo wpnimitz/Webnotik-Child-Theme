@@ -360,6 +360,12 @@ function toolbox_help_guidelines_callback() {
 	echo toolbox_content($ret, 'help-guidelines');
 }
 
+function toolbox_report_callback() {
+	$ret = 'Something awesome is coming here.';
+	echo toolbox_content($ret, 'report');
+}
+
+
 function toolbox_old_information_callback() {
 	$ret = 'Something awesome is coming here.';
 	echo toolbox_content($ret, 'old-information');
