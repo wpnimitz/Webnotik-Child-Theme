@@ -310,7 +310,7 @@ function toolbox_branding_callback() {
 
 	$output = ob_get_contents();
 	echo toolbox_content($output, 'branding');
-	ob_end_clean();
+	ob_end_flush();
 }
 
 function toolbox_forms_callback() {
