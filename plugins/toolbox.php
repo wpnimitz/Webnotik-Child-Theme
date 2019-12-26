@@ -91,7 +91,11 @@ function get_toolbox_option($name, $group) {
 	if(isset($toolbox[$name])) {
 		return $toolbox[$name];
 	} else {
-		return $default[$group][$name];
+		if(isset($default[$group][$name])) {
+			return $default[$group][$name];
+		} else {
+			return '';
+		}
 	}
 }
 
