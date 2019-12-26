@@ -1252,10 +1252,7 @@ function webnotik_divi_global_header() {
 			echo do_shortcode('<div class="wrapper-'.$layout_id[$i].'">[et_pb_section global_module="'.$layout_id[$i].'"][/et_pb_section]</div>');
 		}
 		echo "<!-- End layout-wrapper -->";
-	}
-
-
-    
+	}    
 }
 
 
