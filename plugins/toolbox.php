@@ -292,7 +292,7 @@ function toolbox_branding_callback() {
 
 	echo '<h3>Form Design</h3>';
 	echo '<p>Make sure to add <strong>form-hero-header</strong> class to any module that you have a form.</p>';
-	toolbox_fields('text', 'Form Header Background', 'branding', false, array("No","Yes"));
+	toolbox_fields('text', 'Form Header Background', 'branding', false, false, 'wda_color_picker');
 	toolbox_fields('select', 'Remove Header Bottom Padding?', 'branding', false, array("No","Yes"));
 	toolbox_fields('select', 'Form Fields Size', 'branding', false, array("Small","Regular"));
 	toolbox_fields('text', 'Form Body Background', 'branding', false, false, 'wda_color_picker');
