@@ -119,7 +119,11 @@ function city_pages_field($name, $action = false, $count = 0, $class = "") {
 			<a title="Delete this City Page Data" class="delete-cp" href="#">DD</a>
 			<a title="Clone this City Page Data" class="clone-cp" href="#">CD</a>
 		</div>';
+		$url_action = '<div class="actions inline-action">
+			<a title="Verify URL" class="verify-cp" href="#">Verify</a>
+		</div>';
 	}
+
 
 
 	$ret = '<div class="form-group keyword '.$class.'">
@@ -134,7 +138,10 @@ function city_pages_field($name, $action = false, $count = 0, $class = "") {
 	    		</div>
 	    		<p class="hint">Enter focus city or state here.</p>
 	    	</div><div class="col-2 k-value">
-	    		<div class="input-group"><input type="url" name="city_pages[urls][]" id="'.$name.'" value="'.$value2.'"></div>
+	    		<div class="input-group">
+	    			<input type="url" name="city_pages[urls][]" id="'.$name.'" value="'.$value2.'">
+	    			'.$url_action.'
+	    		</div>
     			<p class="hint">Enter page URL. Very usefull for automatic linking.</p>
 	    	</div>
     	</div>
