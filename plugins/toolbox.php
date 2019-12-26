@@ -265,7 +265,6 @@ function show_toolbox_content_callback() {
 	$ret .= toolbox_fields('text', 'Privacy URL', 'general',  array('help' => '[webnotik business="privacy_url"]'));
 	$ret .= toolbox_fields('text', 'Terms of Use URL', 'general', array('help' => '[webnotik business="terms_of_use_url"]'));
 
-
 	$ret .= get_submit_button();
 	echo toolbox_content($ret, 'general');
 }
