@@ -252,23 +252,21 @@ function toolbox_content($body, $tab = 'general') {
 } //close toolbox_content
 
 function show_toolbox_content_callback() {
-	ob_start();
-	echo '<p>Welcome to general settings of Wide Open Homes LLC. Output any shortcode in any of your wordpress page and we will instantly convert any data to seo rich snippets.</p>';	
+
+	$ret = '<p>Welcome to general settings of Wide Open Homes LLC. Output any shortcode in any of your wordpress page and we will instantly convert any data to seo rich snippets.</p>';	
 	
-	echo toolbox_fields('text', 'Business Name', 'general', array('help' => '[webnotik business="name"]'));
-	echo toolbox_fields('text', 'Business Phone Number', 'general', array('help' => '[webnotik business="phone_number"]'));
-	echo toolbox_fields('text', 'Business Email Address', 'general', array('help' => '[webnotik business="email_address"]'));
-	echo toolbox_fields('text', 'Business Address Line 1', 'general', array('help' => '[webnotik business="address_line_1"]'));
-	echo toolbox_fields('text', 'Business Address Line 2', 'general', array('help' => '[webnotik business="address_line_2"]'));
-	echo toolbox_fields('text', 'Business Logo URL', 'general', array('help' => '[webnotik business="logo_url"]'));
-	echo toolbox_fields('text', 'Privacy URL', 'general',  array('help' => '[webnotik business="privacy_url"]'));
-	echo toolbox_fields('text', 'Terms of Use URL', 'general', array('help' => '[webnotik business="terms_of_use_url"]'));
+	$ret .= toolbox_fields('text', 'Business Name', 'general', array('help' => '[webnotik business="name"]'));
+	$ret .= toolbox_fields('text', 'Business Phone Number', 'general', array('help' => '[webnotik business="phone_number"]'));
+	$ret .= toolbox_fields('text', 'Business Email Address', 'general', array('help' => '[webnotik business="email_address"]'));
+	$ret .= toolbox_fields('text', 'Business Address Line 1', 'general', array('help' => '[webnotik business="address_line_1"]'));
+	$ret .= toolbox_fields('text', 'Business Address Line 2', 'general', array('help' => '[webnotik business="address_line_2"]'));
+	$ret .= toolbox_fields('text', 'Business Logo URL', 'general', array('help' => '[webnotik business="logo_url"]'));
+	$ret .= toolbox_fields('text', 'Privacy URL', 'general',  array('help' => '[webnotik business="privacy_url"]'));
+	$ret .= toolbox_fields('text', 'Terms of Use URL', 'general', array('help' => '[webnotik business="terms_of_use_url"]'));
 
 
-	submit_button();
-	$output = ob_get_contents();
-    ob_end_clean();
-	echo toolbox_content($output, 'general');
+	$ret .= get_submit_button();
+	echo toolbox_content($ret, 'general');
 }
 
 function toolbox_branding_callback() {
