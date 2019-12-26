@@ -2,6 +2,7 @@
 $pages = array('Branding', 'Forms', 'City Pages', 'Divi Global', 'Help & Guidelines', 'Report');
 include_once('toolbox-config.php');
 
+
 // Enqueue the script on the back end (wp-admin)
 add_action( 'admin_enqueue_scripts', 'toolbox_admin_scripts_assets' );
 function toolbox_admin_scripts_assets() {
@@ -14,6 +15,7 @@ function toolbox_admin_scripts_assets() {
     wp_enqueue_script( 'get-city-pages-script', get_stylesheet_directory_uri() . '/plugins/js/webnotik-ajax.js?ver='.$ver, array( 'jquery' ), null, true );
     wp_localize_script( 'get-city-pages-script', 'get_city_pages_data', array('ajaxurl' => admin_url( 'admin-ajax.php' )) );
 }
+
 
 add_action('admin_menu', 'toolbox_admin_menu_999');
 function toolbox_admin_menu_999() {
@@ -36,6 +38,7 @@ function toolbox_settings() {
     }
 }
 
+
 add_action( 'wp_before_admin_bar_render', 'toolbox_admin_bar_render' );
 function toolbox_admin_bar_render() {
     global $wp_admin_bar;
@@ -52,8 +55,8 @@ function toolbox_admin_bar_render() {
 	    )	    
 	); 
 
-	//   for ($i=0; $i < count($pages); $i++) { 
-	//   	$wp_admin_bar->add_menu(
+  //   for ($i=0; $i < count($pages); $i++) { 
+  //   	$wp_admin_bar->add_menu(
 		// 	array(
 		//     	'parent' => 'toolbox-general',
 		//         'id' => 'toolbox-' . toolbox_create_slug($pages[$i]),
@@ -61,8 +64,9 @@ function toolbox_admin_bar_render() {
 		//         'href' => admin_url( 'admin.php?page=toolbox-' . toolbox_create_slug($pages[$i]) )
 		//     )
 		// );
-	//   }
+  //   }
 }
+
 
 function toolbox_create_slug($string, $underscore = false) {
     // Replaces all spaces with hyphens.
@@ -124,6 +128,9 @@ function city_pages_field($name, $action = false, $count = 0, $class = "") {
 			<a title="Verify URL" class="verify-cp" href="#">Verify</a>
 		</div>';
 	}
+
+
+
 	$ret = '<div class="form-group keyword '.$class.'">
     	<div class="form-label">
     		<label for="'.$name.'">'.$label.'</label> 
@@ -207,49 +214,42 @@ function toolbox_fields($type = 'text', $name, $group = false, $help = false, $o
 	return $ret;
 }
 
+
 function toolbox_content($body, $tab = 'general') {
 	global $pages;
-
-	$ret = '<div class="webnotik-re-wrapper">';
-	$ret .= '';
-	$ret .= '<div class="message"></div>';
-	$ret .= '<div class="panel">
+	?>
+	<div class="webnotik-re-wrapper">
+		<div class="message"></div>
+		<div class="panel">
 			<div class="panel-header">
 				<h1>Welcome to REI Toolbox Settings</h1>
-				<p>Speeding up the process of website development for Real Estate Investor clients.</p>';
-	$ret .= '<div class="panel">
-				<div class="panel-header">
-					<h1>Welcome to REI Toolbox Settings</h1>
-					<p>Speeding up the process of website development for Real Estate Investor clients.</p></div>';
-	$ret .= '<div class="panel-navigation">
-				<div class="panel-nav">';
-	$ret .= '<a class="forms-group '. ($tab == 'general' ? 'active' : '') .'" href="admin.php?page=toolbox-general">General</a>';
-
-			for ($i=0; $i < count($pages); $i++) {
-		    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
-				$ret .= '<a class="forms-group ' . ($tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox-'.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
-		    }
-	$ret .= '<a href="#" class="icon">&#9776;</a>';
-	$ret .= '</div>';
-	$ret .= '</div>';
-
-	$ret .= settings_errors();
-	$ret .= '<div class="panel-body">';
-	$ret .= '   <form method="post" action="options.php">';
-	$ret .= settings_fields( 'toolbox-' .toolbox_create_slug($tab, true) . '-group');
-	$ret .= do_settings_sections( 'toolbox-' .toolbox_create_slug($tab, true) . '-group');
-
-	$ret .= $body;
-	$ret .= '   </form>
+				<p>Speeding up the process of website development for Real Estate Investor clients.</p>
+				
+			</div>
+			<div class="panel-navigation">
+				<div class="panel-nav">
+					<a class="forms-group <?php echo ($tab == 'general' ? 'active' : '') ?>" href="admin.php?page=toolbox-general">General</a>
+					<?php 
+					for ($i=0; $i < count($pages); $i++) {
+				    	$toolbox_content = 'toolbox_' .toolbox_create_slug($pages[$i], true) .'_callback';
+						echo '<a class="forms-group ' . ($tab == toolbox_create_slug($pages[$i]) ? 'active' : 'inactive') . '" href="admin.php?page=toolbox-'.toolbox_create_slug($pages[$i]).'">'.$pages[$i].'</a>';
+				    }
+					?>
+					<a href="#" class="icon">&#9776;</a>			
 				</div>
 			</div>
-		</div>';
-
-	return $ret;
+			<?php settings_errors(); ?>			
+			<div class="panel-body">
+				<form method="post" action="options.php">
+				<?php settings_fields( 'toolbox-' .toolbox_create_slug($tab, true) . '-group'); ?>
+				<?php do_settings_sections( 'toolbox-' .toolbox_create_slug($tab, true) . '-group'); ?>
+				<?php echo $body; ?>
+				</form>
+			</div>
+		</div>
+	</div>
+<?php 
 } //close toolbox_content
-
-
-add_action('admin_notices', 'toolbox_admin_notices');
 
 function show_toolbox_content_callback() {
 
@@ -337,6 +337,8 @@ function toolbox_city_pages_callback() {
 	$ret .=  '<p class="submit"><a href="#" id="submit" class="button button-primary add-sub-keyword">Add new city page</a></p>
 	    <p class="submit"><a href="#" id="get-cp" class="button button-primary" >List City Pages</a></p>
 	</div>';
+
+
 	echo toolbox_content($ret, 'city-pages');
 }
 
@@ -351,6 +353,7 @@ function toolbox_divi_global_callback() {
 
 	echo toolbox_content($ret, 'divi-global');
 }
+
 
 function toolbox_help_guidelines_callback() {
 	$ret = 'Something awesome is coming here.';
