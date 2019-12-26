@@ -1,5 +1,5 @@
 <?php
-$pages = array('Branding', 'Forms', 'City Pages', 'Divi Global', 'Help & Guidelines', 'Report');
+$pages = array('Branding', 'Forms', 'City Pages', 'Divi Global', 'Help & Guidelines', 'Report', 'Ticket');
 include_once('toolbox-config.php');
 
 
@@ -350,8 +350,6 @@ function toolbox_divi_global_callback() {
 	$ret .= toolbox_fields('text', 'Blog Post - After Content', 'divi_global', array('help' => 'ADD any divi global layouts ID to the field above. IDs must be separated with commas.'));
 
 	$ret .= get_submit_button();
-
-
 
 	echo toolbox_content($ret, 'divi-global');
 }
