@@ -217,7 +217,6 @@ function toolbox_fields($type = 'text', $name, $group = false, $help = false, $o
 
 function toolbox_content($body, $tab = 'general') {
 	global $pages;
-	ob_start()
 	?>
 	<div class="webnotik-re-wrapper">
 		<div class="message"></div>
@@ -250,11 +249,6 @@ function toolbox_content($body, $tab = 'general') {
 		</div>
 	</div>
 <?php 
-	$output = ob_get_contents();
-    ob_end_clean();
-
-    return $output;
-
 } //close toolbox_content
 
 function show_toolbox_content_callback() {
