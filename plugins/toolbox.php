@@ -20,7 +20,7 @@ function toolbox_admin_scripts_assets() {
 add_action('admin_menu', 'toolbox_admin_menu_999');
 function toolbox_admin_menu_999() {
 	global $pages;
-    add_menu_page( __('Toolbox', 'rei-toolbox'), __('Toolbox v2', 'rei-toolbox'), 'manage_options', 'toolbox-general', 'show_toolbox_content_callback', 'dashicons-flag', 3);
+    add_menu_page( __('Toolbox', 'rei-toolbox'), __('REI Toolbox', 'rei-toolbox'), 'manage_options', 'toolbox-general', 'show_toolbox_content_callback', 'dashicons-flag', 3);
     add_action( 'admin_init', 'toolbox_settings' );
 
     for ($i=0; $i < count($pages); $i++) {
@@ -65,7 +65,7 @@ function toolbox_admin_bar_render() {
 	//         'href' => admin_url( 'admin.php?page=' . $link )
 	//     )
 	// );
-  }
+ //  }
 }
 
 
