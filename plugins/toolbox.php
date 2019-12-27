@@ -44,7 +44,7 @@ function toolbox_admin_bar_render() {
     global $wp_admin_bar;
     global $pages;
     // we can remove a menu item, like the Comments link, just by knowing the right $id
-    //$wp_admin_bar->remove_menu('comments');
+    // $wp_admin_bar->remove_menu('comments');
 
     // lets add our main theme settings option
     $wp_admin_bar->add_menu(
@@ -55,13 +55,14 @@ function toolbox_admin_bar_render() {
 	    )	    
 	); 
 
-  for ($i=0; $i < count($pages); $i++) { 
+  for ($i=0; $i < count($pages); $i++) {
+  	$link =  'toolbox-' . toolbox_create_slug($pages[$i]);
   	$wp_admin_bar->add_menu(
 		array(
 	    	'parent' => 'toolbox-general',
-	        'id' => 'toolbox-' . toolbox_create_slug($pages[$i]),
+	        'id' => $link . '-submenu',
 	        'title' => __($pages[$i]),
-	        'href' => admin_url( 'admin.php?page=toolbox-' . toolbox_create_slug($pages[$i]) )
+	        'href' => admin_url( 'admin.php?page=' . $link )
 	    )
 	);
   }
