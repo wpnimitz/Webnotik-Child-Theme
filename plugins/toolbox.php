@@ -55,16 +55,16 @@ function toolbox_admin_bar_render() {
 	    )	    
 	); 
 
-  for ($i=0; $i < count($pages); $i++) {
-  	$link =  'toolbox-' . toolbox_create_slug($pages[$i]);
-  	$wp_admin_bar->add_menu(
-		array(
-	    	'parent' => 'toolbox-general',
-	        'id' => $link . '-submenu',
-	        'title' => __($pages[$i]),
-	        'href' => admin_url( 'admin.php?page=' . $link )
-	    )
-	);
+ //  for ($i=0; $i < count($pages); $i++) {
+ //  	$link =  'toolbox-' . toolbox_create_slug($pages[$i]);
+ //  	$wp_admin_bar->add_menu(
+	// 	array(
+	//     	'parent' => 'toolbox-general',
+	//         'id' => $link . '-submenu',
+	//         'title' => __($pages[$i]),
+	//         'href' => admin_url( 'admin.php?page=' . $link )
+	//     )
+	// );
   }
 }
 
