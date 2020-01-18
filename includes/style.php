@@ -170,7 +170,7 @@ $css .= '
 //isolated case where the button have a spacing for the hover color
 $css .= '
 .round_corners .et_pb_module .gform_wrapper button {
-	margin-left: -1px;
+	margin-left: -'.$round_corners_px.'px;
 	border: '.$round_corners_px.'px;
 }
 ';
